@@ -1,0 +1,5 @@
+o.BaseObj = "Executioner.CActor"
+o.Scale = 1.8
+o.Health = 125
+o.WalkSpeed = 1.5
+o.RunSpeed = 1.5

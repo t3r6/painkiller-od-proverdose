@@ -1,0 +1,6 @@
+o.BaseObj = "CItem"
+o.Model = "hang_body"
+--o.Model = "test_body"
+o.Scale = 2
+
+

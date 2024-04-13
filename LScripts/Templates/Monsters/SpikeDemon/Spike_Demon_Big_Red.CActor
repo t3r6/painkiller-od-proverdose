@@ -1,0 +1,39 @@
+o.BaseObj = "Spike_Demon_Blue.CActor"
+o.Model = "spike_demon"
+o.Scale = 0.22
+o.Health = 125
+o.AiParams.aiGoals = {"idle","attack", "hunt", "hear","throw"}
+
+o.AiParams.weaponDamage = 18			-- bliski atak
+o.AiParams.attackRange = 3.8
+
+o.s_SubClass.Animations.death1 = {1.0, false, {
+				{0.0,'EndWalk'},
+				{0.5,'BindFX','deathspark1'},
+				{1.0,'BindFX','deathspark2'},
+				{1.3,'BindFX','deathspark3'},
+				{1.6,'BindFX','deathspark4'},
+				{1.7,'BindFX','deathspark5'},
+
+				{0.6,'PlaySound',"$/actor/deaths/spike_sound"},
+				{0.5,'PlaySound',"$/actor/bones/bones_krok1"},
+				{0.5,'PlaySound',"$/actor/bones/bones_krok2"},
+				{0.5,'PlaySound',"$/actor/bones/bones_krok3"},
+				{0.5,'PlaySound',"$/actor/falls/fall8"},
+				{3.8,'PlaySound',"$/actor/bones/bones_krok3"},
+				{3.8,'PlaySound',"$/actor/bones/bones_krok1"},
+				{4.0,'PlaySound',"$/actor/gibs/bones_gib"},
+
+	}}
+
+o.s_SubClass.Animations.death2 = {2.2,false,{
+				{0.0,'EndWalk'},
+
+				{0.5,'PlaySound',"$/actor/falls/fall9"},
+				{0.5,'PlaySound',"$/actor/bones/bones_krok1"},
+				{0.6,'PlaySound',"$/actor/bones/bones_krok2"},
+				{0.7,'PlaySound',"$/actor/bones/bones_krok3"},
+				{0.4,'PlaySound',"$/actor/gibs/bones_gib"},
+
+
+	}}

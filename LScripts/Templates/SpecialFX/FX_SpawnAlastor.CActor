@@ -1,0 +1,38 @@
+EDITOR.AddObjectTemplate("Particles","FX_SpawnKerberos","FX_SpawnElectric.CActor");	
+
+FX_SpawnAlastor.Model = "spawn"
+FX_SpawnAlastor.Scale = 15
+FX_SpawnAlastor.NotCountable = true
+
+FX_SpawnAlastor.s_SubClass = 
+{
+    Animations = {  
+        idle        = {1.0},
+    },
+}
+
+function FX_SpawnAlastor:OnPrecache()
+	Cache:PrecacheParticleFX("Kerberos_spawn_1")
+	Cache:PrecacheParticleFX("Kerberos_spawn_2")
+end
+
+function FX_SpawnAlastor:OnCreateEntity()
+    self:BindFX("AlastornewSpawnFX",2,"e1")
+    self:BindFX("AlastornewSpawnFX",2,"e2")
+--    self:BindFX("AlastornewSpawnFX",2,"e3")
+--    self:BindFX("AlastornewSpawnFX",2,"e4")
+    self:BindFX("AlastornewSpawnFX",2,"e5")
+    self:BindFX("AlastornewSpawnFX",2,"e6")
+--    self:BindFX("AlastornewSpawnFX",2,"e7")
+--    self:BindFX("AlastornewSpawnFX",2,"e8")
+    self:BindFX("AlastornewSpawnFX",2,"e9")
+    self:BindFX("AlastornewSpawnFX",2,"e10")
+end
+
+function FX_SpawnAlastor:OnFinishAnim(name)
+    ENTITY.UnregisterAllChildren(self._Entity)
+    GObjects:ToKill(self)
+end
+
+
+o.Immortal = true

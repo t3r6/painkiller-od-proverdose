@@ -1,0 +1,72 @@
+o.s_SubClass.SoundsDefinitions = {
+	idle_howl = {
+		samples = {'$/actor/mw_anubis/anubis_howl'},
+		dist1 = 8,
+		dist2 = 30,
+	},	
+	idle_voice = {
+		samples = {'$/actor/mw_anubis/anubis_idle1','$/actor/mw_anubis/anubis_idle2','$/actor/mw_anubis/anubis_idle3'},
+		dist1 = 6,
+		dist2 = 40,
+	},	
+	swish = {
+		samples = {'$/actor/mw_anubis/anubis_swish'},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	
+	shield = {
+		samples = {'$/actor/mw_anubis/anubis_shieldhit'},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	bodyfalls = {
+		samples = {'$/actor/mw_anubis/anubis_bodyfalls1','$/actor/mw_anubis/anubis_bodyfalls2',},
+		dist1 = 8,
+		dist2 = 60,
+	},
+	shoot = {
+		samples = {'$/actor/mw_anubis/anubis_shoot',},
+		dist1 = 15,
+		dist2 = 80,
+	},
+	atak = {
+		samples = {'$/actor/mw_anubis/anubis_at1','$/actor/mw_anubis/anubis_at2'},
+		dist1 = 10,
+		dist2 = 30,
+		playChance = 0.5,
+	},	
+	onAttackOnce = {
+		samples = {'$/actor/mw_anubis/anubis_halt1', '$/actor/mw_anubis/anubis_halt2', '$/actor/mw_anubis/anubis_halt3'},
+		dist1 = 20,
+		dist2 = 50,
+	},
+	hit = {
+		samples = {'$/actor/mw_anubis/anubis_hit1','$/actor/mw_anubis/anubis_hit2','$/actor/mw_anubis/anubis_hit3',},
+		dist1 = 10,
+		dist2 = 70,
+	},
+	weaponlost = {
+		samples = {'$/actor/mw_anubis/anubis_weapon-lost1','$/actor/mw_anubis/anubis_weapon-lost2','$/actor/mw_anubis/anubis_weapon-lost3',},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	death = {
+		samples= {'$/actor/mw_anubis/anubis_death1','$/actor/mw_anubis/anubis_death2'},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	damage = {
+		samples = {'$/actor/mw_anubis/anubis_hits_hero'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+
+	bodyfalls = {
+		samples = {"$/actor/mw_anubis/anubis_bodyfalls1","$/actor/mw_anubis/anubis_bodyfalls2"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+
+}

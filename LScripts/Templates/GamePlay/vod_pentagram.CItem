@@ -1,0 +1,3 @@
+o.Model = "checkpoint"
+o.Scale = 2
+o.Frozen = false

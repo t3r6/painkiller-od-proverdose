@@ -1,0 +1,10 @@
+chimes1.Volume = 60
+chimes1.Interval = 0
+chimes1.RandomShift = 0
+chimes1.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+chimes1.Sound ="C7L04_haunted_valley/chimes1"
+

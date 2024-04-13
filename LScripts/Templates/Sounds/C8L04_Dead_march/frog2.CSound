@@ -1,0 +1,10 @@
+frog2.Volume = 80
+frog2.Interval = 0
+frog2.RandomShift = 0
+frog2.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+frog2.Sound ="C8L04_Dead_march/frog2"
+

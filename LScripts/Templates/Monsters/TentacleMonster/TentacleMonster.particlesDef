@@ -1,0 +1,21 @@
+o.s_SubClass.ParticlesDefinitions = {
+	poisongas = {
+		pfx = "tentacle_gasattack",
+		scale = 1.4,
+		joint = "root",
+		offset = Vector:New(0,0,0),
+	},
+	permgas = {
+		pfx = "tentacle_stink",
+		scale = 0.9,
+		joint = "root",
+		offset = Vector:New(0,-0.4,0),
+	},
+		leave_effect = {
+		pfx = "tentacle_leave",
+		scale = 0.7,
+		joint = "root",
+		offset = Vector:New(0,-0.5,0),
+	},
+}
+

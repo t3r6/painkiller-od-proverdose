@@ -1,0 +1,10 @@
+crickets2.Volume = 80
+crickets2.Interval = 0
+crickets2.RandomShift = 0
+crickets2.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+crickets2.Sound ="C8L04_Dead_march/crickets2"
+

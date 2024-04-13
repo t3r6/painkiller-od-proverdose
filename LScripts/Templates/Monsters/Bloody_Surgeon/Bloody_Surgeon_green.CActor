@@ -1,0 +1,243 @@
+o.Model = "bloody_surgeon"
+o.Scale = 1.35
+o.CreatePO = true
+o.Health = 102
+o.WalkSpeed = 1
+o.RunSpeed = 1.3
+o.RotateSpeed = 8
+
+o.DeadAnimChance = 40
+
+o.NeverWalk = true
+o.enableGibWhenHPBelow = -39
+
+o.throwHeart = true
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,	-- pozniej sphere
+    Mass     = 400,
+}
+
+o.s_SubClass = {
+	rotateHead = 0.6,			-- zakres
+	rotateHeadBone = "k_szyja",
+	rotateHeadMaxSpeed = 0.2,
+	SoundDir = "Gladiator",
+	Animations = {
+	 death1     = {2.4, false, {
+					{0.4,'stopbinds'},
+  					{0.0,'PlaySound',"$/actor/deaths/bloody_surgeon_off"},
+  					{1.5,'PlaySound',"$/actor/falls/fall8"},
+  					{2.1,'PlaySound',"$/actor/mw_frankenstein/frank_weapon-lost1"},
+  					{2.2,'PlaySound',"$/actor/mw_frankenstein/frank_weapon-lost2"},
+  					{1.8,'PlaySound',"$/actor/zombie_soldier/zombs_bodyfalls1"},
+  					{1.9,'PlaySound',"$/actor/falls/fall3"},
+		}},
+	 death2     = {1.5, false, {
+					{0.4,'stopbinds'},
+  					{0.0,'PlaySound',"$/actor/deaths/bloody_surgeon_off"},
+  					{0.0,'PlaySound',"$/actor/mw_bloody_surgeon/surgeon_attack1b"},
+  					{0.0,'PlaySound',"$/actor/deaths/blood1"},
+  					{1.8,'PlaySound',"$/actor/falls/fall8"},
+  					{2.5,'PlaySound',"$/actor/falls/fall9"},
+  					{2.8,'PlaySound',"$/actor/mw_frankenstein/frank_weapon-lost1"},
+  					{2.9,'PlaySound',"$/actor/mw_frankenstein/frank_weapon-lost2"},
+					
+					
+					{0.1,'BindFX','deathblood'},
+					{0.2,'BindFX','deathblood'},
+					{0.3,'BindFX','deathblood'},
+					{0.4,'BindFX','deathblood'},
+					{0.5,'BindFX','deathblood'},
+					{0.6,'BindFX','deathblood'},
+					{0.7,'BindFX','deathblood'},
+					{0.8,'BindFX','deathblood'},
+					{0.9,'BindFX','deathblood'},
+					{1.0,'BindFX','deathblood'},
+					{1.1,'BindFX','deathblood'},
+					{1.2,'BindFX','deathblood'},
+					{1.3,'BindFX','deathblood'},
+					{1.4,'BindFX','deathblood'},
+					{1.5,'BindFX','deathblood'},
+					{1.6,'BindFX','deathblood'},
+					{1.7,'BindFX','deathblood'},
+}},
+
+		idle   = {1.0,false},
+		i2b   = {1.0,false,{
+					{1.1,'BindFX','splat2'},
+					{1.1,'BindFX','splat3'},
+
+		}},
+		i2c   = {1.0,false},
+		walk   = {1.4,true,{
+				{0.1,'PlaySound',"surgeon_run"},
+				{0.65,'PlaySound',"step1"},
+				{0.0,'PlaySound',"step2"},
+			}},
+		run   = {1.0,true,{
+				{0.3,'PlaySound',"surgeon_run"},
+				{0.8,'PlaySound',"step1"},
+				{0.8,'FootFX','r_toe'},
+				{0.4,'PlaySound',"step2"},
+				{0.4,'FootFX','l_toe'},
+			}},
+
+		a2a   = {1.9,false,{
+					{0.0,'PlaySound',"surgeon_voice"},
+					{0.1,'PlaySound',"surgeon_attack1a"},
+					{0.2,'PlaySound',"surgeon_swish"},
+					{0.6,'startsplat'},
+					{0.6,'damage',2,2},
+					{0.6,'PlaySound',"shield"},
+					{1.1,'PlaySound',"surgeon_attack1b"},
+					{1.3,'PlaySound',"surgeon_swish"},
+					{1.5,'damage',2,2},
+					{1.6,'PlaySound',"shield"},
+					{1.7,'stopsplat'},
+				}},
+		a2b   = {1.9,false,{
+					{0.0,'PlaySound',"surgeon_voice"},
+					{0.2,'PlaySound',"surgeon_attack1a"},
+					{0.5,'PlaySound',"surgeon_swish"},
+--					{0.6,'startsplat'},
+					{0.6,'damage',2,2},
+					{0.6,'damage',2,2},
+					{0.6,'PlaySound',"shield"},
+--					{1.4,'stopsplat'},
+				}},
+		a2c   = {1.8,false,{
+					{0.0,'PlaySound',"surgeon_voice"},
+					{0.2,'PlaySound',"surgeon_attack1a"},
+					{0.5,'PlaySound',"surgeon_swish"},
+					{0.6,'PlaySound',"shield"},
+					{1.2,'bexplode'},
+					{1.3,'Throw'},
+					{2.6,'Showdisk'},
+				}},
+		a2d   = {2.2,false,{
+					{0.0,'PlaySound',"surgeon_voice"},
+					{0.2,'PlaySound',"surgeon_attack1a"},
+					{0.5,'PlaySound',"surgeon_swish"},
+					{0.9,'startsplat'},
+					{1,'damage',2,2},
+					{1,'damage',2,2},
+					{1.6,'PlaySound',"shield"},
+					{1.7,'stopsplat'},
+				}},
+		h1   = {2,false,{
+					{0.0,'PlaySoundHit',"hit"},
+				}},
+		h2   = {2,false,{
+					{0.0,'PlaySoundHit',"hit"},
+				}},
+    },
+
+	RagdollCollisions = {
+        MinStren = 2.5,
+        MinTime = 0.7,
+        Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_p_lokiec", "bodyfalls", true},
+				{"r_l_lokiec", "bodyfalls", true},
+				{"weapon3","weaponlost",false},
+				{"tar","weaponlost",false},
+			},
+    },
+
+
+	NearAttacks = {"a2a","a2d"},
+    Hits = {"h1", "h2"},
+    Ambients = {"idle","i2b","i2c"},
+    
+    DeathJoints = {
+        'r_p_bark','r_l_bark','k_szyja','l_up_leg','r_up_leg',        
+    },
+   	notBleedingJoints = {
+		weapon3 = {},
+		tar = {},
+    },
+
+    GibExplosionStrength = 12000,
+	GibExplosionRange = 1.8,
+	GibExplosionDeltaY = -1.0,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+				{"l_up_leg","FX_gib_blood",1},
+				{"r_up_leg","FX_gib_blood",-1},
+				{"r_l_bark","FX_gib_blood",-1},
+				{"r_p_bark","FX_gib_blood",-1},
+				{"spine_2","FX_gib_blood",1},
+				{"root","FX_gib_blood",-1},
+				{"k_szyja","FX_gib_blood",-1},
+	},
+	gibShader = "palskinned_bloody",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"l_up_leg", "gibSplash", true},
+				{"r_up_leg", "gibSplash", true},
+				{"r_l_bark", "gibSplash", true},
+				{"r_p_bark", "gibSplash", true},
+				{"root", "gibSplash", true},
+				{"k_szyja", "gibSplash", true},
+				{"spine_2","gibSplash", true},			
+			},
+	    },
+}
+
+
+o.DeathTimer = 140                  -- po ilu 1/30 postac znika po smierci
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","hunt","hear","throw","closeAttack"}
+
+o.AiParams.viewDistance = 90
+o.AiParams.viewDistance360 = 70 
+o.AiParams.viewAngle = 100
+o.AiParams.weaponDamage = 20
+o.AiParams.attackRange = 2.1
+o.AiParams.attackRangeAngle = 100
+
+
+o.AiParams.hearing = 1.0
+o.AiParams.perception = 1.0
+o.AiParams.GuardStill = false 
+o.AiParams.guardAngle = {15,90}
+o.AiParams.guardAngleRandom = false
+o.AiParams.guardChangePosition = {10,15}
+o.AiParams.guardRange = -1			-- max. walk distance when idle
+o.AiParams.stopAfterWalking = 1.0
+o.AiParams.stopAfterWalkingTime = {30,60}
+o.AiParams.walkStep = 7.0
+o.AiParams.walkAreaRandom = false
+o.AiParams.WalkAreaWhenAttack = false
+o.AiParams.useOnlyWaypointsWhenGuard = false
+o.AiParams.moveDisplacement = 3.0
+o.AiParams.chanceOfEscapeAfterFire = 0.2
+o.AiParams.escapeTime = 60 
+o.AiParams.updateSpeed = 0.33
+o.AiParams.alwaysSee = true
+o.AiParams.huntPlayer = true
+o.AiParams.delayBetweenAttacks = 8
+o.AiParams.minDelayBetweenThrow = 2.0
+
+
+
+o.shadow = 128
+o.AiParams.FarAttacks = {"a2c",}
+
+o.AiParams.throwAnim = "a2c"
+o.AiParams.throwAmmo = 99999
+o.AiParams.throwRangeMin = 4 
+o.AiParams.throwRangeMax = 40
+o.AiParams.ThrowableItem = "Bloody_Surgeon_greenThrowable.CItem"
+o.AiParams.throwItemBindTo = "r_hand"
+o.AiParams.holdJointDisplace = Vector:New(0,0,0)
+o.AiParams.hideMesh = nil
+o.AiParams.weaponBindPos = o.AiParams.throwItemBindTo
+o.AiParams.ThrowSpeed = 60
+o.AiParams.throwDeltaY = 1.5
+o.AiParams.throwDistMinus = 0.0

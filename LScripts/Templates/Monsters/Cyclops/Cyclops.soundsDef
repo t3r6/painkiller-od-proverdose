@@ -1,0 +1,76 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {'$/actor/mw_cyclop/cyclop_krokl',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	step2 = {
+		samples = {'$/actor/mw_cyclop/cyclop_krokp',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	onAttackOnce = {
+		samples = {'$/actor/mw_cyclop/cyclop_halt1','$/actor/mw_cyclop/cyclop_halt2'},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	atak = {
+		samples = {'$/actor/mw_cyclop/cyclop_atak1','$/actor/mw_cyclop/cyclop_atak2','$/actor/mw_cyclop/cyclop_atak3',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	pick = {
+		samples = {'$/actor/mw_cyclop/cyclop_pick',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	swish1 = {
+		samples = {'$/actor/mw_cyclop/cyclop_swish1',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	swish2 = {
+		samples = {'$/actor/mw_cyclop/cyclop_swish2',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_cyclop/cyclop_bodyfalls"},
+		dist1 = 20,
+		dist2 = 80,
+	},
+
+    attackAmbient = {
+		samples = {'$/actor/mw_cyclop/cyclop_attackscream1','$/actor/mw_cyclop/cyclop_attackscream2','$/actor/mw_cyclop/cyclop_attackscream3',},
+		dist1 = 20,
+		dist2 = 80,
+	},
+
+    death = {
+		samples = {"$/actor/mw_cyclop/cyclop_death1","$/actor/mw_cyclop/cyclop_death2","$/actor/mw_cyclop/cyclop_death3",},
+		dist1 = 40,
+		dist2 = 120,
+	},
+
+    damage = {
+		samples = {"$/actor/mw_cyclop/cyclop_hand-hit"},
+	},
+
+	hurt = {
+		samples = {'$/actor/mw_cyclop/cyclop_hit1','$/actor/mw_cyclop/cyclop_hit2','$/actor/mw_cyclop/cyclop_hit3','$/actor/mw_cyclop/cyclop_hit4'},
+		dist1 = 20,
+		dist2 = 80,
+	},
+
+	angry = {
+		samples = {'$/actor/mw_cyclop/cyclop_angry1','$/actor/mw_cyclop/cyclop_angry2'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	enter = {
+		samples = {'$/actor/mw_cyclop/cyclop_enter'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+        
+}

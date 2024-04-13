@@ -1,0 +1,60 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {'$/actor/mw_sprayer/sprayer_step1'},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	step2 = {
+		samples = {'$/actor/mw_sprayer/sprayer_step2'},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_sprayer/sprayer_bodyfalls"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+  spraying_1 = {
+		samples = {"$/actor/mw_sprayer/sprayer_spray1"},
+		dist1 = 10,
+		dist2 = 45,
+	},
+
+  spraying_2 = {
+		samples = {"$/actor/mw_sprayer/sprayer_spray2"},
+		dist1 = 10,
+		dist2 = 45,
+	},
+
+  shooting = {
+		samples = {"$/actor/mw_sprayer/sprayer_shot"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+  
+	attack_voice = {
+		samples = {"$/actor/mw_sprayer/sprayer_atvoice1","$/actor/mw_sprayer/sprayer_atvoice2","$/actor/mw_sprayer/sprayer_atvoice3","$/actor/mw_sprayer/sprayer_atvoice4","$/actor/mw_sprayer/sprayer_atvoice5","$/actor/mw_sprayer/sprayer_atvoice6"},
+		dist1 = 16,
+		dist2 = 40,
+	},
+
+	idle_voice = {
+		samples = {"$/actor/mw_sprayer/sprayer_atvoice1","$/actor/mw_sprayer/sprayer_atvoice2","$/actor/mw_sprayer/sprayer_atvoice4","$/actor/mw_sprayer/sprayer_atvoice6"},
+		dist1 = 16,
+		dist2 = 40,
+		playChance = 0.2
+	},
+
+
+	hit = {
+		samples = {'$/actor/mw_sprayer/sprayer_hit1','$/actor/mw_sprayer/sprayer_hit2','$/actor/mw_sprayer/sprayer_hit3'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	death = {
+		samples= {"$/actor/mw_sprayer/sprayer_death1","$/actor/mw_sprayer/sprayer_death2"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+}

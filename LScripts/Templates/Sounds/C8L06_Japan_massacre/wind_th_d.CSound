@@ -1,0 +1,10 @@
+wind_th_d.Volume = 80
+wind_th_d.Interval = 0
+wind_th_d.RandomShift = 0
+wind_th_d.Falloff =
+{
+  Start = 10,
+  End = 100
+}
+wind_th_d.Sound ="C8L06_Japan_massacre/wind_th_d"
+

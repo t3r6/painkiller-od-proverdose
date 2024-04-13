@@ -1,0 +1,10 @@
+waterfall2.Volume = 100
+waterfall2.Interval = 0
+waterfall2.RandomShift = 0
+waterfall2.Falloff =
+{
+  Start = 5,
+  End = 50
+}
+waterfall2.Sound ="C7L04_haunted_valley/waterfall2"
+

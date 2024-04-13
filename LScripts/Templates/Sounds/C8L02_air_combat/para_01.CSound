@@ -1,0 +1,10 @@
+para_01.Volume = 80
+para_01.Interval = 6
+para_01.RandomShift = 0
+para_01.Falloff =
+{
+  Start = 5,
+  End = 30
+}
+para_01.Sound ="C8L02_air_combat/para_01"
+

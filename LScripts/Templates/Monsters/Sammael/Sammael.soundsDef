@@ -1,0 +1,57 @@
+o.s_SubClass.SoundsDefinitions = {
+	atak = {
+		samples = {'$/actor/mw_sammael/sammael_attack1','$/actor/mw_sammael/sammael_attack2','$/actor/mw_sammael/sammael_attack3'},
+		playChance = 0.25,
+		dist1 = 20,
+		dist2 = 60,
+	},
+
+	swish = {
+		samples = {"$/actor/mw_sammael/sammael_swish",},
+		dist1 = 20,
+		dist2 = 50,
+	},
+	
+	sswish = {
+		samples = {"$/actor/mw_sammael/sammael_swordswish",},
+		dist1 = 20,
+		dist2 = 50,
+	},
+		
+	bodyfalls = {
+		samples = {"$/actor/mw_sammael/bodyfalls",},
+		dist1 = 20,
+		dist2 = 50,
+	},
+	death  = {
+		samples = {"$/actor/mw_sammael/sammael_death"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+    --onAttackOnce      -- podlaczyc
+    attackAmbient = {
+        samples = {"$/actor/mw_sammael/sammael_attack1","$/actor/mw_sammael/sammael_attack2","$/actor/mw_sammael/sammael_attack3"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+  hit = {
+		samples = {"$/actor/mw_sammael/sammael_hit1","$/actor/mw_sammael/sammael_hit2","$/actor/mw_sammael/sammael_hit3"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	damage = {
+        samples = {"wdemon-damage"},
+    },
+  sfly = {
+        samples = {"$/actor/mw_sammael/sammael_fly"},
+    },
+}
+
+o.s_SubClass.SoundsDefinitionsBindings = {
+    atak   = {
+			{0.0, 'PlaySoundHit', 'atak'},
+	},
+    hit   = {
+			{0.0, 'PlaySoundHit', 'hit'},
+	},
+}

@@ -1,0 +1,13 @@
+-- without jump
+o.Sequence = {
+    {"Object:'FX_SpawnElectric.CActor',1,px,py-2,pz,p.angle"},        
+    {'AI:p,false'},
+	{"PSnd:{'specials/respawns/electric'},10,30"},
+
+    {'EnableDraw:p,true'},    
+
+    {"Wait:0.5"},
+    {"PlaySpawnSound:p,10,35"},
+
+    {'AI:p,true'},
+}

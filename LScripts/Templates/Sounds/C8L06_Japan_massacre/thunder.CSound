@@ -1,0 +1,10 @@
+thunder.Volume = 80
+thunder.Interval = 15
+thunder.RandomShift = 7
+thunder.Falloff =
+{
+  Start = 15,
+  End = 200
+}
+thunder.Sound ="C8L06_Japan_massacre/thunder_a;C8L06_Japan_massacre/thunder_b;C8L06_Japan_massacre/thunder_c;C8L06_Japan_massacre/thunder_d;C8L06_Japan_massacre/thunder_e;C8L06_Japan_massacre/thunder_f;C8L06_Japan_massacre/thunder_g"
+

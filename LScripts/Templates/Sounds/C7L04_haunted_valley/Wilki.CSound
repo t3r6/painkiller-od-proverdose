@@ -1,0 +1,10 @@
+Wilki.Volume = 80
+Wilki.Interval = 14
+Wilki.RandomShift = 4
+Wilki.Falloff =
+{
+  Start = 10,
+  End = 60
+}
+Wilki.Sound ="C7L04_haunted_valley/wilki_01;C7L04_haunted_valley/wilki_02;C7L04_haunted_valley/wilki_03"
+

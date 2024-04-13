@@ -1,0 +1,7 @@
+o.BaseObj = "Nurse.CActor"
+
+o.s_SubClass.xchgTextures = {
+		{"sexy_nurse_tex","sexy_manager_tex"},
+	}
+
+o.AiParams.alwaysSee = true

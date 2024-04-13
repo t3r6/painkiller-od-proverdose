@@ -1,0 +1,21 @@
+o.BaseObj = "Walking_Tree_Red.CActor"
+o.Health = 320
+o.Scale = 0.15
+o.WalkSpeed = 1
+o.RunSpeed = 1
+
+
+function o:OnPrecache()
+	Cache:PrecacheParticleFX("BodyBlood")
+	Cache:PrecacheParticleFX("Walking_Tree_greendymm")
+	Cache:PrecacheParticleFX("Walking_Tree_greeneyes")
+	Cache:PrecacheParticleFX("Walking_Tree_greenattack")
+end
+
+
+o.s_SubClass.GibEmitters = {
+				{"Branch","leaves",-1},
+				{"RightShoulder","leaves",-1},
+				{"root","leaves",-1},
+--				{"r_l_bark","leaves",-1},
+	}

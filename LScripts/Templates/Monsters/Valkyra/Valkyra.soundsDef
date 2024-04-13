@@ -1,0 +1,61 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {'$/actor/mw_valkyr/valkyra_krok1',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	step2 = {
+		samples = {'$/actor/mw_valkyr/valkyra_krok2',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	swish = {
+		samples = {'$/actor/mw_valkyr/valkyra_swish1','$/actor/mw_valkyr/valkyra_swish2'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	atak1 = {
+		samples = {'$/actor/mw_valkyr/valkyra_at1','$/actor/mw_valkyr/valkyra_at2','$/actor/mw_valkyr/valkyra_at3',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	atak3 = {
+		samples = {'$/actor/mw_valkyr/valkyra_at3',},
+		dist1 = 10,
+		dist2 = 25,
+	},
+	hit = {
+		samples = {'$/actor/mw_valkyr/monster_valkyra_warlord_hit1','$/actor/mw_valkyr/monster_valkyra_warlord_hit2','$/actor/mw_valkyr/monster_valkyra_warlord_hit3'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	bodyfalls = {
+		samples = {'$/actor/mw_valkyr/valkyra-bodyfalls1','$/actor/mw_valkyr/valkyra-bodyfalls2'},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	weaponlost = {
+		samples = {'$/actor/mw_valkyr/valkyra-weapon-lost1','$/actor/mw_valkyr/valkyra-weapon-lost2','$/actor/mw_valkyr/valkyra-weapon-lost3',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	attackAmbient = {
+		samples = {'$/actor/mw_valkyr/valkyra_attackscream1','$/actor/mw_valkyr/valkyra_attackscream2','$/actor/mw_valkyr/valkyra_attackscream3',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+    death = {
+		samples = {'$/actor/mw_valkyr/monster_valkyra_warlord_death1','$/actor/mw_valkyr/monster_valkyra_warlord_death2','$/actor/mw_valkyr/monster_valkyra_warlord_death3'},
+		dist1 = 16,
+		dist2 = 60,
+	},
+    OnSpawn = {
+		samples = {'$/actor/mw_valkyr/valkyra_at1','$/actor/mw_valkyr/valkyra_at2','$/actor/mw_valkyr/valkyra_at3'},
+		dist1 = 16,
+		dist2 = 60,
+	},
+    damage = {
+		samples = {'$/actor/mw_valkyr/valkyra_hits_hero'},
+    },
+}

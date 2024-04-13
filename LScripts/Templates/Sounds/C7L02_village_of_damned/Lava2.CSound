@@ -1,0 +1,11 @@
+Lava2.Volume = 100
+Lava2.Interval = 0
+Lava2.RandomShift = 0
+Lava2.EnvironmentIntensity = 0.3
+Lava2.Falloff =
+{
+  Start = 2,
+  End = 30
+}
+Lava2.Sound ="C7L02_village_of_damned/lava2"
+

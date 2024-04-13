@@ -1,0 +1,10 @@
+rain_window_a.Volume = 80
+rain_window_a.Interval = 0
+rain_window_a.RandomShift = 0
+rain_window_a.Falloff =
+{
+  Start = 5,
+  End = 30
+}
+rain_window_a.Sound ="C8L06_Japan_massacre/rain_window_a"
+

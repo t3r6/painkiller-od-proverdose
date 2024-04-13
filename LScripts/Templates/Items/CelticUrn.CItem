@@ -1,0 +1,21 @@
+o.Mesh = "kelt_urnaShape"
+o.Pack = "o_kelt_urna.dat"
+o.DestroyPack = "o_kelt_urna_zlom.dat"
+o.Scale = 0.35
+o.Health = 10
+o.Mass = 100
+
+o.Destroy.ExplosionStrength = 0
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 45
+o.Destroy.Effect = "explode_dust"
+o.Destroy.EffectScale = 0.4
+o.Destroy.Treasures = 
+{
+    Coins  = {6, 'g'},
+}
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 0
+o.Destroy.ExplosionRadius = 0
+o.Destroy.LifetimeAfterExplosion = 3

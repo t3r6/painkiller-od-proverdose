@@ -1,0 +1,9 @@
+o.BaseObj = "Skeleton_Soldier.CActor"
+o.Model = "Skeletonsoldier_V2"
+
+o.s_SubClass.xchgTextures = {
+		{"SkeletonSoldierKoscisty2","airship_soldier"},
+		{"SkeletonSoldierKoscisty2_add","airship_soldier_add"},
+		{"skeletonsoldiertexgun","airship_soldier_gun"},
+	}
+

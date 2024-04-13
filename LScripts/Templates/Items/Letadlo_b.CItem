@@ -1,0 +1,7 @@
+o.BaseObj = "CItem"
+o.Model = "lietadielko_b"
+o.Scale = 1
+o.flame_FX = "FAtanksmoke"
+o.flame_FXscale = 1.5
+
+o.flightspeed = 0.65

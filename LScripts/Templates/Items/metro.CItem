@@ -1,0 +1,6 @@
+o.BaseObj = "CItem"
+o.Model = "metro_riot"
+o.Scale = 1
+o.flame_FX = "firework"
+o.flame_FXscale = 2
+

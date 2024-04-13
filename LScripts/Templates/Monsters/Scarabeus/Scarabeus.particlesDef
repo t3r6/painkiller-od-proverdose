@@ -1,0 +1,8 @@
+o.s_SubClass.ParticlesDefinitions = {
+	saliva = {
+		pfx = 'Scarabeus_saliva',
+		scale = 1,
+		joint = "RightTeeth",
+		offset = Vector:New(0,0,0),
+	},
+}

@@ -1,0 +1,28 @@
+o.Mesh = "pSphereShape1"
+o.Pack = "Kamyk.dat"
+o.Restitution = 0.8 -- sprezystosc
+o.LinearDamping = 0.8  -- tlumienie liniowe
+o._fx = "tankshot"
+o.BOD = 10
+o.NotCountable = true
+o.EQRange = 30
+o.CameraRot = 0
+o.CameraMov = 0
+o.scale = 2
+
+o.initDistance = 10
+
+function o:OnCreateEntity()
+	ENTITY.EnableDraw(self._Entity, false)
+end
+
+function o:Tick(delta)
+			if (math.random(100)<2) then
+	 			AddPFX(self._fx, self.scale, self.Pos)
+
+	 						PlaySound3D("c8l02_air_combat/cannon_fire_dist"..math.random(1,4),self.Pos.X, self.Pos.Y, self.Pos.Z,200,600,nil)
+	 						PlaySound3D("c8l02_air_combat/cannon_fire_close"..math.random(1,2),self.Pos.X, self.Pos.Y, self.Pos.Z,30,100,nil)
+
+			end
+end
+

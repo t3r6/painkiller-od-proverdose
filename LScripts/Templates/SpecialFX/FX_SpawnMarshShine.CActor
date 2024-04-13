@@ -1,0 +1,37 @@
+EDITOR.AddObjectTemplate("Particles","FX_SpawnMarshShine","FX_SpawnMarshShine.CActor");	
+
+FX_SpawnMarshShine.Model = "spawn"
+FX_SpawnMarshShine.Scale = 4.8
+FX_SpawnMarshShine.NotCountable = true
+
+FX_SpawnMarshShine.s_SubClass = 
+{
+    Animations = {  
+        idle        = {2.0},
+    },
+}
+
+function FX_SpawnMarshShine:OnPrecache()
+	Cache:PrecacheParticleFX("explo_barrelarab")
+end
+
+function FX_SpawnMarshShine:OnCreateEntity()
+    self:BindFX("spawn_marsh3",0.2,"e1")
+    self:BindFX("spawn_marsh3",0.2,"e2")
+    self:BindFX("spawn_marsh3",0.2,"e3")
+    self:BindFX("spawn_marsh3",0.2,"e4")
+    self:BindFX("spawn_marsh3",0.2,"e5")
+    self:BindFX("spawn_marsh3",0.2,"e6")
+    self:BindFX("spawn_marsh3",0.2,"e7")
+    self:BindFX("spawn_marsh3",0.2,"e8")
+    self:BindFX("spawn_marsh3",0.2,"e9")
+    self:BindFX("spawn_marsh3",0.2,"e10")
+end
+
+function FX_SpawnMarshShine:OnFinishAnim(name)
+    ENTITY.UnregisterAllChildren(self._Entity)
+    GObjects:ToKill(self)
+end
+
+
+o.Immortal = true

@@ -1,0 +1,5 @@
+o.BaseObj = "AC_Lamp1.CItem"
+o.Scale = 3
+o.s_SubClass.bindFX = {"marsh_lamp", 0.3, "joint7"}
+o.BillBoard = {"Eye_Corona.CBillboard", 3.5, "joint7",0,0.3,0}
+

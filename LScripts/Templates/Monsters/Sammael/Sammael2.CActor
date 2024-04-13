@@ -1,0 +1,6 @@
+o.BaseObj="Sammael.CActor"
+o.AiParams.aiGoals = {"FlyingIdle","throw","Change"}
+
+
+
+

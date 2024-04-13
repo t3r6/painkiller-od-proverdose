@@ -1,0 +1,10 @@
+elec2.Volume = 80
+elec2.Interval = 0
+elec2.RandomShift = 0
+elec2.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+elec2.Sound ="C7L03_powerplant/elec2"
+

@@ -1,0 +1,26 @@
+o.Model = "banshee"
+o.Scale = 1.55
+o.Health = -1
+o.NotCountable = true
+
+o.s_SubClass = {
+
+	DeathJoints = {
+        's_p_kostka','s_l_kostka',
+        'dlo_lewa_root',
+        'dlo_prawa_root',
+        'k_glowa',
+    },
+    
+	RagdollCollisions = {
+		MinStren = 4.0,
+		MinTime = 0.6,
+		Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_p_lokiec", "bodyfalls", true},
+				{"r_l_lokiec", "bodyfalls", true},
+			},
+	},
+
+}
+

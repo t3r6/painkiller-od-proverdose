@@ -1,0 +1,20 @@
+o.s_SubClass.Light = {
+	template = "leper_Light.CLight",
+	scale = 1,
+ 	joint = "weapon",
+ 	offset = Vector:New(0,0,0),
+}
+o.s_SubClass.BillBoard = {
+	template = "lepper-torch.CBillboard",
+	scale = 0.6,
+	joint = "weapon",
+	offset = Vector:New(-1,0,0),
+}
+
+o.s_SubClass.ParticlesDefinitions = {
+	atak = {
+		pfx = 'mummysand',
+		scale = 1,
+		joint = "jaw",
+	},
+}

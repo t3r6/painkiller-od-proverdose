@@ -1,0 +1,49 @@
+o.s_SubClass.SoundsDefinitions = {
+   path = "actor/mw_demonhand",
+	swish = {
+		samples = {'hand_swish'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	step = {
+		samples = {'hand_krok1','hand_krok2'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	flamevoice = {
+		samples = {'hand_flametrower-start-voice1','hand_flametrower-start-voice2','hand_flametrower-start-voice3',},
+		dist1 = 12,
+		dist2 = 40,
+		playChance = 0.28,
+	},
+	grenadev = {
+		samples = {'hand_grenade-launch-voice1','hand_grenade-launch-voice2'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	shot = {
+		samples = {'hand_grenade-shoot'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	hit = {
+		samples = {'hand_hit-satisfy1','hand_hit-satisfy2','hand_hit-satisfy3','hand_hit-satisfy4'},
+		dist1 = 20,
+		dist2 = 100,
+	},
+	onAttackOnce = {
+		samples = {"hand_halt1","hand_halt2","hand_halt3","hand_halt4"},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	bodyfalls = {
+		samples = {"hand_bodyfalls"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	death = {
+		samples = {"hand_death1","hand_death2","hand_death3"},
+        dist1 = 16,
+		dist2 = 60,
+	},
+}

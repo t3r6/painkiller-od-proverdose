@@ -1,0 +1,13 @@
+o.BaseObj = "CItem"
+o.Model = "lampion01"
+o.Scale = 1
+
+o.LoonyOffset = Vector:New(0,0,0)
+o.LoonyJoint = "root"
+o.LoonyDontRotate = true
+
+o.Pinned = true
+o.LifeG = 300
+
+o.enableGibWhenHPBelow = 0
+o.Health=1

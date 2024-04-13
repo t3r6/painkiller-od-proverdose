@@ -1,0 +1,10 @@
+tubelight1.Volume = 80
+tubelight1.Interval = 0
+tubelight1.RandomShift = 0
+tubelight1.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+tubelight1.Sound ="C8L05_Studios/tubelight1"
+

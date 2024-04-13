@@ -1,0 +1,73 @@
+o.Model = "screamer"
+o.Scale = 0.4
+o.SecondaryIdle = true
+o.Idledelay = 260
+o.Pos = Vector:New(0.11, -0.13 ,-0.115)
+o.Ang = Vector:New(6.3, 3, -0.06)
+o.lefteye = Vector:New(-0.017,0.01,0.02)
+o.righteye = Vector:New(-0.01,0.06,-0.03)
+
+o.s_SubClass = {
+    ragdollShockStren = 200,
+    ragdollShockTime = 3.0,				-- w sek.
+    ragdoll_fx = "scdeath",
+    ragdoll_fxscale = 0.6,
+    ragdoll_sound = "misc/shockdeadbody",
+    impulseAfterDeathY = 30,
+    impulseAfterDeathXZ = 30,
+
+    -- trzesienie kamera przy wystrzale:
+     ShotCamMove = 0.25,
+     ShotCamRotate = 0.25,
+    -- odstep czasu miedzy kolejnymi strzalami (1/30 sec):
+     FireTimeout    = 4,
+     AltFireTimeout = 30,
+
+    -- Evil Eye
+     FireRange = 55,
+     BeamDamage = 6,
+
+    -- Psychic Scream
+     ScreamThrowBack = 200,
+     ScreamThrowUp   = 100,
+     ScreamDamage   = 1,
+	StepScream = 5,
+	ScreamDiv = 10,
+     ScreamSpeed   = 20,
+	ScreamEnemyThrowBack = 10,
+	ScreamEnemyThrowUp = 5,
+     PhysicsImpulse = 200,
+     Animations = 
+     {   
+        idle        = {1.0, 0.2},
+        idle1        = {1.0, 0.2},
+        walk        = {1.0, 0.2},
+        attack1     = {1  , 0.1},
+        attack2     = {2, 0.1},
+     }
+}
+
+o.s_MPSubClass = {
+     FireRange = 55,
+     BeamDamage = 15,
+     ScreamThrowBack = 200,
+     ScreamThrowUp   = 100,
+     ScreamDamage   = 2,
+	StepScream = 2,
+	ScreamDiv = 4,
+     ScreamSpeed   = 60,
+	ScreamEnemyThrowBack = 10,
+	ScreamEnemyThrowUp = 5,
+     ShotCamMove = 0.25,
+     ShotCamRotate = 0.25,
+     FireTimeout    = 1,
+     AltFireTimeout = 40,
+     PhysicsImpulse = 200,
+     Animations = 
+     {   
+        idle        = {1.0, 0.2},
+        walk        = {1.0, 0.2},
+        shot        = {1  , 0.1},
+        iceshot     = {0.7, 0.1},
+     }
+}

@@ -1,0 +1,10 @@
+chimes2.Volume = 60
+chimes2.Interval = 0
+chimes2.RandomShift = 0
+chimes2.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+chimes2.Sound ="C7L04_haunted_valley/chimes2"
+

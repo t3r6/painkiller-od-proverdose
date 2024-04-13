@@ -1,0 +1,10 @@
+bird_call_close.Volume = 80
+bird_call_close.Interval = 8
+bird_call_close.RandomShift = 2
+bird_call_close.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+bird_call_close.Sound ="C7L04_haunted_valley/bird_call_close1;C7L04_haunted_valley/bird_call_close2"
+

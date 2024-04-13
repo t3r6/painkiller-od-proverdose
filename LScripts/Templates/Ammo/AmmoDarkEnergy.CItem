@@ -1,0 +1,54 @@
+o.Mesh = "polySurfaceShape8"
+o.Pack = "ammo_Dark_Energy.dat"
+o.takeDistance = 1.8
+o.Scale = 0.6
+o.DisabledInVoosh = true
+o.RespawnTime = 15
+o.AmmoAdd = 30
+o.MPAmmoAdd = 30
+
+--============================================================================
+function AmmoDarkEnergy:OnInitTemplate()
+    self.CubeMap = nil
+    self.DetailMap = nil
+    self.NormalMap = nil
+    self.Destroy = nil
+    self.Impulse = nil
+    self:ReplaceFunction("_Synchronize","Synchronize")
+    self:ReplaceFunction("Synchronize","nil")
+end
+--============================================================================
+function AmmoDarkEnergy:OnCreateEntity()
+	ENTITY.SetSynchroString(self._Entity,"DarkEnergy.CItem")
+	ENTITY.EnableNetworkSynchronization(self._Entity)
+	self:Client_OnCreateEntity(self._Entity)
+end
+
+function AmmoDarkEnergy:Client_OnCreateEntity(entity)
+  local smokefx = AddPFX("darkenergy",0.5)
+    ENTITY.RegisterChild(entity,smokefx)
+end
+--============================================================================
+function AmmoDarkEnergy:OnTake(player)    
+    if player.Ammo.DarkEnergy >= CPlayer.s_SubClass.MaxAmmo.DarkEnergy then return true end
+local add
+if Game.GMode == GModes.SingleGame then add=self.AmmoAdd else add = self.MPAmmoAdd end
+    self.TakeFX(player._Entity, add)
+	Game.PlayerAmmoFound =  Game.PlayerAmmoFound + 1
+end
+--============================================================================
+function AmmoDarkEnergy:TakeFX(pe,add)
+    local player = EntityToObject[pe]    
+    if player then
+	if Game.GMode == GModes.SingleGame then
+        player.Ammo.DarkEnergy = player.Ammo.DarkEnergy + add * AmmoDifficultyModifier[Game.Difficulty] * Game.AmmoFoundFactor
+	else
+        player.Ammo.DarkEnergy = player.Ammo.DarkEnergy + add 
+	end
+        player:CheckMaxAmmo()
+        if player == Player then player:PickupFX() end
+    end
+    Templates["AmmoDarkEnergy.CItem"]:SndEnt("pickup",pe)
+end
+Network:RegisterMethod("AmmoDarkEnergy.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eu")
+--============================================================================

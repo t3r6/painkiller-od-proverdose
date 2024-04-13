@@ -1,0 +1,245 @@
+-------------------------------
+
+AiStates.Burrow = {
+	name = "Burrow",
+    _lastTimeBurrow = 0,
+    lastTimeDamage = -100,
+}
+
+function AiStates.Burrow:OnInit(brain)
+	local actor = brain._Objactor
+	self.active = true
+	self.state = 0
+
+	
+	self.lastTimeDamage = -100
+	if brain.r_closestEnemy then
+		actor:RotateToVector(brain.r_closestEnemy._groundx, brain.r_closestEnemy._groundy, brain.r_closestEnemy._groundz)
+	else
+	end
+	self._oldDontCheckFloors = actor._DontCheckFloors
+end
+
+function AiStates.Burrow:OnUpdate(brain)
+    local actor = brain._Objactor
+    local aiParams = actor.AiParams
+    if self.state == 0 then
+		if not actor._isRotating then
+	ENTITY.PO_EnableGravity(actor._Entity, false)
+	ENTITY.PO_SetCollisionGroup(actor._Entity, ECollisionGroups.Noncolliding)
+			actor:Stop()
+			if aiParams.prepareBurrowAnim then
+				actor:SetAnim(aiParams.prepareBurrowAnim, false)
+			end
+			self.state = 1
+		end
+    end
+    if self.state == 1 then
+		if not actor._isAnimating or not aiParams.prepareBurrowAnim then
+			if brain.r_closestEnemy then
+				self.state = 2
+				
+				local distToE = Dist3D(actor._groundx,actor._groundy,actor._groundz, brain.r_closestEnemy._groundx, brain.r_closestEnemy._groundy, brain.r_closestEnemy._groundz)
+				Game:Print("distToE > aiParams.BurrowRangeMin"..distToE.." > "..aiParams.BurrowRangeMin)
+				if distToE > aiParams.BurrowRangeMin then
+
+					actor:RotateToVector(brain.r_closestEnemy._groundx, brain.r_closestEnemy._groundy, brain.r_closestEnemy._groundz, true)
+					
+					if brain.r_closestEnemy._groundy - actor._groundy > 6 then		-- pozniej te testy przed prepareBurrowAnim (narazie hardcoded to 6)
+						Game:Print(actor._Name.." cant Burrow, target too high")
+						self.active = false
+						return
+					end
+					
+					
+					
+------------------------------------------------------
+--
+	self._oldspeed = actor._randomizedParams.RotateSpeed
+	actor.onlyWPmove = true
+	actor._randomizedParams.RotateSpeed = actor._randomizedParams.RotateSpeed * 6
+	self.destx = nil
+	self.destx2 = nil
+	self.destx3 = nil
+	actor.NeverMove=false
+	ENTITY.EnableDemonic(actor._Entity,true,true)
+	-- losowanie punktu z boku gracza
+	local enemy = brain.r_closestEnemy
+    if enemy then
+		self._lastTimeTeleport = brain._currentTime
+		actor._overrideMovingCurve = aiParams.teleportSpeed
+
+		local sign = 1
+		if math.random(100) < 50 then
+			sign = -1
+		end
+
+		local done = false
+		local maxCount = 8
+        if debugMarek then
+            actor.DDEB = {}
+        end
+		while not done do
+			local angle = FRand(75 * math.pi/180, 100 * math.pi/180) * sign
+			local v = Vector:New(math.sin(enemy.angle - angle), 0, math.cos(enemy.angle - angle))		-- pozniej troche random
+			v:Normalize()
+
+   			local d = FRand(4.5,5.6)
+			self.destx = enemy._groundx + v.X * d
+			self.desty = enemy._groundy
+			self.destz = enemy._groundz + v.Z * d
+			local v2 = Vector:New(math.sin(enemy.angle - angle), 0, math.cos(enemy.angle - angle))		-- pozniej troche random
+			v2:Normalize()
+	       
+			d = FRand(3.5,4.5)
+			self.destx2 = enemy._groundx + v2.X * d
+			self.desty2 = enemy._groundy
+			self.destz2 = enemy._groundz + v2.Z * d
+            if debugMarek then
+                table.insert(actor.DDEB, {self.destx2,self.desty2+1,self.destz2,enemy._groundx,enemy._groundy+1,enemy._groundz})
+            end
+			
+			local b,d = WORLD.LineTraceFixedGeom(self.destx2, self.desty2+1, self.destz2, enemy._groundx, enemy._groundy+1, enemy._groundz)
+			if not d then
+				done = true
+			--	Game:Print("ok.")
+			else
+				sign = -sign
+				maxCount = maxCount - 1
+				if maxCount < 0 then
+					done = true
+--					Game:Print("failed..")
+				end
+			end
+		end
+		
+		if maxCount >= 0 then
+			local b,d,x,y,z,nx,ny,nz,he,e = WORLD.LineTrace(self.destx, self.desty+2.8, self.destz, actor._groundx,actor._groundy+2.8,actor._groundz)
+			if b then
+				if debugMarek then 
+					local obj = EntityToObject[e]
+					Game:Print(actor._Name.." col1")
+					if obj then
+						Game:Print(actor._Name.." col1 "..obj._Name)
+					end
+				end
+--				return
+			end
+		
+			Game:Print("!!!!!!!!! teleport")
+			actor:WalkTo(self.destx, self.desty, self.destz, true)
+			Game:Print("!!!!!!!!! teleport")
+			local v = Vector:New(self.destx2 - enemy._groundx, self.desty2 - enemy._groundy, self.destz2 - enemy._groundz)
+			v:Normalize()
+			v.X = v.X * 3
+			v.Y = v.Y * 3
+			v.Z = v.Z * 3
+			self.destx3 = enemy._groundx + v.X
+			self.desty3 = enemy._groundy + v.Y
+			self.destz3 = enemy._groundz + v.Z
+		end
+    end
+
+
+--
+------------------------------------------------------
+					actor._disableHits = true
+				else
+					self.active = false
+				end
+			else
+				self.active = false
+			end
+		else
+			if actor.Animation ~= aiParams.prepareBurrowAnim then
+				self.active = false
+			else
+				if brain.r_closestEnemy then
+					local distToE = Dist3D(actor._groundx,actor._groundy,actor._groundz, brain.r_closestEnemy._groundx, brain.r_closestEnemy._groundy, brain.r_closestEnemy._groundz)
+					if distToE <= aiParams.attackRange then
+						if debugMarek then Game:Print("prepare Burrow canceled dtoe: "..distToE) end
+						self.active = false
+					end
+				end
+			end
+		end
+    end
+    if self.state == 2 then
+		
+	    if not actor._isAnimating then
+			if aiParams.afterBurrowAnim then
+			--	Game:Print(actor._Name.." afterBurrowAnim")
+		                brain._enemyLastSeenShootTarget = Vector:New(0,brain._enemyLastSeenPoint.Y + 1.8,0)
+		                self._animName = aiParams.afterBurrowAnim
+				actor:SetAnim(self._animName, false)
+				self.state = 3
+			else
+				self.active = false
+			end
+			if debugMarek then Game:Print("Burrow_atak fin ok") end
+		else
+			if actor.Animation ~= aiParams.BurrowAnim then
+	ENTITY.PO_EnableGravity(actor._Entity, true)
+	ENTITY.PO_SetCollisionGroup(actor._Entity, ECollisionGroups.Normal)
+
+			--		Game:Print("!!!!! anim ~= Burrow_atak : " ..actor.Animation)
+		       			if aiParams.afterBurrowAnim then
+				                    if debugMarek then Game:Print(actor._Name.." afterBurrowAnim") end
+				                     brain._enemyLastSeenShootTarget = Vector:New(nil,brain._enemyLastSeenPoint.Y + 1.8,nil)
+				                    self._animName = aiParams.afterBurrowAnim
+				                    actor:SetAnim(self._animName, false)
+				                    self.state = 3
+			                else
+	                  self.active = false
+	                  if debugMarek then Game:Print("Burrow_atak fin ok") end
+                end
+
+			else
+				if math.random(100) < 15 and brain.r_closestEnemy and not aiParams.doNotRotateWhileBurrowing then
+					actor:RotateToVector(brain.r_closestEnemy._groundx, brain.r_closestEnemy._groundy, brain.r_closestEnemy._groundz, true)
+				end
+			end
+		end
+	end
+
+    if self.state == 3 then
+		if not actor._isAnimating or actor.Animation ~= self._animName then
+			if debugMarek then Game:Print(actor._Name.."koniec afterBurrow" ..actor.Animation) end
+			self.active = false
+		else
+			if aiParams.rotateWhileAfterBurrowAnim then
+				brain._enemyLastSeenShootTarget.Y = Player._groundy + 1.8
+				actor:RotateToVector(Player._groundx, Player._groundy, Player._groundz)
+			end
+		end
+	end
+
+	self._lastTimeBurrow = brain._currentTime
+end
+
+function AiStates.Burrow:OnRelease(brain)
+	local actor = brain._Objactor
+	actor._doNotLoopWalkAnim = nil
+	self.active = false
+	actor._DontCheckFloors = self._oldDontCheckFloors
+	actor._disableHits = nil
+	ENTITY.PO_EnableGravity(actor._Entity, true)
+	ENTITY.PO_SetCollisionGroup(actor._Entity, ECollisionGroups.Normal)
+end
+
+function AiStates.Burrow:Evaluate(brain)
+	if self.active then
+		return 0.7
+	end
+	if brain.r_closestEnemy then
+		local actor = brain._Objactor
+		local aiParams = actor.AiParams
+		if self._lastTimeBurrow + aiParams.minDelayBetweenBurrows < brain._currentTime and not brain.escape and actor._state ~= "ATTACKING" then
+			if brain._distToNearestEnemy > aiParams.BurrowRangeMin and brain._distToNearestEnemy < aiParams.BurrowRangeMax --[[and math.random(100) < (24 - brain._distToNearestEnemy)*0.5--]] then
+				return 0.55
+			end
+		end
+	end
+	return 0.0
+end
+

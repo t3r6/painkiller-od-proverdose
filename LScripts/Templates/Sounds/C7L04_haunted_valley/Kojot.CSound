@@ -1,0 +1,10 @@
+Kojot.Volume = 80
+Kojot.Interval = 9
+Kojot.RandomShift = 4
+Kojot.Falloff =
+{
+  Start = 10,
+  End = 30
+}
+Kojot.Sound ="C7L04_haunted_valley/Kojot"
+

@@ -1,0 +1,33 @@
+o.BaseObj = "Alastor_fire.CActor"
+o.AiParams.aiGoals = {"idleAlastor","groundAttackAlastor","flyupAlastor","topattackAlastor"}
+o.s_SubClass.NearAttacks = {"atak3"}
+o.AiParams.attackRange = 10
+o.AiParams.moveDisplacement = 10
+o.NeverRun = true
+o.AiParams.delayBetweenAttacks = 4
+o.AiParams.chanceOfEscapeAfterFire = 0.4
+o.StompTimeOut = 12				-- eartq params
+o.StompRange = 40
+o.CameraRot = 0.3
+o.CameraMov = 0.3
+o.Scale = 13.0
+o.burnPFX = "redburn"
+o.burnsize= 0.2
+o.Health = 6000
+o.WalkSpeed = 1.0
+o.walkdist = 4 
+o.hitgroundFX = "AlastorkingSpawnFX"
+o.hitgroundFXscale = 0.05 
+o.hitgroundrndnumber =  10
+o.hitgroundscatter =  20
+o.hitgroundcount =  40
+o.IsBoss = true
+o.Poison = {
+	checkSpeed = 2,
+	Range = 8,
+	TimeOut = 60,
+	Freq = 9999,
+	SlowDown = 0.2,
+}
+
+o.AiParams.breathAttackDistMin = 14

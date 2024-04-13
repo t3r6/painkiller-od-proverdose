@@ -1,0 +1,11 @@
+o.BaseObj = "Raven_Corpse.CActor"
+o.TimeToLive = nil				-- czas zycia
+o.AiParams.aiGoals = {"RavenIdle"}
+o.AiParams.viewDistance = 0
+o.AiParams.viewAngle = 0
+o.AiParams.viewDistance360 = 0
+o.AiParams.hearing = 0
+o.AiParams.perception = 0
+o.AiParams.walkStep = 	0
+o.AiParams.guardRange = 0
+o.Nevermove = true

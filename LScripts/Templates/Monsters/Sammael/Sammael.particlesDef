@@ -1,0 +1,124 @@
+o.s_SubClass.ParticlesDefinitions = {
+	ethflames = {
+		pfx = "sammael_angry",
+		scale = 1.2,
+		joint = "ROOOT",
+		offset = Vector:New(0,0,0),
+	},
+	ethflames_sword = {
+		pfx = "Valkyra_Flame",
+		scale = 1.5,
+		joint = "sword_tip",
+		offset = Vector:New(0,0,-1),
+	},
+	ethflames_end = {
+		pfx = "sammael_angryE",
+		scale = 1,
+		joint = "root",
+		offset = Vector:New(0,-0.3,0),
+	},
+	deathflames = {
+		pfx = "krystal_teleport_green",
+		scale = 4,
+		joint = "root",
+		offset = Vector:New(0,-5,0),
+	},
+--	firerain = {
+--		pfx = "krystal_teleport_blue",
+--		scale = 4,
+--		joint = "root",
+--		offset = Vector:New(0,-5,0),
+--	},
+	firerainblast = {
+		pfx = "sammael_rain_sword",
+		scale = 3,
+		joint = "sword_tip",
+		offset = Vector:New(0,0,0),
+	},
+	swflames1 = {
+		pfx = "sammael_flame",
+		scale = 0.9,
+		joint = "sword_2",
+		offset = Vector:New(0,0,0.5),
+	},
+	swflames2 = {
+		pfx = "sammael_flame",
+		scale = 0.9,
+		joint = "sword_3",
+		offset = Vector:New(0,0,0.5),
+	},
+	swflames3 = {
+		pfx = "sammael_flame",
+		scale = 1,
+		joint = "sword_tip",
+		offset = Vector:New(0,0,-0.5),
+	},
+	Bswflames1 = {
+		pfx = "sammael_flame",
+		scale = 4,
+		joint = "sword_2",
+		offset = Vector:New(0,0,2),
+	},
+	Bswflames2 = {
+		pfx = "sammael_flame",
+		scale = 4,
+		joint = "sword_3",
+		offset = Vector:New(0,0,2),
+	},
+	Bswflames3 = {
+		pfx = "sammael_flame",
+		scale = 4,
+		joint = "sword_tip",
+		offset = Vector:New(0,0,-1),
+	},
+	ballblast = {
+		pfx = "firework_explo",
+		scale = 0.2,
+		joint = "sword_tip",
+		offset = Vector:New(0,0,0),
+	},
+	spawn = {
+		pfx = "sammael_swarm",
+		scale = 1,
+		joint = "l_hand",
+		offset = Vector:New(0,0,0.5),
+	},
+	summon = {
+		pfx = "sammael_summon",
+		scale = 1,
+		joint = "sword_3",
+		offset = Vector:New(0,0,0),
+	},
+	summon_end = {
+		pfx = "sammael_summonE",
+		scale = 1,
+		joint = "sword_3",
+		offset = Vector:New(0,0,0),
+	},
+	rootflame = {
+		pfx = "sammael3_aura",
+		scale = 4,
+		joint = "ROOOT",
+		offset = Vector:New(0,10,0),
+	},
+	rootflame2 = {
+		pfx = "sammael_aura",
+		scale = 1,
+		joint = "ROOOT",
+		offset = Vector:New(0,3,0),
+	},
+}
+
+
+o.s_SubClass.BillBoard = {
+	template = "Sammael_Corona.CBillboard",
+	joint = "sword_tip",
+	offset = Vector:New(0,-0.7,-1),
+}
+
+
+o.s_SubClass.Light = {
+    template = "Sammael_Light.CLight",
+    joint = "sword_tip",
+}
+

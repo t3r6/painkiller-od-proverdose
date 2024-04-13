@@ -1,0 +1,10 @@
+atmo2.Volume = 80
+atmo2.Interval = 0
+atmo2.RandomShift = 0
+atmo2.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+atmo2.Sound ="DM_Sphere/atmo2"
+

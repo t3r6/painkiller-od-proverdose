@@ -1,0 +1,24 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {'bb_krok1',},
+		dist1 = 6,
+		dist2 = 20,
+	},
+	step2 = {
+		samples = {'bb_krok2',},
+		dist1 = 6,
+		dist2 = 20,
+	},
+	explode = {
+		samples = {"$/actor/mw_swarm/swarm_at",},
+		dist1 = 20,
+		dist2 = 60,
+	},
+
+    
+	hurt = {
+	       samples = {"$/actor/mw_swarm/swarm_at"},
+   		dist1 = 30,
+		dist2 = 70,
+	},
+}

@@ -1,0 +1,89 @@
+o.s_SubClass.ParticlesDefinitions = {
+	bottom = {
+		pfx = "Guardian_bottom",
+		scale = 2,
+		joint = "spine_2",
+		offset = Vector:New(0,6,0),
+	},
+
+	bodyflame = {
+		pfx = "Guardian_bottom_blue",
+		scale = 2,
+		joint = "spine_2",
+		offset = Vector:New(0,6,0),
+	},
+
+	handflame1 = {
+		pfx = "Guardian_bodyflame",
+		scale = 2,
+		joint = "r_forearm",
+		offset = Vector:New(0,2,0),
+	},
+	handflame2 = {
+		pfx = "Guardian_bodyflame",
+		scale = 2,
+		joint = "l_forearm",
+		offset = Vector:New(0,2,0),
+	},
+	headflame = {
+		pfx = "Guardian_bodyflame",
+		scale = 2,
+		joint = "head",
+		offset = Vector:New(0,2,0),
+	},
+
+
+	relbow = {
+		pfx = "Guardian_elbow",
+		scale = 1.5,
+		joint = "r_forearm",
+		offset = Vector:New(-0.7,0,0.7),
+	},	
+	lelbow = {
+		pfx = "Guardian_elbow",
+		scale = 1.5,
+		joint = "l_forearm",
+		offset = Vector:New(0.7,0,-0.7),
+	},
+	lwrist = {
+		pfx = "Guardian_wrist",
+		scale = 1.5,
+		joint = "l_hand",
+		offset = Vector:New(0,0,0),
+	},
+	rwrist = {
+		pfx = "Guardian_wrist",
+		scale = 1.5,
+		joint = "r_hand",
+		offset = Vector:New(0,0,0),
+	},
+	rdust = {
+		pfx = "Guardian_dust",
+		scale = 9,
+		joint = "r_hand",
+		offset = Vector:New(0,0,0),
+	},
+	ldust = {
+		pfx = "Guardian_dust",
+		scale = 9,
+		joint = "l_hand",
+		offset = Vector:New(0,0,0),
+	},
+
+	clap = {
+		pfx = "Guardian_clap",
+		scale = 3,
+		joint = "r_hand",
+		offset = Vector:New(0,0,0),
+	},
+	rain = {
+		pfx = "Guardian_chest",
+		scale = 2,
+		joint = "spine_3",
+		offset = Vector:New(0,0,0),
+	},
+
+}
+
+
+

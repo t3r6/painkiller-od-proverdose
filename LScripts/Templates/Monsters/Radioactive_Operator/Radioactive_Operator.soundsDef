@@ -1,0 +1,77 @@
+o.s_SubClass.SoundsDefinitions = {
+	rad_attack2_steam = {
+		samples = {"$/actor/mw_radioactive_operator/radio_attack2_steam"},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	rad_attack1 = {
+		samples = {"$/actor/mw_radioactive_operator/radio_attack1"},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	missed = {
+		samples = {"$/actor/mw_radioactive_operator/Dd-missed1","$/actor/mw_radioactive_operator/Dd-missed2"},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	step1 = {
+		samples = {'$/actor/mw_radioactive_operator/DD-krok1',},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	step2 = {
+		samples = {'$/actor/mw_radioactive_operator/DD-krok2',},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_radioactive_operator/dd_bodyfalls"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	swish = {
+		samples = {'$/actor/mw_radioactive_operator/dd_swish',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	atak1 = {
+		samples = {'$/actor/mw_radioactive_operator/dd-at1a','$/actor/mw_radioactive_operator/dd-at1b'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},	
+	atak2 = {
+		samples = {'$/actor/mw_radioactive_operator/dd-at2a','$/actor/mw_radioactive_operator/dd-at2b'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},	
+	inhale = {
+		samples = {'$/actor/mw_radioactive_operator/dd_inhale'},
+		dist1 = 10,
+		dist2 = 30,
+	},	
+	onAttackOnce = {
+		samples = {"$/actor/mw_radioactive_operator/dd-halt1", "$/actor/mw_radioactive_operator/dd-halt2", "$/actor/mw_radioactive_operator/dd-halt3"},
+		dist1 = 20,
+		dist2 = 50,
+	},
+	hit = {
+		samples = {'$/actor/mw_radioactive_operator/dd-hit1','$/actor/mw_radioactive_operator/dd-hit2','$/actor/mw_radioactive_operator/dd-hit3',},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	weaponlost = {
+		samples = {"$/actor/mw_radioactive_operator/dd_weapon-lost","$/actor/mw_radioactive_operator/dd_weapon-lost2",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	death = {
+		samples= {"$/actor/mw_radioactive_operator/dd-death1","$/actor/mw_radioactive_operator/dd-death2","$/actor/mw_radioactive_operator/dd-death3",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	damage = {
+		samples= {"$/actor/mw_radioactive_operator/dd-damage"},
+	}
+}

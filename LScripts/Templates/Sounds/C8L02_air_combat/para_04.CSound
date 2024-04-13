@@ -1,0 +1,10 @@
+para_04.Volume = 80
+para_04.Interval = 5
+para_04.RandomShift = 0
+para_04.Falloff =
+{
+  Start = 5,
+  End = 30
+}
+para_04.Sound ="C8L02_air_combat/para_04"
+

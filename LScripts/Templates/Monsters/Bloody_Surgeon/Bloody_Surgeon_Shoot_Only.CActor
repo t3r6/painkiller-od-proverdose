@@ -1,0 +1,6 @@
+o.BaseObj = "Bloody_Surgeon_green.CActor"
+
+
+o.NeverMove = true
+
+o.AiParams.aiGoals = {"idle","hunt","hear","throw"}

@@ -1,0 +1,10 @@
+transformator.Volume = 80
+transformator.Interval = 0
+transformator.RandomShift = 0
+transformator.Falloff =
+{
+  Start = 5,
+  End = 50
+}
+transformator.Sound ="C7L03_powerplant/generator"
+

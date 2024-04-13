@@ -1,0 +1,10 @@
+wolfs.Volume = 80
+wolfs.Interval = 8
+wolfs.RandomShift = 3
+wolfs.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+wolfs.Sound ="C7L04_haunted_valley/wolf1;C7L04_haunted_valley/wolf2;C7L04_haunted_valley/wolf3"
+

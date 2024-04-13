@@ -1,0 +1,9 @@
+o.Model = "unionsoldier"
+o.BaseObj="Skeleton_Soldier.CActor"
+o.AiParams.aiGoals = {"idle","attack","hunt"}
+o.Scale = 1.1
+o.Health = 50
+o.enableGibWhenHPBelow = -30
+
+o.exp1speed = 1.0
+o.exp2speed = 1.0

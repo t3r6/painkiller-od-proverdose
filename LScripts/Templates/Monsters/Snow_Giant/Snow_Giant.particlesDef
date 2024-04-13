@@ -1,0 +1,68 @@
+o.s_SubClass.ParticlesDefinitions = {
+	flame = {
+		pfx = "Snow_Giant_Flame",
+		scale = 1,
+		joint = "RightHandMiddle1",
+		offset = Vector:New(-0.6,2.1,0.6),
+	},
+	blast = {
+		pfx = "Snow_Giant_hitground",
+		scale = 1,
+		joint = "RightHandMiddle1",
+		offset = Vector:New(-0.9,-1,1.6),
+	},	
+--	ring = {
+--		pfx = "Snow_Giant_hitground",
+--		scale = 1.1,
+--		joint = "RightHandMiddle1",
+--		offset = Vector:New(-10.5,-3,2),
+--	},	
+	fire = {
+		pfx = "Snow_Giant_blast",
+		scale = 1,
+		joint = "RightHandMiddle1",
+		offset = Vector:New(0,2,0.1),
+	},
+
+	bodyfire = {
+		pfx = "Snow_Giant_Flame2",
+		scale = 1,
+		joint = "k_szyja",
+		offset = Vector:New(0,0,0),
+	},	
+	rhfire = {
+		pfx = "Snow_Giant_Flame2",
+		scale = 1,
+		joint = "RightHand",
+		offset = Vector:New(0,0,0),
+	},	
+	lhfire = {
+		pfx = "Snow_Giant_Flame2",
+		scale = 1,
+		joint = "LeftHand",
+		offset = Vector:New(0,0,0),
+	},			
+
+	walkl = {
+		pfx = "Snow_Giant_Walk",
+		scale = 0.9,
+		joint = "s_l_kostka",
+		offset = Vector:New(-0.6,0,1.1),
+	},					
+
+	walkr = {
+		pfx = "Snow_Giant_Walk",
+		scale = 0.9,
+		joint = "s_p_kostka",
+		offset = Vector:New(0.6,0,0.9),
+	},					
+--	breath = {
+--		pfx = "Snow_Giant_breath",
+--		scale = 1,
+--		joint = "k_szyja",
+--		offset = Vector:New(0,0,0),
+--	},					
+		
+}
+
+

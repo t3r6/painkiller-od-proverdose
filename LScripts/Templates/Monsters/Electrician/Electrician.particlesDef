@@ -1,0 +1,8 @@
+o.s_SubClass.ParticlesDefinitions = {}
+
+o.s_SubClass.bindFX = {
+	{"electrician_hands",0.15,'l_middle_2',0, 0, 0},
+	{"electrician_hands",0.15,'r_middle_2',0, 0, 0},
+	{"electrician_hands",0.07,'mouth',0, 0, 0.1},
+}
+

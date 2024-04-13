@@ -1,0 +1,192 @@
+o.Model = "scarecrow"
+o.Scale = 1.3
+o.Health = 75
+o.CreatePO = true
+o.WalkSpeed = 1.2
+o.RunSpeed = 1.15
+o.RotateSpeed = 15
+o.throwHeart = true
+o.Animation = "idle_default"
+o.enableGibWhenHPBelow = -39
+o._minwhirltime= 30*15 
+o._maxwhirltime= 30*90
+o.whirlchance = 100
+o.customgibexpsound = {"actor/gibs/scarecrow_gib"}
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 120,
+    InertiaTensorMultiplier = 0.15,
+}
+
+
+o.s_SubClass = {
+	SoundDir = "psycho_elektro",
+	rotateHead = 0.6,			-- zakres
+	rotateHeadBone = "neck",
+	rotateHeadMaxSpeed = 0.1,
+
+	Animations = {
+	 death1     = {1.0, false, {
+		 					{0.1,'PlaySound',"$/actor/deaths/chain_drop3"},
+		 					{0.0,'PlaySound',"$/actor/falls/fall9"},
+
+		 					{0.6,'PlaySound',"$/actor/falls/fall9"},
+		 					{0.6,'PlaySound',"$/actor/deaths/chain_drop1"},
+		 					{0.6,'PlaySound',"$/actor/deaths/chain_drop2"},
+		 					{0.6,'PlaySound',"$/actor/deaths/chain_drop3"},
+
+		 					{1.0,'PlaySound',"$/actor/falls/fall3"},
+		 					{1.0,'PlaySound',"$/actor/falls/fall8"},
+		 					{1.0,'PlaySound',"$/actor/falls/fall9"},
+		 					{1.1,'PlaySound',"$/actor/deaths/chain_drop2"},
+		 					{1.1,'PlaySound',"$/actor/deaths/chain_drop3"},
+
+		 					{1.3,'PlaySound',"$/actor/falls/fall6"},
+		 					{1.3,'PlaySound',"$/actor/falls/fall9"},
+		 					{1.4,'PlaySound',"$/actor/deaths/chain_drop3"},
+		 					{1.5,'PlaySound',"$/actor/deaths/chain_drop2"},
+
+		 					{1.7,'PlaySound',"$/actor/falls/fall9"},
+		 					{1.8,'PlaySound',"$/actor/deaths/chain_drop2"},
+		 					{1.9,'PlaySound',"$/actor/deaths/chain_drop3"},
+
+		 					{2.4,'PlaySound',"$/actor/falls/fall9"},
+		 					{2.4,'PlaySound',"$/actor/deaths/chain_drop3"},
+		 					{2.7,'PlaySound',"$/actor/deaths/chain_drop2"},
+
+	 
+	 }},
+	 death2     = {1.0, false, {
+		 					{0.2,'PlaySound',"$/actor/deaths/scare_death2"},
+		 					{0.2,'PlaySound',"$/actor/falls/fall9"},
+		 					{0.2,'PlaySound',"$/actor/deaths/chain_drop1"},
+		 					{1.0,'PlaySound',"$/actor/deaths/chain_drop2"},
+		 					{1.3,'PlaySound',"$/actor/deaths/chain_drop3"},
+
+	 }},
+
+		idle_default   = {1.0,false},
+
+		walk  = {0.7,true, {
+				{0.0,'PlaySound',"step"},
+				{0.0,'PlaySound',"noise"},
+				{0.4,'PlaySound',"rotate"},
+				{0.8,'PlaySound',"step"},
+				{0.8,'PlaySound',"noise"},
+				{1.2,'PlaySound',"rotate"},
+				--{0.0,'BindTrails'},
+				--{1.0,'EndTrails'},
+			}},
+		run   = {1.0,true, {
+				{0.0,'PlaySound',"step"},
+				{0.0,'PlaySound',"noise"},
+				{0.7,'PlaySound',"step"},
+				{0.7,'PlaySound',"noise"},
+				{0.8,'FootFX','toe'},
+				{1.6,'FootFX','toe'},
+			}},
+		attack1   = {1.0,false, {
+				{0.2,'PlaySound',"attack1a"},
+				{0.1,'PlaySound',"noise"},
+				{0.4,'PlaySound',"attack1b"},
+				{0.7,'PlaySound',"attack1c"},
+				{0.0,'BindTrails'},
+				{0.13,'damage'},
+				{0.53,'damage'},
+				{0.73,'damage'},
+				{1.06,'damage'},
+				{1.4,'EndTrails'},
+
+			}},
+		attack2   = {2.0,false, {
+				{0.2,'PlaySound',"attack2"},
+				{0.0,'BindTrails'},
+				{0.6,'damage'},
+				{1.4,'EndTrails'},
+			}},
+		attack3   = {1.0,false, {
+				{0.0,'PlaySound',"wirl_attack"},
+				{0.5,'PlaySound',"wirl_init"},
+				{0.0,'imme'},
+				{1.0,'spme'},
+				{2.0,'omme'},
+			}},
+	},
+	
+	NearAttacks = {"attack1","attack2"},
+	ragdollJoint = "ROOOT_old",
+	--swalk = {"walk"},
+	Ambients = {"idle_deault",},
+	
+	DeathJoints = {
+        'up_leg','hips','spine_1','neck','r_arm','l_arm',
+    },
+    
+	RagdollCollisions = {
+		MinStren = 4.0,
+		MinTime = 0.6,
+		Bones = {
+				{"r_arm", "bodyfalls", true},
+				{"l_arm", "bodyfalls", true},
+			},
+	},
+
+    GibExplosionStrength = 7000,
+	GibExplosionRange = 3.0,
+	GibExplosionDeltaY = -1.0,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+		{"l_arm","scarecrow_death01",-1},
+		{"r_arm","scarecrow_death01",-1},
+		{"up_leg","scarecrow_death01",-1},
+		{"spine_1","scarecrow_death01",-1},
+		{"neck","scarecrow_death01",-1},
+		{"ROOOT_old","scarecrow_death01",-1},
+	},
+	gibShader = "palskinned_bloody",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"l_arm", "gibSplash", true},
+				{"r_arm", "gibSplash", true},
+				{"up_leg", "gibSplash", true},
+				{"spine_1", "gibSplash", true},
+				{"neck", "gibSplash", true},
+				{"hips", "gibSplash", true},
+			},
+	    },
+}	    
+
+o.DeathTimer = 140
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"hunt","idle", "hear","attack","whirl"}
+
+o.AiParams.walkStep = 5.0
+
+o.AiParams.viewDistance = 100
+o.AiParams.viewDistance360 = 100
+o.AiParams.viewAngle = 360
+o.AiParams.attackRange = 3.5
+o.AiParams.attackRangeAngle = 360
+o.AiParams.weaponDamage = 8
+
+o.AiParams.GuardStill = false
+o.AiParams.guardAngle = {0,0}
+o.AiParams.guardAngleRandom = true			-- wtedy guardAngle nie jest uwzgledniany
+o.AiParams.guardChangePosition = {}
+o.AiParams.guardRange = -1
+o.AiParams.stopAfterWalking = 0
+o.AiParams.stopAfterWalkingTime = {20,60}
+o.AiParams.updateSpeed = 0.7
+
+o.AiParams.chanceOfEscapeAfterFire = 0
+o.AiParams.delayBetweenAttacks = 20
+o.AiParams.moveDisplacement = -1
+o.AiParams.perception = 1.0
+o.AiParams.hearing = 2.0
+
+o.shadow = 128

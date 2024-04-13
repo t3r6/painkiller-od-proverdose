@@ -1,0 +1,159 @@
+o.Model = "sammael"
+o.Scale = 2.7
+o.Health = 850
+o.FlySpeed = 8.0
+o.WalkSpeed = 1.0
+o.ToughOne = true
+o.ScreamDamage = 10
+o.CreatePO = true
+o.RotateSpeed = 4
+o._DontCheckFloors = true
+o.DeathTimer = 120
+o.checkColInFlight = 0.3
+o.disableFreeze = true
+o.IsBoss = true
+
+
+
+o.s_Physics = {
+    BodyType = BodyTypes.Simple,
+    BodyScale = 0.5,
+    Mass     = 20000,
+    --Friction = 0.9,
+}
+
+o.smoothFly = 2.8		-- dobrac
+
+o.s_SubClass = {
+	rotateHead = 0.2,
+	rotateHeadBone = "neck",
+	rotateHeadMaxSpeed = 0.5,
+	
+    Animations =  {
+        idle          = {1.0, false},
+
+        fly  = {1.0,  false,{
+      					{0.1,'PlaySound',"sfly"},
+				}},
+        summon  = {1.0, false,{
+      					{0.1,'PlaySound',"atak"},
+					{1.0,'BindFX','summon'},
+--					{2.0,'BindFX','summon'},
+--					{3.0,'BindFX','summon'},
+--					{4.0,'BindFX','summon'},
+					{4.0,'BindFX','summon_end'},
+				}},
+        swarm  = {1.0, false,{
+      					{0.1,'PlaySound',"atak"},
+      					{0.6,'PlaySound',"swish"},
+					{0.29,'BindFX','spawn'},
+					{0.8,'ThrowImmid'},
+				}},
+        firerain  = {1.0, false,{
+      					{0.1,'PlaySound',"atak"},
+					{2.0,'BindTrailSword','trail_sword','sword_2','sword_3','sword_tip'},
+					{2.6,'BindFX','firerainblast'},
+					{4.0,'EndTrailSword'},
+				}},
+        fireball  = {1.0, false,{
+      					{0.1,'PlaySound',"atak"},
+      					{0.6,'PlaySound',"sswish"},
+					 {0.0,'BindTrailSword','trail_sword','sword_2','sword_3','sword_tip'},
+					{0.59,'BindFX','ballblast'},
+					{0.6,'ThrowImmid','nil','true'},
+					{0.8,'EndTrailSword'},
+
+				}},
+        death1  = {1.0, false,{
+      					{0.1,'PlaySound',"death"},
+					{0.0,'BindFX','deathflames'},
+				}},
+        angry  = {1.0, false,{
+					{2.0,'BindTrailSword','trail_sword','sword_2','sword_3','sword_tip'},
+					{0.0,'BindFX','ethflames'},
+					{0.1,'BindFX','ethflames_sword'},
+--					{1.1,'BindFX','ethflames'},
+--					{2.2,'BindFX','ethflames'},
+--					{3.3,'BindFX','ethflames'},
+					{4.0,'EndTrailSword'},
+					{5.9,'BindFX','ethflames_end'},
+				}},
+    },
+
+    flyWalk = "fly",			-- potrzebne?
+    DeathJoints = {
+ "l_hand","r_hand","neck","l_wing","r_wing","r_wing2","l_wing2","l_leg","r_leg","r_l_soutane1","r_r_soutane1","r_r_soutane2","r_l_soutane2"
+    },
+    RagdollCollisions = {
+        MinStren = 2.0,
+        MinTime = 0.7,
+        Bones = {
+				{"root", {"$/impacts/meat-splash5"}, true},		-- joint, {sounds}, blood
+			},
+    },
+    
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+		{"root", "gibSplash", true},
+                {"r_wing","gibSplash", true},
+                {"l_wing","gibSplash", true},
+		{"r_hand","gibSplash", true},
+                {"l_hand","gibSplash", true},
+            },
+	    },
+    
+}
+
+o.retreatpoints = {}
+o.retreatpoints[1] = Vector:New(2.1128687858582,55.977447509766,36.302890777588)
+o.retreatpoints[2] = Vector:New(0.1164,90.170013427734,-55.8484)
+o.retreatpoints[3] = Vector:New(-9.9072599411011,55.42223739624,-124.68962097168)
+
+o.vulnjoints ={"l_wing1","l_wing2","l_wing3","l_wing_tip","r_wing1","r_wing2","r_wing3","r_wing_tip","head","neck"}
+o.Explosionmodifier=2
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"FlyingIdle","throw","Retreat"}
+
+o.AiParams.viewDistance = 40000
+o.AiParams.viewAngle = 360
+o.AiParams.viewDistance360 = 40000
+    
+o.AiParams.attackRange = 2.6
+o.AiParams.attackRangeAcid = 4.0
+o.AiParams.weaponDamage = 5
+o.AiParams.hearing = 1.0
+o.AiParams.perception = 1.0
+o.AiParams.walkStep = 6.0
+
+o.AiParams.flyUp = 0.5
+o.AiParams.flyDown = 0.65
+o.AiParams.updateSpeed = 0.8
+o.AiParams.soundAmbientDelay = 4.5
+
+o.AiParams.alwaysSee = true
+o.AiParams.moveDelays = {8,14}
+o.AiParams.moveUpRange = 6
+
+o.AiParams.keepMinHeight = 2.0
+o.AiParams.minDelayBetweenThrow = 0.5
+o.AiParams.throwAmmo = 9999
+o.AiParams.throwRangeMax  = 3000
+o.AiParams.throwVelocity = 40
+o.AiParams.throwRangeMin  = 4
+o.AiParams.throwMaxAnglePitchDiff = 60
+o.AiParams.throwMaxAngleYawDiff = 60
+o.AiParams.throwAngle = 0
+o.AiParams.throwDistMinus = 0.0				-- < 0.0 celuje za gracza, > 0.0 przed gracza
+o.AiParams.throwAngularVelocitySpeed = 4.0
+o.AiParams.ThrowableItem = "Sammael_Fireball.CItem"
+o.AiParams.throwItemBindTo = "sword_tip"
+o.AiParams.throwAnim = "fireball"
+o.AiParams.throwItemBindToOffset = Vector:New(0,0,0)
+o.AiParams.throwDeltaY = 1.5                -- na taka wysokosc gracza celuje
+
+o.AiParams.seeThruWalls = true
+

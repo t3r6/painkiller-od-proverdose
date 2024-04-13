@@ -1,0 +1,6 @@
+o.BaseObj = "Gladiator.CActor"
+o.s_SubClass.xchgTextures = {
+		{"gladiator_texture","gladiator_texture_lava"},
+		{"gladiator_texture_add","gladiator_texture_lava_add"},
+		}
+

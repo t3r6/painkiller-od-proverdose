@@ -1,0 +1,10 @@
+stwind2.Volume = 80
+stwind2.Interval = 0
+stwind2.RandomShift = 0
+stwind2.Falloff =
+{
+  Start = 10,
+  End = 90
+}
+stwind2.Sound ="DM_Blink/stwind2"
+

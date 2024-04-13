@@ -1,0 +1,13 @@
+-- without jump
+o.Sequence = {
+    {"Object:'FX_SpawnKerberos.CActor',1,px,py-2,pz,p.angle"},        
+    {'AI:p,false'},
+	{"PSnd:{'specials/respawns/kerberos_spawn1','specials/respawns/kerberos_spawn2'},30,80"},
+
+    {'EnableDraw:p,true'},    
+
+    {"Wait:0.5"},
+    {"PlaySpawnSound:p,10,35"},
+
+    {'AI:p,true'},
+}

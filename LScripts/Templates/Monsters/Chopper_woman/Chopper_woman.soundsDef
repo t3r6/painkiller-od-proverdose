@@ -1,0 +1,65 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {'$/actor/mw_chopper_woman/chop_krok1','$/actor/mw_chopper_woman/chop_krok2',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+
+	step2 = {
+		samples = {'$/actor/mw_chopper_woman/chop_krok2','$/actor/mw_chopper_woman/chop_krok3'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+
+	motor_acc3 = {
+	samples = {"$/actor/mw_chopper_woman/motor_acc3"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+	motor_acc2 = {
+	samples = {"$/actor/mw_chopper_woman/motor_acc2"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+	motor_acc = {
+	samples = {"$/actor/mw_chopper_woman/motor_acc"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+	hit = {
+		samples = {"$/actor/mw_chopper_woman/chop_hit1","$/actor/mw_chopper_woman/chop_hit2","$/actor/mw_chopper_woman/chop_hit3",},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	atak_voice = {
+		samples = {"$/actor/mw_chopper_woman/chop_atvoice1","$/actor/mw_chopper_woman/chop_atvoice2","$/actor/mw_chopper_woman/chop_atvoice3"},
+		dist1 = 12,
+		dist2 = 40,
+	},
+
+	idle_sound = {
+		samples = {'$/actor/mw_chopper_woman/chop_idle1','$/actor/mw_chopper_woman/chop_idle2','$/actor/mw_chopper_woman/chop_idle3'},
+		dist1 = 10,
+		dist2 = 50,
+		playChance = 0.1,
+	},
+
+	bodyfalls = {
+		samples = {"$/actor/hellbiker/hellb-boddyfalls1","$/actor/hellbiker/hellb-boddyfalls2"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	death = {
+        samples = {"$/actor/mw_chopper_woman/chop_death1","$/actor/mw_chopper_woman/chop_death2","$/actor/mw_chopper_woman/chop_death3"},
+   		dist1 = 16,
+		dist2 = 60,
+	},
+	damage = {
+	        samples = {'$/actor/mw_chopper_woman/chop_plhit'},
+	},
+
+}

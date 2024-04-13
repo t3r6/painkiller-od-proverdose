@@ -1,0 +1,10 @@
+Enclave_02.Volume = 70
+Enclave_02.Interval = 0
+Enclave_02.RandomShift = 0
+Enclave_02.Falloff =
+{
+  Start = 50,
+  End = 150
+}
+Enclave_02.Sound ="C7L01_field_ambulance/enclave_R"
+

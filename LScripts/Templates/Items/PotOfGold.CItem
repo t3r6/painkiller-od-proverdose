@@ -1,0 +1,28 @@
+o.Mesh = "hrnec_zlataShape1"
+o.Pack = "o_hrnec_zlata.dat"
+o.DestroyPack = "o_hrnec_zlata_zlom.dat"
+o.Scale = 0.4
+o.Health = 40
+o.Mass = 400
+
+o.Destroy.ExplosionStrength = 50
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 0
+o.Destroy.Effect = "explode_dust"
+o.Destroy.EffectScale = 0.4
+o.Destroy.Treasures = 
+{
+    Coins  = {7, 'g'},
+}
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 0
+o.Destroy.ExplosionRadius = 0
+o.Destroy.LifetimeAfterExplosion = 1
+
+o.s_SubClass.bindFX = {
+        {"flarka_kielich", 0.4, nil, {0.2, 0.5, 0}, {0.4, 0.4, 0.4}},
+        {"FLARA_HOSTIE", 3, nil, {0, 0, 0}, {0.9, 0.9, 0.9}},
+}
+
+

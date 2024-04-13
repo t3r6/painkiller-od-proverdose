@@ -1,0 +1,8 @@
+o.s_SubClass.ParticlesDefinitions = {
+	abdeath = {
+		pfx = "altarboy_death",
+		scale = 0.7,
+		offset = Vector:New(0,0,0),
+		joint = "root",
+		},
+}

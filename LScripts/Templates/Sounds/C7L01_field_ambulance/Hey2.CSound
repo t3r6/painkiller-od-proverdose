@@ -1,0 +1,10 @@
+Hey2.Volume = 85
+Hey2.Interval = 9
+Hey2.RandomShift = 7
+Hey2.Falloff =
+{
+  Start = 10,
+  End = 100
+}
+Hey2.Sound ="C7L01_field_ambulance/hey08;C7L01_field_ambulance/hey09;C7L01_field_ambulance/hey10;C7L01_field_ambulance/hey11;C7L01_field_ambulance/hey12;C7L01_field_ambulance/hey13;C7L01_field_ambulance/hey14"
+

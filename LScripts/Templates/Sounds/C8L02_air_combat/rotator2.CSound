@@ -1,0 +1,10 @@
+rotator2.Volume = 80
+rotator2.Interval = 0
+rotator2.RandomShift = 0
+rotator2.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+rotator2.Sound ="C8L02_air_combat/rotator2"
+

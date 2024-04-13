@@ -1,0 +1,22 @@
+o.Model = "crossbowitem"
+o.Scale = 1
+o.DisabledInVoosh = true
+o.SlotIndex = 4
+o.RespawnTime = Cfg.WeaponRespawnTime
+o.Ammo = 
+{
+   Arrows = 15,
+    Heads = 6
+}
+
+o.s_SubClass.SoundsDefinitions = 
+{
+    path  = "weapons/stake",
+    disablePitch = true,
+    pickup = 
+    {
+        samples = {"take-stake"},
+        dist1 = 15,
+        dist2 = 50,
+    },
+}

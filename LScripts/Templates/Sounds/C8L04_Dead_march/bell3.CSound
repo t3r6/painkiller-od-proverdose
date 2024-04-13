@@ -1,0 +1,10 @@
+bell3.Volume = 80
+bell3.Interval = 10
+bell3.RandomShift = 3
+bell3.Falloff =
+{
+  Start = 6,
+  End = 40
+}
+bell3.Sound ="C8L04_Dead_march/mbird1;C8L04_Dead_march/bell3"
+

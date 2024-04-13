@@ -1,0 +1,10 @@
+rain_tent.Volume = 100
+rain_tent.Interval = 0
+rain_tent.RandomShift = 0
+rain_tent.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+rain_tent.Sound ="C7L01_field_ambulance/rain_tent"
+

@@ -1,0 +1,9 @@
+whisper1.Volume = 80
+whisper1.Interval = 20
+whisper1.RandomShift = 0
+whisper1.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+whisper1.Sound ="C8L04_Dead_march/whisper1;C8L04_Dead_march/whisper2;C8L04_Dead_march/whisper3;C8L04_Dead_march/whisper4;C8L04_Dead_march/whisper5"

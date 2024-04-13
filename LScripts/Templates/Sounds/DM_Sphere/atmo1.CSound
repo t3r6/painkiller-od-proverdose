@@ -1,0 +1,10 @@
+atmo1.Volume = 80
+atmo1.Interval = 0
+atmo1.RandomShift = 0
+atmo1.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+atmo1.Sound ="DM_Sphere/atmo1"
+

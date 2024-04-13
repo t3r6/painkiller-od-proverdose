@@ -1,0 +1,7 @@
+o.BaseObj = "Frankenstein.CActor"
+o.Health = 600
+o.Scale = 1.8
+o.AiParams.attackRange = 4
+o.AiParams.weaponDamage = 25
+
+o.AiParams.ThrowableItem = "Fthrow2.CItem"

@@ -1,0 +1,10 @@
+o.s_SubClass.bindFX = nil
+
+o.s_SubClass.ParticlesDefinitions = {
+	turlanie = {
+		pfx = "beast_fire",
+		scale = 0.15,
+		joint = "k_ogo",
+		offset = Vector:New(0,0,0),
+	},
+}

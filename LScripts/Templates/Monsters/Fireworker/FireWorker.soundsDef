@@ -1,0 +1,81 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {'$/actor/mw_fireworker/fire_krok1','$/actor/mw_fireworker/fire_krok2'},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	step2 = {
+		samples = {'$/actor/mw_fireworker/fire_krok3','$/actor/mw_fireworker/fire_krok4'},
+		dist1 = 3,
+		dist2 = 20,
+	},
+
+  at_voice = {
+		samples = {'$/actor/mw_fireworker/fire_atvoice1','$/actor/mw_fireworker/fire_atvoice2','$/actor/mw_fireworker/fire_atvoice3'},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+	hit = {
+		samples = {'$/actor/mw_fireworker/fire_hit1','$/actor/mw_fireworker/fire_hit2','$/actor/mw_fireworker/fire_hit3','$/actor/mw_fireworker/fire_hit4'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+
+	death = {
+		samples = {"$/actor/mw_fireworker/fire_death1","$/actor/mw_fireworker/fire_death2"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	onAttackOnce = {
+		samples = {"$/actor/mw_fireworker/fire_halt1", "$/actor/mw_fireworker/fire_halt2", "$/actor/mw_fireworker/fire_halt3"},
+		dist1 = 20,
+		dist2 = 50,
+	},
+
+	bodyfalls = {
+		samples = {"offic_bodyfalls",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	swish = {
+		samples = {"$/actor/mw_fireworker/fire_swish1",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	fire_fire0 = {
+		samples = {"$/actor/mw_fireworker/fire_fire0",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	fire_fire = {
+		samples = {"$/actor/mw_fireworker/fire_fire",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	damage = {
+		samples = {"$/actor/hellbiker/hellb-attack-head-hit"},
+	},
+}
+
+o.s_SubClass.SoundsDefinitionsBindings = {
+		walk   = {
+			{0.0,'PlaySound',"step1"},
+			{0.7,'PlaySound',"step2"},
+		},
+		run   = {
+			{0.0,'PlaySound',"step1"},
+			{0.7,'PlaySound',"step2"},
+		},
+		hit1   = {
+					{0.0,'PlaySoundHit',"hit"},
+				},
+		hit2   = {
+					{0.0,'PlaySoundHit',"hit"},
+				},
+}

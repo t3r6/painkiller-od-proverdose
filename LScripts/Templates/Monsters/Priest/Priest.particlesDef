@@ -1,0 +1,8 @@
+o.s_SubClass.ParticlesDefinitions = {
+	ethflames = {
+		pfx = "altarboy_death",
+		scale = 1,
+		joint = "l_toe",
+		offset = Vector:New(0,-0.3,0),
+	},
+}

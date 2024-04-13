@@ -1,0 +1,10 @@
+ocean.Volume = 60
+ocean.Interval = 0
+ocean.RandomShift = 0
+ocean.Falloff =
+{
+  Start = 5,
+  End = 150
+}
+ocean.Sound ="C7L05_ragnarok/ocean"
+

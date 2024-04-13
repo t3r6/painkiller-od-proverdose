@@ -1,0 +1,11 @@
+disco_mono.Volume = 80
+disco_mono.Interval = 0
+disco_mono.RandomShift = 0
+disco_mono.disablePitch = true
+disco_mono.Falloff =
+{
+  Start = 10,
+  End = 20
+}
+disco_mono.Sound ="C8L01_riot/disco_mono"
+

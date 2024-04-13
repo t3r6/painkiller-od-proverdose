@@ -1,0 +1,38 @@
+EDITOR.AddObjectTemplate("Particles","FX_SpawnKerberos","FX_SpawnElectric.CActor");	
+
+FX_SpawnGuardian.Model = "spawn"
+FX_SpawnGuardian.Scale = 15
+FX_SpawnGuardian.NotCountable = true
+
+FX_SpawnGuardian.s_SubClass = 
+{
+    Animations = {  
+        idle        = {1.0},
+    },
+}
+
+function FX_SpawnGuardian:OnPrecache()
+	Cache:PrecacheParticleFX("Kerberos_spawn_1")
+	Cache:PrecacheParticleFX("Kerberos_spawn_2")
+end
+
+function FX_SpawnGuardian:OnCreateEntity()
+    self:BindFX("guardian_spawn",2,"e1")
+    self:BindFX("guardian_spawn",2,"e2")
+--    self:BindFX("guardian_spawn",2,"e3")
+--    self:BindFX("guardian_spawn",2,"e4")
+    self:BindFX("guardian_spawn",2,"e5")
+    self:BindFX("guardian_spawn",2,"e6")
+--    self:BindFX("guardian_spawn",2,"e7")
+--    self:BindFX("guardian_spawn",2,"e8")
+    self:BindFX("guardian_spawn",2,"e9")
+    self:BindFX("guardian_spawn",2,"e10")
+end
+
+function FX_SpawnGuardian:OnFinishAnim(name)
+    ENTITY.UnregisterAllChildren(self._Entity)
+    GObjects:ToKill(self)
+end
+
+
+o.Immortal = true

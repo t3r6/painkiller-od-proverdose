@@ -1,0 +1,10 @@
+beep_c.Volume = 80
+beep_c.Interval = 3
+beep_c.RandomShift = 0
+beep_c.Falloff =
+{
+  Start = 3,
+  End = 20
+}
+beep_c.Sound ="C8L02_air_combat/beep_c1;C8L02_air_combat/beep_c2;C8L02_air_combat/beep_c3;C8L02_air_combat/beep_c4"
+

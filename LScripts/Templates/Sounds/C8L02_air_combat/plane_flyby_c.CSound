@@ -1,0 +1,10 @@
+plane_flyby_c.Volume = 80
+plane_flyby_c.Interval = 9
+plane_flyby_c.RandomShift = 3
+plane_flyby_c.Falloff =
+{
+  Start = 50,
+  End = 150
+}
+plane_flyby_c.Sound ="C8L02_air_combat/plane_flyby2;C8L02_air_combat/plane_flyby4;C8L02_air_combat/plane_flyby7"
+

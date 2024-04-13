@@ -1,0 +1,9 @@
+RSkull2.Mesh = "bones03_polySurfaceShape1869"
+RSkull2.Pack = "BonesHead.dat"
+RSkull2.Scale = 0.08
+RSkull2.Mass = 40
+RSkull2.Restitution = 0.1
+RSkull2.Damage = 30
+RSkull2.RotateSpeed = 30
+RSkull2.ThrowSpeed = 20
+RSkull2.AngularDamping = 0.2		-- sprawdzic ### 

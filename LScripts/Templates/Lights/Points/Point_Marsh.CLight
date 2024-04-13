@@ -1,0 +1,5 @@
+Point_Marsh["Color"] = Color:New(255,255,155,0)
+o.Range = 10
+o.Type = 2
+o.Intensity  = 1
+o.StartFalloff = 2.5

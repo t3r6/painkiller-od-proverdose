@@ -1,0 +1,62 @@
+Soul_ColR.Model = "Energy"
+Soul_ColR.Scale = 0.5
+Soul_ColR.takeDistance = 1.8
+Soul_ColR.HealthAdd = 15
+Soul_ColR.MaxLimit = 250
+Soul_ColR.TimeToLive = 30 * 30
+Soul_ColR.Team = 1
+o.s_SubClass ={}
+--============================================================================
+function Soul_ColR:OnPrecache()
+	Cache:PrecacheParticleFX("energy_red")
+
+end
+--============================================================================
+function Soul_ColR:OnCreateEntity()
+    --Log("Soul_ColR:OnCreateEntity\n")
+    self:PO_Create(BodyTypes.Simple,1.2,ECollisionGroups.Particles)
+    ENTITY.PO_SetMovedByExplosions(self._Entity, false) -- moze to nie jest przyslane?
+    ENTITY.PO_SetFreedomOfRotation(self._Entity, EFreedomsOfRotation.Disabled) -- albo to ??
+    ENTITY.SetSynchroString(self._Entity,"Soul_ColR.CItem")
+    ENTITY.EnableNetworkSynchronization(self._Entity,true,false)
+    self:Client_OnCreateEntity(self._Entity)
+    ENTITY.PO_SetMissile(self._Entity, MPProjectileTypes.Soul )
+end
+--============================================================================
+function Soul_ColR:GetPlayerState(player)
+    self.Team = player.Team
+    self.pid = player.ClientID
+end
+gNrSoul = 0
+--============================================================================
+function Soul_ColR:Client_OnCreateEntity(entity)
+    gNrSoul = gNrSoul + 1
+    Log("Soul_ColR:Client_OnCreateEntity:"..gNrSoul.."\n")
+  BindFX(entity,"energy_red",0.2,"e1")
+ BindFX(entity,"energy_red",0.2,"e2")
+    BindFX(entity,"energy_red",0.2,"e3")
+    BindFX(entity,"energy_red",0.2,"e4")
+    BindFX(entity,"energy_red",0.2,"e5")
+    BindFX(entity,"energy_red",0.2,"e6")    
+   
+end
+--============================================================================
+function Soul_ColR:OnTake(player)
+    if player.Health < self.MaxLimit then
+        player.Health = player.Health + self.HealthAdd
+        if player.Health > self.MaxLimit then player.Health = self.MaxLimit  end        
+    end
+    self.TakeFX(player._Entity,self.Team,self.pid)
+end
+--============================================================================
+function Soul_ColR:TakeFX(pe,team,pid)
+    local player = EntityToObject[pe]    
+    if player then
+		if player.Team ~= team then
+	  player:UpdateForSoulReaper(pid,player.ClientID,AttackTypes.SoulReaper,1)
+	end
+    end
+    Templates["Soul_ColR.CItem"]:SndEnt("pickup",pe)
+end
+Network:RegisterMethod("Soul_ColR.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eubuuuuuuuuuu")
+--============================================================================

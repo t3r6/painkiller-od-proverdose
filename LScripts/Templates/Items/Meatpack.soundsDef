@@ -1,0 +1,9 @@
+o.s_SubClass.SoundsDefinitions = {
+	path = "impacts/",
+	SoundImpact = {
+		samples = {"universal-impact1","universal-impact2","universal-impact3"},
+	},
+	DestroySound = {
+		samples = {"gib_big2"},
+	},
+}

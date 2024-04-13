@@ -1,0 +1,10 @@
+nagrobek_02.Volume = 70
+nagrobek_02.Interval = 8
+nagrobek_02.RandomShift = 4
+nagrobek_02.Falloff =
+{
+  Start = 4,
+  End = 10
+}
+nagrobek_02.Sound ="C7L04_haunted_valley/nagrobek_03;C7L04_haunted_valley/nagrobek_04"
+

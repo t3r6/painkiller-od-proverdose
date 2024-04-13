@@ -1,0 +1,10 @@
+fire_n.Volume = 80
+fire_n.Interval = 0
+fire_n.RandomShift = 0
+fire_n.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+fire_n.Sound ="C8L06_Japan_massacre/fire_n"
+

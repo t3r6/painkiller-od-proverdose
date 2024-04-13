@@ -1,0 +1,9 @@
+police.Volume = 80
+police.Interval = 10
+police.RandomShift = 0
+police.Falloff =
+{
+  Start = 10,
+  End = 80
+}
+police.Sound ="C8L01_riot/police1;C8L01_riot/police2"

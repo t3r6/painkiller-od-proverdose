@@ -1,0 +1,3 @@
+o.ParticleFX = "camrainfield"
+o._IsPE = true
+o.SoundLoop = "misc/rain_light-loop"

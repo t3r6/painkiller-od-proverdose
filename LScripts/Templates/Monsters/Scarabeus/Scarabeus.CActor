@@ -1,0 +1,182 @@
+o.Model = "scarabeus"
+o.Scale = 0.15
+o.Health = 85
+o.CreatePO = true
+o.WalkSpeed = 1.0
+o.RunSpeed = 1.0
+
+o.DeadAnimChance = 50
+
+o.NeverRun = true
+o.RotateSpeed = 15
+o.enableGibWhenHPBelow = -20
+o.throwHeart = true
+o._GreenBlood = true
+
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 150,
+}
+
+o.s_SubClass = {
+--    rotateHead = 0.9,			-- zakres
+--    rotateHeadBone = "hips",
+--    rotateHeadMaxSpeed = 0.2,
+    SoundDir = "pirate",
+	Animations = {
+	 death1     = {1.5, false, {
+  					{0.2,'PlaySound',"$/actor/deaths/scarabeus_noise"},
+  					{1.2,'PlaySound',"$/actor/falls/fall8"},
+  					{1.1,'PlaySound',"$/actor/falls/fall9"},
+
+	 }},
+	 death2     = {1.0, false, {
+  					{0.6,'PlaySound',"$/actor/deaths/scarabeus_noise"},
+  					{0.5,'PlaySound',"$/actor/falls/fall9"},
+	 
+	 }},
+
+		idle    = {1.0, false},
+		hit1    = {1.0, false, {
+						{0.2,'PlaySoundHit',"hit" },
+					}},
+		atak1    = {1.2, false, {
+						{0.0,'PlaySound',"armhit"},
+						{0.2,'PlaySound',"shootvoice"},
+						{0.3,'damage' },
+					}},
+
+		walk    = {1.4, true, {
+						{0.0,'PlaySound',"step"},
+						{0.0,'PlaySound',"step"},
+						{0.1,'PlaySound',"step"},
+						{0.1,'PlaySound',"step"},
+						{0.3,'PlaySound',"step"},
+						{0.3,'PlaySound',"step"},
+					}},
+		
+		jump     = {1.0, true,   {
+						{0.0,'PlaySound',"scar_jump"},
+  						{0.1,'StartMovement'},
+  						{0.6,'StopMovement'},
+  						{0.7,'FootFX','LeftLeg'},
+						{0.7,'FootFX','RightLeg'},
+						{0.7,'PlaySound',"step"},
+						{0.7,'PlaySound',"step"},
+    						{0.7,'FootFX','LeftLegF'},
+						{0.7,'FootFX','RightLegF'},
+						{0.7,'PlaySound',"step"},
+						{0.9,'PlaySound',"step"},
+    						{0.9,'FootFX','LeftLegB'},
+						{0.9,'FootFX','RightLegB'},
+						{0.9,'PlaySound',"step"},
+						{0.9,'PlaySound',"step"},
+
+		}},
+		},
+
+	RagdollCollisions = {
+		MinStren = 4.2,
+		MinTime = 0.6,
+		Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sound}, blood
+				{"gun","weaponlost",false},
+			}
+	},
+    notBleedingJoints = {
+		gun = {},
+    },
+
+
+	Hits = {"hit1",},
+	NearAttacks = {"atak1",},
+
+	DeathJoints = {
+	    
+	},
+
+    gibFX = "gibExplosion",
+	GibEmitters = {
+				{"root","FX_gib_blood",-1},				
+    },
+	gibShader = "palskinned_bloody",
+    	
+	GibExplosionStrength = 7000,
+	GibExplosionRange = 2.0,
+	GibExplosionDeltaY = -1.0,
+    RagdollCollisionsGib = {
+        MinStren = 6.0,
+        MinTime = 0.8,
+        Bones = {
+				{"root", "gibSplash", true},				
+			},
+    },
+
+}
+
+o.DeathTimer = 90
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","hear","hunt","attack","Jump"}
+o.AiParams.viewDistance = 70			-- zasieg widzenia
+o.AiParams.viewAngle = 100			-- kat widzenia
+o.AiParams.viewDistance360 = 10			-- zasieg widzenia z katem widzenia 360 stopni
+    
+o.AiParams.hearing = 1.0				-- zasieg sluchu
+o.AiParams.perception = 1.0				-- szansa uslyszenia halasu
+o.AiParams.walkStep = 7.0
+
+o.AiParams.GuardStill = true			-- true, nie bedzie sie poruszal w trybie guard
+o.AiParams.guardAngle = {0,10}			-- (min, max) kat o jaki sie nie bedzie sie poruszal w "idle"
+o.AiParams.guardAngleRandom = true
+o.AiParams.guardChangePosition = {30,60}-- (min, max) dlugosc pauzy pomiedzy obrotami
+o.AiParams.guardRange = -1				-- max. zasieg patrolu
+o.AiParams.useOnlyWaypointsWhenGuard = false	-- wykorzystuje tylko WayPointy przy chodzeniu w trybie guard
+o.AiParams.stopAfterWalking = 0.5			-- szansa zatrzymania po przejsciu do kolejnego punktu
+o.AiParams.stopAfterWalkingTime = {30,90}	-- (min, max) czas zatrzymania
+
+--o.AiParams.walkArea = ""
+o.AiParams.walkAreaRandom = false
+o.AiParams.WalkAreaWhenAttack = false
+o.AiParams.FinishMovementBeforeAttack = false	-- atakuje dopiero gdy dojdzie do wczesniej zaplanowanego punktu
+
+o.AiParams.changePosAfterFire = 0.84		-- szansa, ze zmieni pozycje po strzale
+o.AiParams.delayBetweenAttacks = 26
+o.AiParams.moveDisplacement = 5.0
+
+o.AiParams.chanceOfEscapeAfterFire = 0.0	-- szansa, ze moster ucieknie po strzale
+o.AiParams.escapeTime = 120			-- typowy czas ucieczki
+
+o.AiParams.updateSpeed = 0.33
+o.AiParams.alwaysSee = false
+o.AiParams.huntPlayer = false
+    
+
+o.minimumTimeBetweenHitAnimation = 12
+o.shadow = 128
+
+-- bliski atak --
+o.AiParams.attackRange = 3 
+o.AiParams.weaponDamage = 15
+o.AiParams.attackRangeAngle = 80
+--
+o.AiParams.findPathSpeed = 0.1      -- domyslnie jest 0.14 (czyli 30 razy na sek. z szansa 0.14 jest wyliczna sciezka do playera)
+o.AiParams.disableEscapeWhenTooClose = true
+
+
+---jump
+o.AiParams.jumpRangeMin = 6
+o.AiParams.jumpRangeMax = 15
+o.AiParams.jumpAnim = "jump"
+o.AiParams.jumpDamageRange  = 0 
+o.AiParams.doNotRotateWhileJumping = true
+o.AiParams.minDelayBetweenJumps = 2.5
+--o.AiParams.jumpAngle = 60.0
+--o.AiParams.jumpDistanceMinus = 1.0				-- na jaka odleglosc przed graczem ma skakac
+o.AiParams.jumpAnimLen = 1	
+o.AiParams.jumpSpeed = 13
+
+o.s_SubClass.xchgTextures = {
+		{"scarabeus","scorpion_b"},
+	}

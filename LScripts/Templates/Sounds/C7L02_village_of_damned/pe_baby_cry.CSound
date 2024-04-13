@@ -1,0 +1,10 @@
+pe_baby_cry.Volume = 100
+pe_baby_cry.Interval = 6
+pe_baby_cry.RandomShift = 2
+pe_baby_cry.Falloff =
+{
+  Start = 5,
+  End = 50
+}
+pe_baby_cry.Sound ="C7L02_village_of_damned/pe_baby_cry1;C7L02_village_of_damned/pe_baby_cry2"
+

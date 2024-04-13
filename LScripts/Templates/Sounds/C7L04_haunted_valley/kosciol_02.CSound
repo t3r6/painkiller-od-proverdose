@@ -1,0 +1,10 @@
+kosciol_02.Volume = 90
+kosciol_02.Interval = 17
+kosciol_02.RandomShift = 6
+kosciol_02.Falloff =
+{
+  Start = 5,
+  End = 20
+}
+kosciol_02.Sound ="C7L04_haunted_valley/kosciol_02;C7L04_haunted_valley/kosciol_03"
+

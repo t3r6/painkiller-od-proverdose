@@ -1,0 +1,6 @@
+o.BaseObj = "Anubis.CActor"
+o.Health =  350
+o.Scale = 0.17
+o.s_SubClass.xchgTextures = {
+		{"anubis","anubis_01"},
+	}

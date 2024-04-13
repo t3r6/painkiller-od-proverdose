@@ -1,0 +1,13 @@
+-- without jump
+o.Sequence = {
+    {"Object:'FX_SpawnGuardian.CActor',1,px,py-2,pz,p.angle"},        
+    {'AI:p,false'},
+	{"PSnd:{'specials/respawns/guard_spawn1','specials/respawns/guard_spawn2','specials/respawns/guard_spawn3'},30,80"},
+
+    {'EnableDraw:p,true'},    
+
+    {"Wait:0.5"},
+    {"PlaySpawnSound:p,10,35"},
+
+    {'AI:p,true'},
+}

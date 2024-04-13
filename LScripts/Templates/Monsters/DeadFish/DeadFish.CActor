@@ -1,0 +1,20 @@
+o.Model = "mutaNemo"
+o.Scale = 1.25
+o.Health = -1
+o.NotCountable = true
+
+o.s_SubClass = {
+  DeathJoints = {
+        'headup1','ogon1','ogon2','root',
+    },
+    
+	RagdollCollisions = {
+		MinStren = 4.0,
+		MinTime = 0.6,
+		Bones = {
+				{"root", "bodyfalls", true},		-- joint, {sounds}, blood
+			},
+	},
+
+}
+

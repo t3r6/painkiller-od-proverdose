@@ -1,0 +1,10 @@
+steerie2.Volume = 80
+steerie2.Interval = 0
+steerie2.RandomShift = 0
+steerie2.Falloff =
+{
+  Start = 10,
+  End = 90
+}
+steerie2.Sound ="C7L03_powerplant/steerie2"
+

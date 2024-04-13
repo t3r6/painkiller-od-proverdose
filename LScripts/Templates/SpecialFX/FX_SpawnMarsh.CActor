@@ -1,0 +1,50 @@
+FX_SpawnMarsh.Model = "splash"
+FX_SpawnMarsh.Scale = 3.5
+FX_SpawnMarsh.NotCountable = true
+o.CreatePO = false
+
+FX_SpawnMarsh.s_SubClass = 
+{
+    Animations = {  
+        idle        = {0.3},
+    },
+}
+
+function FX_SpawnMarsh:OnCreateEntity()
+    self:BindFX("spawn_marsh2",0.4,"e1")
+    self:BindFX("spawn_marsh2",0.4,"e2")
+    self:BindFX("spawn_marsh2",0.4,"e3")
+    self:BindFX("spawn_marsh2",0.4,"e4")
+    self:BindFX("spawn_marsh2",0.4,"e5")
+    self:BindFX("spawn_marsh2",0.4,"e6")
+    self:BindFX("spawn_marsh2",0.4,"e7")
+    self:BindFX("spawn_marsh2",0.4,"e8")
+    self:BindFX("spawn_marsh2",0.4,"e9")
+    self:BindFX("spawn_marsh2",0.4,"e10")
+    self:BindFX("spawn_marsh2",0.4,"e11")
+    self:BindFX("spawn_marsh2",0.4,"e12")
+    self:BindFX("spawn_marsh2",0.4,"e13")
+    self:BindFX("spawn_marsh2",0.4,"e14")
+    self:BindFX("spawn_marsh2",0.4,"e15")
+    self:BindFX("spawn_marsh2",0.4,"e16")
+    self:BindFX("spawn_marsh1",0.2,"e17")
+    self:BindFX("spawn_marsh1",0.2,"e18")
+    self:BindFX("spawn_marsh1",0.2,"e19")
+    self:BindFX("spawn_marsh1",0.2,"e20")
+
+end
+
+function FX_SpawnMarsh:OnFinishAnim(name)
+    ENTITY.UnregisterAllChildren(self._Entity)
+    GObjects:ToKill(self)
+end
+
+
+function FX_SpawnMarsh:OnEditTick(delta)
+    if INP.Key(Keys.Space) == 1 then
+        self:OnFinishAnim()
+        self:OnCreateEntity()
+        self:ForceAnim(self.Animation,true,nil,0)
+    end
+end
+o.Immortal = true

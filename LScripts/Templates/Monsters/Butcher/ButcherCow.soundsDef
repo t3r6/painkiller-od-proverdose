@@ -1,0 +1,56 @@
+o.s_SubClass.SoundsDefinitions = {
+	cow = {
+		samples = {"$/actor/mw_butchercow/cow0","$/actor/mw_butchercow/cow1","$/actor/mw_butchercow/cow2","$/actor/mw_butchercow/cow3"},
+		dist1 = 15,
+		dist2 = 50,
+		playChance = 0.1,
+	},
+
+	hit = {
+		samples = {"$/actor/mw_butchercow/hit1","$/actor/mw_butchercow/hit2"},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	stepwalk = {
+		samples = {'$/actor/mw_butcher/butcher_krok1','$/actor/mw_butcher/butcher_krok2','$/actor/mw_butcher/butcher_krok3'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},
+	onAttackOnce = {
+		samples = {'$/actor/mw_butchercow/butcher_at1','$/actor/mw_butchercow/butcher_at2','$/actor/mw_butchercow/butcher_at3'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	swish0 = {
+		samples = {'$/actor/mw_butcher/butcher_swish0'},
+		dist1 = 6,
+		dist2 = 32,
+	},
+	swish1 = {
+		samples = {'$/actor/mw_butcher/butcher_swish1'},
+		dist1 = 6,
+		dist2 = 32,
+	},
+	swish2 = {
+		samples = {'$/actor/mw_butcher/butcher_swish2'},
+		dist1 = 6,
+		dist2 = 32,
+	},
+	attack = {
+		samples = {'$/actor/mw_butcher/butcher_attack1a','$/actor/mw_butcher/butcher_attack1b'},
+		dist1 = 6,
+		dist2 = 32,
+	},
+	attack_voice = {
+		samples = {'$/actor/mw_butchercow/butcher_at1','$/actor/mw_butchercow/butcher_at2','$/actor/mw_butchercow/butcher_at3'},
+		dist1 = 20,
+		dist2 = 32,
+	},
+	meat = {
+		samples = {'$/actor/mw_butcher/butcher_meat'},
+	},
+	death = {
+		samples = {'$/actor/mw_butchercow/death','$/actor/mw_butchercow/death2'},
+	},
+}

@@ -1,0 +1,39 @@
+o.Mesh = "torn_handShape"
+o.Pack = "P_Bloody_Hand.dat"
+o.Scale = 0.28
+o.Mass = 40
+o.Restitution = 0.1
+o.Damage = 30
+o.RotateSpeed = 30
+o.ThrowSpeed = 20
+o.AngularDamping = 0.2		-- sprawdzic ### 
+o.hitGroundParticle = {"torch_hitground", 0.2}
+o.CollisionSound = {"actor/vamp_small/vamp_meathit"}
+o.LoopSound = "actor/leper/throw-loop"
+o.fx = "VampBlood.CItem"
+
+--============================================================================
+function EHand:OnPrecache()
+    Cache:PrecacheParticleFX(self.hitGroundParticle[1])
+end
+--============================================================================
+function EHand:OnCreateEntity()
+	self:PO_Create(BodyTypes.FromMesh,nil,ECollisionGroups.FromMesh)
+	self.timer = 100
+	local fx = self.bindfx
+	if fx then
+		self._fx = self:BindFX(fx.name,fx.scale, nil, fx.offset.X, fx.offset.Y, fx.offset.Z)
+	end
+	if self.ThrowSound then
+		self:BindSound(self.ThrowSound,10,40,false)
+	end
+end
+--============================================================================
+function EHand:OnUpdate()
+	if self.timer then
+		self.timer = self.timer - 1
+		if self.timer < 0 then
+			GObjects:ToKill(self)
+		end
+	end
+end

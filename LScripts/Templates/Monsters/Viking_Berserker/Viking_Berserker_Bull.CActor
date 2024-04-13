@@ -1,0 +1,10 @@
+o.BaseObj = "Viking_Berserker.CActor"
+o.Model = "viking_bh"
+o.Health = 170
+o.enableGibWhenHPBelow = -41
+o.Scale = 0.2
+o.WalkSpeed = 0.6
+o.RunSpeed = 0.6
+
+o.ToughOne = true
+--o.ScreamDamage = 50

@@ -1,0 +1,70 @@
+Skycicle.Mesh = "pConeShape1"
+Skycicle.Pack = "P_Icicle.dat"
+
+Skycicle.Scale = 1
+Skycicle.Pos = Vector:New(0,0,-5)
+Skycicle.Restitution = 0.2
+Skycicle.Damage = 28
+
+Skycicle.LifeTime = 180				-- after 1st col
+Skycicle.TimeToLive = 30 * 60
+Skycicle.CollisionSound = {"impacts/stonebig-impact1","impacts/stonebig-impact2","impacts/stonebig-impact3","impacts/stonebig-impact4","impacts/stonebig-impact5"}
+
+--============================================================================
+function Skycicle:OnCollision(x,y,z,nx,ny,nz,e)
+	local ecol = true
+			AddPFX("Snow_Giant_Skycicle_explode",1,Vector:New(self.Pos.X,self.Pos.Y,self.Pos.Z))
+			AddPFX("Snow_Giant_Skycicle_snowblast",1,Vector:New(self.Pos.X,self.Pos.Y,self.Pos.Z))
+	if e then
+		local obj = EntityToObject[e]
+		if obj and obj._Class ~= "CItem" then
+			if obj ~= self.ObjOwner then
+				if obj.OnDamage then
+					local v = Vector:New(ENTITY.GetVelocity(self._Entity))
+					local x,y,z,mag = ENTITY.GetVelocity(self._Entity)
+						PlaySound3D("actor/giant/giant_hand-hit",obj.Pos.X,obj.Pos.Y,obj.Pos.Z,3,5)
+						obj:OnDamage(self.Damage, self)
+						self.Damage = 3
+					ecol = false
+				end
+				--GObjects:ToKill(self)
+			else
+				Game:Print("coL WITH Sekfl")
+			end
+		else
+            if not SOUND3D.IsPlaying(self._snd) then
+                self._snd = PlaySound3D("impacts/stonebig-impact"..math.random(1,3),x,y,z, 10, 60)
+            end
+		end
+	end
+	if not self.timer then
+        ENTITY.PO_EnableGravity(self._Entity,true)
+		self.timer = math.random(self.LifeTime*0.8,self.LifeTime*1.2)
+	end
+end
+--============================================================================
+function Skycicle:OnCreateEntity()
+	self:PO_Create(BodyTypes.FromMesh,nil,ECollisionGroups.Noncolliding)
+	self:BindFX('Snow_Giant_Icicle_Flame',1)
+    ENTITY.PO_EnableGravity(self._Entity,true)
+    self.timerInit = 8
+end
+--============================================================================
+function Skycicle:OnUpdate()
+	if self.timerInit then
+		self.timerInit = self.timerInit - 1
+		if self.timerInit < 0 then
+			ENTITY.PO_SetCollisionGroup(self._Entity, ECollisionGroups.Normal)
+   			ENTITY.EnableCollisions(self._Entity, true, 0.8, 4.0)
+   			self.timerInit = nil
+   		end
+   	else
+		if self.timer then
+			self.timer = self.timer - 1
+			if self.timer < 0 then
+				GObjects:ToKill(self)
+				AddPFX("Snow_Giant_Walk",0.5,Vector:New(self.Pos.X,self.Pos.Y,self.Pos.Z))
+			end
+		end
+	end
+end

@@ -1,0 +1,10 @@
+mbird.Volume = 80
+mbird.Interval = 8
+mbird.RandomShift = 3
+mbird.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+mbird.Sound ="C8L04_Dead_march/mbird1;C8L04_Dead_march/mbird2"
+

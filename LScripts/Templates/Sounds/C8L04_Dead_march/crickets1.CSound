@@ -1,0 +1,10 @@
+crickets1.Volume = 80
+crickets1.Interval = 0
+crickets1.RandomShift = 0
+crickets1.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+crickets1.Sound ="C8L04_Dead_march/crickets1"
+

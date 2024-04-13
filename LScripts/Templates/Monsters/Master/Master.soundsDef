@@ -1,0 +1,79 @@
+o.s_SubClass.SoundsDefinitions = {
+
+ step1 = {
+		samples = {'$/actor/mw_master/master_krok1','$/actor/mw_master/master_krok3'},
+		dist1 = 10,
+		dist2 = 40,
+	},
+ step2 = {
+		samples = {'$/actor/mw_master/master_krok2','$/actor/mw_master/master_krok3'},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+ idle = {
+		samples = {'$/actor/mw_master/master_idle1','$/actor/mw_master/master_idle2','$/actor/mw_master/master_idle3',},
+		dist1 = 10,
+		dist2 = 40,
+		playChance = 0.1,
+},
+damage = {
+		samples = {'$/actor/mw_master/master_hero_hit'},
+		dist1 = 10,
+		dist2 = 40,
+},
+
+master_disappear = {
+		samples = {'$/actor/mw_master/master_disappear'},
+		dist1 = 10,
+		dist2 = 40,
+},
+
+
+ hit = {
+		samples = {'$/actor/mw_master/master_hit1','$/actor/mw_master/master_hit2','$/actor/mw_master/master_hit3','$/actor/mw_master/master_hit4','$/actor/mw_master/master_hit5','$/actor/mw_master/master_hit6'},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+	atak1 = {
+		samples = {'$/actor/mw_master/master_at1','$/actor/mw_master/master_at2','$/actor/mw_master/master_at3','$/actor/mw_master/master_at4','$/actor/mw_master/master_at5','$/actor/mw_master/master_at6','$/actor/mw_master/master_at7','$/actor/mw_master/master_at8'},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	atak_suicide = {
+		samples = {'$/actor/mw_master/master_suicide'},
+		dist1 = 10,
+		dist2 = 60,
+	},
+
+ death = {
+		samples = {'$/actor/mw_master/master_death1','$/actor/mw_master/master_death2','$/actor/mw_master/master_death3','$/actor/mw_master/master_death4','$/actor/mw_master/master_death5','$/actor/mw_master/master_death6',},
+		dist1 = 10,
+		dist2 = 60,
+	},
+
+bodyfalls = {
+		samples = {'$/actor/mw_master/master_bodyfalls'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+
+flus = {
+		samples = {'$/actor/mw_master/master_flus'},
+		dist1 = 10,
+		dist2 = 50,
+	},
+
+swish1 = {
+		samples = {'$/actor/mw_master/master_swish1'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+swish2 = {
+		samples = {'$/actor/mw_master/master_swish1'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+        
+}

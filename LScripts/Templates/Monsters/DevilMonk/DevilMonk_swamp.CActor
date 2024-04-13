@@ -1,0 +1,38 @@
+o.BaseObj = "DevilMonkV3.CActor"
+o.Scale = 1.4
+o.Health = 129
+o.WalkSpeed = 1.5
+o.RunSpeed = 1.6
+
+o.enableGibWhenHPBelow = -49
+
+o.s_SubClass.xchgTextures = {
+		{"devil3tex01","devil_swamptex01"},
+		{"devil3tex02","devil_swamptex02"},
+		{"kosa","devil_swamp_kosa"},
+	}
+
+
+o.s_SubClass.Animations.atak1 = {2.5, true,{
+							{0.0,'BindTrailSword','trail_sword','trail_kosa1','trail_kosa2'},
+							{0.3,'PlaySound',"atak"},
+							{1.2,'PlaySound',"swish"},
+                            {1.3,'damage',},
+                            {2.8,'EndTrailSword'},
+						}}
+o.s_SubClass.Animations.atak2 = {2.5, true,{
+							{0.25,'PlaySound',"atak"},
+							{0.5,'PlaySound',"swish"},
+                            {0.6,'damage'},
+						}}
+
+o.AiParams.aiGoals = {"idle","attack", "hunt", "flee", "hear"}
+
+o.AiParams.throwAnim = "czar"
+o.AiParams.throwRangeMin = 10
+o.AiParams.throwRangeMax = 30
+o.AiParams.minDelayBetweenThrow = 8
+o.AiParams.throwAmmo = 99999
+o.AiParams.lightingDamage = 16
+o.lightingFX = "DM3spell"
+o.AiParams.lightingDist = 40

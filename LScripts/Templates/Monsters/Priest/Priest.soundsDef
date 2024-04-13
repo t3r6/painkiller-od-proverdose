@@ -1,0 +1,89 @@
+o.s_SubClass.SoundsDefinitions = {
+   path = "actor/mw_priest",
+	resurrect = {
+		samples = {'priest_resurrection'},
+		dist1 = 20,
+		dist2 = 50,
+	},
+
+
+	idle = {
+		samples = {'priest_idle1','priest_idle2','priest_idle3','priest_idle4','priest_idle5','priest_idle6'},
+      playChance = 0.1,
+		dist1 = 5,
+		dist2 = 15,
+	},
+	step = {
+		samples = {'priest_krok1','priest_krok2','priest_krok3'},
+		dist1 = 5,
+		dist2 = 10,
+	},
+	jump = {
+		samples = {'priest_jump'},
+		dist1 = 5,
+		dist2 = 10,
+	},
+	spell = {
+		samples = {'priest_spell'},
+		dist1 = 5,
+		dist2 = 10,
+	},
+	healing = {
+		samples = {'priest_healing'},
+		dist1 = 5,
+		dist2 = 10,
+	},
+	spell_hit = {
+		samples = {'priest_spell_hit'},
+		dist1 = 5,
+		dist2 = 10,
+	},
+	atak = {
+		samples = {'priest_at1','priest_at2','priest_at3','priest_at4','priest_at5','priest_at6','priest_at7','priest_at8','priest_at9','priest_at10','priest_at11'},
+      playChance = 0.5,
+      dist1 = 9,
+		dist2 = 20,
+	},
+	swish1 = {
+		samples = {'priest_swish1',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	swish2 = {
+		samples = {'priest_swish2'},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	hit = {
+		samples = {'priest_hit1','priest_hit2','priest_hit3','priest_hit4'},
+		dist1 = 10,
+		dist2 = 70,
+	},
+	bodyfalls = {
+		samples = {'priest_bodyfalls1','priest_bodyfalls2',},
+		dist1 = 9,
+		dist2 = 60,
+	},
+	weaponlost = {
+		samples = {'$/actor/mw_priest/priest-weapon-lost1','$/actor/mw_priest/priest-weapon-lost2','$/actor/mw_priest/priest-weapon-lost3',},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	missed = {
+		samples = {'$/actor/mw_priest/priest_missed1','$/actor/mw_priest/priest_missed2'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+    death = {
+		samples = {'$/actor/mw_priest/priest_death1','$/actor/mw_priest/priest_death2','$/actor/mw_priest/priest_death3'},
+   	dist1 = 10,
+		dist2 = 60,
+	},
+	damage = {
+		samples = {'$/actor/mw_priest/priest_hits_hero'},
+		dist1 = 10,
+		dist2 = 60,
+	},
+
+
+}

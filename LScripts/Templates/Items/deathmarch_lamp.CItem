@@ -1,0 +1,47 @@
+o.BaseObj = "CItem"
+o.Model = "deadmarch_lamp"
+o.Scale = 27
+o.speed = 1.0
+o.s_SubClass.bindFX = {"deadmarsh_lamp2", 0.4, "root"}
+o.BillBoard = {
+	template = "marsh_Corona.CBillboard",
+	joint="root"
+}
+
+o.s_SubClass.Light = {
+    template = "Point_Marsh.CLight",
+    joint = "e4",
+}
+
+o.s_SubClass.AnimActions = 
+{
+    idle = {
+        {0.2,"PTSnd:'Rope'"},
+        {2.4,"PTSnd:'Rope'"}
+    }    
+}
+
+o.s_SubClass.ParticlesDefinitions = {
+	e1 = {
+		pfx = 'deadmarsh_lamp1',
+		scale = 0.17,
+		joint = "e1",
+		offset = Vector:New(0,0,0),
+
+	},
+	e2 = {
+		pfx = 'deadmarsh_lamp1',
+		scale = 0.17,
+		joint = "e2",
+		offset = Vector:New(0,0,0),
+
+	},
+	e3 = {
+		pfx = 'deadmarsh_lamp1',
+		scale = 0.17,
+		joint = "e3",
+		offset = Vector:New(0,0,0),
+
+	},
+}
+

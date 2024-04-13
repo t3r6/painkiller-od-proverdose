@@ -1,0 +1,47 @@
+o.Mesh = "pSphereShape1"
+o.Pack = "Kamyk.dat"
+o.Restitution = 0.8 -- sprezystosc
+o.LinearDamping = 0.8  -- tlumienie liniowe
+o._fx = "explo_beczka"
+o.Time = 300
+o.BOD = 10
+o.NotCountable = true
+o.EQRange = 1
+o.CameraRot = 0
+o.CameraMov = 0
+
+o.initDistance = 220
+
+function o:OnCreateEntity()
+	ENTITY.EnableDraw(self._Entity, false)
+    self:AddTimer("CatchPlayer",1.0)
+end
+
+function o:CatchPlayer()
+    local dist = Dist3D(PX,PY,PZ,self.Pos.X,self.Pos.Y,self.Pos.Z)
+    if dist < self.initDistance then
+   		self.time = self.Time
+		self._initialized = true
+
+		Game._EarthQuakeProc:Add(self.Pos.X, self.Pos.Y, self.Pos.Z, self.Time*30, self.EQRange, self.CameraMov, self.CameraRot, 1.0)
+		AddPFX(self._fx, 0.3, self.Pos)
+        self:ReleaseTimers()
+    end
+end
+
+function o:Tick(delta)
+	if self._initialized then
+		self.time = self.time - delta
+		if self.time < 0 then
+			GObjects:ToKill(self)
+			return
+		end
+		if math.random(1000) < 3 then
+			local scales = {2.4, 1.8, 2.00,2.3,2.4,2.1,2.5,2.9,2.4,2.4}
+			local rnd = 10.8
+			local obj,e = AddObject("lavaRainRiot_item.CItem",scales[math.random(1,9)],Vector:New(self.Pos.X + FRand(-rnd, rnd), self.Pos.Y + FRand(-rnd, rnd), self.Pos.Z + FRand(-rnd, rnd)),nil,true) 
+			obj.deltaYSound = 9999
+		end
+	end
+end
+

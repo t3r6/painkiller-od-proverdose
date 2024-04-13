@@ -1,0 +1,10 @@
+bird_owl.Volume = 80
+bird_owl.Interval = 6
+bird_owl.RandomShift = 2
+bird_owl.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+bird_owl.Sound ="C7L04_haunted_valley/bird_owl1;C7L04_haunted_valley/bird_owl2"
+

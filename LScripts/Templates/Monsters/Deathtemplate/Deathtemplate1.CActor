@@ -1,0 +1,23 @@
+o.BaseObj = "AmputeeV2.CActor"
+o.Model = "ge_amputee_2"
+o.Animation = "exp1"
+o.CreatePO = false
+o.Immortal =  true
+o._disableDeathSounds = true
+o.NeverMove = true
+o.RotateSpeed = 0
+o.deathanim="normal" 
+o.NotCountable = true
+o.enableGibWhenHPBelow = false
+o.TimeToLive = 150
+o.s_SubClass.Animations =
+ {
+	exp1   = {0.1,false,{
+			{4,'TD'},
+}},
+	exp2   = {0.1,false,{
+			{4,'TD'},
+}},
+}
+o.AiParams.aiGoals = {"idle"}
+o.s_SubClass.Ambients={"exp2","exp1"}

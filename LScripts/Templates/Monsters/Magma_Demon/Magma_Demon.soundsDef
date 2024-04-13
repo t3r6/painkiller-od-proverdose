@@ -1,0 +1,78 @@
+o.s_SubClass.SoundsDefinitions = {
+	wheel1 = {
+		samples = {'$/actor/mw_guardian/guard_wheel1','$/actor/mw_guardian/guard_wheel2',},
+		dist1 = 8,
+		dist2 = 40,
+	},
+	hand_groundhit = {
+		samples = {'$/actor/mw_guardian/guard_walk_hand1','$/actor/mw_guardian/guard_walk_hand2','$/actor/mw_guardian/guard_walk_hand3'},
+		dist1 = 10,
+		dist2 = 80,
+	},
+	wheel2 = {
+		samples = {'$/actor/mw_guardian/guard_wheel3','$/actor/mw_guardian/guard_wheel4',},
+		dist1 = 8,
+		dist2 = 40,
+	},
+	onAttackOnce = {
+		samples = {'$/actor/mw_guardian/guard_halt1'},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	atak_voice = {
+		samples = {'$/actor/mw_guardian/quard_voice1','$/actor/mw_guardian/quard_voice2','$/actor/mw_guardian/quard_voice3',},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	atak2_voice = {
+		samples = {'$/actor/mw_guardian/quard_at2_voice'},
+		dist1 = 10,
+		dist2 = 40,
+	},
+	atak1 = {
+		samples = {'$/actor/mw_guardian/guard_at1','$/actor/mw_guardian/guard_at2'},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	atak2 = {
+		samples = {'$/actor/mw_guardian/guard_at_hands'},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	turn_voice = {
+		samples = {'$/actor/mw_guardian/guard_rotate_voice1','$/actor/mw_guardian/guard_rotate_voice2','$/actor/mw_guardian/guard_rotate_voice3'},
+		dist1 = 10,
+		dist2 = 60,
+		playChance = 0.75,
+	},
+	idle_sound = {
+		samples = {'$/actor/mw_guardian/guard_idle1','$/actor/mw_guardian/guard_idle2'},
+		dist1 = 10,
+		dist2 = 60,
+		playChance = 0.25,
+	},
+	
+	death = {
+		samples = {"$/actor/mw_guardian/guard_death1","$/actor/mw_guardian/guard_death2","$/actor/mw_guardian/guard_death3",},
+		dist1 = 40,
+		dist2 = 120,
+	},
+
+	hurt = {
+		samples = {'$/actor/mw_guardian/guard_hit1','$/actor/mw_guardian/guard_hit2','$/actor/mw_guardian/guard_hit3'},
+		dist1 = 20,
+		dist2 = 80,
+	},
+
+	angry = {
+		samples = {'$/actor/mw_guardian/guard_angry1','$/actor/mw_guardian/guard_angry2'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+    mortal = {
+        samples = {'$/actor/mw_guardian/guard_boss_mortal'},
+		dist1 = 40,
+		dist2 = 160,
+	},
+        
+}

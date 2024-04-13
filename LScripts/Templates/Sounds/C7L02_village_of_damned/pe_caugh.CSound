@@ -1,0 +1,10 @@
+pe_caugh.Volume = 100
+pe_caugh.Interval = 5
+pe_caugh.RandomShift = 7
+pe_caugh.Falloff =
+{
+  Start = 5,
+  End = 30
+}
+pe_caugh.Sound ="C7L02_village_of_damned/pe_caugh1;C7L02_village_of_damned/pe_caugh2;C7L02_village_of_damned/pe_caugh3;C7L02_village_of_damned/pe_caugh4"
+

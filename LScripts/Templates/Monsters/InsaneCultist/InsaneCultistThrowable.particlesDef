@@ -1,0 +1,10 @@
+o.s_SubClass.ParticlesDefinitions = {
+    flying = {
+        pfx = "cultist_brain_fly",
+        scale = 0.8,
+    },
+	whenHitGround = {
+        pfx = "cultist_brain_floor",
+        scale = 1.5,
+    }
+}

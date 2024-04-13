@@ -1,0 +1,39 @@
+o.BaseObj = "deathmarch_lamp.CItem"
+o.s_SubClass.bindFX = {"deadmarsh_lamp2r", 0.9, "root"}
+o.Scale = 33
+
+o.BillBoard = {
+	template = "marsh_Corona_red.CBillboard",
+	joint="root"
+}
+
+--o.s_SubClass.Light = {
+--    template = "Point_Marsh_red.CLight",
+--    joint = "e2",
+--}
+
+
+o.s_SubClass.ParticlesDefinitions = {
+	e1 = {
+		pfx = 'deadmarsh_lamp1r',
+		scale = 0.17,
+		joint = "e1",
+		offset = Vector:New(0,0,0),
+
+	},
+	e2 = {
+		pfx = 'deadmarsh_lamp1r',
+		scale = 0.17,
+		joint = "e2",
+		offset = Vector:New(0,0,0),
+
+	},
+	e3 = {
+		pfx = 'deadmarsh_lamp1r',
+		scale = 0.17,
+		joint = "e3",
+		offset = Vector:New(0,0,0),
+
+	},
+}
+

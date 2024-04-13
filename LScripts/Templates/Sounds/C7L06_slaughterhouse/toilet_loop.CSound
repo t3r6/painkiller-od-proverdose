@@ -1,0 +1,10 @@
+toilet_loop.Volume = 60
+toilet_loop.Interval = 0
+toilet_loop.RandomShift = 0
+toilet_loop.Falloff =
+{
+  Start = 2,
+  End = 20
+}
+toilet_loop.Sound ="C7L06_slaughterhouse/toilet_loop"
+

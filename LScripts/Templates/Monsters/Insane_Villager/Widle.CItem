@@ -1,0 +1,134 @@
+o.Mesh = "forkShape"
+o.Pack = "P_Fork.dat"
+o.Scale = 0.02
+o.Mass = 40
+o.Restitution = 0.1
+o.Damage = 40
+o.RotateSpeed = 30
+o.ThrowSpeed = 20
+o.LifeTime = 100		-- after 1st collision
+o.TimeToLive = 150      -- after create
+o.AngularDamping = 0.2		-- sprawdzic ### 
+o.hitGroundParticle = {"torch_hitground", 0.2}
+o.CollisionSound = {"impacts/widle1","impacts/widle2"}
+--o.LoopSound = "actor/leper/throw-loop"
+o.fx = "VampBlood.CItem"
+
+o.Poison = {
+	checkSpeed = 2,	-- ile razy na sekunde ma spradzac, czy jest w zasiegu trucizny
+	Range = 2.5,
+	TimeOut = 100,	-- jak dlugo dziala
+	Freq = 24,		-- jak czesto trucizna zadaje rany
+	DamageHp = 4,
+}
+
+o.bindfx = "barrel_flame_FX" 
+
+
+--============================================================================
+function Widle:OnPrecache()
+    Cache:PrecacheParticleFX(self.hitGroundParticle[1])
+end
+--============================================================================
+function Widle:OnCollision(x,y,z,nx,ny,nz,e,he)
+	if self._sndLoop then
+		ENTITY.Release(self._sndLoop)
+		self._sndLoop = nil
+	end
+	if math.random(100) < 50 then
+		local a = MDL.GetJointFromHavokBody(self._Entity, he)
+		if a and a ~= -1 then
+			local ke = AddItem(self.fx,0.3,Vector:New(x,y + 0.01,z),true)
+		end
+	end
+
+
+	local sndCol = self.CollisionSound[math.random(1,table.getn(self.CollisionSound))]
+	local isPlayer = false
+	if e then
+		local obj = EntityToObject[e]
+		if obj and not self.deathTimer then
+			if obj.OnDamage and obj == Player then
+				PlaySound2D("actor/leper_monk/lepperm-stick-hit")
+				obj:OnDamage(self.Damage, self.ObjOwner)
+				isPlayer = true
+			end
+			GObjects:ToKill(self)
+		end
+	end
+	if not isPlayer then
+		if not self.deathTimer then
+			self.deathTimer = math.random(self.LifeTime*0.8, self.LifeTime*1.2)
+		end
+        PlaySound3D(sndCol,x,y,z,18,36,nil)
+	end
+	
+	if self._bindedLight then
+		GObjects:ToKill(self._bindedLight)
+		self._bindedLight = nil
+	end
+	if self._bindedBill then
+		GObjects:ToKill(self._bindedBill)
+		self._bindedBill = nil
+	end
+--[[	if self._fx then
+		x,y,z = ENTITY.GetPosition(self._fx)
+		local q = Quaternion:New_FromNormal(nx,ny,nz)
+		AddPFX(self.hitGroundParticle[1], self.hitGroundParticle[2], Vector:New(x,y,z), q)
+		PARTICLE.Die(self._fx)
+		self._fx = nil
+	end ]]--
+end
+--============================================================================
+function Widle:OnCreateEntity()
+	self:PO_Create(BodyTypes.FromMesh,nil,ECollisionGroups.Noncolliding)
+	self.timer = 12
+	local fx = self.bindfx
+	if fx then
+		self._fx = self:BindFX("widle_flame",0.75, nil, 0, 0,0)
+	end
+	if self.ThrowSound then
+		self:BindSound(self.ThrowSound,10,40,false)
+	end
+end
+--============================================================================
+function Widle:OnUpdate()
+	if self.timer then
+		self.timer = self.timer - 1
+		if self.timer < 0 then
+			self.timer = nil
+			ENTITY.PO_SetCollisionGroup(self._Entity, ECollisionGroups.Normal)
+			ENTITY.EnableCollisions(self._Entity, true, 0.6, 2.5)
+			if self.LoopSound then
+				self._sndLoop = self:BindSound(self.LoopSound,3,18,true)
+			end
+		end
+
+	end
+		if math.random(100) < 20 and Player then
+			self._checkSpeed = 30/self.Poison.checkSpeed 
+			local x,y,z = ENTITY.GetPosition(self._Entity)
+			local dist = Dist3D(x,y,z, Player._groundx,Player._groundy, Player._groundz)
+			local distLast = 9999
+			if self._fx_lastx then
+				distLast = Dist3D(self._fx_lastx,self._fx_lasty,self._fx_lastz, Player._groundx,Player._groundy, Player._groundz)
+			end
+			if dist < self.Poison.Range or distLast < self.Poison.Range then
+				--Game:Print("PLAYER poisoned")
+                
+                if not SOUND2D.IsPlaying(Player._oldSND) then
+				                	Player._oldSND = PlaySound2D("belial/Belial_ingame_"..math.random(32,36),nil,nil,true)
+	            end
+                
+				Player._poisoned = self.Poison.TimeOut
+				Player._poisonedTime = 0
+				Player._poison = self.Poison
+				Player._DrawColorQuad = true
+				Player._ColorOfQuad = Color:New(255, 10, 10)
+				Player._QuadAlphaMax = 50
+			end
+			self._fx_lastx = x
+			self._fx_lasty = y
+			self._fx_lastz = z
+		end
+end

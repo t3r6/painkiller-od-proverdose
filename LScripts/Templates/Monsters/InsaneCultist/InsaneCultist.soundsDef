@@ -1,0 +1,97 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {'$/actor/mw_insanecultist/cultist_step1','$/actor/mw_insanecultist/cultist_step2'},
+		dist1 = 7,
+		dist2 = 26,
+	},
+	step2 = {
+		samples = {'$/actor/mw_insanecultist/cultist_step3','$/actor/mw_insanecultist/cultist_step4'},
+		dist1 = 7,
+		dist2 = 26,
+	},
+
+	death  = {
+		samples = {"$/actor/mw_insanecultist/cultist_death1","$/actor/mw_insanecultist/cultist_death2","$/actor/mw_insanecultist/cultist_death3",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	atak = {
+		samples = {'$/actor/mw_insanecultist/cultist_atak1','$/actor/mw_insanecultist/cultist_atak2','$/actor/mw_insanecultist/cultist_atak3','$/actor/mw_insanecultist/cultist_atak4'},
+		dist1 = 8,
+		dist2 = 30,
+	},
+  hit = {
+		samples = {'$/actor/mw_insanecultist/cultist_hit1','$/actor/mw_insanecultist/cultist_hit2','$/actor/mw_insanecultist/cultist_hit3','$/actor/mw_insanecultist/cultist_hit4'},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+  swish = {
+		samples = {'$/actor/mw_insanecultist/cultist_swish'},
+		dist1 = 16,
+		dist2 = 50,
+	},
+
+  swish2 = {
+		samples = {'$/actor/mw_insanecultist/cultist_swish2'},
+		dist1 = 16,
+		dist2 = 50,
+	},
+
+	bodyfalls = {
+		samples = {"$/actor/mw_insanecultist/cultist_bodyfalls",},
+		dist1 = 16,
+		dist2 = 50,
+	},
+
+	damage = {
+		samples = {"$/actor/mw_insanecultist/cultist_damage",},
+	},
+
+    onAttackOnce = {
+        samples = {"$/actor/mw_insanecultist/cultist_atak1","$/actor/mw_insanecultist/cultist_atak2"},
+   		dist1 = 16,
+		dist2 = 60,
+    },
+
+
+    walkVoice = {
+        samples = {"$/actor/mw_insanecultist/cultist_idle1","$/actor/mw_insanecultist/cultist_idle2","$/actor/mw_insanecultist/cultist_idle3","$/actor/mw_insanecultist/cultist_idle4"},
+		playChance = 0.2,
+   		dist1 = 30,
+		dist2 = 70,
+    },
+
+}
+o.s_SubClass.SoundsDefinitionsBindings = {
+        idle = {
+            {0.65,'PlaySound',"walkVoice"},
+        },
+		walk   = {
+            {0.0,'PlaySound',"walkVoice"},
+            {0.65,'PlaySound',"step1"},
+			{1.6,'PlaySound',"step2"},
+		},
+		run   = {
+            {0.0,'PlaySound',"walkVoice"},
+            {0.65,'PlaySound',"step1"},
+			{0.07,'PlaySound',"step2"},
+		},
+        hit1 = {
+        	{0.0,'PlaySoundHit',"hit"},
+        },
+        hit2 = {
+        	{0.0,'PlaySoundHit',"hit"},
+        },
+
+        attack1 = {
+            {0.0,'PlaySound',"atak"},
+            {0.5,'PlaySound',"swish"},
+        },
+        attack2 = {
+            {0.0,'PlaySound',"atak"},
+            {0.5,'PlaySound',"swish2"},
+        },
+
+}

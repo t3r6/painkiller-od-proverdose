@@ -1,0 +1,185 @@
+o.Model = "tentacle_monster"
+o.Scale = 1.6
+o.Health = 299
+o.CreatePO = true
+o.WalkSpeed = 5.0
+o.RunSpeed = 1.0
+o.RotateSpeed = 0 
+o.DisableRotate = true 
+o.enableGibWhenHPBelow = 0
+o.throwHeart = true
+o.NeverMove = true
+o.NeverRun = true
+o.DontIdleafterWalk = true
+o.transformIntoBigVampFX = "FX_transform"
+o.enableTransformHP = -150
+o._GreenBlood = true
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 1500,
+}
+
+o.s_SubClass = {
+    rotateHead = math.pi*2,			-- zakres
+    rotateHeadBone = "chapadlo_002",
+    rotateHeadMaxSpeed = 1,
+ rotateHeadRight = Vector:New(1, 1.0, -1),
+    rotateHeadLeft =  Vector:New(1, 1.0, -1),
+   rotateHeadCoords = Vector:New(1, 1, 2),
+    SoundDir = "pirate",
+	Animations = {
+
+--		idle    = {2.0, false,{{0.2,'visme'},}},
+		idle    = {2.0, false},
+		enter    = {2.0, false,{
+					{0.0,'PlaySound',"ten_enter"},
+			{0.0,'visme'},
+			{0.0,'leavemud'},
+			{0.0,'startg'},
+			}},
+		leave    = {1.0, false,{{0.0,'endg'},
+					{0.0,'PlaySound',"ten_leave"},
+			   {0.1,'leavemud'},
+					}},
+		walk    = {1.4, false, {
+					}},
+		attack2 = {1, false, {
+					{0.0,'PlaySound',"shoot"},
+					{0.0,'PlaySound',"ten_steam"},
+					{0.0,'gas',},
+					{0.3,'damage',nil,nil,nil,true},
+					{0.2,'gas',},
+					{0.5,'damage',nil,nil,nil,true},
+					{0.7,'damage',nil,nil,nil,true},
+					{0.9,'damage',nil,nil,nil,true},
+					}},
+
+		attack1 = {1, false, {		-- close
+						{0.0,'PlaySound',"atakvoice"},
+					{0.0,'PlaySound',"ten_swish"},
+						{0.4,'damage',},
+					}},
+		},
+
+
+	RagdollCollisions = {
+		MinStren = 4.2,
+		MinTime = 0.6,
+		Bones = {
+			{"chapadlo_008", "bodyfalls", true},		-- joint, {sound}, blood
+				{"chapadlo_004","weaponlost",false},
+	                	{"chapadlo_001","weaponlost",false},
+			}
+
+	},
+	
+	Ambients = {"idle"},
+	NearAttacks = {"attack2","attack1"},
+
+DeathJoints = {
+	    'root','chapadlo_004','chapadlo_002','chapadlo_007','chapadlo_009'
+	},
+
+    gibFX = "gibExplosion",
+	GibEmitters = {
+				{"root","FX_gib_blood_green",-1},
+				{"chapadlo_0010","FX_gib_blood_green",-1},
+				{"chapadlo_008","FX_gib_blood_green",-1},			
+				{"chapadlo_006","FX_gib_blood_green",-1},	
+				{"chapadlo_004","FX_gib_blood_green",-1},	
+				{"chapadlo_002","FX_gib_blood_green",-1},
+    },
+	GibExplosionStrength = 7000,
+	GibExplosionRange = 4.0,
+	GibExplosionDeltaY = -1.0,
+    RagdollCollisionsGib = {
+        MinStren = 6.0,
+        MinTime = 0.8,
+	 Bones = {
+				{"root", "gibSplash", true},
+				{"chapadlo_002", "gibSplash", true},
+				{"chapadlo_004", "gibSplash", true},				
+			},
+
+    },
+
+}
+
+o.DeathTimer = 120
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","Burrow","attack"}
+--o.AiParams.aiGoals = {"idle","FarAttack", "hunt", "hear", "attack","Burrow"}
+o.AiParams.viewDistance = 70			-- zasieg widzenia
+o.AiParams.viewAngle = 100			-- kat widzenia
+o.AiParams.viewDistance360 = 70			-- zasieg widzenia z katem widzenia 360 stopni
+    
+o.AiParams.hearing = 1.0				-- zasieg sluchu
+o.AiParams.perception = 1.0				-- szansa uslyszenia halasu
+o.AiParams.walkStep = 7.0
+
+o.AiParams.GuardStill = true			-- true, nie bedzie sie poruszal w trybie guard
+o.AiParams.guardAngle = {0,10}			-- (min, max) kat o jaki sie nie bedzie sie poruszal w "idle"
+o.AiParams.guardAngleRandom = true
+o.AiParams.guardChangePosition = {30,60}-- (min, max) dlugosc pauzy pomiedzy obrotami
+o.AiParams.guardRange = -1				-- max. zasieg patrolu
+o.AiParams.useOnlyWaypointsWhenGuard = false	-- wykorzystuje tylko WayPointy przy chodzeniu w trybie guard
+o.AiParams.stopAfterWalking = 0.5			-- szansa zatrzymania po przejsciu do kolejnego punktu
+o.AiParams.stopAfterWalkingTime = {30,90}	-- (min, max) czas zatrzymania
+
+--o.AiParams.walkArea = ""
+o.AiParams.walkAreaRandom = false
+o.AiParams.WalkAreaWhenAttack = false
+o.AiParams.FinishMovementBeforeAttack = false	-- atakuje dopiero gdy dojdzie do wczesniej zaplanowanego punktu
+
+o.AiParams.delayBetweenAttacks = 2
+o.AiParams.moveDisplacement = 5.0
+
+o.AiParams.chanceOfEscapeAfterFire = 0.0	-- szansa, ze moster ucieknie po strzale
+o.AiParams.escapeTime = 120			-- typowy czas ucieczki
+
+o.AiParams.updateSpeed = 0.33
+o.AiParams.alwaysSee = true
+o.AiParams.huntPlayer = false
+    
+o.AiParams.doNotRotateWhenShooting = true
+o.AiParams.weapon = {
+		bulletsPerShot = 1,
+		maxDist = 1,
+		minDist = 1.0,
+		spreadAngle = 2.0,
+		maxYaw = 45,				-- maksymalna odchylka broni lewo/prawo w stos. do kata patrzenia
+		maxPitch = 45,				-- maksymalna odchylka broni gora/dol
+		fireParticle = "scorpion_shot",	
+		fireParticleSize = 0.6,
+		
+	}
+
+
+o.shadow = 0
+
+-- bliski atak --
+o.AiParams.attackRange = 9
+o.AiParams.secondattackRange = 9
+o.AiParams.weaponDamage = 15
+o.AiParams.weapon2Damage = 10
+o.AiParams.attackRangeAngle = 360
+--
+o.AiParams.disableEscapeWhenTooClose = true
+o.minimumTimeBetweenHitAnimation = 25
+
+o.disableRotateHeadToZero = true
+---jump
+o.AiParams.BurrowRangeMin = 2
+o.AiParams.BurrowRangeMax = 80 
+o.AiParams.prepareBurrowAnim = "leave"
+o.AiParams.BurrowAnim = "walk"
+o.AiParams.afterBurrowAnim = "enter"
+o.AiParams.doNotRotateWhileBurrowing = true
+o.AiParams.minDelayBetweenBurrows = 4.0
+o.AiParams.BurrowAnimLen = 0.7	
+o.AiParams.BurrowSpeed = 11
+o.AiParams.BurrowDistanceMinus=4
+o.AiParams.BurrowAngle=10
+o.AiParams.alwaysSee = true
+

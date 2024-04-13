@@ -1,0 +1,74 @@
+o.s_SubClass.ParticlesDefinitions = {
+	shotfx = {   
+		pfx = "spike_demon_shot",
+		scale = 0.6,
+		joint = "k_ramiona",
+		offset = Vector:New(0,3,0),
+	},
+	breath = {   
+		pfx = "spike_demon_breath",
+		scale = 0.1,
+		joint = "k_ogo",
+		offset = Vector:New(0,1,0),
+	},
+	walkcloud = {   
+		pfx = "spike_demon_cloud",
+		scale = 0.5,
+		joint = "n_l_kolano",
+		offset = Vector:New(0.5,0,0.8),
+	},
+	walkcloud2 = {   
+		pfx = "spike_demon_cloud",
+		scale = 0.5,
+		joint = "n_r_kolano",
+		offset = Vector:New(-0.35,0,0.5),
+	},
+	walkcloud3 = {   
+		pfx = "spike_demon_cloud",
+		scale = 0.7,
+		joint = "n_l_kolano",
+		offset = Vector:New(0.7,0,0.9),
+	},
+	walkcloud4 = {   
+		pfx = "spike_demon_cloud",
+		scale = 0.7,
+		joint = "n_r_kolano",
+		offset = Vector:New(-0.55,0,0.6),
+	},	
+	runcloud = {   
+		pfx = "spike_demon_runcloud",
+		scale = 0.6,
+		joint = "n_r_kolano",
+		offset = Vector:New(0,0,0),
+	},
+	deathspark1 = {   
+		pfx = "spikedemon_death2",
+		scale = 0.3,
+		joint = "r_p_bark",
+		offset = Vector:New(0,0,0),
+	},
+	deathspark2 = {   
+		pfx = "spikedemon_death2",
+		scale = 0.3,
+		joint = "r_l_bark",
+		offset = Vector:New(0,0,0),
+	},
+	deathspark3 = {   
+		pfx = "spikedemon_death2",
+		scale = 0.3,
+		joint = "k_zebra",
+		offset = Vector:New(0,0,0),
+	},
+	deathspark4 = {   
+		pfx = "spikedemon_death2",
+		scale = 0.3,
+		joint = "root",
+		offset = Vector:New(0,0,0),
+	},
+	deathspark5 = {   
+		pfx = "spikedemon_death",
+		scale = 0.6,
+		joint = "root",
+		offset = Vector:New(0,0,0),
+	},
+}

@@ -1,0 +1,79 @@
+o.s_SubClass.SoundsDefinitions = {
+	path = "actor/mw_hant/",
+	bliti = {
+		samples = {"vomiting"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+	idle = {
+		samples = {"hant_idle1","hant_idle2","hant_idle3","hant_idle4","hant_idle5"},
+      playChance = 0.5,
+		dist1 = 5,
+		dist2 = 20,
+	},
+	run_idle = {
+      playChance = 0.8,
+		samples = {'hant-at1a','hant-at1b'},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	missed = {
+		samples = {"$/actor/mw_hant/hant-missed1","$/actor/mw_hant/hant-missed2"},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	step1 = {
+		samples = {'hant-krok1',},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	step2 = {
+		samples = {'hant-krok2',},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	bodyfalls = {
+		samples = {"hant_bodyfalls"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	swish = {
+		samples = {'hant_swish',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	atak1 = {
+		samples = {'hant-at2a','hant-at2b'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},	
+	inhale = {
+		samples = {'hant_inhale'},
+		dist1 = 10,
+		dist2 = 30,
+	},	
+	onAttackOnce = {
+		samples = {"$/actor/mw_hant/hant-halt1", "$/actor/mw_hant/hant-halt2", "$/actor/mw_hant/hant-halt3"},
+		dist1 = 20,
+		dist2 = 50,
+	},
+	hit = {
+		samples = {'$/actor/mw_hant/hant-hit1','$/actor/mw_hant/hant-hit2','$/actor/mw_hant/hant-hit3',},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	weaponlost = {
+		samples = {"$/actor/mw_hant/hant_weapon-lost","$/actor/mw_hant/hant_weapon-lost2",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	death = {
+		samples= {"$/actor/mw_hant/hant-death1"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	damage = {
+		samples= {"$/actor/mw_hant/hant-damage"},
+	}
+}

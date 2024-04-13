@@ -1,0 +1,66 @@
+--timeout between series
+LShipFight.MTimeout = 20 * 30
+LShipFight.Timeout = 4
+
+
+o.BaseName = "LShipFight.CProcess"
+
+--============================================================================
+function LShipFight:New()
+end
+--============================================================================
+function LShipFight:Init()
+end
+--============================================================================
+function LShipFight:Update()    
+    self.Timeout = self.Timeout - 1    
+    if self.Timeout < 0 then
+
+local action = {
+ {"CannonFX:GunFlame_006.Pos.X,GunFlame_006.Pos.Y,GunFlame_006.Pos.Z,1,1,0,0"},
+ {"Wait:0.3"},
+ {"CannonFX:GunFlame_008.Pos.X,GunFlame_008.Pos.Y,GunFlame_008.Pos.Z,1,1,0,0"},
+ {"Wait:0.3"},
+ {"CannonFX:GunFlame_007.Pos.X,GunFlame_007.Pos.Y,GunFlame_007.Pos.Z,1,1,0,0"},
+ {"Wait:0.3"},
+ {"CannonFX:GunFlame_011.Pos.X,GunFlame_011.Pos.Y,GunFlame_011.Pos.Z,1,1,0,0"},
+ {"Wait:0.2"},
+ {"CannonFX:GunFlame_010.Pos.X,GunFlame_010.Pos.Y,GunFlame_010.Pos.Z,1,1,0,0"},
+ {"Wait:0.3"},
+ {"CannonFX:GunFlame_006.Pos.X,GunFlame_006.Pos.Y,GunFlame_006.Pos.Z,1,1,0,0"},
+ {"Wait:0.1"},
+ {"CannonFX:GunFlame_008.Pos.X,GunFlame_008.Pos.Y,GunFlame_008.Pos.Z,1,1,0,0"},
+ {"Wait:0.3"},
+ {"CannonFX:GunFlame_007.Pos.X,GunFlame_007.Pos.Y,GunFlame_007.Pos.Z,1,1,0,0"},
+ {"Wait:0.4"},
+ {"CannonFX:GunFlame_011.Pos.X,GunFlame_011.Pos.Y,GunFlame_011.Pos.Z,1,1,0,0"},
+ {"Wait:0.5"},
+ {"CannonFX:GunFlame_010.Pos.X,GunFlame_010.Pos.Y,GunFlame_010.Pos.Z,1,1,0,0"},
+ {"Wait:2"},
+{"CannonFX:259.1055, 2.3872, -184.7753,1,0,0,0"},
+ {"Wait:0.1"},
+{"CannonFX:259.4189, 1.7676, -178.6643,1,0,0,0"},
+ {"Wait:0.4"},
+{"CannonFX:259.4189, 1.6948, -172.3748,1,0,0,0"},
+ {"Wait:0.5"},
+{"CannonFX:259.4189, 1.8600, -166.1936,1,0,0,0"},
+ {"Wait:0.3"},
+{"CannonFX:259.4189, 2.0266, -159.8223,1,0,0,0"},
+ {"Wait:0.2"},
+{"CannonFX:259.4189, 1.8600, -166.1936,1,0,0,0"},
+ {"Wait:1"},
+{"CannonFX:259.4189, 1.8600, -166.1936,1,0,0,0"},
+
+
+
+}
+		AddAction(action,self)
+	    self.Timeout  = self.MTimeout
+    end
+
+
+
+end
+--============================================================================
+function LShipFight:Synchronize()
+end

@@ -1,0 +1,32 @@
+o.s_SubClass.ParticlesDefinitions = {
+	plaminek = {
+		pfx = 'pochodnia',
+		scale = 0.2,
+		joint = "zapalovac1",
+	},
+	sprej = {
+		pfx = 'radioactive_operator_greengass',
+		scale = 0.4,
+		joint = "sprej",
+	},
+	sprejflame1 = {
+		pfx = 'spray_green',
+		scale = 0.6,
+		joint = "sprej",
+		offset= Vector:New(0,0,0),
+	},
+	sprejflame2 = {
+		pfx = 'spray_violet',
+		scale = 0.6,
+		joint = "sprej",
+		offset= Vector:New(0,0,0),
+	},
+	sprejflame3 = {
+		pfx = 'spray_silver',
+		scale = 0.6,
+		joint = "sprej",
+		offset= Vector:New(0,0,0),
+	},
+
+}
+

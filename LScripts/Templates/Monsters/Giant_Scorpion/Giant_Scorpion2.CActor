@@ -1,0 +1,6 @@
+o.BaseObj = "Giant_Scorpion.CActor"
+o.Health = 750
+o.WalkSpeed = 0.7
+o.RunSpeed = 0.1
+o.disableFreeze = true
+o.clawFX="scorpionclaw"

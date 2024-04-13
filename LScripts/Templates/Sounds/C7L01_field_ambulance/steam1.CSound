@@ -1,0 +1,10 @@
+steam1.Volume = 80
+steam1.Interval = 9
+steam1.RandomShift = 0
+steam1.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+steam1.Sound ="C7L01_field_ambulance/steam1"
+

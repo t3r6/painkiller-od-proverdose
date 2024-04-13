@@ -1,0 +1,73 @@
+--o.Mesh = "polySurfaceShape89990"
+--o.Pack = "kamien.dat"
+
+o.Mesh = "pSphereShape1"
+o.Pack = "meteor_caly.dat"
+o._fx = 'or_lava'
+
+o.Scale = 0.65
+o.Pos = Vector:New(0,0,-4)
+o.Restitution = 0.2
+o.Damage = 45
+
+o.LifeTime = 180				-- after 1st col
+o.TimeToLive = 30 * 60
+o.CollisionSound = {"impacts/stonebig-impact1","impacts/stonebig-impact2","impacts/stonebig-impact3","impacts/stonebig-impact4","impacts/stonebig-impact5"}
+
+function o:OnPrecache()
+    Cache:PrecacheParticleFX(self._fx)    
+end
+
+
+--============================================================================
+function o:OnCollision(x,y,z,nx,ny,nz,e)
+	if ENTITY.IsFixedMesh(e)  and Player and Dist3D(Player.Pos.X,Player.Pos.Y,Player.Pos.Z,x,y,z) < 10 then
+	local zn,idx = WPT.GetClosest(x,y,z)   		
+    	if idx > -1 then
+	        local kx,ky,kz = WPT.GetPosition(zn,idx)    
+	        local pos = Vector:New(kx,ky+2.5,kz)    
+	        local obj = AddObject("Spawn.CSpawnPoint",nil,pos,nil,true)
+		obj.SpawnTemplate  = "SpectreTower.CActor"
+	        obj.SpawnFX = "MonsterSpawnFlame.CAction"        
+		obj.NotCountable = true
+	        obj.StartDelay = 1 
+	        obj.GroupDelay = -1 -- czeka na smierc potwora
+	        obj.GroupCount = 1
+	        obj.GroupSize = 1
+	        obj:Apply()
+	        obj:OnLaunch()
+	end
+	end
+	if not self.timer then
+        ENTITY.PO_EnableGravity(self._Entity,true)
+		self.timer = math.random(self.LifeTime*0.8,self.LifeTime*1.2)
+	end
+end
+--============================================================================
+function o:OnCreateEntity()
+if self._fx then
+		self:BindFX(self._fx, 0.1, -1)
+	end
+	self:PO_Create(BodyTypes.FromMesh,nil,ECollisionGroups.Noncolliding)
+    ENTITY.PO_EnableGravity(self._Entity,false)
+    self.timerInit = 8
+end
+--============================================================================
+function o:OnUpdate()
+	if self.timerInit then
+		self.timerInit = self.timerInit - 1
+		if self.timerInit < 0 then
+			ENTITY.PO_SetCollisionGroup(self._Entity, ECollisionGroups.Normal)
+   			ENTITY.EnableCollisions(self._Entity, true, 0.8, 4.0)
+   			self.timerInit = nil
+   		end
+   	else
+		if self.timer then
+			self.timer = self.timer - 1
+			if self.timer < 0 then
+				GObjects:ToKill(self)
+				AddPFX("BodyExplosion",1.5,Vector:New(self.Pos.X,self.Pos.Y,self.Pos.Z))
+			end
+		end
+	end
+end

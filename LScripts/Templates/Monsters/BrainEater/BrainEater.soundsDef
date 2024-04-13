@@ -1,0 +1,69 @@
+o.s_SubClass.SoundsDefinitions = {
+	path = "actor/mw_braineater/",
+  damage = {
+		samples = {'$/actor/mw_braineater/brain_hand_hit'},
+		dist1 = 16,
+		dist2 = 60,
+    },
+	step1 = {
+		samples = {'$/actor/mw_braineater/brain_krok1','$/actor/mw_braineater/brain_krok2'},
+		dist1 = 6,
+		dist2 = 20,
+	},
+	step2 = {
+		samples = {'$/actor/mw_braineater/brain_krok2','$/actor/mw_braineater/brain_krok3'},
+		dist1 = 6,
+		dist2 = 20,
+	},
+	hitsound = {
+		samples = {'$/actor/mw_braineater/brain_hit1','$/actor/mw_braineater/brain_hit2','$/actor/mw_braineater/brain_hit3'},
+		dist1 = 6,
+		dist2 = 60,
+	},
+	idle = {
+		samples = {'$/actor/mw_braineater/brain_idle1','$/actor/mw_braineater/brain_idle2','$/actor/mw_braineater/brain_idle3','$/actor/mw_braineater/brain_idle4','$/actor/mw_braineater/brain_idle5'},
+		playChance = 0.10,
+		dist1 = 6,
+		dist2 = 30,
+	},
+	brainsfx = {
+		samples = {'$/actor/mw_braineater/brain_sfx1','$/actor/mw_braineater/brain_sfx2','$/actor/mw_braineater/brain_sfx3','$/actor/mw_braineater/brain_sfx4','$/actor/mw_braineater/brain_sfx5'},
+		dist1 = 3,
+		dist2 = 20,
+	},
+  swish1 = {
+		samples = {"$/actor/mw_braineater/brain_swish1"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+  swish2 = {
+		samples = {"$/actor/mw_braineater/brain_swish2"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	atak_long = {
+		samples = {'$/actor/mw_braineater/brain_at1','$/actor/mw_braineater/brain_at2','$/actor/mw_braineater/brain_at3'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	atak_short = {
+		samples = {'$/actor/mw_braineater/brain_ats1','$/actor/mw_braineater/brain_ats2','$/actor/mw_braineater/brain_ats3'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+    
+	death = {
+		samples = {"$/actor/mw_braineater/brain_death1","$/actor/mw_braineater/brain_death2"},
+		dist1 = 20,
+		dist2 = 60,
+	},
+
+  bodyfalls = {
+		samples = {"$/actor/mw_braineater/brain_bodyfalls"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+}
+

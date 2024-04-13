@@ -1,0 +1,15 @@
+o.s_SubClass.SoundsDefinitions = {
+
+
+	idle_sound = {
+		samples = {"$/actor/mw_hengun/chicken_idle1","$/actor/mw_hengun/chicken_idle2"},
+	        dist1 = 1,
+		dist2 = 15,
+	},
+
+	death = {
+		samples = {"cannon-death"},
+	        dist1 = 10,
+		dist2 = 60,
+	},
+}

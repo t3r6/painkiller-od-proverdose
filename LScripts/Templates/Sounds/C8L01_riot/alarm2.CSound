@@ -1,0 +1,9 @@
+alarm2.Volume = 80
+alarm2.Interval = 2
+alarm2.RandomShift = 0
+alarm2.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+alarm2.Sound ="C8L01_riot/alarm2"

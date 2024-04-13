@@ -1,0 +1,82 @@
+o.s_SubClass.SoundsDefinitions = {
+
+	step1 = {
+		samples = {'$/actor/mw_invisible_man/iman-step1','$/actor/mw_invisible_man/iman-step3',},
+		dist1 = 10,
+		dist2 = 40,
+	},
+	step2 = {
+		samples = {'$/actor/mw_invisible_man/iman-step2','$/actor/mw_invisible_man/iman-step3',},
+		dist1 = 10,
+		dist2 = 40,
+	},
+	
+	run = {
+		samples = {'$/actor/mw_invisible_man/iman-run1_1','$/actor/mw_invisible_man/iman-run2_2','$/actor/mw_invisible_man/iman-run1_2','$/actor/mw_invisible_man/iman-run2_1'},
+		dist1 = 4,
+		dist2 = 30,
+	},
+	laugh = {
+		samples = {'$/actor/mw_invisible_man/iman-shooting-laugh1','$/actor/mw_invisible_man/iman-shooting-laugh2',},
+		dist1 = 16,
+		dist2 = 52,
+		playChance = 0.5,
+	},
+	bodyfalls = {
+		samples = {'$/actor/mw_invisible_man/iman-boddyfalls1','$/actor/mw_invisible_man/iman-boddyfalls2'},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	onAttackOnce = {
+		samples = {"$/actor/mw_invisible_man/iman-halt1", "$/actor/mw_invisible_man/iman-halt2",},
+		playChance = 0.5,
+		dist1 = 30,
+		dist2 = 70,
+	},
+	shootend = {
+		samples = {"$/actor/mw_invisible_man/iman-weapon-shoot-end"},
+		dist1 = 16,
+		dist2 = 52,
+	},
+	swish1 = {
+		samples = {"$/actor/mw_invisible_man/iman-swish1"},
+		dist1 = 8,
+		dist2 = 40,
+	},
+	swish2 = {
+		samples = {"$/actor/mw_invisible_man/iman-swish2"},
+		dist1 = 8,
+		dist2 = 40,
+	},
+	weaponlost = {
+		samples = {"$/actor/mw_invisible_man/iman-weapon-lost"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	shells = {
+		samples = {'$/actor/mw_invisible_man/iman-weapon-shells2','$/actor/mw_invisible_man/iman-weapon-shells1',},
+		dist1 = 16,
+		dist2 = 52,
+	},
+	hit = {
+		samples = {'$/actor/mw_invisible_man/iman-hit1','$/actor/mw_invisible_man/iman-hit2','$/actor/mw_invisible_man/iman-hit3',},
+		dist1 = 30,
+		dist2 = 70,
+	},
+
+  death = {
+		samples = {'$/actor/mw_invisible_man/iman-death1','$/actor/mw_invisible_man/iman-death2','$/actor/mw_invisible_man/iman-death3' },
+   		dist1 = 30,
+		dist2 = 70,
+	},
+  OnSpawn = {
+		samples = {'$/actor/mw_invisible_man/iman-hit1','$/actor/mw_invisible_man/iman-hit2','$/actor/mw_invisible_man/iman-hit3'},
+   		dist1 = 30,
+		dist2 = 70,
+	},
+   damage = {
+		samples = {"$/actor/mw_invisible_man/iman-hero-hit"},
+	},
+
+
+}

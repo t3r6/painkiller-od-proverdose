@@ -1,0 +1,11 @@
+o.BaseObj = "DevilMonk_swamp.CActor"
+o.Scale = 1.6
+o.Health = 129
+o.WalkSpeed = 1.5
+o.RunSpeed = 1.1
+
+
+o.AiParams.alwaysSee = true
+o.AiParams.huntPlayer = true
+
+o.AiParams.aiGoals = {"idle","attack", "hunt", "flee", "hear"}

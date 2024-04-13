@@ -1,0 +1,8 @@
+o.BaseObj = "CItem"
+o.Model = "litadielko_a"
+o.Scale = 1
+o.flame_FX = "alice"
+o.flame_FXscale = 2
+
+o.flightspeed = 0.68
+

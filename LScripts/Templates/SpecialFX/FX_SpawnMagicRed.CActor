@@ -1,0 +1,45 @@
+FX_SpawnMagicRed.Model = "spawn"
+FX_SpawnMagicRed.Scale = 3
+FX_SpawnMagicRed.NotCountable = true
+
+FX_SpawnMagicRed.s_SubClass = 
+{
+    Animations = {  
+        idle        = {0.7},
+    },
+}
+function FX_SpawnMagicRed:OnPrecache()
+	Cache:PrecacheParticleFX("spawn_red")
+--	Cache:PrecacheParticleFX("FX_sground1")
+end
+
+function FX_SpawnMagicRed:OnCreateEntity()
+    self:BindFX("spawn_red",1,"e3")
+--    self:BindFX("spawn_studios2",0.9,"e3")
+--    self:BindFX("spawn_studios2",0.9,"e6")
+--    self:BindFX("spawn_studios2",0.9,"e9")
+--    self:BindFX("spawn_studios2",0.6,"e9")
+--    self:BindFX("spawn_studios2",0.6,"e11")
+--    self:BindFX("spawn_studios2",0.6,"e13")
+--   self:BindFX("spawn_studios2",0.6,"e14")
+--    self:BindFX("spawn_studios2",0.6,"e17")
+--    self:BindFX("spawn_studios2",0.6,"e18")
+--    self:BindFX("spawn_studios2",0.6,"e19")
+--    self:BindFX("spawn_studios2",0.6,"e20")
+end
+
+function FX_SpawnMagicRed:OnFinishAnim(name)
+    ENTITY.UnregisterAllChildren(self._Entity)
+    GObjects:ToKill(self)
+end
+
+
+function FX_SpawnMagicRed:OnEditTick(delta)
+    if INP.Key(Keys.Space) == 1 then
+        self:OnFinishAnim()
+        self:OnCreateEntity()
+        self:ForceAnim(self.Animation,true,nil,0)
+    end
+end
+
+o.Immortal = true

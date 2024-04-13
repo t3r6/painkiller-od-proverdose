@@ -1,0 +1,68 @@
+RazorCube.Model      = "razorcube"
+RazorCube.Scale      = 0.45
+RazorCube.Pos        = Vector:New(-0.2, -0.33 ,-0.27)
+RazorCube.Ang        = Vector:New(-0.05  , -2.8,  0)
+RazorCube.FireTime   = 0
+RazorCube.s_SubClass = {
+    
+    -- GLOWICA
+    PainHeadRange        = 60, -- max. zasieg
+    PainHeadSpeed        = 30,
+    PainHeadBackSpeed    = 60,
+    PainHeadDamage       = 99,   
+    PainHeadSpinningSpeed  = 10,
+    PainHeadSpinningDamage = 150, -- combo with knife
+    PainHeadBackImpulse  = -1200, -- impuls przyciagania przedmiotow
+    PainHeadMonstersBackVelocity  = -10, -- predkosc przyciagania monsterow
+    -- KOSIARA
+    PainKnifeDamage   = 10,    -- obrazenia zadawane sa 30 * na sec    
+    PainKnifeImpulse  = 700,  -- sila odpychania od smigla
+    PainKnifeRange    = 1.8,  -- odleglosc od gracza w jakiej zadaje obrazenia
+    -- PROMIEN
+    PainRayDamage     = 20,    -- obrazenia przy wejsciu w promien (zadawane 30*sec)
+    PainRayTolerance  = 2.5,    -- tolerancja dla polaczenia
+    
+    Animations = 
+    {   
+        idle        = {1.0,0.1},
+        walk        = {1.0,0.1},
+        attack1start   = {1.5,0.1},
+        combostart   = {1.0,0.1},
+        attack1stop       = {1.5,0.1},
+        attack1roll   = {1.0,0.1},
+        attack2start = {1.2,0.1},
+        attack2stop  = {1.5,0.1},
+    }    
+}
+
+RazorCube.s_MPSubClass = {
+    
+    -- GLOWICA
+    PainHeadRange        = 60, -- max. zasieg
+    PainHeadSpeed        = 30,
+    PainHeadBackSpeed    = 60,
+    PainHeadDamage       = 50,   
+    PainHeadSpinningSpeed  = 15,
+    PainHeadSpinningDamage = 300, -- combo with knife
+    PainHeadBackImpulse  = -1200, -- impuls przyciagania przedmiotow
+    PainHeadMonstersBackVelocity  = -10, -- predkosc przyciagania monsterow
+    -- KOSIARA
+    PainKnifeDamage   = 5,    -- obrazenia zadawane sa 30 * na sec    
+    PainKnifeImpulse  = 700,  -- sila odpychania od smigla
+    PainKnifeRange    = 1.8,  -- odleglosc od gracza w jakiej zadaje obrazenia
+    -- PROMIEN
+    PainRayDamage     = 20,    -- obrazenia przy wejsciu w promien (zadawane 30*sec)
+    PainRayTolerance  = 9,    -- tolerancja dla polaczenia
+    
+    Animations = 
+    {   
+        idle        = {1.0,0.1},
+        walk        = {1.0,0.1},
+        attack1start   = {1.5,0.1},
+        combostart   = {1.0,0.1},
+        attack1stop       = {2.0,0.1},
+        attack1roll   = {1.0,0.1},
+        attack2start = {1.2,0.1},
+        attack2stop  = {1.5,0.1},
+    }    
+}

@@ -1,0 +1,8 @@
+o.BaseObj = "Bloody_Surgeon_green.CActor"
+o.AiParams.aiGoals = {"idle","hunt","hear","attack"}
+o.Scale = 1.3
+o.AiParams.GuardStill = false
+
+o.s_SubClass.xchgTextures = {
+		{"bloody_surgeon01","bloody_surgeon"},
+	}

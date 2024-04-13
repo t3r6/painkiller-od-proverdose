@@ -1,0 +1,47 @@
+o.Mesh = "polySurfaceShape1"
+o.Pack = "ammo_Broken_Souls.dat"
+o.takeDistance = 1.8
+o.Scale = 0.4
+o.DisabledInVoosh = true
+o.RespawnTime = 15
+o.AmmoAdd = 30
+o.MPAmmoAdd = 10
+
+--============================================================================
+function AmmoBrokenSouls:OnInitTemplate()
+    self.CubeMap = nil
+    self.DetailMap = nil
+    self.NormalMap = nil
+    self.Destroy = nil
+    self.Impulse = nil
+    self:ReplaceFunction("_Synchronize","Synchronize")
+    self:ReplaceFunction("Synchronize","nil")
+end
+--============================================================================
+function AmmoBrokenSouls:OnCreateEntity()
+    ENTITY.EnableNetworkSynchronization(self._Entity)
+end
+--============================================================================
+function AmmoBrokenSouls:OnTake(player)    
+    if player.Ammo.BrokenSouls >= CPlayer.s_SubClass.MaxAmmo.BrokenSouls then return true end
+local add
+if Game.GMode == GModes.SingleGame then add=self.AmmoAdd else add = self.MPAmmoAdd end
+    self.TakeFX(player._Entity, add)
+	Game.PlayerAmmoFound =  Game.PlayerAmmoFound + 1
+end
+--============================================================================
+function AmmoBrokenSouls:TakeFX(pe,add)
+    local player = EntityToObject[pe]    
+    if player then
+	if Game.GMode == GModes.SingleGame then
+        player.Ammo.BrokenSouls = player.Ammo.BrokenSouls + add * AmmoDifficultyModifier[Game.Difficulty] * Game.AmmoFoundFactor
+	else
+        player.Ammo.BrokenSouls = player.Ammo.BrokenSouls + add
+	end
+        player:CheckMaxAmmo()
+        if player == Player then player:PickupFX() end
+    end
+    Templates["AmmoBrokenSouls.CItem"]:SndEnt("pickup",pe)
+end
+Network:RegisterMethod("AmmoBrokenSouls.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eu")
+--============================================================================

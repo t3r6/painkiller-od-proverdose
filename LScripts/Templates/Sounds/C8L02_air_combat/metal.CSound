@@ -1,0 +1,10 @@
+metal.Volume = 80
+metal.Interval = 0
+metal.RandomShift = 0
+metal.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+metal.Sound ="C8L02_air_combat/metal"
+

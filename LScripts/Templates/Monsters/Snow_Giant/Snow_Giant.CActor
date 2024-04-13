@@ -1,0 +1,237 @@
+o.Model = "snow_giant"
+o.Scale = 0.2 
+o.Health = 850
+o.CreatePO = true
+o.WalkSpeed = 1.0
+o.RotateSpeed = 6		-- degrees per 1/30 sec
+o.throwHeart = "red"
+o.Animation = "idle1"
+o.disableNoAnimDetection = true
+o.enableGibWhenHPBelow = -70
+o.disableFreeze = true
+o.customgibexpsound = {"actor/gibs/showgiant_gib"}
+
+o.ToughOne = true
+o.ScreamDamage = 50
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 1500,
+    InertiaTensorMultiplier = 0.05,
+}
+
+o.s_SubClass = {
+	rotateHead = 0.4,		-- dodac inny limit na Y (x = 0.7, y = 0.1)
+	rotateHeadBone = "k_szyja",
+	rotateHeadMaxSpeed = 0.2,
+	SoundDir = "Gladiator",
+    Animations = {
+    death1     = {1.0, false, {
+							{0.0,'eflame'},
+
+  	       					{0.9,'PlaySound',"$/actor/DocDeath/dd_weapon-lost"},
+  	       					{0.9,'PlaySound',"$/actor/DocDeath/dd_weapon-lost2"},
+  	       					{0.9,'PlaySound',"$/actor/deaths/snowgiant_weaponlost"},
+
+  	       					{0.9,'PlaySound',"$/actor/blackdemon/bdemon_death3"},
+
+
+  	       					{2.4,'PlaySound',"$/actor/falls/fall8"},
+	 	  	       			{2.4,'PlaySound',"$/actor/deaths/chain_drop1"},
+  	       					{3.6,'PlaySound',"$/actor/falls/fall6"},
+	 	  	       			{3.6,'PlaySound',"$/actor/deaths/chain_drop2"},
+  	       					{3.6,'PlaySound',"$/actor/falls/fall3"},
+						
+							
+}},
+	 death2     = {1.5, false, {
+							{0.0,'eflame'},
+
+  	       					{1.0,'PlaySound',"$/actor/DocDeath/dd_weapon-lost"},
+  	       					{1.0,'PlaySound',"$/actor/DocDeath/dd_weapon-lost2"},
+  	       					{1.0,'PlaySound',"$/actor/deaths/snowgiant_weaponlost"},
+
+  	       					{0.2,'PlaySound',"$/actor/blackdemon/bdemon-angry1"},
+
+  	       					{1.4,'PlaySound',"$/actor/falls/fall8"},
+	 	  	       			{1.4,'PlaySound',"$/actor/deaths/chain_drop1"},
+  	       					{1.6,'PlaySound',"$/actor/falls/fall6"},
+	 	  	       			{1.6,'PlaySound',"$/actor/deaths/chain_drop2"},
+  	       					{1.6,'PlaySound',"$/actor/falls/fall3"},
+  	       					{2.8,'PlaySound',"$/actor/deaths/snowgiant_weaponlost2"},
+
+							
+							
+}},
+	idle = {1.0, true},
+	idle1 = {1.0, true,},
+--							{0.65,'BindFX','breath'},
+	idle2 = {1.0, true},
+        walk = {1.0, true,{
+							{0.65,'PlaySound',"step1"},
+                           				 {0.65,'BindFX','walkr'},
+							{0.07,'PlaySound',"step2"},
+                				            {0.07,'BindFX','walkl'},
+                            
+
+						}},
+        run = {1.0, true,{
+							{0.7,'PlaySound',"step1"},
+                            {0.7,'BindFX','walkr'},
+							{0.25,'PlaySound',"step2"},
+                            {0.25,'BindFX','walkl'},
+                            
+
+						}},
+
+        atak1 = {2.0, true,{
+							{0.3,'PlaySound',"atak"},
+							{0.5,'PlaySound',"swish"},
+							{1.4,'PlaySound',"$/actor/deaths/snowgiant_groundhit"},
+
+							{1.5,"damage"},
+							{1.5,'BindFX','blast'},
+--							{1.5,'BindFX','ring'},
+							{1.5,'Quake'},
+						}},
+        atak3 = {1.2, true,{
+							{0.3,'PlaySound',"atak"},
+							{0.1,'StartFlames'},
+							{0.5,'PlaySound',"swish2"},
+							{0.0,'PlaySound',"mystattack1"},
+							{0.6,"Skycicle"},
+							{1,'EndFlames'},
+						}},
+
+		atak2 = {2.2, false, {
+							{0.0,'PlaySound',"atak"},
+							{0.0,'PlaySound',"mystattack2"},
+                     {0.9,'PlaySound',"swish"},
+							{1.05,'BindFX','fire'},
+							{1.05,'Throw'},
+						}},
+		hit1 = {2.0, false, {	{0.0,'PlaySound',"angry"},}},
+		hit2 = {2.0, false, {	{0.0,'PlaySound',"angry"},	}},
+
+    },
+
+    ragdollJoint = "root",
+    Hits = {"hit1","hit2"},
+    Ambients = {"idle1","idle2"},
+    NearAttacks = {"atak1"},
+    FarAttacks = {"atak2"},
+    DeathJoints = {
+		'root','k_szyja',
+        'LeftUpLeg','RightUpLeg','r_p_bark','r_l_bark',
+        'root','k_zebra',
+    },
+
+    RagdollCollisions = {
+	MinStren = 5.0,
+	MinTime = 0.6,
+	Bones = {
+				{"K_ogo", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"k_head", "bodyfalls", true},
+			}
+    },
+
+	GibExplosionStrength = 60000,
+	GibExplosionRange = 6.5,
+	GibExplosionDeltaY = -1.5,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+				{"RightLeg","snowgiant_death01",-1},		-- "FX_gib_blood"
+				{"LeftLeg","snowgiant_death01",1},
+				{"root","snowgiant_death01",-1},
+				{"root","explo_bUblemo_sw",-1},
+				{"k_zebra","snowgiant_death01",1},
+				{"RightForeArm","snowgiant_death01",-1},
+				{"LeftForeArm","snowgiant_death01",-1},				
+				{"k_szyja","snowgiant_death01",-1},
+	},
+	gibShader = "palskinned_bloody",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"r_p_bark", "gibSplash", true},
+				{"r_l_bark", "gibSplash", true},
+				{"LeftUpLeg", "gibSplash", true},
+				{"RightUpLeg", "gibSplash", true},
+				{"k_szyja", "gibSplash", true},
+				{"k_zebra", "gibSplash", true},
+				{"root", "gibSplash", true},
+			},
+	    },
+
+}
+
+o.DeathTimer = 140
+o.Icicleheight = 10
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","attack", "hunt","throw","Icicle"}
+--o.AiParams.aiGoals = {"idle","hunt","Icicle","throw"}
+    
+o.AiParams.viewDistance = 180
+o.AiParams.viewDistance360 = 40
+o.AiParams.viewAngle = 170
+
+o.AiParams.weaponDamage = 30
+o.AiParams.attackRange = 4.4
+o.AiParams.attackRangeAngle = 90
+o.AiParams.delayBetweenAttacks = -1
+
+o.AiParams.perception = 1.0
+o.AiParams.walkStep = 10.0
+o.AiParams.hearing = 1.0
+
+o.AiParams.GuardStill = true
+o.AiParams.guardAngle = {0,0}
+o.AiParams.guardAngleRandom = true			-- wtedy guardAngle nie jest uwzgledniany
+o.AiParams.guardChangePosition = {}
+o.AiParams.guardRange = -1
+o.AiParams.stopAfterWalking = 0.0
+o.AiParams.stopAfterWalkingTime = {30,90}
+
+
+o.AiParams.chanceOfEscapeAfterFire = 0.03
+o.AiParams.escapeTime = 120
+o.AiParams.moveDisplacement = 3.5
+o.AiParams.updateSpeed = 0.3
+
+o.AiParams.walkAreaRandom = false
+o.AiParams.alwaysSee = true
+
+o.shadow = 128
+o.AiParams.findPathSpeed = 0.08
+o.minimumTimeBetweenHitAnimation = 90
+
+o.AiParams.soundAmbientDelay = 6.0
+
+
+o.AiParams.ThrowableItem = "Icicle.CItem"
+o.AiParams.throwItemBindTo = "RightHandMiddle1"
+o.AiParams.throwItemBindToOffset = Vector:New(0.1, 2, 0.1)
+--o.AiParams.throwAngularVelocitySpeed = 5
+o.AiParams.throwDistMinus = 0.0
+o.AiParams.throwAnim = "atak2"
+o.AiParams.throwAmmo = 99999
+o.AiParams.throwRangeMin = 4.5
+o.AiParams.throwRangeMax = 20 
+o.AiParams.minDelayBetweenThrow = 4.0
+o.AiParams.escapeAfterThrowTime = 0		-- 0 - no escape
+o.AiParams.throwVelocity = 40
+o.AiParams.throwDeltaY = 1.9
+o.AiParams.timeBetweenRaids = 10
+o.AiParams.minDistToPlayerRaid = 10
+o.AiParams.disableEscapeWhenTooClose = true
+
+
+o.AiParams.weapon = {
+		maxDist = 40,
+		minDist = 4,
+		maxYaw = 45,
+		maxPitch = 45,
+	}
+

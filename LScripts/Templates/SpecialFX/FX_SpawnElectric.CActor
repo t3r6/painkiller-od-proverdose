@@ -1,0 +1,38 @@
+EDITOR.AddObjectTemplate("Particles","FX_SpawnElectric","FX_SpawnElectric.CActor");	
+
+FX_SpawnElectric.Model = "spawn"
+FX_SpawnElectric.Scale = 4
+FX_SpawnElectric.NotCountable = true
+
+FX_SpawnElectric.s_SubClass = 
+{
+    Animations = {  
+        idle        = {1.0},
+    },
+}
+
+function FX_SpawnElectric:OnPrecache()
+	Cache:PrecacheParticleFX("spawn_warp")
+	Cache:PrecacheParticleFX("spawn_gate")
+end
+
+function FX_SpawnElectric:OnCreateEntity()
+    self:BindFX("spawn_gate",1,"e1")
+    self:BindFX("spawn_gate",1,"e2")
+    self:BindFX("spawn_gate",1,"e3")
+    self:BindFX("spawn_gate",1,"e4")
+    self:BindFX("spawn_gate",1,"e5")
+    self:BindFX("spawn_gate",1,"e6")
+    self:BindFX("spawn_warp",0.8,"e7")
+    self:BindFX("spawn_warp",0.8,"e8")
+    self:BindFX("spawn_gate",1,"e9")
+    self:BindFX("spawn_gate",1,"e10")
+end
+
+function FX_SpawnElectric:OnFinishAnim(name)
+    ENTITY.UnregisterAllChildren(self._Entity)
+    GObjects:ToKill(self)
+end
+
+
+o.Immortal = true

@@ -1,0 +1,10 @@
+o.BaseObj = "Panzer_Demon.CActor"
+o.Scale = 2
+o.AiParams.minTimeBetweenAttacksWhenClose = 2.0
+o.AiParams.minTimeBetweenAttacksWhenFar = 1.0		-- wtedy glownie rakiety
+o.AiParams.farAttackRange = 35.0					-- > 30
+o.Health = 3000
+o.AiParams.useAttacks = {false,true,true}
+
+o.ToughOne = true
+o.ScreamDamage = 40

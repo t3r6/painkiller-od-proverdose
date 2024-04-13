@@ -1,0 +1,10 @@
+stwind1.Volume = 80
+stwind1.Interval = 0
+stwind1.RandomShift = 0
+stwind1.Falloff =
+{
+  Start = 10,
+  End = 90
+}
+stwind1.Sound ="DM_Blink/stwind1"
+

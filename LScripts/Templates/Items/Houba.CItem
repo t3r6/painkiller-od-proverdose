@@ -1,0 +1,28 @@
+o.Mesh = "pichavky02Shape"
+o.Pack = "o_pichavky.dat"
+o.DestroyPack = "o_pichavky_zlom.dat"
+
+
+o.Scale = 0.4
+o.Health = 10
+o.Pinned = true
+
+o.Destroy.ExplosionStrength = 200
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 250
+o.Destroy.Effect = "infernalbul"
+o.Destroy.EffectScale = 0.01
+o.Destroy.Treasures = 
+{
+    Coins  = {1, 'g'},
+}
+
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 150
+o.Destroy.ExplosionRadius = 5.5
+o.Destroy.LifetimeAfterExplosion = 20
+
+o.Destroy.ThrowItem = {"Mushcloud.CItem"}
+o.Destroy.ThrowItemCount = 1
+o.Destroy.ThrowItemSpread = 0

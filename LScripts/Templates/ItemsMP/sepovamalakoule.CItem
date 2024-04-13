@@ -1,0 +1,8 @@
+o.BaseObj = "CItem"
+o.Model = "sepovamalakoule"
+o.Scale = 1
+o.Pinned = true
+o.AnimSpeed = 1.0
+
+
+

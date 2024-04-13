@@ -1,0 +1,11 @@
+Lava4.Volume = 100
+Lava4.Interval = 0
+Lava4.RandomShift = 0
+Lava4.EnvironmentIntensity = 0.3
+Lava4.Falloff =
+{
+  Start = 2,
+  End = 30
+}
+Lava4.Sound ="C7L02_village_of_damned/lava4"
+

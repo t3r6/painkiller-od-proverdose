@@ -1,0 +1,51 @@
+o.Mesh = [[polySurfaceShape3]]
+o.Pack = [[ammo_stonebullets.dat]]
+o.takeDistance = 1.8
+o.Scale = 0.05
+o.DisabledInVoosh = true
+o.AmmoAdd = 8
+o.MPAmmoAdd = 8
+o.RespawnTime = 15
+o.s_SubClass ={}
+
+--============================================================================
+function o:OnInitTemplate()
+    self.CubeMap = nil
+    self.DetailMap = nil
+    self.NormalMap = nil
+    self.Destroy = nil
+    self.Impulse = nil
+    self:ReplaceFunction("_Synchronize","Synchronize")
+    self:ReplaceFunction("Synchronize","nil")
+end
+--============================================================================
+function AmmoStoneBullets:OnCreateEntity()
+    ENTITY.EnableNetworkSynchronization(self._Entity)
+-- self:BindFX("pochodnia",1)
+end
+--============================================================================
+function AmmoStoneBullets:OnTake(player)
+    if player.Ammo.StoneBullets >= CPlayer.s_SubClass.MaxAmmo.StoneBullets then return true end
+local add
+if Game.GMode == GModes.SingleGame then add=self.AmmoAdd else add = self.MPAmmoAdd end
+    self.TakeFX(player._Entity, add)
+	Game.PlayerAmmoFound =  Game.PlayerAmmoFound + 1
+end
+--============================================================================
+function AmmoStoneBullets:TakeFX(pe,add)
+    local player = EntityToObject[pe]
+    
+    if player then
+	if Game.GMode == GModes.SingleGame then
+	        player.Ammo.StoneBullets = player.Ammo.StoneBullets + add * AmmoDifficultyModifier[Game.Difficulty] * Game.AmmoFoundFactor
+	else
+	        player.Ammo.StoneBullets = player.Ammo.StoneBullets + add 
+	end
+        player:CheckMaxAmmo()
+        if player == Player then player:PickupFX() end
+    end
+
+    Templates["AmmoStoneBullets.CItem"]:SndEnt("pickup",pe)
+end
+Network:RegisterMethod("AmmoStoneBullets.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eu")
+--============================================================================

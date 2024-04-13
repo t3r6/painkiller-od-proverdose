@@ -1,0 +1,32 @@
+o.BaseObj = "InvisibleMan.CActor"
+o.Health = 149
+
+
+function o:OnCreateEntity()
+--	MDL.SetMeshVisibility(self._Entity, "jeans_2sidedShape", false)
+	MDL.SetMeshVisibility(self._Entity, "jeans_hole_2sidedShape", false)
+--	MDL.SetMeshVisibility(self._Entity, "Hat_2sidedShape", false)
+	MDL.SetMeshVisibility(self._Entity, "L_shoeShape", false)
+--	MDL.SetMeshVisibility(self._Entity, "R_shoeShape", false)
+	MDL.SetMeshVisibility(self._Entity, "Jacket_2sidedShape", false)
+--	MDL.SetMeshVisibility(self._Entity, "pCylinderShape1", false)
+	MDL.SetMeshVisibility(self._Entity, "polySurfaceShape1", false)
+	MDL.SetMeshVisibility(self._Entity, "glass_warpShape", false)
+	self:BindFX("invisible_cigar",0.25,"head",-0.08,-0.08,0.23)
+
+end
+
+function o:CustomOnDeathAfterRagdoll()
+	MDL.SetMeshVisibility(self._Entity, "Hat_2sidedShape", false)
+	MDL.SetMeshVisibility(self._Entity, "L_shoeShape", false)
+	MDL.SetMeshVisibility(self._Entity, "R_shoeShape", false)
+	MDL.SetMeshVisibility(self._Entity, "polySurfaceShape9", false)
+	MDL.SetMeshVisibility(self._Entity, "polySurfaceShape11", false)
+	MDL.SetMeshVisibility(self._Entity, "polySurfaceShape10", false)
+	MDL.SetMeshVisibility(self._Entity, "polySurfaceShape13", false)
+	MDL.SetMeshVisibility(self._Entity, "polySurfaceShape14", false)
+	MDL.SetMeshVisibility(self._Entity, "polySurfaceShape15", false)
+	MDL.SetMeshVisibility(self._Entity, "pCylinderShape1", false)
+end
+
+o.CustomOnGib = o.CustomOnDeathAfterRagdoll

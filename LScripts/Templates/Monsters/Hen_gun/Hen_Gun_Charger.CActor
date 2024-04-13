@@ -1,0 +1,6 @@
+o.BaseObj = "Hen_Gun.CActor"
+o.Health = 200
+o.AiParams.aiGoals = {"idle"}
+o.throwHeart = false
+
+

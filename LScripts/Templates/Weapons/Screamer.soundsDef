@@ -1,0 +1,39 @@
+o.s_SubClass.SoundsDefinitions = 
+{
+    path = "weapons/screamer",
+    dist1   = 15,
+    dist2   = 50,
+    disablePitch = true,
+    laser_loop = 
+    {
+        samples = {"screamer_loop"},
+    },
+    laser_electro_loop = 
+    {
+        samples = {"screamer_electro_loop"},
+    },
+    laser_start = 
+    {
+        samples = {"screamer_start"},
+    },
+    laser_start_voice = 
+    {
+        samples = {"screamer_start_voice"},
+    },
+    laser_end = 
+    {
+        samples = {"screamer_end"},
+    },
+    scream1 = 
+    {
+        samples = {"scream1"},
+    },
+    screamer_shoot = 
+    {
+        samples = {"screamer_shoot"},
+    },
+    screamer_hitwall = 
+    {
+        samples = {"screamer_hitwall"},
+    },
+}

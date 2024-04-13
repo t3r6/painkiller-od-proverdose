@@ -1,0 +1,6 @@
+o.BaseObj = "Snow_Giant.CActor"
+o.NeverMove = true
+o.Pinned = true
+
+o.AiParams.aiGoals = {"idle","throw","Icicle"}
+

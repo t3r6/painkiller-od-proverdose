@@ -1,0 +1,9 @@
+o.BaseObj = "CItem"
+o.Model = "vytah_lietadlova_lod"
+o.Scale = 3
+
+o.LoonyOffset = Vector:New(0,0,0)
+o.LoonyJoint = "root"
+o.LoonyDontRotate = true
+
+o.Pinned = true

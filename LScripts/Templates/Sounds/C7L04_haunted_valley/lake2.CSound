@@ -1,0 +1,10 @@
+lake2.Volume = 60
+lake2.Interval = 0
+lake2.RandomShift = 0
+lake2.Falloff =
+{
+  Start = 15,
+  End = 50
+}
+lake2.Sound ="C7L04_haunted_valley/lake2"
+

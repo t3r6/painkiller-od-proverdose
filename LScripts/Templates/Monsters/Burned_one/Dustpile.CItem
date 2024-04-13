@@ -1,0 +1,82 @@
+o.Mesh = "weapon2"
+o.Pack = "LeperChopper.dat"
+o.Scale = 0.01
+o.Mass = 40
+o.Restitution = 0.1
+o.Damage = 30
+o.RotateSpeed = 30
+o.ThrowSpeed = 20
+o.LifeTime = 100		-- after 1st collision
+o.TimeToLive = 150      -- after create
+o.AngularDamping = 0.2		-- sprawdzic ### 
+o.hitGroundParticle = {"torch_hitground", 0.2}
+o.CollisionSound = {"actor/devilmonk/devil-weapon-lost2"}
+o.LoopSound = "actor/leper/throw-loop"
+
+o.hitGroundParticle = 'but'
+o.hitGroundParticlescale = 1
+o.bindfx = {
+	name = "burnedone_attack",
+	scale = 2,
+	offset = Vector:New(-0.0,-0.5,-0.0),
+}
+
+
+--============================================================================
+function Dustpile:OnPrecache()
+    Cache:PrecacheParticleFX(self.hitGroundParticle)
+end
+--============================================================================
+function Dustpile:OnCollision(x,y,z,nx,ny,nz,e)
+	local isPlayer = false
+	if e then
+		local obj = EntityToObject[e]
+		if obj and not self.deathTimer then
+			if obj.OnDamage and obj == Player then
+				obj:OnDamage(self.Damage, self.ObjOwner)
+				isPlayer = true
+			end
+			GObjects:ToKill(self)
+		end
+	end
+
+
+	if self._fx then
+		x,y,z = ENTITY.GetPosition(self._fx)
+		local q = Quaternion:New_FromNormal(nx,ny,nz)
+		AddPFX(self.hitGroundParticle, self.hitGroundParticlescale, Vector:New(x,y,z), q)
+		self:PlaySound("actor/mw_burned_one/dustpile_stop",5,30,false)
+		PARTICLE.Die(self._fx)
+		self._fx = nil
+	end
+	if not isPlayer then
+		GObjects:ToKill(self)
+	end
+
+end
+--============================================================================
+function Dustpile:OnCreateEntity()
+	self:PO_Create(BodyTypes.FromMesh,nil,ECollisionGroups.Noncolliding)
+	self.timer = 12
+	local fx = self.bindfx
+	if fx then
+		self._fx = self:BindFX(fx.name,fx.scale, nil, fx.offset.X, fx.offset.Y, fx.offset.Z)
+	end
+	if self.ThrowSound then
+		self:BindSound(self.ThrowSound,10,40,false)
+	end
+
+self:BindSound("actor/mw_burned_one/dustpile",5,30,true)
+
+end
+--============================================================================
+function Dustpile:OnUpdate()
+	if self.timer then
+		self.timer = self.timer - 1
+		if self.timer < 0 then
+			self.timer = nil
+			ENTITY.PO_SetCollisionGroup(self._Entity, ECollisionGroups.Normal)
+			ENTITY.EnableCollisions(self._Entity, true, 0.6, 2.5)
+		end
+	end
+end

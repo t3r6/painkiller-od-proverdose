@@ -1,0 +1,88 @@
+HellBlade.Model = "hellblade"
+HellBlade.Scale = 0.5
+HellBlade.Pos        = Vector:New(0.24, -1.17 ,0.1)
+HellBlade.Ang        = Vector:New(0.1  , -3.4,  0)
+
+HellBlade._ShotNr = 0
+HellBlade.ShotCamMove = 0.025
+HellBlade.ShotCamRotate = 0.025
+o.SecondaryIdle = true
+o.Idledelay = 260
+o.weaponwalk = "control"
+o.weaponidle = "control"
+HellBlade.s_SubClass = {
+
+    -- odstep czasu miedzy kolejnymi strzalami (1/30 sec):
+    FireTimeout    = 25,
+    AltFireTimeout = 40,        
+
+	LockingDistance = 70,
+    -- Skulls
+    EnergySpeed           = 14,
+    EnergyThrowBack  = 1200,
+    EnergyThrowUp    = 0,
+    DarkEnergyDamage          = 40,
+	Ammolimit=2,
+
+    -- dark energy
+
+	PainHeadSpinningDamage = 140,
+	PainHeadBackImpulse=100,
+	PainHeadMonstersBackVelocity=50,
+	PainHeadRange=80,
+	PainHeadSpinningSpeed=4,
+	Sidespeed = 10,
+
+
+    
+       
+    Animations = 
+    {   
+        walk         = {0.75 ,0.3},
+        idle         = {1.0 ,0.3},
+        idle1         = {1.0 ,0.3},
+        attack1     = {1.0, 0},        
+        attack2    = {1.0, 0},        
+        attack2a    = {1.0, 0},        
+        catch    = {1.0, 0},        
+        throw    = {2.0, 0},        
+        control    = {1.0, 0},        
+    }
+}
+
+HellBlade.s_MPSubClass = {
+
+    FireTimeout    = 25,
+    AltFireTimeout = 40,        
+
+	LockingDistance = 70,
+    -- Skulls
+    EnergySpeed           = 45,
+    EnergyThrowBack  = 1200,
+    EnergyThrowUp    = 0,
+    DarkEnergyDamage          = 40,
+	Ammolimit=1,
+
+
+    -- dark energy
+
+	PainHeadSpinningDamage = 140,
+	PainHeadBackImpulse=100,
+	PainHeadMonstersBackVelocity=50,
+	PainHeadRange=80,
+	PainHeadSpinningSpeed=4,
+	Sidespeed = 30,
+       
+    Animations = 
+    {   
+        walk         = {0.75 ,0.3},
+        idle         = {1.0 ,0.3},
+        idle1         = {1.0 ,0.3},
+        attack1     = {1.0, 0},        
+        attack2    = {1.0, 0},        
+        attack2a    = {1.0, 0},        
+        catch    = {1.0, 0},        
+        throw    = {2.0, 0},        
+        control    = {1.0, 0},        
+    }
+}

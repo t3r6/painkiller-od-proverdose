@@ -1,0 +1,64 @@
+o.s_SubClass.SoundsDefinitions = {
+	hit = {
+		samples = {"$/actor/mw_scarabeus/scarabeus_hit1","$/actor/mw_scarabeus/scarabeus_hit2","$/actor/mw_scarabeus/scarabeus_hit3"},
+		dist1 = 5,
+		dist2 = 50,
+	},
+	step = {
+		samples = {"$/actor/mw_scarabeus/scarabeus_krok1","$/actor/mw_scarabeus/scarabeus_krok2",},
+		dist1 = 4,
+		dist2 = 30,
+	},
+	scar_jump = {
+		samples = {"$/actor/mw_scarabeus/scarabeus_jump"},
+		dist1 = 4,
+		dist2 = 30,
+	},
+	armhit = {
+		samples = {"$/actor/mw_scarabeus/scarabeus_armhit"},
+		dist1 = 4,
+		dist2 = 30,
+	},
+	shootvoice = {
+		samples = {"$/actor/mw_scarabeus/scarabeus_shoot_voice1","$/actor/mw_scarabeus/scarabeus_shoot_voice2","$/actor/mw_scarabeus/scarabeus_shoot_voice3","$/actor/mw_scarabeus/scarabeus_shoot_voice4"},
+		playChance = 0.33,
+		dist1 = 30,
+		dist2 = 80,
+	},
+	swish = {
+		samples = {'pirate_smoke-throw-swish',},
+		dist1 = 20,
+		dist2 = 80,
+	},
+	bswish = {
+		samples = {"pirate_bayonet-atack-swish",},
+		dist1 = 20,
+		dist2 = 80,
+	},
+	atakvoice = {
+		samples = {"$/actor/mw_scarabeus/scarabeus_shoot_voice1","$/actor/mw_scarabeus/scarabeus_shoot_voice2","$/actor/mw_scarabeus/scarabeus_shoot_voice3","$/actor/mw_scarabeus/scarabeus_shoot_voice4"},
+		dist1 = 20,
+		dist2 = 80,
+	},
+	onAttackOnce = {
+		samples = {"$/actor/mw_scarabeus/scarabeus_shoot_voice1","$/actor/mw_scarabeus/scarabeus_shoot_voice2","$/actor/mw_scarabeus/scarabeus_shoot_voice3","$/actor/mw_scarabeus/scarabeus_shoot_voice4"},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	
+	death = {
+		samples = {"$/actor/mw_scarabeus/scarabeus_death1","$/actor/mw_scarabeus/scarabeus_death2","$/actor/mw_scarabeus/scarabeus_death3"},
+	        dist1 = 20,
+		dist2 = 80,
+	},
+    
+	onAttack = {
+		samples = {"$/actor/mw_scarabeus/scarabeus_shoot_voice1","$/actor/mw_scarabeus/scarabeus_shoot_voice2","$/actor/mw_scarabeus/scarabeus_shoot_voice3","$/actor/mw_scarabeus/scarabeus_shoot_voice4"},
+        dist1 = 16,
+		dist2 = 80,
+	},
+    
+    damage = {
+		samples = {"pirate_bayonet-hit"},
+	},
+}

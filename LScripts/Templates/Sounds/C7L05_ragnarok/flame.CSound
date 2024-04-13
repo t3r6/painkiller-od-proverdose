@@ -1,0 +1,10 @@
+flame.Volume = 60
+flame.Interval = 0
+flame.RandomShift = 0
+flame.Falloff =
+{
+  Start = 2,
+  End = 15
+}
+flame.Sound ="C7L05_ragnarok/flame"
+

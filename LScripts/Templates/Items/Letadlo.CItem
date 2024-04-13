@@ -1,0 +1,11 @@
+o.BaseObj = "CItem"
+o.Model = "letadlo_nove"
+o.Scale = 3
+
+o.LoonyOffset = Vector:New(0,-2,0)
+o.LoonyJoint = "eye_point"
+--o.LoonyJoint = "gun"
+--o.LoonyJoint = "body"
+--o.LoonyJoint = "prop"
+
+o.LoonyDontRotate = false

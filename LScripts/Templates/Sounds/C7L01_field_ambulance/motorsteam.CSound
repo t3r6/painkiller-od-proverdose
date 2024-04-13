@@ -1,0 +1,10 @@
+motorsteam.Volume = 100
+motorsteam.Interval = 0
+motorsteam.RandomShift = 0
+motorsteam.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+motorsteam.Sound ="C7L01_field_ambulance/motorsteam"
+

@@ -1,0 +1,10 @@
+elec5.Volume = 80
+elec5.Interval = 0
+elec5.RandomShift = 0
+elec5.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+elec5.Sound ="C7L03_powerplant/elec5"
+

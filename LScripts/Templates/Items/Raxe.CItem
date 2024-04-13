@@ -1,0 +1,11 @@
+o.Mesh = "polySurfaceShape905"
+o.Pack = "toporek.dat"
+o.Scale = 0.08
+o.Mass = 40
+o.Restitution = 0.1
+o.Damage = 15
+o.RotateSpeed = 30
+o.ThrowSpeed = 20
+o.AngularDamping = 0.2	-- sprawdzic ### 
+
+

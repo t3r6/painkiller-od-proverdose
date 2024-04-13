@@ -1,0 +1,63 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {'$/actor/mw_geisha/geisha_krok1','$/actor/mw_geisha/geisha_krok3'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	step2 = {
+		samples = {'$/actor/mw_geisha/geisha_krok2','$/actor/mw_geisha/geisha_krok3'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	swish1 = {
+		samples = {'$/actor/mw_geisha/geisha_swish1'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	swish2 = {
+		samples = {'$/actor/mw_geisha/geisha_swish2'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	atak = {
+		samples = {'$/actor/mw_geisha/geisha_at1','$/actor/mw_geisha/geisha_at2','$/actor/mw_geisha/geisha_at3','$/actor/mw_geisha/geisha_at4','$/actor/mw_geisha/geisha_at5','$/actor/mw_geisha/geisha_at6','$/actor/mw_geisha/geisha_at7','$/actor/mw_geisha/geisha_at8','$/actor/mw_geisha/geisha_at9','$/actor/mw_geisha/geisha_at10'},
+		dist1 = 10,
+		dist2 = 40,
+	},
+	suicide = {
+		samples = {'$/actor/mw_geisha/geisha_suicide'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+
+
+	hit = {
+		samples = {'$/actor/mw_geisha/geisha_hit1','$/actor/mw_geisha/geisha_hit2','$/actor/mw_geisha/geisha_hit3','$/actor/mw_geisha/geisha_hit4','$/actor/mw_geisha/geisha_hit5','$/actor/mw_geisha/geisha_hit6',},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_geisha/geisha_bodyfalls"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	weaponlost = {
+		samples = {"zombie-weapon-lost1","zombie-weapon-lost2","zombie-weapon-lost3",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	attackAmbient = {
+		samples = {'$/actor/mw_geisha/geisha_at1','$/actor/mw_geisha/geisha_at2','$/actor/mw_geisha/geisha_at3','$/actor/mw_geisha/geisha_at4','$/actor/mw_geisha/geisha_at5','$/actor/mw_geisha/geisha_at6','$/actor/mw_geisha/geisha_at7','$/actor/mw_geisha/geisha_at8','$/actor/mw_geisha/geisha_at9','$/actor/mw_geisha/geisha_at10','$/actor/mw_geisha/geisha_at11','$/actor/mw_geisha/geisha_at12','$/actor/mw_geisha/geisha_at13',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+    death = {
+		samples = {"$/actor/mw_geisha/geisha_death1","$/actor/mw_geisha/geisha_death2","$/actor/mw_geisha/geisha_death3",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+    damage = {
+		samples = {"zombie_hits_hero"},
+    },
+}

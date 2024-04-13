@@ -1,0 +1,5 @@
+o.BaseObj = "LabCommandos.CActor"
+o.s_SubClass.xchgTextures = {
+		{"labcomando_texture3","green_comando_texture3"},
+	}
+o.Health = 125

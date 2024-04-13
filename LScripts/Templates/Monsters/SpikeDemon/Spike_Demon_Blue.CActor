@@ -1,0 +1,247 @@
+o.Model = "spike_demon_blue"
+o.CreatePO = true
+o.WalkSpeed = 1.0 
+o.RunSpeed = 1.0
+o.RotateSpeed = 25
+
+o.DeadAnimChance = 40
+
+o.throwHeart = true
+o.Health = 98
+o.Scale = 0.19
+o.enableGibWhenHPBelow = -20
+o.customgibexpsound = {"actor/gibs/bones_gib"}
+
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 150,
+    InertiaTensorMultiplier = 0.05,
+}
+
+
+o.s_SubClass = {
+ DeathJoints = {
+		'r_l_bark','r_l_bark','root','k_szyja',
+	},
+
+    BreakableJoints = {},
+	RagdollCollisions = {
+		MinStren = 4.0,
+		MinTime = 0.7,
+		Bones = {
+					{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				}
+	},
+
+    GibExplosionStrength = 9000,
+	GibExplosionRange = 3.0,
+	GibExplosionDeltaY = -1.0,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+		{"r_l_bark","bones_explode",-1},
+		{"r_p_bark","bones_explode",-1},
+		{"root","bones_explode",1},
+		{"k_szyja","bones_explode",-1},
+		{"Tail2","bones_explode",-1},
+	},
+	gibShader = "palskinned_bloody",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"r_l_bark", "gibSplash", true},
+				{"r_p_bark", "gibSplash", true},
+				{"root", "gibSplash", true},
+				{"k_szyja", "gibSplash", true},
+			},
+	    },
+}
+
+o.s_SubClass.Animations = {
+	death1   = {1.0,false,{
+				{0.0,'EndWalk'},
+				{0.5,'BindFX','deathspark1'},
+				{1.0,'BindFX','deathspark2'},
+				{1.3,'BindFX','deathspark3'},
+				{1.6,'BindFX','deathspark4'},
+				{1.7,'BindFX','deathspark5'},
+
+				{0.5,'PlaySound',"$/actor/bones/bones_krok1"},
+				{0.5,'PlaySound',"$/actor/bones/bones_krok2"},
+				{0.5,'PlaySound',"$/actor/bones/bones_krok3"},
+				{0.5,'PlaySound',"$/actor/falls/fall8"},
+
+				{3.8,'PlaySound',"$/actor/bones/bones_krok3"},
+				{3.8,'PlaySound',"$/actor/bones/bones_krok1"},
+				{4.0,'PlaySound',"$/actor/gibs/bones_gib"},
+								
+
+	}},			-- speed, movingcurve, e
+
+	death2   = {2.2,false,{
+				{0.0,'EndWalk'},
+
+				{0.5,'PlaySound',"$/actor/falls/fall9"},
+				{0.5,'PlaySound',"$/actor/bones/bones_krok1"},
+				{0.6,'PlaySound',"$/actor/bones/bones_krok2"},
+				{0.7,'PlaySound',"$/actor/bones/bones_krok3"},
+				{0.4,'PlaySound',"$/actor/gibs/bones_gib"},
+
+
+	}},			-- speed, movingcurve, 
+
+	idle1   = {1.0,false,{
+				{0.0,'EndWalk'},
+--				{1.3,'BindFX','breath'},
+	}},			-- speed, movingcurve, events
+	idle   = {1.0,false,{
+				{0.0,'EndWalk'},
+--				{1.3,'BindFX','breath'},
+	}},			-- speed, movingcurve, events
+	walk   = {1.5,true, {
+				{0.0,'EndWalk'},
+				{0.60,'PlaySound',"steps"},
+				{0.3,'BindFX','walkcloud2'},
+				{0.7,'BindFX','walkcloud'},
+				{0.0,'PlaySound',"steps"},
+				}},
+
+	run    = {1.0,true, {
+				{0.60,'PlaySound',"onAttackOnce"},
+				{0.0,'EndWalk'},
+				{0.0,'StartWalk'},
+--				{0.1,'BindFX','runcloud'},
+				}},
+	atak1  = {1.6,true, {
+				{0.0,'EndWalk'},
+				{0.9,'damage'},
+				{0.9,'damage'},
+				{0.8,'PlaySound',"swish1"},
+				{0.9,'PlaySound',"swish2"},
+				{0.2,'PlaySound',"atak"},
+				}},
+	atak2  = {1.5,true, {
+				{0.0,'EndWalk'},
+				{0.1,'BindTrails'},
+				{0.7,'damage'},
+				{1.3,'damage'},
+				{0.2,'PlaySound',"atak"},
+				{0.5,'PlaySound',"swish1"},
+				{1.1,'PlaySound',"swish2"},
+				{1.8,'EndTrails'},
+				}},
+	atak3  = {1.0,false, {
+				{0.0,'EndWalk'},
+				{0.5,'PlaySound',"atak3"},
+				{1.0,'Shotflash'},
+				{1.0,'ThrowImmid',nil,true,nil,-10},
+				{1.0,'ThrowImmid',nil,true,},
+				{1.0,'ThrowImmid',nil,true,nil, 10},
+				}},
+
+	hit1 = {1.0, false, {
+				{0.0,'EndWalk'},
+				{0.60,'FootFX','root'},
+				{0.0,'PlaySoundHit',{'$/actor/mw_spikedemon/spike_hit1','$/actor/mw_spikedemon/spike_hit2','$/actor/mw_spikedemon/spike_hit3'},12,48, },
+				}},
+	hit2 = {1.0, false, {
+				{0.0,'EndWalk'},
+				{0.0,'PlaySoundHit',{'$/actor/mw_spikedemon/spike_hit1','$/actor/mw_spikedemon/spike_hit2','$/actor/mw_spikedemon/spike_hit3'},12,48, },
+				{0.60,'FootFX','root'},
+				}},
+}
+
+o.s_SubClass.NearAttacks = {"atak1","atak2"}
+o.s_SubClass.Ambients = {"idle","idle1"}
+o.s_SubClass.Hits = {"hit1","hit2"}
+	
+o.s_SubClass.RagdollCollisions = {
+	MinStren = 2.0,
+	MinTime = 0.7,
+	Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_p_lokiec", "bodyfalls", true},
+				{"szabla", "weaponlost", false},
+			}
+}
+
+o.s_SubClass.RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"r_l_bark", "gibSplash", true},
+				{"r_p_bark", "gibSplash", true},
+				{"n_l_biodro", "gibSplash", true},
+				{"n_p_biodro", "gibSplash", true},
+				{"root", "gibSplash", true},
+				{"k_szyja", "gibSplash", true},
+				{"szabla", "weaponlost", false},
+			},
+	    }
+o.AiParams = {}
+o.AiParams.viewDistance = 36
+o.AiParams.viewDistance360 = 8
+o.AiParams.viewAngle = 110
+
+o.AiParams.weaponDamage = 14			-- bliski atak
+o.AiParams.attackRange = 3
+o.AiParams.attackRangeAngle = 110		--
+    
+o.AiParams.hearing = 1.5
+o.AiParams.perception = 1.0
+    
+o.AiParams.GuardStill = false
+o.AiParams.guardAngle = {15,90}
+o.AiParams.guardAngleRandom = false
+o.AiParams.guardChangePosition = {30,60}	-- {} - wylacza 1/30sec
+o.AiParams.guardRange = -1				-- max. walk distance when idle
+o.AiParams.stopAfterWalking = 1.0
+o.AiParams.stopAfterWalkingTime = {30,60}
+
+o.AiParams.walkStep = 6.0
+o.AiParams.walkArea = ""
+o.AiParams.walkAreaRandom = false
+o.AiParams.WalkAreaWhenAttack = false
+o.AiParams.useOnlyWaypointsWhenGuard = false
+
+o.AiParams.delayBetweenAttacks = 12
+o.AiParams.moveDisplacement = 3.0
+
+o.AiParams.chanceOfEscapeAfterFire = 1 -- 0.02
+o.AiParams.escapeTime = 90
+
+o.AiParams.updateSpeed = 0.35				-- brain (visibility) update speed, 1.0 - update every frame
+o.AiParams.alwaysSee = false
+o.AiParams.huntPlayer = false
+
+
+o.AiParams.weapon = {
+		maxDist = 45,
+		minDist = 5,
+		maxYaw = 45,
+		maxPitch = 45,
+	}
+o.AiParams.weaponBindPos = o.AiParams.throwItemBindTo
+
+o.AiParams.ThrowableItem = "PBone.CItem"
+o.AiParams.aiGoals = {"idle","attack", "hunt", "hear","DemonTeleport"}
+o.shadow = 128
+
+
+o.AiParams.throwItemBindTo = "k_szyja"
+o.AiParams.throwAnim = "atak3"
+o.AiParams.throwAmmo = 9999
+o.AiParams.throwRangeMin = 7
+o.AiParams.throwRangeMax = 35
+o.AiParams.minDelayBetweenThrow = 2
+o.AiParams.escapeAfterThrowTime = 0		-- 0 - no escape
+o.AiParams.throwVelocity = 200 
+o.AiParams.throwDistMinus = 0			-- <0 celuje za gracza, 0> przed gracza
+o.AiParams.throwAngularVelocitySpeed = 10
+o.AiParams.teleportPFX = "ninjatravel"
+o.AiParams.teleportSpeed = 12
+
+o.AiParams.minimumTimeBetweenTeleport = 3 
+

@@ -1,0 +1,30 @@
+o.Mesh = "bednaskrystalyShape"
+o.Pack = "o_bednaskrystaly_v3.dat"
+o.DestroyPack = "o_bednaskrystaly_v3_zlom.dat"
+o.Scale = 0.2
+o.Mass = 200
+o.Health = 10
+
+o.Destroy.ExplosionStrength = 1500
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 200
+o.Destroy.Effect = "explo_zyrandol1"
+o.Destroy.EffectScale = 0.5
+o.Destroy.Treasures = 
+{
+    Coins  = {2, 'g'},
+}
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 80
+o.Destroy.ExplosionRadius = 5.5
+o.Destroy.LifetimeAfterExplosion = 2
+
+o.Poison = {
+	checkSpeed = 1,	-- ile razy na sekunde ma spradzac, czy jest w zasiegu trucizny
+	Range = 7.5,
+	DamageHp = 0,
+	TimeOut = 60,
+	Freq = 9999,
+	SlowDown = 0.5,
+}

@@ -1,0 +1,11 @@
+Lava1.Volume = 100
+Lava1.Interval = 0
+Lava1.RandomShift = 0
+Lava1.EnvironmentIntensity = 0.3
+Lava1.Falloff =
+{
+  Start = 2,
+  End = 30
+}
+Lava1.Sound ="C7L02_village_of_damned/lava1"
+

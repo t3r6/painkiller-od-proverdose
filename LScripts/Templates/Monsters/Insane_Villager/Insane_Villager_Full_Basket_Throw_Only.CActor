@@ -1,0 +1,7 @@
+o.BaseObj = "Insane_Villager_Full_Basket.CActor"
+
+o.AiParams.aiGoals = {"idle","hunt", "hear","throw","flee"}
+
+o.NeverWalk = true
+o.Health = 89
+

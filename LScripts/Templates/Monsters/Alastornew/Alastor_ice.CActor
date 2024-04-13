@@ -1,0 +1,13 @@
+o.BaseObj = "Alastor_fire.CActor"
+o.flamerFX = "alice"
+o.burnPFX = "blueburn"
+o.walkdist = 5
+o.Poison = {
+	checkSpeed = 2,
+	Range = 8,
+	TimeOut = 60,
+	Freq = 9999,
+	SlowDown = 0.2,
+}
+
+Alastor_ice._CustomAiStates.groundAttackAlastor.minAttackDistance = 8.0

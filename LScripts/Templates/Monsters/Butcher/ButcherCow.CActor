@@ -1,0 +1,58 @@
+o.BaseObj = "Butcher.CActor"
+o.Scale = 1.4
+o.Model = "butcher_cow"
+o.Health = 158
+
+o.s_SubClass.Animations.death1 = {1.0, false, {
+  					{1.1,'PlaySound',"$/actor/falls/fall8"},
+ 					{1.1,'PlaySound',"$/actor/zombie_soldier/zombs_bodyfalls1"},
+  					{1.4,'PlaySound',"$/actor/falls/fall1"},
+  					{2.9,'PlaySound',"$/actor/mw_insanevillager/villager-hook-lost1"},
+}}
+o.s_SubClass.Animations.death2 = {1.0, false, {
+  					{0.8,'PlaySound',"$/actor/falls/fall3"},
+  					{0.8,'PlaySound',"$/actor/zombie_soldier/zombs_bodyfalls1"},
+  					{1.2,'PlaySound',"$/actor/falls/fall4"},
+  					{1.2,'PlaySound',"$/actor/mw_insanevillager/villager-hook-lost1"},
+}}
+o.s_SubClass.Animations.idle = {1.0, false, {
+ 					{0.2,'PlaySound',"cow"},
+}}
+o.s_SubClass.Animations.idle1 = {1.0, false, {
+ 					{0.2,'PlaySound',"cow"},
+}}
+o.s_SubClass.Animations.walk = {1.5, false, {
+ 					{0.2,'PlaySound',"cow"},
+						{0.0,'EndTrails'},
+						{0.5,'PlaySound','stepwalk'},
+						{1.1,'PlaySound','stepwalk'},
+}}
+o.s_SubClass.Animations.run = {1.2, true, {
+ 					{0.2,'PlaySound',"cow"},
+						{0.0,'EndTrails'},
+						{0.0,'PlaySound','stepwalk'},
+						{0.0,'BloodFromShoeL'},
+						{0.5,'PlaySound','stepwalk'},
+						{0.5,'BloodFromShoeR'},
+}}
+o.s_SubClass.Animations.atak1 = {1.8, false, {
+						{0.3, 'PlaySound','attack_voice'},
+						{0.8, 'PlaySound','swish1'},
+						{0.9, 'PlaySound','stepwalk'},
+						
+						{0.9, 'damage'},
+						{1.2, 'damage'},
+						
+}}
+o.s_SubClass.Animations.atak2 = {1.1, false, {
+						{0.3, 'PlaySound','attack_voice'},
+						{0.7, 'PlaySound','swish1'},
+						{1.2, 'PlaySound','swish2'},
+						{0.7, 'PlaySound','stepwalk'},
+	
+						{0.9, 'damage'},
+						{1.6, 'damage'},
+}}
+
+
+o.s_SubClass.NearAttacks = {"atak1","atak2",}

@@ -1,0 +1,10 @@
+volcano2.Volume = 80
+volcano2.Interval = 0
+volcano2.RandomShift = 0
+volcano2.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+volcano2.Sound ="C7L01_field_ambulance/volcano2"
+

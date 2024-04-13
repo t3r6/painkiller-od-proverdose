@@ -1,0 +1,11 @@
+o.Mesh = "pCubeShape11"
+o.Pack = "plyta.dat"
+o.Sounds = {
+    impact = {"bullet-wood","bullet-wood2","bullet-wood3",}
+}
+o.Health = 201
+o.Mass = 200000
+o.Friction = 1
+o.Scale = 0.5
+o.Pinned = true
+o.Immortal = true

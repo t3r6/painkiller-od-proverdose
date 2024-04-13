@@ -1,0 +1,82 @@
+o.s_SubClass.SoundsDefinitions = {
+	at3voice = {
+		samples = {'$/actor/mw_mummy/mummy_voice_at3',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	mummy_sound = {
+		samples = {'$/actor/mw_mummy/mummy_sound1','$/actor/mw_mummy/mummy_sound2','$/actor/mw_mummy/mummy_sound3'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+
+	walkvoice = {
+		samples = {'$/actor/mw_mummy/mummy_walk-voice1','$/actor/mw_mummy/mummy_walk-voice2','$/actor/mw_mummy/mummy_walk-voice3','$/actor/mw_mummy/mummy_walk-voice4','$/actor/mw_mummy/mummy_walk-voice5','$/actor/mw_mummy/mummy_walk-voice6','$/actor/mw_mummy/mummy_walk-voice7'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	
+	step1 = {
+		samples = {'$/actor/mw_mummy/mummy_krok1',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	step2 = {
+		samples = {'$/actor/mw_mummy/mummy_krok1',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_mummy/mummy_bodyfalls","$/actor/mw_mummy/mummy_bodyfalls1"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	hit = {
+		samples = {'$/actor/mw_mummy/mummy_hit1','$/actor/mw_mummy/mummy_hit2','$/actor/mw_mummy/mummy_hit3',},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	weaponlost = {
+		samples = {"$/actor/mw_mummy/mummy_weapon-lost1","$/actor/mw_mummy/mummy_weapon-lost2","$/actor/mw_mummy/mummy_weapon-lost3"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+	onAttackOnce = {
+		samples = {"$/actor/mw_mummy/mummy_halt1", "$/actor/mw_mummy/mummy_halt2", "$/actor/mw_mummy/mummy_halt3", "$/actor/mw_mummy/mummy_halt4",},
+		playChance = 0.5,
+		dist1 = 30,
+		dist2 = 70,
+	},
+	atak = {
+		samples = {'$/actor/mw_mummy/mummy_attack1','$/actor/mw_mummy/mummy_attack2','$/actor/mw_mummy/mummy_attack3','$/actor/mw_mummy/mummy_attack4',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	swish1 = {
+		samples = {'$/actor/mw_mummy/mummy_swish1'},
+		dist1 = 12,
+		dist2 = 48,
+	},
+	swish2 = {
+		samples = {'$/actor/mw_mummy/mummy_swish2'},
+		dist1 = 12,
+		dist2 = 48,
+	},
+	flame_swish = {
+		samples = {'$/actor/mw_mummy/mummy_flame_at'},
+		dist1 = 12,
+		dist2 = 48,
+	},
+
+
+	death = {
+		samples = {"$/actor/mw_mummy/mummy_death1","$/actor/mw_mummy/mummy_death2"},
+		dist1 = 12,
+		dist2 = 42,
+	},
+
+	damage = {
+		samples = {"$/actor/mw_mummy/mummy_fire-hit"},
+	},
+
+}

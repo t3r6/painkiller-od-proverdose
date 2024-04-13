@@ -1,0 +1,27 @@
+o.Model = "evilmonk"
+o.CreatePO = true
+o.Scale = 1
+o.Health = -1
+o.NotCountable = true
+
+
+o.s_SubClass = {
+    RagdollCollisions = {
+        MinStren = 2.0,
+        MinTime = 0.7,
+        Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_p_lokiec", "bodyfalls", true},
+				{"r_l_lokiec", "bodyfalls", true}
+			},
+    },
+
+
+    DeathJoints = {
+        's_p_kostka','n_p_kolano','n_p_biodro','s_l_kostka',
+        'n_l_kolano','n_l_biodro','dlo_lewa_root','r_l_lokiec',
+        'r_l_bark','dlo_prawa_root','r_p_lokiec','r_p_bark',
+        'k_ogo','k_zebra','k_ramiona','k_glowa',
+	}
+}
+o.shadow = 128

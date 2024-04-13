@@ -1,0 +1,189 @@
+o.Model = "geisha"
+o.Scale = 1
+o.Health = 129
+o.ABhp = 69
+o.CreatePO = true
+o.WalkSpeed = 1
+o.RunSpeed = 1.6
+o.NeverWalk = true
+o.RotateSpeed = 20		-- degrees per 1/30 sec
+o.enableGibWhenHPBelow = -44
+
+o.throwHeart = true
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 120,
+}
+
+o.s_SubClass = {
+    rotateHead = 0.7,
+    rotateHeadBone = "k_szyja",
+    rotateHeadMaxSpeed = 0.2,
+	SoundDir = "Gladiator",
+
+    Animations = {
+        idle           = {0.7, false},
+        idle2           = {0.7, false},
+        walk           = {1.4, false,{		-- 1.0
+							{0.9,'PlaySound',"step1"},
+							{0.35,'PlaySound',"step2"},
+              {0.65,'FootFX','s_p_srodstopie'},
+              {0.07,'FootFX','s_l_srodstopie'},
+							}},
+        run            = {1, true,{
+	 						{0.6,'PlaySound',"step1"},
+							{0.25,'PlaySound',"step2"},
+              {0.65,'FootFX','s_p_srodstopie'},
+              {0.07,'FootFX','s_l_srodstopie'},
+							}},
+
+        attack2          = {1.35, false,{
+					{0.2,'PlaySound',"atak"},
+					{0.6,'PlaySound',"swish2"},
+       		{1.1,'ThrowImmid'},
+					{1.11,'ThrowImmid',nil,nil,nil,-3},
+					{1.11,'ThrowImmid',nil,nil,nil,3},
+
+						}},
+        attack3          = {1.0, false,{
+					{0.2,'PlaySound',"suicide"},
+					{0.9,'PlaySound',"bodyfalls"},
+      		{0.491,'ThrowImmid'},
+					{0.492,'ThrowImmid',nil,nil,nil,-5},
+					{0.493,'ThrowImmid',nil,nil,nil,5},
+					{0.494,'ThrowImmid',nil,nil,nil,-15},
+					{0.496,'ThrowImmid',nil,nil,nil,15},
+					{0.497,'ThrowImmid',nil,nil,nil,-25},
+					{0.498,'ThrowImmid',nil,nil,nil,25},
+					{0.495,'ThrowImmid',nil,nil,nil,-45},
+					{0.499,'ThrowImmid',nil,nil,nil,45},
+					{0.498,'ThrowImmid',nil,nil,nil,-65},
+					{0.498,'ThrowImmid',nil,nil,nil,65},
+					{0.495,'tdai'}
+						}},
+
+        attack1          = {1.2, false,{				-- z tarcza
+	  						{0.4,'PlaySound',"swish1"},
+                {0.2,'PlaySound',"atak"},
+                            {0.1,'BindTrailSword','trail_kolek','r_hand','fan_joint','fan_a2'},
+                            {0.7,'damage',},
+                            {1.0,'EndTrailSword'},
+						}},
+        hit              = {1.0, false,{
+                            {0.0,'PlaySoundHit',"hit"},
+						}},
+        hit2              = {1.0, false,{
+                            {0.0,'PlaySoundHit',"hit"},
+						}},
+    },
+    
+    RagdollCollisions = {
+        MinStren = 6.0,
+        MinTime = 0.6,
+        Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_p_lokiec", "bodyfalls", true},
+				{"r_l_lokiec", "bodyfalls", true},
+				{"sword1", "weaponlost", false},
+			}
+    },
+
+    ragdollJoint = "k_ogo",
+    Hits = {"hit","hit2"},
+    Ambients = {"idle","idle2"},
+    NearAttacks = {"attack1",},
+
+	notBleedingJoints = {
+		sword1 = true,
+		sword2 = true,
+		r_l_lokiec = true,
+    },
+    DeathJoints = {
+        's_p_kostka','n_p_kolano','n_p_biodro','s_l_kostka',
+        'n_l_kolano','n_l_biodro','dlo_lewa_root','r_l_lokiec',
+        'r_l_bark','dlo_prawa_root','r_p_lokiec','r_p_bark',
+        'k_ogo','k_zebra','k_ramiona',
+        'sword1',
+    },
+
+    GibExplosionStrength = 5000,
+	GibExplosionRange = 2.0,
+	GibExplosionDeltaY = -1.0,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+				{"k_ogo","FX_gib_blood",-1},
+				{"k_ramiona","FX_gib_blood",1},
+				{"r_l_bark","FX_gib_blood",-1},
+				{"r_p_bark","FX_gib_blood",1},
+				{"k_szyja","FX_gib_blood",-1},
+				{"root","FX_gib_blood",1},
+	},
+	gibShader = "palskinned_bloody",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"k_ogo", "gibSplash", true},
+				{"k_ramiona", "gibSplash", true},
+				{"r_l_bark", "gibSplash", true},
+				{"r_p_bark", "gibSplash", true},
+				{"k_szyja", "gibSplash", true},
+				{"root", "gibSplash", true},
+				{"sword1", "weaponlost", false},
+				{"sword2", "weaponlost", false},
+			},
+	    },
+
+}
+
+o.DeathTimer = 150
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","attack", "hunt", "hear", "throw"}
+    
+o.AiParams.viewDistance = 60
+o.AiParams.viewDistance360 = 12
+o.AiParams.viewAngle = 170
+
+o.AiParams.weaponDamage = 35
+o.AiParams.attackRange = 2.8
+o.AiParams.attackRangeAngle = 110
+o.AiParams.delayBetweenAttacks = 10
+
+o.AiParams.perception = 1.0
+o.AiParams.walkStep = 10.0
+o.AiParams.hearing = 1.0
+
+
+o.AiParams.GuardStill = false
+o.AiParams.guardAngle = {0,0}
+o.AiParams.guardAngleRandom = true			-- wtedy guardAngle nie jest uwzgledniany
+o.AiParams.guardChangePosition = {30,60}
+o.AiParams.guardRange = 40
+o.AiParams.stopAfterWalking = 1
+o.AiParams.stopAfterWalkingTime = {30,90}
+o.AiParams.chanceOfEscapeAfterFire = 0.04
+o.AiParams.escapeTime = 70
+o.AiParams.moveDisplacement = 3.6
+o.AiParams.updateSpeed = 0.25				-- brain (visibility) update speed, 1.0 - update every frame !!!!
+
+o.AiParams.walkAreaRandom = false
+
+o.AiParams.soundAmbientDelay = 5.0
+o.shadow = 128
+
+o.AiParams.ThrowableItem = "Jehlice.CItem"
+o.AiParams.throwItemBindTo = "l_hand"
+o.AiParams.throwItemBindToOffset = Vector:New(0,1,0)
+o.AiParams.throwVelocity = 4
+o.AiParams.throwAngle = 0
+o.AiParams.throwAnim = "attack2"
+o.AiParams.throwAmmo = 9999
+o.AiParams.throwRangeMin = 7
+o.AiParams.throwRangeMax = 40
+o.AiParams.minDelayBetweenThrow = 2
+o.AiParams.escapeAfterThrowTime = 0		-- 0 - no escape
+o.AiParams.throwDistMinus = 0	
+

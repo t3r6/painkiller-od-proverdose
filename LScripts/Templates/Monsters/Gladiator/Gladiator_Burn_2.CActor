@@ -1,0 +1,6 @@
+o.BaseObj = "Gladiator2.CActor"
+
+o.s_SubClass.xchgTextures = {
+		{"gladiator_2","gladiator_2a_lava"},
+		{"gladiator_2_add","gladiator_2a_lava_add"},
+	}

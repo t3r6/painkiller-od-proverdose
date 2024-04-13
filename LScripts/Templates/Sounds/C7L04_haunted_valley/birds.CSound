@@ -1,0 +1,10 @@
+birds.Volume = 80
+birds.Interval = 8
+birds.RandomShift = 2
+birds.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+birds.Sound ="C7L04_haunted_valley/birds1;C7L04_haunted_valley/birds2"
+

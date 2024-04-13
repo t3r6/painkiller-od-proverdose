@@ -1,0 +1,60 @@
+MagicCrossbow.Model = "crossbow"
+MagicCrossbow.Scale = 1
+MagicCrossbow.Pos = Vector:New(0.65,-0.32,-1.18)
+MagicCrossbow.Ang = Vector:New(0   , 3.14,     0)
+MagicCrossbow._ShotNr = 0
+MagicCrossbow.ShotCamMove = 0.025
+MagicCrossbow.ShotCamRotate = 0.025
+MagicCrossbow.s_SubClass = {
+
+    -- odstep czasu miedzy kolejnymi strzalami (1/30 sec):
+    FireTimeout    = 24,
+    AltFireTimeout = 30,        
+    
+    -- Arrow
+    ArrowSpeed           = 190,
+    ArrowEnemyThrowBack  = 0,
+    ArrowEnemyThrowUp    = 0,
+    ArrowDamage          = 75,
+    
+    -- Heads
+    HeadsSpeed             = 30,
+    HeadsDamage            = 70,
+    HeadsExplosionStrength = 2000,
+    HeadsExplosionRange    = 5,
+    
+    Animations = 
+    {   
+        idle         = {1.0 ,0.3},
+        walk         = {1.0 ,0.3},
+        arrowshot     = {1.2, 0.1},        
+        headshot    = {1, 0.1},        
+    }
+}
+
+MagicCrossbow.s_MPSubClass = {
+
+    FireTimeout    = 30,
+    AltFireTimeout = 24,        
+    
+    -- Arrow
+    ArrowSpeed           = 190,
+    ArrowEnemyThrowBack  = 0,
+    ArrowEnemyThrowUp    = 0,
+    ArrowDamage          = 30,
+    
+    -- Heads
+    HeadsSpeed             = 60,
+    HeadsDamage            = 120,
+    HeadsExplosionStrength = 3200,
+    HeadsExplosionRange    = 6,
+    HeadsExplosionTimer    = 50,
+
+    Animations = 
+    {   
+        idle         = {1.0 ,0.3},
+        walk         = {1.0 ,0.3},
+        arrowshot     = {1.2, 0},        
+        headshot    = {1, 0},        
+    }
+}

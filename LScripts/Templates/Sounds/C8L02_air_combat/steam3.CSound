@@ -1,0 +1,10 @@
+steam3.Volume = 80
+steam3.Interval = 0
+steam3.RandomShift = 0
+steam3.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+steam3.Sound ="C8L02_air_combat/steam3"
+

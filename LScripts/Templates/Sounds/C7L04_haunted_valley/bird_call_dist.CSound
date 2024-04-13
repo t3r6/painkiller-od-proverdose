@@ -1,0 +1,10 @@
+bird_call_dist.Volume = 100
+bird_call_dist.Interval = 5
+bird_call_dist.RandomShift = 6
+bird_call_dist.Falloff =
+{
+  Start = 15,
+  End = 100
+}
+bird_call_dist.Sound ="C7L04_haunted_valley/bird_call_dist1;C7L04_haunted_valley/bird_call_dist2;C7L04_haunted_valley/bird_call_dist3;C7L04_haunted_valley/bird_call_dist4;C7L04_haunted_valley/bird_call_dist5;C7L04_haunted_valley/bird_call_dist6"
+

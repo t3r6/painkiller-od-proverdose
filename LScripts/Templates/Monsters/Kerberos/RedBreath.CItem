@@ -1,0 +1,89 @@
+o.Mesh = "polySurfaceShape14692"
+o.Pack = "pilka.dat"
+o.Scale = 0.001
+o.Timeout = 4*30+5
+
+o.Restitution = 0 -- sprezystosc
+o.Friction = 0 -- tarcie
+o.LinearDamping = 0  -- tlumienie liniowe
+
+o.Mass = 1
+o.TestDeathZone = true
+o.SoundInWater = "impacts/bulletbig-water"
+--o.LinearDamping = 0.0
+o.Damage = 15
+o.fxx = 'Kerberos_breath_red'
+o.dopad = 'Kerberos_breath_red_dopad'
+o.Poison = {
+	checkSpeed = 1,	-- ile razy na sekunde ma spradzac, czy jest w zasiegu trucizny
+	Range = 3,
+	TimeOut = 100,	-- jak dlugo dziala
+	Freq = 24,		-- jak czesto trucizna zadaje rany
+	DamageHp = 4,
+}
+
+
+function o:OnPrecache()
+    Cache:PrecacheParticleFX("Grenade")
+    Cache:PrecacheItem("KamykWybuch.CItem")
+end
+-------------------------------------------------------------------------------
+function o:OnCreateEntity()
+    self:PO_Create(BodyTypes.FromMesh,nil,ECollisionGroups.Noncolliding)
+    ENTITY.PO_EnableGravity(self._Entity,false)
+    ENTITY.PO_SetMovedByExplosions(self._Entity, false)
+	self._fx2 = self:BindFX(self.fxx)
+--    ENTITY.RegisterChild(self._Entity,self._fx2)    
+
+            --ENTITY.PO_SetCollisionGroup(self._Entity, ECollisionGroups.HCGNormalNCWithSelf)
+
+    self.timer = 1
+end
+-------------------------------------------------------------------------------
+function o:Update()
+    if self.timer then
+        self.timer = self.timer - 1
+        if self.timer < 0 then
+            ENTITY.EnableCollisions(self._Entity,true)
+            self.timer = nil
+        end
+    end
+    self.Timeout = self.Timeout - 1
+		if math.random(100) < 20 and Player then
+			self._checkSpeed = 30/self.Poison.checkSpeed 
+			local x,y,z = ENTITY.GetPosition(self._Entity)
+			local dist = Dist3D(x,y,z, Player._groundx,Player._groundy, Player._groundz)
+			local distLast = 9999
+			if self._fx_lastx then
+				distLast = Dist3D(self._fx_lastx,self._fx_lasty,self._fx_lastz, Player._groundx,Player._groundy, Player._groundz)
+			end
+			if dist < self.Poison.Range or distLast < self.Poison.Range then
+			
+            		Player:OnDamage(self.Damage,self.ObjOwner,AttackTypes.Grenade)
+
+			end
+		end
+
+
+    if self.Timeout <= 0 then
+	PARTICLE.Die(self._fx2)
+ GObjects:ToKill(self) 
+
+end
+end
+-------------------------------------------------------------------------------
+function o:OnCollision(x,y,z,nx,ny,nz,e)
+	ENTITY.PO_SetLinearDamping(self._Entity, 1.5)
+    local obj = EntityToObject[e]
+    if obj and self.ObjOwner ~= obj then
+        if obj._Class == "CPlayer" then 
+            obj:OnDamage(self.Damage,self.ObjOwner,AttackTypes.Grenade)
+	end
+    end
+	PARTICLE.Die(self._fx2)
+	self._fx2 = self:BindFX(self.dopad)
+
+end
+-------------------------------------------------------------------------------
+
+

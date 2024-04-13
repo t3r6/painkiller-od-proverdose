@@ -1,0 +1,11 @@
+o.BaseObj = "Alastor_attack.CActor"
+Alastor_throw._CustomAiStates.groundAttackAlastor.atak1minDistance = 10
+o.s_SubClass.Animations.atak1   = {0.8,true, {			
+					{1.2,'PlaySound',"swish"},
+					{0.9,'PlaySoundHitBinded',"av"},
+					{0.0,'PlaySound',"prepare"},
+					{1.2,'PlaySound',"naskok"},
+					{1.4,'Throw'},
+					{1.04,'EnableRotate'},
+					{1.26,'DisableRotate'},
+				},0.5, true}

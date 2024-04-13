@@ -1,0 +1,61 @@
+o.s_SubClass.SoundsDefinitions = {
+	hit = {
+		samples = {'$/actor/mw_overseer/overseer_hit1','$/actor/mw_overseer/overseer_hit2','$/actor/mw_overseer/overseer_hit3'},
+		dist1 = 8,
+		dist2 = 40,
+	},
+	attack_voice = {
+		samples = {'$/actor/mw_overseer/overseer_attackvoice1','$/actor/mw_overseer/overseer_attackvoice2','$/actor/mw_overseer/overseer_attackvoice3',},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	swish1 = {
+		samples = {'$/actor/mw_overseer/swish1',},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	swish2 = {
+		samples = {'$/actor/mw_overseer/swish2',},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	step1 = {
+		samples = {'$/actor/mw_overseer/overseer_krokl',},
+		dist1 = 5,
+		dist2 = 20,
+	},
+	step2 = {
+		samples = {'$/actor/mw_overseer/overseer_krokp',},
+		dist1 = 5,
+		dist2 = 20,
+	},
+	throw = {
+		samples = {'$/actor/mw_overseer/throw'},
+		dist1 = 12,
+		dist2 = 40,
+		disablePitch = true,
+	},
+	damage = {
+		samples = {"$/actor/mw_overseer/damage"},
+    },
+	bodyfalls = {
+		samples = {"$/actor/devilmonk/devil_bodyfalls"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	weaponlost = {
+		samples = {"$/impacts/stake-ground1"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	onAttackOnce = {
+		samples = {"$/actor/mw_overseer/overseer_attackvoice1", "$/actor/mw_overseer/overseer_attackvoice2", "$/actor/mw_overseer/overseer_attackvoice3",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+    death = {
+		samples = {"$/actor/mw_overseer/overseer_death1","$/actor/mw_overseer/overseer_death2","$/actor/mw_overseer/overseer_death3"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+}

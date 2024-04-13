@@ -1,0 +1,66 @@
+o.s_SubClass.SoundsDefinitions = 
+{
+    path = "weapons/hellblade",
+    dist1   = 15,
+    dist2   = 50,
+    disablePitch = true,
+    bolt_shot = 
+    {
+        samples = {"hellblase_throwswish1","hellblase_throwswish2","hellblase_throwswish3"},
+    },
+		throw_swish = 
+		{
+        samples = {"hellblase_throwswish2","hellblase_throwswish3"},
+		},
+    hellblade_swish = 
+    {
+        samples = {"hellblade_swish"},
+    },
+ 
+    dark_swish0 = 
+    {
+        samples = {"dark_swish"},
+    },
+    dark_swish = 
+    {
+        samples = {"dark_swish1","dark_swish2","dark_swish3"},
+    },
+    
+    bolt_reload = 
+    {
+    path = "weapons/hellblade",
+        samples = {"weapon_bolt_reload"},
+    },
+    heater_shot = 
+    {
+    path = "weapons/hellblade",
+        samples = {"phantomblades"},
+    },
+    heater_bounce = 
+    {
+    path = "weapons/hellblade",
+        disablePitch = false,
+        samples = {"weapon_heater-bounce1","weapon_heater-bounce2"},
+    },
+    heater_explosion = 
+    {
+        path = "weapons/hellblade",
+    disablePitch = false,
+        samples = {"weapon_heater-explosion1","weapon_heater-explosion2","weapon_heater-explosion3"},
+    },
+    zoom_in = 
+    {
+    path = "weapons/hellblade",
+        samples = {"zoom-in"},
+    },
+    zoom_loop = 
+    {
+    path = "weapons/hellblade",
+        samples = {"zoom-loop"},
+    },
+    out_of_ammo = 
+    {
+        path = "weapons/assault-rifle",
+        samples = {"weapon_rifle_empty"},
+    },
+}

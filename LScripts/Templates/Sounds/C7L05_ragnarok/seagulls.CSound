@@ -1,0 +1,10 @@
+seagulls.Volume = 60
+seagulls.Interval = 0
+seagulls.RandomShift = 0
+seagulls.Falloff =
+{
+  Start = 5,
+  End = 150
+}
+seagulls.Sound ="C7L05_ragnarok/seagulls"
+

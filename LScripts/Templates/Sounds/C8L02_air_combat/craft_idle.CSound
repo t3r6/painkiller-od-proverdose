@@ -1,0 +1,10 @@
+craft_idle.Volume = 80
+craft_idle.Interval = 0
+craft_idle.RandomShift = 0
+craft_idle.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+craft_idle.Sound ="C8L02_air_combat/craft_idle"
+

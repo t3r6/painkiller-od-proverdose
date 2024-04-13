@@ -1,0 +1,30 @@
+o.BaseObj = "Legless_freak.CActor"
+o.Health = 200
+o.NeverMove = true
+o.Pinned = true
+
+o.AiParams.aiGoals = {"idle","hear","throw",}
+
+o.AiParams.alwaysSee = true
+
+o.AiParams.minDelayBetweenThrow = 0.5
+o.s_SubClass.Animations.a1  = {1.0,false, {
+			{0.1,'PlaySound',"at1"},
+			{0.8,'PlaySound',"swish1"},
+			{1.0,'PlaySound',"plazmball"},
+				{0.0,'Glowhand'},
+				{1.0,'TakeToThrow'},
+				{1.1,'ThrowTaken','nil','true'},
+				{1.4,'Dieglow'},
+				}}
+	o._throwModeRagdoll = false
+	o.AiParams.throwAnim = "a1"	
+	o.AiParams.throwRangeMin = 5
+	o.AiParams.throwRangeMax = 400
+	o.AiParams.ThrowableItem = "GlowBall.CItem"
+	o.AiParams.throwVelOnly = true
+	o.AiParams.throwDistMinus = 0 
+	o.AiParams.ThrowSpeed = 130
+	o.AiParams.throwVelocity = 130
+	o.AiParams.throwItemBindToOffset = Vector:New(0,0,-1)
+	o.AiParams.throwAngularVelocitySpeed=20

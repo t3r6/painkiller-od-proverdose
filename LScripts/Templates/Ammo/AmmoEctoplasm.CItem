@@ -1,0 +1,47 @@
+o.Mesh = "EctoplasmShape2"
+o.Pack = "ammo_Ectoplasm.dat"
+o.takeDistance = 1.8
+o.Scale = 0.6
+o.DisabledInVoosh = true
+o.RespawnTime = 15
+o.AmmoAdd = 10
+o.MPAmmoAdd = 10
+
+--============================================================================
+function AmmoEctoplasm:OnInitTemplate()
+    self.CubeMap = nil
+    self.DetailMap = nil
+    self.NormalMap = nil
+    self.Destroy = nil
+    self.Impulse = nil
+    self:ReplaceFunction("_Synchronize","Synchronize")
+    self:ReplaceFunction("Synchronize","nil")
+end
+--============================================================================
+function AmmoEctoplasm:OnCreateEntity()
+    ENTITY.EnableNetworkSynchronization(self._Entity)
+end
+--============================================================================
+function AmmoEctoplasm:OnTake(player)    
+    if player.Ammo.Ectoplasm >= CPlayer.s_SubClass.MaxAmmo.Ectoplasm then return true end
+local add
+if Game.GMode == GModes.SingleGame then add=self.AmmoAdd else add = self.MPAmmoAdd end
+    self.TakeFX(player._Entity, add)
+	Game.PlayerAmmoFound =  Game.PlayerAmmoFound + 1
+end
+--============================================================================
+function AmmoEctoplasm:TakeFX(pe,add)
+    local player = EntityToObject[pe]    
+    if player then
+	if Game.GMode == GModes.SingleGame then
+        	player.Ammo.Ectoplasm = player.Ammo.Ectoplasm + add * AmmoDifficultyModifier[Game.Difficulty] * Game.AmmoFoundFactor
+	else
+        	player.Ammo.Ectoplasm = player.Ammo.Ectoplasm + add 
+	end
+        player:CheckMaxAmmo()
+        if player == Player then player:PickupFX() end
+    end
+    Templates["AmmoEctoplasm.CItem"]:SndEnt("pickup",pe)
+end
+Network:RegisterMethod("AmmoEctoplasm.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eu")
+--============================================================================

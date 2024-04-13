@@ -1,0 +1,43 @@
+o.s_SubClass.Light = {
+	template = "leper_Light.CLight",
+ 	joint = "Spear",
+}
+o.s_SubClass.BillBoard = {
+	template = "anubis_staff.CBillboard",
+	joint = "Spear",
+	scale = 0.3
+}
+
+o.s_SubClass.ParticlesDefinitions = {
+	prach = {
+		pfx = 'Anubis_dust',
+		scale = 0.65,
+		joint = "CarpetN",
+		offset = Vector:New(0,-1,0)
+	},
+	koule = {
+		pfx = 'Anubis_ball',
+		scale = 0.2,
+		joint = "Spear",
+		offset = Vector:New(1.15,0,0)
+	},
+
+	tip = {
+		pfx = 'Anubis_ball',
+		scale = 0.4,
+		joint = "Spear",
+		offset = Vector:New(-2.2,0,0)
+	},
+	deathsand = {
+		pfx = 'Anubis_dust',
+		scale = 1.5,
+		joint = "CarpetN",
+		offset = Vector:New(0,0,0)
+	},
+	deathsand2 = {
+		pfx = 'Anubis_dust',
+		scale = 1,
+		joint = "Spear",
+		offset = Vector:New(-2.2,0,0)
+	},
+}

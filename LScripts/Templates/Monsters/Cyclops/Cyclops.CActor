@@ -1,0 +1,202 @@
+o.Model = "cyclop"
+o.Scale = 2.0
+o.Health = 800
+o.CreatePO = true
+o.WalkSpeed = 1.0
+o.RotateSpeed = 6		-- degrees per 1/30 sec
+o.throwHeart = "red"
+o.Animation = "idle"
+o.enableGibWhenHPBelow = -40
+o.disableFreeze = true
+o.fxx = 'or_lava'
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 1500,
+    InertiaTensorMultiplier = 0.05,
+}
+
+o.s_SubClass = {
+	rotateHead = 0.4,		-- dodac inny limit na Y (x = 0.7, y = 0.1)
+	rotateHeadBone = "k_szyja",
+	rotateHeadMaxSpeed = 0.2,
+	SoundDir = "Gladiator",
+    Animations = {
+		idle = {1.0, true},
+        walk = {1.0, true,{
+							{0.65,'PlaySound',"step1"},
+                            {0.65,'FootFX','n_p_stop1'},
+							{0.07,'PlaySound',"step2"},
+                            {0.07,'FootFX','n_l_stop1'},
+						}},
+        run = {1.0, true,{
+							{0.65,'PlaySound',"step1"},
+				                            {0.65,'FootFX','R_toe_tip'},
+								{0.07,'PlaySound',"step2"},
+				                            {0.07,'FootFX','L_toe_tip'},
+						}},
+        enter = {1.0, true,{
+							{0.3,'PlaySound',"enter"},
+							{2.5,'PlaySound',"swish2"},
+						}},
+		attack3 = {1.0, true,{
+							{0.3,'PlaySound',"atak"},
+							{0.5,'PlaySound',"swish2"},
+							{0.6,"damage"},
+						}},
+		attack1 = {1.0, false, {
+							{0.0,'PlaySound',"atak"},
+							{0.9,'PlaySound',"swish1"},
+							{1.05,'ThrowImmid'},
+							{1.05,'Hidestone'},
+							{3.20,'Showstone'},
+							{3.21,'SetnextThrow'},
+
+							
+						}},
+		attack2 = {1.0, false, {
+							{0.0,'PlaySound',"atak"},
+							{0.5,'PlaySound',"swish1"},
+							{0.1,'Setydest','-4'},
+							{0.15,'Setydest','-3.75'},
+							{0.2,'Setydest','-3.5'},
+							{0.25,'Setydest','-3.25'},
+							{0.3,'Setydest','-3'},
+							{0.35,'Setydest','-2.75'},
+							{0.4,'Setydest','-2.5'},
+							{0.45,'Setydest','-2.25'},
+							{0.5,'Setydest','-2'},
+							{0.55,'Setydest','-1.75'},
+							{0.6,'Setydest','-1.5'},
+							{0.65,'Setydest','-1.25'},
+							{0.7,'Setydest','-1'},
+							{0.75,'Setydest','-0.75'},
+							{0.8,'Setydest','-0.5'},
+							{0.85,'Setydest','-0.25'},
+							{0.9,'Setydest','0'},
+							{0.95,'Setydest','0.25'},
+							{1,'Setydest','0.5'},
+							{1,'SetnextThrow'},
+						}},
+
+		hit1 = {1.0, false, {
+							{0.0,'PlaySound',"angry"},
+						}},
+		hit2 = {1.0, false, {
+							{0.0,'PlaySound',"angry"},
+						}},
+
+    },
+
+    ragdollJoint = "root",
+    Hits = {"hit1","hit2"},
+    Ambients = {"idle"},
+    NearAttacks = {"attack3"},
+
+    DeathJoints = {
+		'head','k_zebra','r_l_bark','r_p_bark','L_forearm','R_forearm','L_upleg','R_upleg','R_leg','L_leg','R_toe','L_toe'
+    },
+
+    RagdollCollisions = {
+	MinStren = 5.0,
+	MinTime = 0.6,
+	Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"head", "bodyfalls", true},
+				{"r_l_bark", "bodyfalls", true},
+				{"r_p_bark", "bodyfalls", true},
+				{"R_leg", "bodyfalls", true},
+				{"L_leg", "bodyfalls", true},
+			}
+    },
+	GibExplosionStrength = 60000,
+	GibExplosionRange = 6.5,
+	GibExplosionDeltaY = -1.5,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+				{"r_l_bark","FX_gib_blood",-1},		-- "FX_gib_blood"
+				{"r_p_bark","FX_gib_blood",1},
+				{"R_leg","FX_gib_blood",-1},
+				{"L_leg","FX_gib_blood",1},
+				{"head","FX_gib_blood",-1},
+				{"k_szyja","FX_gib_blood",1},
+				{"root","FX_gib_blood",-1},
+	},
+	gibShader = "palskinned_bloody",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"r_l_bark", "gibSplash", true},
+				{"r_p_bark", "gibSplash", true},
+				{"R_leg", "gibSplash", true},
+				{"L_leg", "gibSplash", true},
+				{"head", "gibSplash", true},
+				{"root", "gibSplash", true},
+			},
+	    },
+
+}
+
+o.DeathTimer = 140
+
+o.AiParams = {}
+--o.AiParams.aiGoals = {"idle","throw"}
+o.AiParams.aiGoals = {"idle","attack", "hunt","throw"}
+    
+o.AiParams.viewDistance = 80
+o.AiParams.viewDistance360 = 10
+o.AiParams.viewAngle = 170
+
+o.AiParams.weaponDamage = 20
+o.AiParams.attackRange = 4.0
+o.AiParams.attackRangeAngle = 90
+o.AiParams.delayBetweenAttacks = -1
+
+o.AiParams.perception = 1.0
+o.AiParams.walkStep = 10.0
+o.AiParams.hearing = 1.0
+
+o.AiParams.GuardStill = true
+o.AiParams.guardAngle = {0,0}
+o.AiParams.guardAngleRandom = true			-- wtedy guardAngle nie jest uwzgledniany
+o.AiParams.guardChangePosition = {}
+o.AiParams.guardRange = -1
+o.AiParams.stopAfterWalking = 0.0
+o.AiParams.stopAfterWalkingTime = {30,90}
+
+
+o.AiParams.chanceOfEscapeAfterFire = 0.03
+o.AiParams.escapeTime = 120
+o.AiParams.moveDisplacement = 3.5
+o.AiParams.updateSpeed = 0.3
+
+o.AiParams.walkAreaRandom = false
+o.AiParams.alwaysSee = true
+
+o.shadow = 128
+o.AiParams.findPathSpeed = 0.08
+o.minimumTimeBetweenHitAnimation = 60
+
+o.AiParams.soundAmbientDelay = 6.0
+
+
+o.AiParams.ThrowableItem = "Cyclops_Stone.CItem"
+o.AiParams.throwItemBindTo = "R_hand"
+o.AiParams.throwItemBindToOffset = Vector:New(0, 0, 0)
+o.AiParams.throwAngularVelocitySpeed = 5
+o.AiParams.throwDistMinus = 1.0
+o.AiParams.throwAnim = "attack1"
+o.AiParams.throwAmmo = 99999
+o.AiParams.throwRangeMin = 12
+o.AiParams.throwRangeMax = 50
+o.AiParams.minDelayBetweenThrow = 2.0
+o.AiParams.escapeAfterThrowTime = 0		-- 0 - no escape
+o.AiParams.throwVelocity = 40
+o.AiParams.throwDeltaY = 1.9
+
+o.AiParams.laserjoint="oko"
+o.AiParams.lasershift=Vector:New(0,0,0)
+o.AiParams.laserdamage=1
+o.AiParams.laserAnimation="attack2"

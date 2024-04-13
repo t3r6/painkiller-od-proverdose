@@ -1,0 +1,136 @@
+o.BaseObj = "Ninja1.CActor"
+
+o.Model = "rocketeer"
+o.Health = 111
+o.enableGibWhenHPBelow = -30
+
+o.s_SubClass.rotateHead = 3.1415 * 0.3			-- zakres
+o.s_SubClass.rotateHeadBone = "neck"
+o.s_SubClass.rotateHeadMaxSpeed = 0.2
+
+o.minimumTimeBetweenHitAnimation = 10
+
+
+o.s_SubClass.Animations = {
+	idle   = {1.0,false},			-- speed, movingcurve, events
+	walk   = {1.5,true, {
+				{0.60,'PlaySound',"rock_step1"},
+				{0.60,'FootFX','s_p_srodstopie'},
+				{0.0,'PlaySound',"rock_step2"},
+				{0.0,'FootFX','s_l_srodstopie'},
+				}},
+
+	run    = {1.2,true, {
+				{0.60,'PlaySound',"rock_step1"},
+				{0.60,'FootFX','s_p_srodstopie'},
+				{0.0,'PlaySound',"rock_step2"},
+				{0.0,'FootFX','s_l_srodstopie'},
+				}},
+	attack1  = {1.0,true, {
+					{0.9,'WeaponFire', 0},
+					{0.9,'PlaySound',"laser_fire"},
+					{1.3,'WeaponFire', 0},
+					{1.3,'PlaySound',"laser_fire"},
+					{1.1,'WeaponFire', 0},
+					{1.1,'PlaySound',"laser_fire"},
+
+				}},
+	attack2  = {1.0,true, {
+				{0.0,'PlaySound',"rock_atvoice_a"},
+				{0.6,'BindFX','Smallflame'},
+				{0.6,'PlaySound',"flameburst"},
+				{0.6,'damage'},
+				{0.7,'damage'},
+				{0.8,'damage'},
+				{0.9,'damage'},
+				}},
+
+	jump  = {1.0,true, {
+				{0.0,'PlaySound',"jump_flameburst"},
+				{0.3,'PlaySound',"rock_noise"},
+				{0.1,'SetVel'},
+				{0.1,'BindFX','ignition'},
+				{0.68,'StopFlying'},
+				{0.69,'damage'},
+				{0.69,'BindFX','fall'},
+				{0.50,'PlaySound',"rock_step1"},
+				{0.70,'PlaySound',"rock_step2"},
+
+				}},
+	hit1 = {1.0, false, {
+--				{0.0,'PlaySoundHit',{'evil_hit1','evil_hit2','evil_hit3',},12,48, },
+				}},
+	hit2 = {1.0, false, {
+--				{0.0,'PlaySoundHit',{'evil_hit1','evil_hit2','evil_hit3',},12,48, },
+				}},
+}
+
+o.AiParams.aiGoals = {"idle","closeAttack", "hunt", "hear","flee", "JumpUP","FarAttack",}
+--o.AiParams.aiGoals = {"idle","attack", "hunt", "hear", "JumpUP"}
+
+
+o.s_SubClass.NearAttacks = {"attack2"}
+
+	
+o.s_SubClass.RagdollCollisions = {
+	MinStren = 2.0,
+	MinTime = 0.7,
+	Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_p_lokiec", "bodyfalls", true},
+				{"szabla", "weaponlost", false},
+			}
+}
+
+o.s_SubClass.RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"r_l_bark", "gibSplash", true},
+				{"r_p_bark", "gibSplash", true},
+				{"n_l_biodro", "gibSplash", true},
+				{"n_p_biodro", "gibSplash", true},
+				{"root", "gibSplash", true},
+				{"k_szyja", "gibSplash", true},
+				{"szabla", "weaponlost", false},
+			},
+	    }
+
+o.AiParams.weapon = {
+		bulletsPerShot = 1,
+		maxDist = 30,
+		minDist = 3.2,
+		spreadAngle = 0.8,
+		damagePerBullet = 4,
+		PO_HitForce = 300,
+		maxYaw = 45,				-- maksymalna odchylka broni lewo/prawo w stos. do kata patrzenia
+		maxPitch = 45,				-- maksymalna odchylka broni gora/dol
+		fireParticle = "electro_hit_wall",	
+		fireParticleSize = 0.5,
+		bulletHitWallParticle =	"electro_hit",
+		bulletHitWallParticleSize = 0.5,
+	}
+o.AiParams.weaponBindPos = "R_thumb_tip"					-- skad wylatuja pociski (i Particle)
+o.AiParams.weaponBindPosShift = Vector:New(-0.4,-0.4,0.1)
+
+
+o.AiParams.attackRange = 5.5
+o.AiParams.weaponDamage = 6
+o.AiParams.jumpRangeMin = 12
+o.AiParams.jumpRangeMax = 25
+o.AiParams.jumpAnim = "jump"
+o.AiParams.jumpDamageRange = 0.0
+o.AiParams.doNotRotateWhileJumping = true
+o.AiParams.minDelayBetweenJumps = 2.0
+o.AiParams.jumpAngle = 60.0
+o.AiParams.jumpDistanceMinus = 1.0				-- na jaka odleglosc przed graczem ma skakac
+o.AiParams.jumpAnimLen = 0.7					-- w sec.
+--o.AiParams.jumpAnimLen = 2.67					-- w sec.
+o.AiParams.FarAttacks = {"attack1",}
+o.AiParams.disableEscapeWhenTooClose = true
+
+o.AiParams.holdJointDisplace = Vector:New(0,0,0)
+o.AiParams.hideMesh = nil
+o.AiParams.ThrowSpeed = 30
+
+o.AiParams.minDelayBetweenRoll = 6.0

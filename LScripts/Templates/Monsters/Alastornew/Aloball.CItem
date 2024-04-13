@@ -1,0 +1,88 @@
+--o.Mesh = "ballShape11"
+--o.Pack = "ball.dat"
+--o.Scale = 0.04
+o.Mesh = "pSphereShape1"
+o.Pack = "meteor_caly.dat"
+o.Scale = 0.17
+
+o.Restitution = 0.2
+o.Damage = 0.5					-- mnozony jest przez predkosc obiektu w momencie kolizji
+o.ThrowForce = 120				-- throwvelocity 100
+o.LifeTime = 180				-- after 1st col
+o.TimeToLive = 80 * 5
+o.CollisionSound = {"impacts/fall-rumble1","impacts/fall-rumble2","impacts/fall-rumble3"}
+
+--============================================================================
+function o:OnCollision(x,y,z,nx,ny,nz,e_other,h_me,h_other,vx,vy,vz,vl)
+    if self._sndLoop then
+		ENTITY.Release(self._sndLoop)
+		self._sndLoop = nil
+	end
+	
+	local bind = true
+	if e_other then
+		local obj = EntityToObject[e_other]
+		if obj then
+			bind = false
+			if obj ~= self.ObjOwner then
+				if obj.OnDamage then
+					if obj == Player then 
+						PlaySound2D("actor/ninja/ninja_shuricane_hit")
+					end
+					obj:OnDamage(self.Damage, self.ObjOwner)
+				end
+				local e = ENTITY.GetPtrByIndex(self._entityIndex)
+				if e then
+					GObjects:ToKill(self)
+				else
+					GObjects:ToKill(self, true)
+				end
+			end
+		end
+	end
+	if bind then
+		 local q = Quaternion:New_FromNormal(nx,ny,nz)
+	        AddPFX("firework_explo",0.8, Vector:New(x,y,z), q)
+		PlaySound3D("actor/maso/maso_grenade-explosion"..math.random(1,3),x,y,z,8,20,nil)
+	end
+	ENTITY.EnableCollisions(self._Entity, false)
+    WORLD.Explosion2(x,y,z, 1000,6, nil, AttackTypes.Rocket, FRand(50,100))
+    GObjects:ToKill(self)
+end
+
+o.flame_FX = "firework"
+o.flame_FXscale = 0.5
+
+function o:OnPrecache()
+    Cache:PrecacheParticleFX(self.flame_FX)
+end
+
+--============================================================================
+function o:OnCreateEntity()
+	self:PO_Create(BodyTypes.FromMeshSweep,nil,ECollisionGroups.Noncolliding)
+    self.timerInit = 5
+    self.timer = 30 * 15
+    self._lockedPos = self.Pos.Y
+    self._Flame = self:BindFX(self.flame_FX,self.flame_FXscale,nil,0,-0.3,0)
+
+end
+--============================================================================
+function o:OnUpdate()
+	if self.timerInit then
+		self.timerInit = self.timerInit - 1
+		if self.timerInit < 1 then
+			ENTITY.PO_SetCollisionGroup(self._Entity, ECollisionGroups.Normal)
+   			ENTITY.EnableCollisions(self._Entity, true, 0.8, 2.0)
+   			self.timerInit = nil
+   		end
+   	else
+		if self.timer then
+			self.timer = self.timer - 1
+			if self.timer < 1 then
+				GObjects:ToKill(self)
+			end
+		end
+
+	end
+end
+

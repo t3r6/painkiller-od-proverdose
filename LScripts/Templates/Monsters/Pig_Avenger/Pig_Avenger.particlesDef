@@ -1,0 +1,15 @@
+o.s_SubClass.ParticlesDefinitions = {
+	bd = {
+		pfx = "Pig_Avenger_blooddrop",
+		scale = 1,
+		joint = "chain_0",
+		offset = Vector:New(0,0,0),
+	},
+
+	shot = {
+		pfx = "Pig_Avenger_bloodsplat",
+		scale = 1,
+		joint = "lugs_l",
+		offset = Vector:New(0,0,0),
+	},
+}

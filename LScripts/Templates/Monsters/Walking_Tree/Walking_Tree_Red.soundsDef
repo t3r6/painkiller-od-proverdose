@@ -1,0 +1,83 @@
+o.s_SubClass.SoundsDefinitions = {
+	missed = {
+		samples = {'$/actor/mw_walking_tree/tree_missed1','$/actor/mw_walking_tree/tree_missed2'},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	step_noise = {
+		samples = {'$/actor/mw_walking_tree/tree_krok1','$/actor/mw_walking_tree/tree_krok2','$/actor/mw_walking_tree/tree_krok3','$/actor/mw_walking_tree/tree_krok4'},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	step1 = {
+		samples = {'$/actor/mw_walking_tree/tree_step1'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	step2 = {
+		samples = {'$/actor/mw_walking_tree/tree_step2'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	bodyfalls = {
+		samples = {'$/actor/mw_walking_tree/dd_bodyfalls'},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	swish1 = {
+		samples = {'$/actor/mw_walking_tree/tree_swish1',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	swish2 = {
+		samples = {'$/actor/mw_walking_tree/tree_swish2',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	atak1 = {
+		samples = {'$/actor/mw_walking_tree/tree_at1a','$/actor/mw_walking_tree/tree_at1b'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},	
+	atak2 = {
+		samples = {'$/actor/mw_walking_tree/tree_at2a','$/actor/mw_walking_tree/tree_at2b'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},	
+	atak2voice = {
+		samples = {'$/actor/mw_walking_tree/tree_voice_at3'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},	
+	inhale = {
+		samples = {'$/actor/mw_walking_tree/dd_inhale'},
+		dist1 = 10,
+		dist2 = 30,
+	},	
+	onAttackOnce = {
+		samples = {'$/actor/mw_walking_tree/tree_halt1', '$/actor/mw_walking_tree/tree_halt2', '$/actor/mw_walking_tree/tree_halt3'},
+		dist1 = 20,
+		dist2 = 50,
+	},
+	hit = {
+		samples = {'$/actor/mw_walking_tree/tree_hit1','$/actor/mw_walking_tree/tree_hit2','$/actor/mw_walking_tree/tree_hit3',},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	weaponlost = {
+		samples = {'$/actor/mw_walking_tree/dd_weapon-lost','$/actor/mw_walking_tree/dd_weapon-lost2',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	death = {
+		samples= {'$/actor/mw_walking_tree/tree_death1','$/actor/mw_walking_tree/tree_death2','$/actor/mw_walking_tree/tree_death3',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	damage = {
+		samples= {'$/actor/mw_walking_tree/tree_damage'},
+	}
+}

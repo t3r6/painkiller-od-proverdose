@@ -1,0 +1,21 @@
+o.s_SubClass.ParticlesDefinitions = {
+	neckblood = {
+		pfx = "Butcher_blood",
+		scale = 0.6,
+		joint = 'weapon',
+		offset = Vector:New(0,-0.5,0),
+	},
+	footblood = {
+		pfx = "Butcher_blood_small",
+		scale = 0.7,
+		joint = 'r_foot_end',
+		offset = Vector:New(0,0,0),
+	},
+	footblood2 = {
+		pfx = "Butcher_blood_small",
+		scale = 0.7,
+		joint = 'l_foot_end',
+		offset = Vector:New(0,0,0),
+	},
+}
+

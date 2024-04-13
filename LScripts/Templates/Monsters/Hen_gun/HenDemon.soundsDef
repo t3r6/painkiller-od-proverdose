@@ -1,0 +1,29 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {'bb_krok1',},
+		dist1 = 6,
+		dist2 = 20,
+	},
+	step2 = {
+		samples = {'bb_krok2',},
+		dist1 = 6,
+		dist2 = 20,
+	},
+	explode = {
+		samples = {"bb-explode",},
+		dist1 = 20,
+		dist2 = 60,
+	},
+
+    onAttackOnce = {
+        samples = {"$/actor/mw_hengun/chicken_attack"},
+   		dist1 = 30,
+		dist2 = 70,
+    },
+    
+	hurt = {
+	       samples = {"bb-hit1","bb-hit2"},
+   		dist1 = 30,
+		dist2 = 70,
+	},
+}

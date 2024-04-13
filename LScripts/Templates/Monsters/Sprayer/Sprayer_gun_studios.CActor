@@ -1,0 +1,13 @@
+o.BaseObj = "Sprayer.CActor"
+o.AiParams.FarAttacks = {"attackGun",}
+o.AiParams.aiGoals = {"idle","hunt", "hear","FarAttack"}
+o.Model = "sprayer_v2"
+o.AiParams.disableEscapeWhenTooClose = false
+
+o.AiParams.alwaysSee = true
+
+o.Health = 129
+o.WalkSpeed = 1.3
+o.RunSpeed = 1.8
+o.RotateSpeed = 12
+o.enableGibWhenHPBelow = -25

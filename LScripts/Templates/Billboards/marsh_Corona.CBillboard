@@ -1,0 +1,7 @@
+o.Corona.Enabled = false
+o.Texture = "sflare2"
+o.Alpha = 1 
+o.BaseObj = "yello.CBillboard"
+o.Size = 5
+o.Pos = Vector:New(-58.0564,15.8226,-139.455)
+o.Color = Color:New(255,255,155,0)

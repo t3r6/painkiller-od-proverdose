@@ -1,0 +1,5 @@
+o.BaseObj = "CItem"
+o.Model = "brankova_vrtulka"
+o.Scale = 1
+o.FanRotateSpeed = 2.0
+

@@ -1,0 +1,10 @@
+Enclave_01.Volume = 70
+Enclave_01.Interval = 0
+Enclave_01.RandomShift = 0
+Enclave_01.Falloff =
+{
+  Start = 50,
+  End = 150
+}
+Enclave_01.Sound ="C7L01_field_ambulance/enclave_L"
+

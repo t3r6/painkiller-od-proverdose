@@ -1,0 +1,10 @@
+Cannon_hit.Volume = 85
+Cannon_hit.Interval = 15
+Cannon_hit.RandomShift = 0
+Cannon_hit.Falloff =
+{
+  Start = 30,
+  End = 100
+}
+Cannon_hit.Sound ="C7L01_field_ambulance/hit1;C7L01_field_ambulance/hit2;C7L01_field_ambulance/hit3;C7L01_field_ambulance/hit4"
+

@@ -1,0 +1,86 @@
+o.s_SubClass.bindFX = {
+	{"Frankenstein_electro_g",0.5,'weapon_head',0.4,0,0},
+}
+
+o.s_SubClass.ParticlesDefinitions = {
+	chargestick = {
+		pfx = "Frankenstein_chargestick_g",
+		scale = 0.6,
+		joint = "weapon_head",
+		offset = Vector:New(0,0,0),
+	},
+	chargebody = {
+		pfx = "Frankenstein_chargebody_g",
+		scale = 1.1,
+--		joint = "k_szyja",
+		joint = "spine_0",
+		offset = Vector:New(0.5,0.3,0),
+	},
+	sparks = {
+		pfx = "Frankenstein_sparks_g",
+		scale = 0.5,
+		joint = "k_szyja",
+		offset = Vector:New(0,1,0),
+	},
+dsparks1 = {
+		pfx = "Frankenstein_electro",
+		scale = 0.5,
+		joint = "l_leg",
+		offset = Vector:New(0,0,0),
+	},
+	dsparks2 = {
+		pfx = "Frankenstein_electro",
+		scale = 0.5,
+		joint = "r_leg",
+		offset = Vector:New(0,0,0),
+	},
+	dsparks3 = {
+		pfx = "Frankenstein_electro",
+		scale = 0.5,
+		joint = "l_foot",
+		offset = Vector:New(0,0,0),
+	},
+	dsparks4 = {
+		pfx = "Frankenstein_electro",
+		scale = 0.5,
+		joint = "r_foot",
+		offset = Vector:New(0,0,0),
+	},
+	dsparks5 = {
+		pfx = "Frankenstein_electro",
+		scale = 0.5,
+		joint = "l_arm",
+		offset = Vector:New(0,0,0),
+	},
+	dsparks6 = {
+		pfx = "Frankenstein_electro",
+		scale = 0.5,
+		joint = "r_arm",
+		offset = Vector:New(0,0,0),
+	},
+	dsparks7 = {
+		pfx = "Frankenstein_electro",
+		scale = 0.5,
+		joint = "spine_0",
+		offset = Vector:New(0,0,0),
+	},
+	dsparks8 = {
+		pfx = "Frankenstein_electro",
+		scale = 0.5,
+		joint = "hips",
+		offset = Vector:New(0,0,0),
+	},
+	dsparks9 = {
+		pfx = "Frankenstein_electro",
+		scale = 0.5,
+		joint = "neck",
+		offset = Vector:New(0,0,0),
+	},
+	dsplat = {
+		pfx = "frankie_orange",
+		scale = 0.7,
+		joint = "neck",
+		offset = Vector:New(0,0,0),
+	},
+
+}

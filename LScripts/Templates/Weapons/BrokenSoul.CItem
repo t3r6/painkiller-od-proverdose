@@ -1,0 +1,12 @@
+o.Mesh = "polySurfaceShape4"
+o.Pack = "shuriken_w.dat"
+o.Scale = 0.01
+o.Restitution = 1
+o.Mass = 0.001
+o.TestDeathZone = true
+o.SoundInWater = "impacts/bulletbig-water"
+o.EnemyThrowBack = 5000 
+o.EnemyThrowUp = 0
+o.Timeout = 100
+o.damage = 15
+o.Central = false 

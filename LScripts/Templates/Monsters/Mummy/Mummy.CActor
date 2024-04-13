@@ -1,0 +1,225 @@
+o.Model = "mummy"
+o.WalkSpeed = 1.3
+o.RunSpeed = 1
+o.CreatePO = true
+o.Scale = 1.2
+o.Health = 155
+o.RotateSpeed = 6
+o.NeverRun = false
+o.throwHeart = true
+o.enableGibWhenHPBelow = -23
+o._DustBlood = true
+o.customgibexpsound = {"actor/gibs/mummy_gib"}
+
+
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 120,
+}
+
+
+o.s_SubClass = {
+	SoundDir = "mw_mummy",
+    rotateHead = 3.1415 * 0.29,
+    rotateHeadBone = "neck",
+    rotateHeadMaxSpeed = 0.2,
+
+    Animations = {
+	 death1     = {1.0, false, {
+  					{0.5,'PlaySound',"$/actor/deaths/mummy_death"},
+	 	 
+	 }},
+	 death2     = {1.0, false, {
+  					{0.5,'PlaySound',"$/actor/falls/fall5"},
+ 					{0.8,'PlaySound',"$/actor/falls/fall4"},
+	 }},
+
+		i1a   = {0.7,false},			-- speed, movingcurve, events
+		i1b   = {0.7,false, {
+				{0.65,'FootFX','l_ring_1'},
+					
+}},			-- speed, movingcurve, events
+		idle   = {0.7,false},			-- speed, movingcurve, events
+		walk   = {1,true, {
+				{0.0,'PlaySound',"walkvoice"},
+				{0.55,'PlaySound',"step1"},
+--				{0.65,'FootFX','r_toe'},
+				{0.07,'PlaySound',"step2"},
+--				{0.07,'FootFX','l_toe'},
+				}},
+
+        run    = {1.2,true, {
+				{0.0,'PlaySound',"walkvoice"},
+				{0.44,'PlaySound',"step1"},
+				{0.65,'FootFX','r_toe'},
+				{0.07,'PlaySound',"step2"},
+				{0.07,'FootFX','l_toe'},
+				}},
+
+		a1a  = {1.1,true, {			-- flamethrower
+					{0.0,'PlaySound',"atak"},
+					{0.2,'PlaySound',"swish"},
+					{0.2,'PlaySound',"flame_swish"},
+					{0.7,'damage',},
+					{0.9,'PlaySound',"swish"},
+					{0.9,'PlaySound',"flame_swish"},
+					{1.2,'damage',},
+					{0.8,'PlaySound',"atak"},
+				}},
+		a1b  = {1.2,true, {			-- przypalanie
+					{0.0,'PlaySound',"atak"},
+					{0.2,'PlaySound',"swish"},
+					{0.2,'PlaySound',"flame_swish"},
+					{0.7,'damage',},
+					{0.9,'PlaySound',"swish"},
+					{1.3,'damage',},
+					{0.8,'PlaySound',"atak"},
+				}},
+
+		a1c  = {1.0,true, {			-- rzut 
+					{0.5, 'Flame'},
+					{0.5,'PlaySound',"at3voice"},
+					{1.0,'PlaySound',"mummy_sound"},
+					{0.9, 'CheckDamageFromFlame'},
+					{1.2, 'CheckDamageFromFlame'},
+					{1.5, 'CheckDamageFromFlame'},
+					{1.9, 'CheckDamageFromFlame'},
+					{2.2, 'CheckDamageFromFlame'},
+					{2.4, 'CheckDamageFromFlame'},
+					{2.7, 'CheckDamageFromFlame'},
+					{2.4, 'EndFlame'},
+				}},
+
+		h1a = {1.3, false, {
+				{0.0,'PlaySoundHit',"hit"},
+				}},
+		h1b = {1.5, false, {
+				{0.0,'PlaySoundHit',"hit"},
+				}},
+	},
+	NearAttacks = {"a1a","a1b"},
+    ragdollJoint = "head",
+    Ambients = {"idle","i1a", "i1b"},
+    Hits = {"h1a", "h1b"},
+
+	RagdollCollisions = {
+		MinStren = 3.0,
+		MinTime = 0.7,
+		Bones = {
+				{"head", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_shoulder", "bodyfalls", true},
+				{"l_shoulder", "bodyfalls", true},
+				{"weapon", "weaponlost", false},
+			}
+	},
+
+
+    DeathJoints = {
+    	'neck,','l_forearm',
+	},
+    BreakableJoints = {
+    	'neck','r_p_bark','r_l_bark','l_up_leg','r_up_leg'
+},
+    CollidableRagdoll = false,
+    
+	notBleedingJoints = {
+		weapon = {weapon},
+    },
+    
+    GibExplosionStrength = 10000,
+	GibExplosionRange = 2.0,
+	GibExplosionDeltaY = -1.0,
+	gibFX = "mumrozpad",
+	GibEmitters = {
+				{"neck","mumrozpad",-1},
+				{"root","mumrozpad",-1},
+				{"l_forearm","mumrozpad",-1},
+				{"r_forearm","mumrozpad",1},
+				{"l_hand","mumrozpad",-1},
+				{"r_up_leg","mumrozpad",1},
+				{"l_up_leg","mumrozpad",1},
+	},
+	gibShader = "palskinned_stone",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"neck", "gibSplash", true},
+				{"l_forearm", "gibSplash", true},
+				{"r_forearm", "gibSplash", true},
+				{"l_hand", "gibSplash", true},
+				{"l_up_leg", "gibSplash", true},
+				{"r_up_leg", "gibSplash", true},
+				{"root", "weaponlost", false},
+			},
+	    },
+
+}
+
+
+o.DeathTimer = 140                  -- po ilu 1/30 postac znika po smierci
+o.flame_FX = "Mummy_flame"
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","hunt", "hear","flee","FarAttack","closeAttack"}
+
+o.AiParams.viewDistance = 90
+o.AiParams.viewDistance360 = 6
+o.AiParams.viewAngle = 100
+
+o.AiParams.weaponDamage = 20
+o.AiParams.attackRange = 4
+o.AiParams.attackRangeAngle = 100
+o.AiParams.hearing = 1.0
+o.AiParams.perception = 1.0
+o.AiParams.changePosAfterFire = 0.4
+    
+o.AiParams.GuardStill = false
+o.AiParams.guardAngle = {-120,120}
+o.AiParams.guardAngleRandom = false
+o.AiParams.guardChangePosition = {30,60}
+o.AiParams.guardRange = -1			-- max. walk distance when idle
+o.AiParams.stopAfterWalking = 1.0
+o.AiParams.stopAfterWalkingTime = {90,120}
+
+o.AiParams.walkStep = 7.0
+--o.AiParams.walkArea = "TestArea"
+o.AiParams.walkAreaRandom = false
+o.AiParams.WalkAreaWhenAttack = false
+o.AiParams.useOnlyWaypointsWhenGuard = false
+
+o.AiParams.moveDisplacement = 3.0
+
+o.AiParams.chanceOfEscapeAfterFire = 0.04
+o.AiParams.escapeTime = 60
+
+o.AiParams.updateSpeed = 0.6
+o.AiParams.alwaysSee = false
+o.AiParams.huntPlayer = true
+
+o.shadow = 128
+
+o.AiParams.delayBetweenAttacks = 15
+o.AiParams.weapon = {
+		maxDist = 10.0,
+		minDist = 4,
+		maxYaw = 60,
+		maxPitch = 45,
+	}
+
+o.shadow = 128
+o.AiParams.FarAttacks = {"a1c",}
+
+o.AiParams.weaponBindPos = "jaw"					-- skad wylatuja pociski (i Particle)
+o.AiParams.weaponBindPosShift = Vector:New(0.0,0.0,0.0)
+
+o.AiParams.flameRange = 10.0
+o.AiParams.flameDamage = 10.0
+
+o.AiParams.disableEscapeWhenTooClose = true
+o.AiParams.doNotBreakFarAttack = true
+o.AiParams.doNotRotateWhenShooting = false
+
+o.AiParams.NearAttack_Priority = 1
+o.AiParams.FarAttack_Priority = 0.6

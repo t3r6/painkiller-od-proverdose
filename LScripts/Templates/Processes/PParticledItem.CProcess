@@ -1,0 +1,30 @@
+PParticledItem.r_Item = nil
+PParticledItem.Timeout = 0
+PParticledItem.scale = 1
+
+o.BaseName = "PParticledItem.CProcess"
+
+-- UWAGA, przywiazac jeszcze dzwiek i przesuwac razem z beczka
+--============================================================================
+function PParticledItem:New(item,pfx,scale)
+    local p = Clone(self)
+    p.r_Item = item
+     if not pfx then return end
+    p.PFX = pfx 
+if scale then p.scale = scale end
+    return p
+end
+--============================================================================
+function PParticledItem:Init()
+    self.pafx = AddPFX(self.PFX,self.scale)
+    ENTITY.RegisterChild(self.r_Item._Entity,self.pafx)      
+end
+--============================================================================
+function PParticledItem:Update()    
+    
+    -- jezeli obiekt zostal w miedzy czasie zniszczony to kasuje proces
+	if not self.r_Item or self.r_Item._ToKill then
+ PARTICLE.Die(self.pafx)
+ GObjects:ToKill(self) end
+end
+--============================================================================

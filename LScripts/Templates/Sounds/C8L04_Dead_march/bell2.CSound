@@ -1,0 +1,10 @@
+bell2.Volume = 80
+bell2.Interval = 13
+bell2.RandomShift = 3
+bell2.Falloff =
+{
+  Start = 6,
+  End = 40
+}
+bell2.Sound ="C8L04_Dead_march/mbird1;C8L04_Dead_march/bell2"
+

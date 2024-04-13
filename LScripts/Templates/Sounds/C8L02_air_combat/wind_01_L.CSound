@@ -1,0 +1,10 @@
+wind_01_L.Volume = 80
+wind_01_L.Interval = 0
+wind_01_L.RandomShift = 0
+wind_01_L.Falloff =
+{
+  Start = 50,
+  End = 150
+}
+wind_01_L.Sound ="C8L02_air_combat/wind_01_L"
+

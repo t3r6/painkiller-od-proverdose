@@ -1,0 +1,10 @@
+noise.Volume = 80
+noise.Interval = 0
+noise.RandomShift = 0
+noise.Falloff =
+{
+  Start = 5,
+  End = 20
+}
+noise.Sound ="C7L01_field_ambulance/noise"
+

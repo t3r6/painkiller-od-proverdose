@@ -1,0 +1,60 @@
+o.s_SubClass.SoundsDefinitions = {
+
+	step1 = {
+		samples = {"$/actor/mw_pig_avenger/pig_krok1"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+	step2 = {
+		samples = {"$/actor/mw_pig_avenger/pig_krok2"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+
+	pig_attack1 = {
+		samples = {"$/actor/mw_pig_avenger/pig_attack1"},
+		dist1 = 8,
+		dist2 = 30,
+	},
+
+	pig_attack2 = {
+		samples = {"$/actor/mw_pig_avenger/pig_attack2"},
+		dist1 = 10,
+		dist2 = 60,
+	},
+
+	pig_swish_attack = {
+		samples = {"$/actor/mw_pig_avenger/pig_swish_attack2"},
+		dist1 = 10,
+		dist2 = 60,
+	},
+
+	pig_voice = {
+		samples = {"$/actor/mw_pig_avenger/pig_voice1","$/actor/mw_pig_avenger/pig_voice2","$/actor/mw_pig_avenger/pig_voice3","$/actor/mw_pig_avenger/pig_voice4"},
+		dist1 = 10,
+		dist2 = 60,
+	},
+
+	walk_effort = {
+		samples = {"$/actor/mw_pig_avenger/pig_walk_effort1","$/actor/mw_pig_avenger/pig_walk_effort2","$/actor/mw_pig_avenger/pig_walk_effort3","$/actor/mw_pig_avenger/pig_walk_effort3","$/actor/mw_pig_avenger/pig_walk_effort4","$/actor/mw_pig_avenger/pig_walk_effort5",},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	damage = {
+		samples = {'$/actor/mw_pig_avenger/pig_hits_hero'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+    death = {
+		samples = {'$/actor/mw_pig_avenger/pig_death1','$/actor/mw_pig_avenger/pig_death2','$/actor/mw_pig_avenger/pig_death3','$/actor/mw_pig_avenger/pig_death4'},
+   		dist1 = 30,
+		dist2 = 70,
+	},
+		bodyfalls = {
+		samples = {'$/actor/mw_pig_avenger/pig_bodyfalls',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+
+}

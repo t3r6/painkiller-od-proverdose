@@ -1,0 +1,19 @@
+o.BaseObj = "dzbanek1.CItem"
+
+
+function dzbanek1_krev:OnPrecache()
+    Cache:PrecacheParticleFX("Vamp_Blood_FX")
+    if Tweak.GlobalData.GermanVersion then
+        Cache:PrecacheDecal("bloodSmall_German")
+    else
+        Cache:PrecacheDecal("bloodSmall")
+    end
+end
+
+function o:OnCreateEntity()
+	self:PO_Create(BodyTypes.FromMesh)
+	 ENTITY.EnableCollisions(self._Entity,true)
+	    local pfx = AddPFX('Vamp_Blood_FX',2.5)
+	    ENTITY.RegisterChild(self._Entity,pfx)    
+	    self.TimeToLive = 999999
+end

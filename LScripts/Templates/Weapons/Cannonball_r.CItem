@@ -1,0 +1,10 @@
+o.Model = "cannonball"
+Cannonball_r.Scale = 2
+Cannonball_r.Timeout = 2*30
+Cannonball_r.Restitution = 1
+Cannonball_r.Mass = 0.001
+Cannonball_r.TestDeathZone = true
+Cannonball_r.SoundInWater = "impacts/bulletbig-water"
+
+o.trail = "trail_canonball"
+o._AnimSpeed = 0.75

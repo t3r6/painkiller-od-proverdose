@@ -1,0 +1,16 @@
+o.BaseObj = "Alastor_fire.CActor"
+o.walkdist = 5
+o.attackDamage = 20
+
+Alastor_attack._CustomAiStates.groundAttackAlastor.minAttackDistance = 2.0
+Alastor_attack._CustomAiStates.groundAttackAlastor.atak1minDistance = 9.0
+
+o.s_SubClass.Animations.atak2   = {1.0,true, {
+					{0.0,'PlaySoundHitBinded',"av2"},
+					{1.5,'PlaySound',"naskok"},
+					{1.5,'Stomp','s_p_kostka',1.5},
+					{1.5,'PlaySound',"atak2"},
+					{1.18,'EnableRotate'},
+					{1.5,'DisableRotate'},
+				},0.5, true}
+

@@ -1,0 +1,21 @@
+o.Mesh = "bedna_atest_Shape"
+o.Pack = "o_bednaskoulema.dat"
+o.DestroyPack = "o_bednaskoulema_zlom.dat"
+o.Scale = 0.3
+o.Health = 15
+o.Mass = 300
+
+o.Destroy.ExplosionStrength = 5000
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 200
+o.Destroy.Effect = "explo_ammobox"
+o.Destroy.EffectScale = 0.5
+o.Destroy.Treasures = 
+{
+    Coins  = {1, 'g'},
+}
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 145
+o.Destroy.ExplosionRadius = 7
+o.Destroy.LifetimeAfterExplosion = 1

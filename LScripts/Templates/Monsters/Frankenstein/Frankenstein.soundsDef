@@ -1,0 +1,83 @@
+o.s_SubClass.SoundsDefinitions = {
+	stepl = {
+		samples = {'$/actor/mw_frankenstein/frank_krok1',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	stepr = {
+		samples = {'$/actor/mw_frankenstein/frank_krok2',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	
+	swish1 = {
+		samples = {'$/actor/mw_frankenstein/frank_swish1',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	swish2 = {
+		samples = {'$/actor/mw_frankenstein/frank_swish2',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	attack1 = {
+		samples = {'$/actor/mw_frankenstein/frank_attack1',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	attack1_voice = {
+		samples = {'$/actor/mw_frankenstein/frank_at1',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	attack2_voice = {
+		samples = {'$/actor/mw_frankenstein/frank_at2a','$/actor/mw_frankenstein/frank_at2b','$/actor/mw_frankenstein/frank_at2c'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	idle_voice = {
+		playChance = 0.2,
+		samples = {'$/actor/mw_frankenstein/frank_idle1','$/actor/mw_frankenstein/frank_idle2','$/actor/mw_frankenstein/frank_idle3','$/actor/mw_frankenstein/frank_idle4','$/actor/mw_frankenstein/frank_idle5'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	
+	onAttackOnce = {
+		samples = {"$/actor/mw_frankenstein/frank_at2a", "$/actor/mw_frankenstein/frank_at2b", "$/actor/mw_frankenstein/frank_at2c"},
+		playChance = 0.5,
+		dist1 = 30,
+		dist2 = 70,
+	},
+	hit = {
+		samples = {'$/actor/mw_frankenstein/frank_hit1','$/actor/mw_frankenstein/frank_hit2','$/actor/mw_frankenstein/frank_hit3',},
+		dist1 = 30,
+		dist2 = 70, 
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_frankenstein/frank_bodyfalls"},
+		dist1 = 12,
+		dist2 = 48, 
+	},
+	weaponlost = {
+		samples = {"$/actor/mw_frankenstein/frank_weapon-lost1","$/actor/mw_frankenstein/frank_weapon-lost2","$/actor/mw_frankenstein/frank_weapon-lost3"},
+		dist1 = 12,
+		dist2 = 48, 
+	},
+	death = {
+        	samples = {"$/actor/mw_frankenstein/frank_death1","$/actor/mw_frankenstein/frank_death2"},
+		dist1 = 20,
+		dist2 = 60, 
+	},
+
+	damage = {
+		samples = {"$/actor/mw_frankenstein/frank_hits_hero"},
+	},
+
+
+}
+
+
+o.s_SubClass.SoundsDefinitions.damage = {
+	samples = {"$/actor/mw_frankenstein/zap"},
+}
+

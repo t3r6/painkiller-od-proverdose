@@ -1,0 +1,13 @@
+o.BaseObj = "Leper_monk.CActor"
+o.NeverMove = true
+o.Pinned = true
+
+o.AiParams.aiGoals = {"idle","throwCorpse","closeAttack"}
+o.AiParams.alwaysSee = true
+
+o.AiParams.attackRange = 40
+o.AiParams.throwRangeMax = 120
+o.AiParams.weaponDamage = 10
+
+o.AiParams.delayBetweenAttacks = 35
+

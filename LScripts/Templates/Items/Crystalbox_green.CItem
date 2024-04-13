@@ -1,0 +1,26 @@
+o.Mesh = "bednaskrystalyShape"
+o.Pack = "o_bednaskrystaly_v1.dat"
+o.DestroyPack = "o_bednaskrystaly_v1_zlom.dat"
+o.Scale = 0.2
+o.Health = 10
+o.Mass = 200
+
+
+o.Destroy.ExplosionStrength = 1000
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 200
+o.Destroy.Effect = "nuclesud_expl"
+o.Destroy.EffectScale = 1
+o.Destroy.Treasures = 
+{
+    Coins  = {2, 'g'},
+}
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 100
+o.Destroy.ExplosionRadius = 7
+o.Destroy.LifetimeAfterExplosion = 2
+
+o.Destroy.ThrowItem = {"Mushcloud.CItem"}
+o.Destroy.ThrowItemCount = 1
+o.Destroy.ThrowItemSpread = 0

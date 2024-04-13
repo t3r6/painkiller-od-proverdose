@@ -1,0 +1,25 @@
+BarrelBlood.Mesh = "BECZKA_DUZAShape"
+BarrelBlood.Pack = "cale_przedmioty.dat"
+
+BarrelBlood.DestroyPack = "beczka_duza_zlom.dat"
+BarrelBlood.Health = 40
+BarrelBlood.Mass = 200
+BarrelBlood.Friction = 1
+BarrelBlood.Scale = 0.5
+
+BarrelBlood.Destroy.Strength = 200
+BarrelBlood.Destroy.ExplosionStrength = 100
+BarrelBlood.Destroy.ExplosionDamage = 200
+BarrelBlood.Destroy.ExplosionRadius = 5
+BarrelBlood.Destroy.AverageDelay = 32
+BarrelBlood.Destroy.AverageVariation = 16
+BarrelBlood.Destroy.Effect = "BodyExplosion"
+BarrelBlood.Destroy.EffectScale = 0.4
+BarrelBlood.Destroy.BurningParts = false
+o.Destroy.Treasures = 
+{
+    Coins  = {1, 'g'},
+}
+BarrelBlood.Destroy.Light = false
+BarrelBlood.Destroy.MinSpeedOnCollision = 18
+

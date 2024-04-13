@@ -1,0 +1,30 @@
+o.s_SubClass.SoundsDefinitions = 
+{
+    path = "weapons/BoneGun",
+    dist1   = 15,
+    dist2   = 50,
+    disablePitch = true,
+    out_of_ammo = 
+    {
+        samples = {"bonegun_empty"},
+    },
+    shot = 
+    {
+        samples = {"bonegun_shot"},
+    },
+    shell = 
+    {
+        samples = {"bonegun_shell1","bonegun_shell2","bonegun_shell3"},
+    },
+    freezer_shot = 
+    {
+        samples = {"bonegun_stonize_shot"},
+    },    
+    hit_water = 
+    {
+        path = "impacts",
+        samples = {"bullet-water1","bullet-water2","bullet-water3","bullet-water4","bullet-water5"},
+        dist1   = 20,
+        dist2   = 50,
+    },
+}

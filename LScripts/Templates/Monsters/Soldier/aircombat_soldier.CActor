@@ -1,0 +1,28 @@
+o.BaseObj = "Russ_soldier.CActor"
+o.Model = "szkop"
+
+o.Health = 95
+
+
+o.s_SubClass.xchgTextures = {
+		{"niemiec_textura","aircombat_soldier"},
+		{"niemiec_textura_add","aircombat_soldier_add"},
+	}
+
+
+
+
+o.AiParams.weapon = {
+		maxDist = 25,
+		minDist = 2.5,
+		maxYaw = 45,
+		maxPitch = 45,
+		bulletsPerShot = 1,
+		spreadAngle = 3.0,
+		damagePerBullet = 7,
+		PO_HitForce = 10,
+		fireParticle = "monstershot",	
+		fireParticleSize = 0.2,
+		bulletHitWallParticle =	"HB_hitground",
+		bulletHitWallParticleSize = 0.2,
+	}

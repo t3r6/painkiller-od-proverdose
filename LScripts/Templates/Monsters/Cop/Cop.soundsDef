@@ -1,0 +1,60 @@
+o.s_SubClass.SoundsDefinitions = {
+
+	step1 = {
+		samples = {"$/actor/mw_cop/cop_step1","$/actor/mw_cop/cop_step2"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+	step2 = {
+		samples = {"$/actor/mw_cop/cop_step3","$/actor/mw_cop/cop_step4"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+
+	cop_swish1 = {
+		samples = {"$/actor/mw_cop/cop_swish1"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+	cop_swish2 = {
+		samples = {"$/actor/mw_cop/cop_swish2"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+	cop_swish3 = {
+		samples = {"$/actor/mw_cop/cop_swish3"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+
+	cop_attack_voice = {
+		samples = {"$/actor/mw_cop/cop_atvoice1","$/actor/mw_cop/cop_atvoice2","$/actor/mw_cop/cop_atvoice3","$/actor/mw_cop/cop_atvoice4","$/actor/mw_cop/cop_atvoice5","$/actor/mw_cop/cop_atvoice6","$/actor/mw_cop/cop_atvoice7","$/actor/mw_cop/cop_atvoice8","$/actor/mw_cop/cop_atvoice9"},
+		dist1 = 8,
+		dist2 = 30,
+		playChance = 0.5,
+	},
+
+hit = {
+		samples = {'$/actor/mw_cop/cop_hit1','$/actor/mw_cop/cop_hit2','$/actor/mw_cop/cop_hit3','$/actor/mw_cop/cop_hit4','$/actor/mw_cop/cop_hit5'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+
+	damage = {
+		samples = {'$/actor/mw_cop/cop_stick_hit'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+    death = {
+		samples = {'$/actor/mw_cop/cop_death1','$/actor/mw_cop/cop_death2'},
+   		dist1 = 30,
+		dist2 = 70,
+	},
+		bodyfalls = {
+		samples = {'$/actor/mw_cop/cop_bodyfalls_temp',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+
+}

@@ -1,0 +1,54 @@
+o.s_SubClass.SoundsDefinitions = {
+	step1 = {
+		samples = {"$/actor/mw_cop/cop_step1","$/actor/mw_cop/cop_step2"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+	step2 = {
+		samples = {"$/actor/mw_cop/cop_step3","$/actor/mw_cop/cop_step4"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+
+	swish = {
+		samples = {"$/actor/mw_cop/cop_swish1"},
+		dist1 = 6,
+		dist2 = 30,
+	},
+
+
+	halt = {
+		samples = {"$/actor/mw_cop_flamer/copf_idle1","$/actor/mw_cop_flamer/copf_idle2","$/actor/mw_cop_flamer/copf_idle3"},
+		dist1 = 6,
+		dist2 = 30,
+		playChance = 0.1
+	},
+
+	flamevoice = {
+		samples = {'$/actor/mw_cop_flamer/copf_atvoice1','$/actor/mw_cop_flamer/copf_atvoice2','$/actor/mw_cop_flamer/copf_atvoice3','$/actor/mw_cop_flamer/copf_atvoice4'},
+		dist1 = 12,
+		dist2 = 40,
+		playChance = 0.28,
+	},
+
+	hit = {
+		samples = {'$/actor/mw_cop_flamer/copf_hit1','$/actor/mw_cop_flamer/copf_hit2','$/actor/mw_cop_flamer/copf_hit3','$/actor/mw_cop_flamer/copf_hit4'},
+		dist1 = 20,
+		dist2 = 100,
+	},
+	onAttackOnce = {
+		samples = {"$/actor/mw_cop_flamer/copf_idle1","$/actor/mw_cop_flamer/copf_idle2","$/actor/mw_cop_flamer/copf_idle3"},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_cop/cop_bodyfalls_temp"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	death = {
+		samples = {"$/actor/mw_cop_flamer/copf_death1","$/actor/mw_cop_flamer/copf_death2","$/actor/mw_cop_flamer/copf_death3"},
+        dist1 = 16,
+		dist2 = 60,
+	},
+}

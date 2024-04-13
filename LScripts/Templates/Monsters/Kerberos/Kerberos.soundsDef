@@ -1,0 +1,77 @@
+o.s_SubClass.SoundsDefinitions = {
+
+	howling = {
+		samples = {'$/actor/mw_kerberos/kerb_howl'},
+		dist1 = 30,
+		dist2 = 150,
+	},
+	step = {
+		samples = {'$/actor/mw_kerberos/kerb_krok1','$/actor/mw_kerberos/kerb_krok2','$/actor/mw_kerberos/kerb_krok3','$/actor/mw_kerberos/kerb_krok4'},
+		dist1 = 30,
+		dist2 = 100,
+	},
+	shoot = {
+		samples = {"$/actor/mw_kerberos/kerb_shoot1","$/actor/mw_kerberos/kerb_shoot2"},
+		dist1 = 40,
+		dist2 = 120,
+	},
+	shootvoice = {
+		samples = {"$/actor/mw_kerberos/kerb_atak_voice1","$/actor/mw_kerberos/kerb_atak_voice2","$/actor/mw_kerberos/kerb_atak_voice3"},
+		dist1 = 15,
+		dist2 = 120,
+	},
+	atak1voice = {
+		samples = {"$/actor/mw_kerberos/kerb_atak1","$/actor/mw_kerberos/kerb_atak1b"},
+		dist1 = 30,
+		dist2 = 100,
+	},
+	atak2voice = {
+		samples = {"$/actor/mw_kerberos/kerb_atak2","$/actor/mw_kerberos/kerb_atak2b"},
+		dist1 = 30,
+		dist2 = 100,
+	},
+	effort = {
+		samples = {"$/actor/mw_kerberos/kerb_effort1","$/actor/mw_kerberos/kerb_effort2","$/actor/mw_kerberos/kerb_effort3","$/actor/mw_kerberos/kerb_effort4","$/actor/mw_kerberos/kerb_effort5","$/actor/mw_kerberos/kerb_effort6","$/actor/mw_kerberos/kerb_effort7","$/actor/mw_kerberos/kerb_effort8"},
+		dist1 = 30,
+		dist2 = 100,
+	},
+	hit = {
+		samples = {'$/actor/mw_kerberos/kerb_hit1','$/actor/mw_kerberos/kerb_hit2','$/actor/mw_kerberos/kerb_hit3'},
+		dist1 = 30,
+		dist2 = 120,
+	},
+
+
+
+	onAttackOnce = {
+		samples = {"$/actor/mw_kerberos/kerb_atak1","$/actor/mw_kerberos/kerb_atak1b","$/actor/mw_kerberos/kerb_atak2","$/actor/mw_kerberos/kerb_atak2b"},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	bodyfalls = {
+		samples = {'$/actor/mw_kerberos/kerb_bodyfalls'},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	weaponlost = {
+		samples = {"$/actor/mw_kerberos/kerb_weaponlost1","$/actor/mw_kerberos/kerb_weaponlost2"},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	
+	death = {
+		samples = {'$/actor/mw_kerberos/kerb_death'},
+        dist1 = 30,
+		dist2 = 100,
+	},
+    
+	onAttack = {
+		samples = {"$/actor/mw_kerberos/kerb_atak_voice1","$/actor/mw_kerberos/kerb_atak_voice2","$/actor/mw_kerberos/kerb_atak_voice3"},
+        dist1 = 30,
+		dist2 = 80,
+	},
+    
+    damage = {
+		samples = {'$/actor/mw_kerberos/kerb_hit1','$/actor/mw_kerberos/kerb_hit2','$/actor/mw_kerberos/kerb_hit3'},
+	},
+}

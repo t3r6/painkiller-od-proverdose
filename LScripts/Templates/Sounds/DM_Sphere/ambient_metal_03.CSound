@@ -1,0 +1,10 @@
+ambient_metal_03.Volume = 60
+ambient_metal_03.Interval = 5
+ambient_metal_03.RandomShift = 0
+ambient_metal_03.Falloff =
+{
+  Start = 10,
+  End = 150
+}
+ambient_metal_03.Sound ="DM_Sphere/ambient_metal_03"
+

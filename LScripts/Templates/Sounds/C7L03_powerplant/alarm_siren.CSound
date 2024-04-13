@@ -1,0 +1,10 @@
+alarm_siren.Volume = 80
+alarm_siren.Interval = 15
+alarm_siren.RandomShift = 0
+alarm_siren.Falloff =
+{
+  Start = 10,
+  End = 60
+}
+alarm_siren.Sound ="C7L03_powerplant/alarm_siren"
+

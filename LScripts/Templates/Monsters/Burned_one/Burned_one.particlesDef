@@ -1,0 +1,55 @@
+o.s_SubClass.Light = {
+    template = "leper_Light.CLight",
+    joint = "d_P_bron",
+}
+o.s_SubClass.BillBoard = {
+	template = "lepper-torch.CBillboard",
+	joint = "d_P_bron",
+}
+o.s_SubClass.ParticlesDefinitions = {
+	torch = {
+		pfx = "pochodnia_flame3",
+		scale = 0.5,
+		offset = Vector:New(1.0,0.15,-0.05),
+		joint = "d_P_bron",
+	},
+
+	handdust ={
+		pfx = "burnedone_hand",
+		scale = 0.6,
+		offset = Vector:New(0,0,0),
+		joint = "d_P_srodek_03",
+	},
+	
+	
+	
+	
+	legdust1 ={
+		pfx = "burnedone_smoke",
+		scale = 0.5,
+		offset = Vector:New(0,0,0),
+		joint = "n_p_kolano",
+	},
+	legdust2 ={
+		pfx = "burnedone_smoke",
+		scale = 0.5,
+		offset = Vector:New(0,0,0),
+		joint = "n_l_kolano",
+	},
+
+	bodydust1 ={    --krk
+		pfx = "burnedone_smoke",
+		scale = 0.85,
+		offset = Vector:New(0,-0.2,0),
+		joint = "szczeka",
+	},
+	bodydust2 ={
+		pfx = "burnedone_smoke",
+		scale = 0.5,
+		offset = Vector:New(0,-0.25,0),
+		joint = "root",
+	},
+}
+
+
+

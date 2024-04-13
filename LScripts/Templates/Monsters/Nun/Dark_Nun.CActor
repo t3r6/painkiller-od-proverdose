@@ -1,0 +1,20 @@
+o.BaseObj = "Nun1.CActor"
+o.RunSpeed = 1.8
+
+o.AiParams.viewDistance = 60
+o.AiParams.attackRange = 2.8
+o.AiParams.hearing = 60.0
+
+o.AiParams.chanceOfEscapeAfterFire = 0.04
+o.AiParams.alwaysSee = true
+o.AiParams.huntPlayer = true
+
+o.s_SubClass.xchgTextures = {
+		{"nuntexture2_add","nuntexture2a_add"},
+		{"NUNtexture3","NUNtexture3a"},
+		{"nuntexture3_add","nuntexture3a_add"},
+		{"NUNtexture4","NUNtexture4a"},
+		{"nuntexture6","nuntexture6a"},
+		{"kosanuna","kosanuna_a"},
+	}
+

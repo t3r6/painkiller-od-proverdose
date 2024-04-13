@@ -1,0 +1,5 @@
+o.BaseObj = "Pirate_bossman.CActor"
+o.Scale = 1.9
+o.NeverMove = true
+o.Pinned = true
+o.Health = 140

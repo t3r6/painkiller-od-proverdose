@@ -1,0 +1,37 @@
+EDITOR.AddObjectTemplate("Particles","FX_SpawnBlood","FX_SpawnBlood.CActor");	
+
+FX_SpawnBlood.Model = "spawn"
+FX_SpawnBlood.Scale = 4
+FX_SpawnBlood.NotCountable = true
+
+FX_SpawnBlood.s_SubClass = 
+{
+    Animations = {  
+        idle        = {1.0},
+    },
+}
+
+function FX_SpawnBlood:OnPrecache()
+	Cache:PrecacheParticleFX("spawnblood")
+end
+
+function FX_SpawnBlood:OnCreateEntity()
+    self:BindFX("spawnblood",1,"e1")
+    self:BindFX("spawnblood",1,"e2")
+    self:BindFX("spawnblood",1,"e3")
+    self:BindFX("spawnblood",1,"e4")
+    self:BindFX("spawnblood",1,"e5")
+    self:BindFX("spawnblood",1,"e6")
+    self:BindFX("spawnblood",1,"e7")
+    self:BindFX("spawnblood",1,"e8")
+    self:BindFX("spawnblood",1,"e9")
+    self:BindFX("spawnblood",1,"e10")
+end
+
+function FX_SpawnBlood:OnFinishAnim(name)
+    ENTITY.UnregisterAllChildren(self._Entity)
+    GObjects:ToKill(self)
+end
+
+
+o.Immortal = true

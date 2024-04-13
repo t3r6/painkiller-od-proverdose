@@ -1,0 +1,47 @@
+o.BaseObj = "Wheelchair_Shoot_Only.CActor"
+o.Scale = 3
+o.Health = 650
+o.NeverMove = true
+o.Pinned = true
+o.throwHeart = red
+
+o.AiParams.weapon = {
+		bulletsPerShot = 1,
+		maxDist = 45,
+		minDist = 2,
+		spreadAngle = 1,
+		damagePerBullet = 3,
+		PO_HitForce = 500,
+		maxYaw = 45,				-- maksymalna odchylka broni lewo/prawo w stos. do kata patrzenia
+		maxPitch = 45,				-- maksymalna odchylka broni gora/dol
+		fireParticle = "RifleHitWall",	
+		fireParticleSize = 0.2,
+	}
+
+o.AiParams.viewDistance = 370			-- zasieg widzenia
+
+o.AiParams.viewAngle = 150				-- kat widzenia
+o.AiParams.viewDistance360 = 370	
+
+o.AiParams.weapon = {
+		bulletsPerShot = 1,
+
+		maxDist = 123,
+	
+		minDist = 5,
+		
+		spreadAngle = 1,
+	
+		damagePerBullet = 2,
+	
+		PO_HitForce = 300,
+		
+		maxYaw = 45,			
+		maxPitch = 45,		
+		-- maksymalna odchylka broni gora/dol
+		
+		fireParticle = "RifleHitWall",	
+	
+		fireParticleSize = 0.1,
+	
+} 

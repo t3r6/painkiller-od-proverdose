@@ -1,0 +1,41 @@
+o.s_SubClass.ParticlesDefinitions = {
+	smoke = {
+		pfx = "Valkyra_Flame",
+		scale = 0,
+		joint = "RightHand",
+		offset = Vector:New(0.2,-0.3,-1),
+	},
+	warp = {
+		pfx = "flamewarp",
+		joint = "root",
+		scale = 0.3,
+		offset = Vector:New(0,0,0),
+	},
+	
+}
+
+
+o.s_SubClass.bindFX = {
+--	{"pochodnia_ghost",0.01,'RightHand',0,1,0},
+--	{"Valkyra_Flame",0.8,'RightHand', 0,1.2,0.22},
+	{"Valkyra_Flame",0.8,'RightHand', 0,1.1,0.21},
+--	{"Valkyra_Flame",0.7,'RightHand', 0,1,0.20},
+	{"Valkyra_Flame",0.7,'RightHand', 0,0.9,0.19},
+--	{"Valkyra_Flame",0.7,'RightHand', 0,0.8,0.18},
+	{"Valkyra_Flame",0.7,'RightHand', 0,0.7,0.17},
+--	{"Valkyra_Flame",0.7,'RightHand', 0,0.6,0.16},
+	{"Valkyra_Flame",0.6,'RightHand', 0,0.5,0.15},
+--	{"Valkyra_Flame",0.6,'RightHand', 0,0.4,0.14},
+	{"Valkyra_Flame",0.6,'RightHand', 0,0.3,0.13},
+--	{"Valkyra_Flame",0.6,'RightHand', 0,0.2,0.13},
+
+}
+
+o.s_SubClass.BillBoard = {
+	template = "Valkyra_Corona.CBillboard",
+	joint = "RightHand",
+}
+
+o.s_SubClass.bindFXkeepScale = 2
+
+

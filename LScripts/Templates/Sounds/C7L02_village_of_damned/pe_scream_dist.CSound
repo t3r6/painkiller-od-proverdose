@@ -1,0 +1,10 @@
+pe_scream_dist.Volume = 100
+pe_scream_dist.Interval = 6
+pe_scream_dist.RandomShift = 5
+pe_scream_dist.Falloff =
+{
+  Start = 15,
+  End = 100
+}
+pe_scream_dist.Sound ="C7L02_village_of_damned/pe_scream_dist1;C7L02_village_of_damned/pe_scream_dist2;C7L02_village_of_damned/pe_scream_dist3;C7L02_village_of_damned/pe_scream_dist4;C7L02_village_of_damned/pe_scream_dist5"
+

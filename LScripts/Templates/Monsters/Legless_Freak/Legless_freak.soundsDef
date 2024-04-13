@@ -1,0 +1,74 @@
+o.s_SubClass.SoundsDefinitions = {
+   path = "actor/mw_leglessfreak",
+	death_snd = {
+		samples = {'legless-death1','legless-death2','legless-death3','legless-death4'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	idle = {
+		samples = {'legless_idle1','legless_idle2','legless_idle3','legless_idle4','legless_idle5'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	step = {
+		samples = {'legless_move1','legless_move2','legless_move3','legless_move4'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	stepl = {
+		samples = {'legless_krok1'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	stepr = {
+		samples = {'legless_krok2'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+
+	at1 = {
+		samples = {'legless_at1','legless_at2','legless_at3'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	at2 = {
+		samples = {'legless_at4','legless_at5','legless_at6'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	plazmball = {
+		samples = {'legless_plazmball'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	swish1 = {
+		samples = {'legless_swish1'},
+		dist1 = 10,
+		dist2 = 32,
+	},
+	swish2 = {
+		samples = {'legless_swish1'},
+		dist1 = 10,
+		dist2 = 32,
+	},
+	dart = {
+		samples = {'legless_blow-dart1', 'legless_blow-dart2',},
+		dist1 = 10,
+		dist2 = 30,
+	},	
+	meat = {
+		samples = {'legless_meat'},
+		dist1 = 10,
+		dist2 = 30,
+	},	
+	hit = {
+		samples = {'$/actor/mw_leglessfreak/legless_hit1','$/actor/mw_leglessfreak/legless_hit2','$/actor/mw_leglessfreak/legless_hit3','$/actor/mw_leglessfreak/legless_hit4'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	damage = {
+		samples = {'$/actor/mw_leglessfreak/legless_playerhit'},
+		dist1 = 10,
+		dist2 = 30,
+	},	
+}

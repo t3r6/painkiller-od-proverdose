@@ -1,0 +1,22 @@
+o.Mesh = "kockaShape"
+o.Pack = "o_egypt_kocka.dat"
+o.DestroyPack = "o_egypt_kocka_zlom.dat"
+o.Scale = 0.12
+o.Health = 10
+o.Mass = 200
+
+
+o.Destroy.ExplosionStrength = 350
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 75
+o.Destroy.Effect = "explode_dust"
+o.Destroy.EffectScale = 0.25
+o.Destroy.Treasures = 
+{
+    Coins  = {4, 'g'},
+}
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 0
+o.Destroy.ExplosionRadius = 0
+o.Destroy.LifetimeAfterExplosion = 1

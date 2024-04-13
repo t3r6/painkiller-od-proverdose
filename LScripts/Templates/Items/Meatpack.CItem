@@ -1,0 +1,21 @@
+o.Mesh = "balikShape1"
+o.Pack = "o_balikmasa.dat"
+o.DestroyPack = "o_balikmasa_zlom.dat"
+o.Scale = 0.22
+o.Health = 10
+--o.Pinned = true
+
+o.Destroy.ExplosionStrength = 50
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 5
+o.Destroy.Effect = "gibExplosion"
+o.Destroy.EffectScale = 0.5
+o.Destroy.Treasures = 
+{
+    Coins  = {2, 'g'},
+}
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 0
+o.Destroy.ExplosionRadius = 0
+o.Destroy.LifetimeAfterExplosion = 4

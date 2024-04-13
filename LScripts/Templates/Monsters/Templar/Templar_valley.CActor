@@ -1,0 +1,25 @@
+o.BaseObj = "Templar.CActor"
+o.NeverRun = true
+o.WalkSpeed = 1.8
+o.Scale = 1.6
+o.RunSpeed = 1.6
+o.AiParams.weaponDamage = 20
+o.AiParams.attackRange = 3.1
+o.AiParams.attackRangeAngle = 100
+o.AiParams.changePosAfterFire = 0.95
+
+
+o.s_SubClass.xchgTextures = {
+		{"templar_tex_1_add","templar_tex_1_add_val"},
+		{"templar_tex_1","templar_tex_1_val"},
+		{"templar_shield_tex","templar_shield_tex_val"},
+	}
+
+
+o.AiParams.delayBetweenAttacks = 40
+o.AiParams.weapon = {
+		maxDist = 35,
+		minDist = 3.1,
+		maxYaw = 45,
+		maxPitch = 45,
+	}

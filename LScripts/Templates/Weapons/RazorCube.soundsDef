@@ -1,0 +1,72 @@
+o.s_SubClass.SoundsDefinitions = 
+{
+    path = "weapons/cube",
+    dist1   = 15,
+    dist2   = 50,
+    disablePitch = true,
+    rotor_loop = 
+    {
+        samples = {"cube-rotor-loop"},
+    },
+    rotor_loop2 = 
+    {
+        samples = {"cube-rotor-loop2"},
+    },
+    rotor_start =
+    {   
+        samples = {"cube-rotor-start"}
+    },
+    rotor_stop =
+    {   
+        samples = {"cube-rotor-stop"}
+    },
+    rotor_hit_enemy = 
+    {
+        samples = {"cube-hit"},
+    },
+    rotor_hit_wall = 
+    {
+        samples = {"cube-spoon_hits_geometry"},
+    },
+    electro_loop = 
+    { 
+        samples = {"cube-electro-chime-loop"},
+    },
+    shock_loop = 
+    { 
+        samples = {"cube-electro-chime-shock-loop"},
+    },
+    head_shot = 
+    {
+        samples = {"cube-shoot"},
+    },
+    head_back = 
+    {
+        samples = {"cube-spoon-back"},
+    },
+    head_reload = 
+    {
+        samples = {"cube-reload"},
+    },
+    head_hit_enemy = 
+    {
+        path = "impacts",
+        samples = {"stake-body1","stake-body2"},
+        dist1   = 15,
+        dist2   = 25,
+    },
+    head_hit_wall = 
+    {
+        path = "impacts",
+        samples = {"painkiller-default1","painkiller-default2"},
+        dist1   = 15,
+        dist2   = 25,
+    },
+    head_hit_water = 
+    {
+        path = "impacts",
+        samples = {"bullet-water1","bullet-water2","bullet-water3","bullet-water4","bullet-water5"},
+        dist1   = 20,
+        dist2   = 50,
+    },
+}

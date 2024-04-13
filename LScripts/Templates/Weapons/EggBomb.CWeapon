@@ -1,0 +1,54 @@
+o.Model = "eggbomb"
+local sc = 1
+o.Scale = 0.09 * sc      -- skala broni
+o.Pos = Vector:New(-0.07*sc,0.4*sc,-0.32*sc) -- pozycja wzgledem kamery
+o.Ang = Vector:New(0.3,3.22,0)   -- kat wzgledem kamery
+o.ShotCamMove = 0.025
+o.ShotCamRotate = 0.025
+o.weaponidle="triggeridle"
+o.weaponwalk="triggerwalk"
+o.s_SubClass = {
+
+    BombDelay    = 20,
+    TriggerDelay    = 10,
+    BombDamage = 250,
+    ExplRange = 7,
+    ExplStr = 200,
+	BVelocityUp = 5,
+	BVelocityForward = 40,
+       
+       
+    Animations = 
+    {   
+        idle         = {1.0 ,0.3},
+        walk         = {1.0 ,0.3},
+        throw         = {1.5 ,0.3},
+        triggerin         = {1.5 ,0.3},
+        triggerthrow         = {1.5 ,0.3},
+        triggerpush         = {1.0 ,0.3},
+        triggerwalk         = {1.0 ,0.3},
+        triggeridle         = {1.0 ,0.3},
+    }
+}
+
+o.s_MPSubClass = {
+   BombDelay    = 6,
+    BombDamage = 80,
+    ExplRange = 6,
+    ExplStr = 80,
+	BVelocityUp = 10,
+	BVelocityForward = 40,
+       
+    Animations = 
+    {   
+        idle         = {1.0 ,0.3},
+        walk         = {1.0 ,0.3},
+        throw         = {1.0 ,0.3},
+        triggerin         = {1.0 ,0.3},
+        triggerthrow         = {1.0 ,0.3},
+        triggerpush         = {1.0 ,0.3},
+        triggerwalk         = {1.0 ,0.3},
+        triggeridle         = {1.0 ,0.3},
+    }
+
+}

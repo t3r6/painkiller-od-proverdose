@@ -1,0 +1,21 @@
+o.s_SubClass.ParticlesDefinitions = {
+	handglow = {
+		pfx = "Legless_freak_handglow",
+		scale = 1,
+		joint = "r_hand",
+		offset = Vector:New(0.0,0,0.0),
+	},
+	blooddrop = {
+		pfx = "Legless_freak_blooddrop",
+		scale = 1,
+		joint = "k_ogo",
+		offset = Vector:New(0.0,0,0.0),
+	},
+	bloodsplat = {
+		pfx = "Legless_freak_bloodsplat",
+		scale = 1,
+		joint = "spine4",
+		offset = Vector:New(0.0,0,0.0),
+	},
+
+}

@@ -1,0 +1,54 @@
+o.BaseObj = "CActor"
+o.Model = "dead_body"
+o.Scale = 1.2
+o.Health = -1
+o.NotCountable = true
+
+o.s_SubClass = {
+    RagdollCollisions = {
+        MinStren = 2.5,
+        MinTime = 0.7,
+        Bones = {
+				{"r_p_bark", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_l_bark", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+			},
+    },
+    DeathJoints = {
+        'n_p_kolano','n_l_kolano','r_l_lokiec','r_p_lokiec','r_p_bark','r_l_bark','k_ogo','k_szyja',
+    },
+}
+
+
+o.TimeToLive = 60
+
+
+function dead_body_dis:OnInitTemplate()
+	self:ReplaceFunction("Tick", nil)
+    self:ReplaceFunction("_Synchronize","Synchronize")
+    self:ReplaceFunction("Synchronize")
+end
+
+function dead_body_dis:OnApply()
+    MDL.SetRagdollLinearDamping(self._Entity,0.5)
+    MDL.SetRagdollAngularDamping(self._Entity,0.5)
+    --MDL.EnableRagdoll(self._Entity,true,ECollisionGroups.RagdollNonColliding)
+    self:EnableRagdoll(true)
+    self._enabledRD = true
+    self._died = true
+    self._deathTimer = 99999
+end
+
+
+function dead_body_dis:Update()
+if self.TimeToLive then
+			if self.TimeToLive > 0 then
+				self.TimeToLive = self.TimeToLive - 1
+			else
+				GObjects:ToKill(self)
+				--Game:Print("not pinned...kill")
+			end
+		end
+end
+
+

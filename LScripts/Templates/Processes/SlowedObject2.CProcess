@@ -1,0 +1,54 @@
+SlowedObject2.FreezeTime = 30 * 10 
+SlowedObject2.FadeInTime = 0.5
+SlowedObject2.FadeOutTime = 0.5
+SlowedObject2.Obj = nil
+
+o.BaseName = "SlowedObject2.CProcess"
+o.s_SubClass = {}
+
+--============================================================================
+function SlowedObject2:New(obj)
+	local shader = "palskinned_freeze" 
+
+    local o = Clone(self)
+--	Game:Print("SloW!")
+    o._timer = 0    
+    o.Obj = obj
+    obj._slowed = true
+   	obj.SlowTimer = self.FreezeTime
+	obj._randomizedParams.WalkSpeed = obj.WalkSpeed * obj.SlowMod
+	obj._randomizedParams.RunSpeed = obj.RunSpeed * obj.SlowMod
+	obj._randomizedParams.RotateSpeed = obj.RotateSpeed * obj.SlowMod
+	 MDL.SetMaterial(obj._Entity, shader)
+    return o 
+end
+--============================================================================
+function SlowedObject2:Tick(delta)
+	 if not self.Obj then
+        Game:Print(">> ERROR: SlowedObject2: no self.Obj!")
+        GObjects:ToKill(self)
+        return
+    end
+    if self.Obj.ToKill then GObjects:ToKill(self) end    
+
+    self._timer = self._timer + delta    
+
+    local a = 0
+    local fio = false
+
+    -- return to normal
+    if self._timer >= self.FreezeTime then
+        local x,y,z = ENTITY.GetPosition(self.Obj._Entity)
+        self.Obj._slowed = false
+        self.Obj._speeded = false
+	self.Obj.SlowMod = 1
+	MDL.SetMaterial(self.Obj._Entity, "")
+        self.Obj._randomizedParams.WalkSpeed = self.Obj.WalkSpeed * self.Obj.SlowMod
+	self.Obj._randomizedParams.RunSpeed = self.Obj.RunSpeed * self.Obj.SlowMod
+	self.Obj._randomizedParams.RotateSpeed = self.Obj.RotateSpeed * self.Obj.SlowMod
+
+	GObjects:ToKill(self)
+        a = 1
+    end
+end    
+--============================================================================

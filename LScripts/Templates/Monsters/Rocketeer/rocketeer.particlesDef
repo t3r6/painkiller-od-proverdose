@@ -1,0 +1,26 @@
+o.s_SubClass.ParticlesDefinitions = {
+	Smallflame = {
+		pfx = 'explo_barrelarab',
+		scale = 0.5,
+		joint = "rocket",
+		offset = Vector:New(0,-2,0),
+	},
+	ignition = {
+		pfx = 'rocketeer_fly',
+		scale = 1.5,
+		joint = "rocket",
+		offset = Vector:New(0,-1,0),
+	},
+	fall = {
+		pfx = 'explo_ammobox',
+		scale = 0.2,
+		joint = "rocket",
+		offset = Vector:New(0,-2,0),
+	},
+	rocketeer_smoke = {
+		pfx = 'rocketeer_idle',
+		scale = 0.75,
+		joint = "rocket",
+		offset = Vector:New(0,-0.75,0),
+	},
+}

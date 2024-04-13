@@ -1,0 +1,40 @@
+o.BaseObj="Sammael.CActor"
+o.AiParams.aiGoals = {"FlyingIdle","Explodeearth","throw","Comeback"}
+o.Scale=10
+o.Health = 1550
+o.hitmeshdelay = 0.5	--delka viditelnosti shieldu
+o._explodedelay = 15  --cas mezi dvema firerain
+o.hitgroundscatter = 25  --rozsah v jakem v jakem okolo playera boucha zeme
+o._toexplode={}
+o._toexplodetime={}
+o._singleexpdelay = 2.0  --cas mezi markem a vybuchem
+o._earthexplodetime = 10  --delka firerain
+o.exphits = 10  --percentual chance na spawn akce kazdych o._earthexplodetime ticku
+o.groundexpstr = 1500
+o.groundexpran = 6
+o.groundexpdam = 50
+o.hitgroundFX = "sammael_rain_mark"
+o.hitgroundFXscale = 1.5
+o.Exploparticle = "sammael_rain_expl"
+o.Exploparticlescale = 1.5
+o.DeadAnimChance = 100
+o.deathtype="deathanim"
+o.Comebacktag=true
+
+o.comebackpoints = {}
+o.comebackpoints[1] = Vector:New(2.1128687858582,20.977447509766,36.302890777588)
+o.comebackpoints[2] = Vector:New(0.1164,90.170013427734,-55.8484)
+o.comebackpoints[3] = Vector:New(-9.9072599411011,55.42223739624,-124.68962097168)
+
+o.AiParams.throwRangeMax  = 3000
+o.AiParams.throwVelocity = 40
+o.AiParams.throwRangeMin  = 4
+o.AiParams.ThrowableItem = "Sammael_Fireball2.CItem"
+
+o.s_SubClass.Animations.swarm  = {1.0, false,{
+					{0.29,'BindFX','spawn'},
+					{0.6,'ThrowImmid'},
+					{0.7,'ThrowImmid'},
+					{0.8,'ThrowImmid'},
+				}}
+

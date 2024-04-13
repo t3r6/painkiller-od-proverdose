@@ -1,0 +1,10 @@
+fire_small.Volume = 80
+fire_small.Interval = 0
+fire_small.RandomShift = 0
+fire_small.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+fire_small.Sound ="C8L02_air_combat/fire_small"
+

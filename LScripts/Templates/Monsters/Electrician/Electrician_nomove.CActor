@@ -1,0 +1,8 @@
+o.BaseObj = "Electrician.CActor"
+o.enableGibWhenHPBelow = -49
+o.AiParams.viewDistance = 80
+o.Scale = 1.35
+o.NeverMove = true
+
+
+o.AiParams.aiGoals = {"idle","hunt", "flee", "hear","throw"}

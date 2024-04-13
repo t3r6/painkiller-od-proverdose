@@ -1,0 +1,10 @@
+wind_rotator1.Volume = 80
+wind_rotator1.Interval = 0
+wind_rotator1.RandomShift = 0
+wind_rotator1.Falloff =
+{
+  Start = 50,
+  End = 150
+}
+wind_rotator1.Sound ="C8L02_air_combat/wind_rotator1"
+

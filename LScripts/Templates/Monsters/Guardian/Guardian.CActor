@@ -1,0 +1,257 @@
+o.Model = "guardian"
+o.IsBoss = true
+o.deathtype = "normal"
+o.Scale = 20
+o.Health = 1800
+o.CreatePO = true
+o.WalkSpeed = 1.0
+o.RotateSpeed = 5		-- degrees per 1/30 sec
+o.throwHeart = false
+o.Animation = "idle_default"
+o.NeverRun = true
+o.disableNoAnimDetection = true
+o.enableGibWhenHPBelow = -70
+o.disableFreeze = true
+o.IsBoss = true
+o.rocknumber = 0
+o.prethrow = false
+o.postthrow = false
+
+o.ToughOne = true
+o.ScreamDamage = 40
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 5500,
+    InertiaTensorMultiplier = 0.05,
+}
+
+o.s_SubClass = {
+--	rotateHead = 0.4,		-- dodac inny limit na Y (x = 0.7, y = 0.1)
+--	rotateHeadBone = "k_szyja",
+--	rotateHeadMaxSpeed = 0.2,
+	SoundDir = "Gladiator",
+    Animations = {
+		idle_default = {1.0, true},
+
+        walk = {0.7, true,{
+							{0.0,'PlaySound',"idle_sound"},
+							{0.1,'PlaySound',"hand_groundhit"},
+							{0.1,'Shakeg'},
+							{0.0,'PlaySound',"wheel2"},
+							{0.5,'PlaySound',"wheel2"},
+							{1.0,'PlaySound',"wheel1"},
+							{1.5,'PlaySound',"wheel1"},
+							{1.15,'Shakeg'},
+							{1.15,'PlaySound',"hand_groundhit"},
+                            {0.3,'BindFX','ldust'},
+                            {0.3,'BindFX','rdust'},
+                            {1.5,'BindFX','ldust'},
+                            {1.5,'BindFX','rdust'},
+                            {0.0,'Blaf'},
+                            {0.1,'Blaf'},
+                            {0.2,'Blaf'},
+                            {0.3,'Blaf'},
+                            {0.4,'Blaf'},
+                            {0.5,'Blaf'},
+                            {0.6,'Blaf'},
+                            {0.7,'Blaf'},
+                            {0.8,'Blaf'},
+                            {0.9,'Blaf'},
+                            {1.0,'Blaf'},
+                            {1.1,'Blaf'},
+                            {1.2,'Blaf'},
+                            {1.3,'Blaf'},
+                            {1.4,'Blaf'},
+                            {1.5,'Blaf'},
+                            {1.6,'Blaf'},
+                            {1.7,'Blaf'},
+                            {1.8,'Blaf'},
+                            {1.9,'Blaf'},
+                            {2.0,'Blaf'},
+                            {2.1,'Blaf'},
+                            {2.2,'Blaf'},
+ 
+
+						}},
+
+        turn_let = {1, MC.ETransX + MC.ETransZ + MC.ERot, {
+							{0.0,'PlaySound',"turn_voice"},
+							{0.75,'PlaySound',"wheel1"},
+							{0.75,'FootFX','n_l_stop1'},
+							{1.5,'PlaySound',"wheel2"},
+							{1.5,'FootFX','n_p_stop1'},
+                        }},
+        turn_right = {1, MC.ETransX + MC.ETransZ + MC.ERot, {
+							{0.0,'PlaySound',"turn_voice"},
+							{0.5,'PlaySound',"wheel1"},
+							{0.5,'FootFX','n_p_stop1'},
+							{1.2,'PlaySound',"wheel2"},
+							{1.2,'FootFX','n_l_stop1'},
+                        }},
+		attack1 = {1.5, false, {
+							{0.1,'PlaySound',"wheel2"},
+							{0.2,'PlaySound',"atak_voice1"},
+							{0.4,'PlaySound',"atak1"},
+							{0.0,'startthrow'},
+							{0.0,'rainfire'},
+							{0.0,'TakeToThrow'},
+							{0.31,'ThrowTaken',nil,true},
+							{0.4,'TakeToThrow'},
+							{0.4,'randshift'},
+							{0.41,'ThrowTaken',nil,true},
+							{0.5,'TakeToThrow'},
+							{0.5,'randshift'},
+							{0.51,'ThrowTaken',nil,true},
+							{0.6,'TakeToThrow'},
+							{0.6,'randshift'},
+							{0.61,'ThrowTaken',nil,true},
+							{0.7,'TakeToThrow'},
+							{0.7,'randshift'},
+							{0.71,'ThrowTaken',nil,true},
+							{0.8,'TakeToThrow'},
+							{0.8,'randshift'},
+							{0.81,'ThrowTaken',nil,true},
+							{0.81,'finishedthrow'},
+						}},
+		attack2 = {1.5, false, {
+							{0.1,'PlaySound',"wheel1"},
+							{0.2,'PlaySound',"atak_voice2"},
+							{0.6,'PlaySound',"atak2"},
+							{0.0,'lavafire'},
+							{0.7,'BindFX',"clap"},
+							{0.60,'TakeToThrow'},
+							{0.71,'ThrowTaken',nil,true},
+							{0.72,'finishedthrow'},
+						}},
+
+    },
+
+
+GibExplosionStrength = 60000,
+ GibExplosionRange = 6.5,
+ GibExplosionDeltaY = -1.5,
+ gibFX = "gibExplosion",
+ GibEmitters = {
+    {"l_arm","FX_gib_blood",-1},  -- "FX_gib_blood"
+    {"r_arm","FX_gib_blood",1},
+    {"l_forearm","FX_gib_blood",-1},
+    {"r_forearm","FX_gib_blood",1},
+    {"wheel","FX_gib_blood",-1},
+    {"spine_1","FX_gib_blood",1},
+    {"neck","FX_gib_blood",-1},
+ },
+ gibShader = "palskinned_bloody",
+    
+ RagdollCollisionsGib = {
+         MinStren = 6.0,
+         MinTime = 0.8,
+         Bones = {
+    {"l_arm", "gibSplash", true},
+    {"r_arm", "gibSplash", true},
+    {"l_forearm", "gibSplash", true},
+    {"r_forearm", "gibSplash", true},
+    {"neck", "gibSplash", true},
+    {"spine_1", "gibSplash", true},
+    {"wheel", "gibSplash", true},
+   },
+     },
+ 
+
+
+
+    ragdollJoint = "root",
+    Ambients = {"idle1","idle2"},
+    NearAttacks = {"atak2", "atak3"},
+
+    DeathJoints = {
+		'K_ogo','k_head',
+        'r_l_arm','r_p_arm','r_p_dlo_root','r_l_dlo_root',
+        'n_p_kol','n_l_kol','n_p_stop','n_l_stop',
+        'r_p_lok','r_l_lok','k_chest',
+    },
+
+    RagdollCollisions = {
+	MinStren = 5.0,
+	MinTime = 0.6,
+	Bones = {
+				{"K_ogo", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"k_head", "bodyfalls", true},
+			}
+    },
+   	rotate90L = "turn_let",
+	rotate90R = "turn_right",
+
+
+}
+
+o.DeathTimer = 140
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","WalkToCorner", "ThrowRocks" ,"WaitInCorner","Showof" }
+o.AiParams.guardRange = 0
+
+
+o.corners ={}
+o.corners.Points ={}
+
+
+o.corners.Points[1] = VectorA:New(0.10986328125,19.41796875,-74.322265625,0)
+o.corners.Points[2] = VectorA:New(65.6591796875,19.41796875,-18.373046875,0)
+o.corners.Points[3] = VectorA:New(37.23583984375,19.41796875,57.05908203125,0)
+o.corners.Points[4] = VectorA:New(-44.1796875,19.41796875,59.9228515625,0)
+o.corners.Points[5] = VectorA:New(-65.041015625,19.41796875,-27.9580078125,0)
+
+
+o.showoffpoint = VectorA:New(1.9940, 19.3566, -95.5396,0)
+
+--[[
+o.corners.Points[1] = VectorA:New(-61,1.6,-61,0)
+o.corners.Points[2] = VectorA:New(-61,1.6,61,0)
+o.corners.Points[3] = VectorA:New(61,1.6,61,0)
+o.corners.Points[4] = VectorA:New(61,1.6,-61,0)
+o.corners.Points[5] = VectorA:New(61,1.6,-61,0)
+
+]]--
+o.alwaysSee = true
+o.AiParams.seeThruWalls = true
+o.AiParams.viewDistance360 = 150
+o.AiParams.viewDistance = 80
+o.AiParams.viewAngle = 170
+
+o.AiParams.weaponDamage = 20
+o.AiParams.attackRange = 4.0
+o.AiParams.attackRangeAngle = 90
+o.AiParams.delayBetweenAttacks = -1
+
+o.AiParams.perception = 1.0
+o.AiParams.walkStep = 10.0
+o.AiParams.hearing = 1.0
+
+o.AiParams.escapeTime = 120
+o.AiParams.moveDisplacement = 3.5
+o.AiParams.updateSpeed = 0.3
+
+o.shadow = 128
+
+o.AiParams.soundAmbientDelay = 6.0
+
+
+
+o.AiParams.ThrowableItem = "Lava_rain.CItem"
+o.AiParams.throwItemBindTo = "k_szyja"
+o.AiParams.throwItemBindToOffset = Vector:New(-3, 0, 4)
+o.AiParams.throwAngularVelocitySpeed = 5
+o.AiParams.throwDistMinus = 1.0
+o.AiParams.throwAnim = "atak1"
+o.AiParams.throwAmmo = 99999
+o.AiParams.throwRangeMin = 12
+o.AiParams.throwRangeMax = 160
+o.AiParams.minDelayBetweenThrow = 0.0
+o.AiParams.escapeAfterThrowTime = 0		-- 0 - no escape
+o.AiParams.throwVelocity = 40
+o.AiParams.throwDeltaY = 0.9
+
+
+o.AiParams.alwaysSee = true
+

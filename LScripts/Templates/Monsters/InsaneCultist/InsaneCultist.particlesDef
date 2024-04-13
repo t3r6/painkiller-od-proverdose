@@ -1,0 +1,28 @@
+o.s_SubClass.ParticlesDefinitions = {
+	ambient1 = {
+        pfx = "cultist_brain",
+        scale = 0.6,
+        offset = Vector:New(0,0,0),
+        joint = "head",
+		rotateWithJoint = true,
+		rotateWithJointOffset = Vector:New(math.pi/2,0,math.pi/2),
+    },
+	charge1 = {
+        pfx = "cultist_regenerate",
+        scale = 0.25,
+        offset = Vector:New(0,0.4,1),
+        joint = "L_toe_tip",
+    },
+	charge2 = {
+        pfx = "cultist_regenerate2",
+        scale = 0.9,
+        offset = Vector:New(0,-0.3,0),
+        joint = "root",
+    },
+	charge3 = {
+        pfx = "cultist_regenerate3",
+        scale = 0.8,
+        offset = Vector:New(0,-0.2,0),
+        joint = "root",
+    },
+}

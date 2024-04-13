@@ -1,0 +1,11 @@
+o.BaseObj = "Gladiator4.CActor"
+o.Health = 600
+o.Scale = 3.2
+o.AiParams.weaponDamage = 12
+o.AiParams.attackRange = 3.9
+o.AiParams.throwRangeMin = 10
+o.AiParams.aiGoals = {"idle","attack", "hunt"}
+o.WalkSpeed = 1.2
+--o.RunSpeed = 1.0
+
+

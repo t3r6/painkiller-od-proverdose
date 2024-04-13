@@ -1,0 +1,8 @@
+o.BaseObj = "CItem"
+o.Model = "koule"
+o.Scale = 1
+o.Pinned = false
+o.AnimSpeed = 1.0
+
+
+

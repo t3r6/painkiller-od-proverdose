@@ -1,0 +1,58 @@
+o.s_SubClass.SoundsDefinitions = {
+   path = "actor/mw_spikedemon",
+	
+	steps = {
+		samples = {'spike_krok1','spike_krok2','spike_krok3'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	onAttackOnce = {
+		samples = {'spike_halt1','spike_halt2'},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	atak = {
+		samples = {'spike_atack1','spike_atack2'},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	atak3 = {
+		samples = {'spike_death1','spike_death2','spike_death3'},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	
+	swish1 = {
+		samples = {'spike_swish1',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	swish2 = {
+		samples = {'spike_swish2',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_spikedemon/spike_fall"},
+		dist1 = 20,
+		dist2 = 80,
+	},
+
+    death = {
+		samples = {"spike_death1","spike_death2","spike_death3",},
+		dist1 = 30,
+		dist2 = 80,
+	},
+
+    damage = {
+		samples = {"$/actor/mw_spikedemon/spike_attack_hit"},
+	},
+
+	hurt = {
+		samples = {'spike_hit1','spike_hit2','spike_hit3'},
+		dist1 = 20,
+		dist2 = 80,
+	},
+
+        
+}

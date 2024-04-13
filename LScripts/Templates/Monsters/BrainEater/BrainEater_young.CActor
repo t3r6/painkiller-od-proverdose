@@ -1,0 +1,13 @@
+o.BaseObj = "BrainEater.CActor"
+o.Health = 99
+
+o.Scale = 0.8
+
+
+
+o.s_SubClass.xchgTextures = {
+		{"brainEater","brainEaterYoung"},
+	}
+
+
+

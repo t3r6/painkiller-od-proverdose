@@ -1,0 +1,25 @@
+o.Mesh = "egypt_urna1Shape"
+o.Pack = "o_egypt_urna.dat"
+o.DestroyPack = "o_egypt_urna_zlom.dat"
+o.Scale = 0.2
+o.Health = 10
+o.Mass = 100
+
+o.Destroy.ExplosionStrength = 0
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 200
+o.Destroy.Effect = "explode_dust"
+o.Destroy.EffectScale = 0.35
+o.Destroy.Treasures = 
+{
+    Coins  = {4, 'g'},
+}
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 0
+o.Destroy.ExplosionRadius = 0
+o.Destroy.LifetimeAfterExplosion = 2
+
+o.Destroy.ThrowItem = {"EHand.CItem"}
+o.Destroy.ThrowItemCount = 1
+o.Destroy.ThrowItemSpread = 0.5

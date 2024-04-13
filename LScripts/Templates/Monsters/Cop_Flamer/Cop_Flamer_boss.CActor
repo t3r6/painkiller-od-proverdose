@@ -1,0 +1,22 @@
+o.BaseObj = "Cop_Flamer.CActor"
+o.Scale = 2
+o.WalkSpeed = 0.8
+o.Health = 500
+o.AiParams.alwaysSee = true
+o.AiParams.viewDistance = 700			-- zasieg widzenia
+o.AiParams.viewAngle = 360				-- kat widzenia
+o.AiParams.viewDistance360 = 8	
+
+o.AiParams.weapon = {
+		maxDist = 15,
+		minDist = 6,
+		maxYaw = 45,
+		maxPitch = 45,
+	}
+
+
+o.s_SubClass.xchgTextures = {
+		{"flamer","flamer_big"},
+		{"flamer_add","flamer_big_add"},
+		{"flamer_weapon","flamer_big_weapon"},
+	}

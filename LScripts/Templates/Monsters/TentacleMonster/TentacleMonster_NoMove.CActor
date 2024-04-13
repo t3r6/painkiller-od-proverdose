@@ -1,0 +1,20 @@
+o.BaseObj = "TentacleMonster.CActor"
+o.AiParams.aiGoals = {"idle","attack"}
+o.enableGibWhenHPBelow = -59
+o.NeverMove = true
+o.Pinned = true
+o.Scale = 1.7
+o.AiParams.attackRange = 11
+o.AiParams.secondattackRange = 11
+o.Health = 189
+
+
+o.shadow = 128
+
+
+
+
+o.s_SubClass.Animations.enter = {2.0, false,{
+			{0.0,'visme'},
+			{0.0,'startg'},
+			}}

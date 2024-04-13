@@ -1,0 +1,166 @@
+========
+OVERVIEW
+========
+
+PROverdose is a multiplayer's modification for Painkiller: Overdose 75.3 and Press demo 66.3 
+
+PROD is a pro-mod for competitions and tournaments without gameplay's change
+
+Devteam is: OriOn (code), PrimeviL (gfx)
+
+Remember this: It's just a beta version and we're just amateurs 
+
+PROD's homepage is under construction, you can visit our forum: www.painkiller.fr/viewforum.php?id=31  
+
+Don't forget to download PK's maps remixes for OD: www.myoekaki.de/killua/OD-maps
+
+Join the PK-OD Ladders: http://www.esl.eu/eu/pkod/  
+
+
+=============
+CHANGELOG 0.2
+=============
+
+- CHG: Singleplayer GUI options are disabled
+- CHG: Speedmeter in spectator mode is now enabled
+- CHG: Match begin in xx seconds text with new font
+- CHG: Vote info text with new font
+
+- ADD: Audio Hitsound option
+- ADD: Audio Killsound option
+- ADD: Show Frag message option 
+- ADD: Preview pics during loading maps
+- ADD: Player VS Player text (warmup duel)
+- ADD: 2 minutes overtime for Duel/Tdm/Ctf
+
+
+=============
+CHANGELOG 0.1
+=============
+
+- CHG: Intro's videos are disabled
+- CHG: New PROverdose startup screen
+- CHG: SinglePlayer's menu is disabled
+- CHG: New MAIN Menu (Game User Intervace)
+- CHG: QUIT menu without confirmation (quick quit)
+- CHG: TIMER have a new position now
+- CHG: WARMUP message have new position too
+- CHG: SPEEDMETER cvar is now saved to overdose.ini
+- CHG: Game/mod version have new position/size in GUI
+- CHG: Gamespy logos in JOIN/CREATE GAME menu are gone
+- CHG: START GAME is in first position on MULTIPLAYER menu
+- CHG: CONSOLE/MULTIPLAYER messages have new position/size
+- CHG: Petrify icon's HUD is disabled (singleplayer weapon)
+- CHG: Greengoo icon's HUD is disabled (singleplayer weapon)
+- CHG: TEAM/ENEMY messages have new colors (team=cyan/all=green)
+
+
+- ADD: PROverdose GUI
+- ADD: Set FOV option 
+- ADD: Set MAX FPS option 
+- ADD: Set ZOOM FOV option 
+- ADD: Set TIMER size option 
+- ADD: Set PRO HUD size option 
+- ADD: Set CROSSHAIR SIZE option 
+- ADD: Set INFOS size/position option 
+- ADD: Show FPS option 
+- ADD: Show PING option 
+- ADD: Show TIMER option 
+- ADD: Show Zoom FX option
+- ADD: Show SPEEDMETER option 
+- ADD: Show PACKET LOSS option 
+- ADD: Show WEAPON's ICON option 
+- ADD: Show CURRENT WEAPON option
+- ADD: show SIMPLE PRO HUD option 
+- ADD: Show TIMER COUNT UP option 
+- ADD: Show TEAMMATE's ICON option 
+- ADD: Show BRIGHTSKINS ammo option 
+- ADD: Show AMMOLIST position option
+- ADD: Mod variables have now "PROD_" prefix
+
+
+======
+HOW TO
+======
+
+- Extract the archive's content to your Painkiller Overdose\Data directory
+
+- To run the mod: add to your OD executable a "-lscripts PROverdose.pak" command line 
+("C:\Program Files\DreamCatcher\Painkiller Overdose\Bin\Overdose.exe" -lscripts PROverdose.pak)
+
+- To run a dedicated server: add to your OD executable a "-dedicated -lscripts PROverdose.pak" 
+("C:\Program Files\DreamCatcher\Painkiller Overdose\Bin\Overdose.exe" -dedicated -lscripts PROverdose.pak)
+
+/!\IMPORTANT/!\  You must set Cfg.PureScripts to false in your overdose.ini. If you don't make it, anyone player that use this mod can connect there!!! 
+
+- You can change hitsound/killsound if you don't like the original ones. Choose an other one into the PRODsounds/bonus file 
+
+- If you want to uninstal the mod, just delete PROverdose.pak, PRODdata.pak, PRODitems.pak 
+
+
+
+
+========
+TODOLIST
+========
+
+- HUD:
+* Hud score
+* Current time
+* Team HUD color
+* Weapon position
+* Low ammo warning
+* Power up icons to HUD
+* Timer left/right position
+
+- GAME:
+* Stats
+* ROcket fix
+* Low ammo sound
+* Auto action
+* Warmup damage
+* Full simple items
+* Nomips on simple items
+* Instagib gamemode
+* Fix the vPK ammo bug 
+* More Brightskins colors
+* PROverdose installer.exe
+
+- GUI:
+* Full new GUI
+* Demos menu
+* More Crosshairs 
+* Show pickup's FX
+* Show Smoke option 
+* Picmip-like option
+* set Warmup time option 
+* Show Bullets option
+* Fix some font color 
+* Show Explosions option 
+* TEAM color/Enemy color 
+* Add some binds commands 
+* Fix "Decals Stay" option bug 
+* Possibility to change config variables from console
+
+
+=======
+CREDITS
+=======
+
+Credits goes to devteams for her ideas:
+
+- PK++ (Blowfish) 
+- NewPK (Crazy)
+- MiniMod (yar)
+- Powermad (kalme)
+- Chains.Mod (yar/kazu/soft/str4y/bab)
+
+
+PROD's devteam would to special thanks:
+
+- ESL to allow PROD with her ladders 
+- killua for her PK's maps remix
+- Mogul for his hitsound/killsound
+- catphone for hosting 3 PROD servers
+- Overdose project and the 17 PKers community :)
+

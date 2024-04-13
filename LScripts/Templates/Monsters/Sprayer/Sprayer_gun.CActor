@@ -1,0 +1,6 @@
+o.BaseObj = "Sprayer.CActor"
+o.AiParams.FarAttacks = {"attackGun",}
+o.AiParams.aiGoals = {"idle","hunt", "hear","FarAttack"}
+o.Model = "sprayer_v2"
+o.AiParams.disableEscapeWhenTooClose = false
+

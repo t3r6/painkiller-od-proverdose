@@ -1,0 +1,101 @@
+o.Mesh = "polySurfaceShape14692"
+o.Pack = "pilka.dat"
+o.Scale = 0.001
+o.Timeout = 4*30+5
+
+o.Restitution = 1 -- sprezystosc
+o.Friction = 0.01 -- tarcie
+o.LinearDamping = 0.0  -- tlumienie liniowe
+
+o.Mass = 1
+o.TestDeathZone = true
+o.SoundInWater = "impacts/bulletbig-water"
+--o.LinearDamping = 0.0
+o.Damage = 5
+o.fxx='Kerberos_breath_blue'
+
+
+
+o.Poison = {
+	checkSpeed = 1,	-- ile razy na sekunde ma spradzac, czy jest w zasiegu trucizny
+	Range = 3,
+	DamageHp = 1,
+	TimeOut = 60,
+	Freq = 9999,
+	SlowDown = 0.2,
+}
+
+
+function o:OnPrecache()
+    Cache:PrecacheParticleFX("Grenade")
+    Cache:PrecacheItem("KamykWybuch.CItem")
+end
+-------------------------------------------------------------------------------
+function o:OnCreateEntity()
+    self:PO_Create(BodyTypes.FromMesh,nil,ECollisionGroups.Noncolliding)
+    ENTITY.PO_EnableGravity(self._Entity,false)
+    ENTITY.PO_SetMovedByExplosions(self._Entity, false)
+	self._fx2 = self:BindFX(o.fxx)
+
+    self.timer = 3
+end
+-------------------------------------------------------------------------------
+function o:Update()
+    if not self._enabled then return end
+    if self.timer then
+        self.timer = self.timer - 1
+        if self.timer < 0 then
+            self.timer = nil
+          --  ENTITY.PO_SetCollisionGroup(self._Entity, ECollisionGroups.HCGNormalNCWithSelf)
+            ENTITY.EnableCollisions(self._Entity,true,0.3,0.01)
+        end
+    end
+    self.Timeout = self.Timeout - 1
+		if math.random(100) < 20 and Player then
+			self._checkSpeed = 30/self.Poison.checkSpeed 
+			local x,y,z = ENTITY.GetPosition(self._Entity)
+			local dist = Dist3D(x,y,z, Player._groundx,Player._groundy, Player._groundz)
+			local distLast = 9999
+			if self._fx_lastx then
+				distLast = Dist3D(self._fx_lastx,self._fx_lasty,self._fx_lastz, Player._groundx,Player._groundy, Player._groundz)
+			end
+			if dist < self.Poison.Range or distLast < self.Poison.Range then
+				--Game:Print("PLAYER poisoned")
+                --Player:PlaySoundHit2D("hero/hero_poison"..math.random(1,3))
+                
+                if not SOUND2D.IsPlaying(Player._oldSND) then
+				                	Player._oldSND = PlaySound2D("belial/Belial_ingame_"..math.random(32,36),nil,nil,true)
+	         end
+                
+				Player._poisoned = self.Poison.TimeOut
+				Player._poisonedTime = 0
+				Player._poison = self.Poison
+				Player._DrawColorQuad = true
+				Player._ColorOfQuad = Color:New(255, 10, 10)
+				Player._QuadAlphaMax = 50
+			end
+		end
+
+
+    if self.Timeout <= 0 then GObjects:ToKill(self) end
+end
+-------------------------------------------------------------------------------
+function o:OnCollision(x,y,z,nx,ny,nz,e)
+	ENTITY.PO_SetLinearDamping(self._Entity, 1.5)
+    local obj = EntityToObject[e]
+    if obj and self.ObjOwner ~= obj then
+        if obj._Class == "CPlayer" then 
+            obj:OnDamage(self.Damage,self.ObjOwner,AttackTypes.Grenade)
+				Player._poisoned = self.Poison.TimeOut
+				Player._poisonedTime = 0
+				Player._poison = self.Poison
+				Player._DrawColorQuad = true
+				Player._ColorOfQuad = Color:New(255, 10, 10)
+				Player._QuadAlphaMax = 50
+	end
+    end
+GObjects:ToKill(self)
+end
+-------------------------------------------------------------------------------
+
+

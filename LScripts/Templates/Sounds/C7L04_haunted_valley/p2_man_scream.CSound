@@ -1,0 +1,10 @@
+p2_man_scream.Volume = 80
+p2_man_scream.Interval = 12
+p2_man_scream.RandomShift = 3
+p2_man_scream.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+p2_man_scream.Sound ="C7L04_haunted_valley/p2_man_scream1;C7L04_haunted_valley/p2_man_scream2;C7L04_haunted_valley/p2_man_scream3"
+

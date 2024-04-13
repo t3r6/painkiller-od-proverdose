@@ -1,0 +1,10 @@
+waterpipe.Volume = 80
+waterpipe.Interval = 8
+waterpipe.RandomShift = 8
+waterpipe.Falloff =
+{
+  Start = 2,
+  End = 20
+}
+waterpipe.Sound ="C7L03_powerplant/water_flush_pipe1;C7L03_powerplant/water_flush_pipe2"
+

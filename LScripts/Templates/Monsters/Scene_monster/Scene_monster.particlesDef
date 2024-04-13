@@ -1,0 +1,14 @@
+o.s_SubClass.ParticlesDefinitions = {
+	neckblood = {
+		pfx = "Butcher_blood",
+		scale = 0.6,
+		joint = 'weapon',
+		offset = Vector:New(0,-0.5,0),
+	},
+
+}
+
+o.s_SubClass.bindFX = {
+	{"scene_monster_blood",0.4,'heart',0, 0, 0},
+}
+

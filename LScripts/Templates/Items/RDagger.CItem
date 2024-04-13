@@ -1,0 +1,6 @@
+RDagger.Mesh = "polySurfaceShape180"
+RDagger.Pack = "knife.dat"
+RDagger.Scale = 0.03
+RDagger.Mass = 40
+RDagger.Restitution = 0.1
+RDagger.Damage = 15

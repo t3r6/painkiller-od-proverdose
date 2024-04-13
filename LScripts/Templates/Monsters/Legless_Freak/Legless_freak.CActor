@@ -1,0 +1,210 @@
+o.Model = "legless_freak"
+o.CreatePO = true
+o.Scale = 1.1
+o.Health = 88
+o.WalkSpeed = 1.0
+o.RunSpeed = 1.0
+o.RotateSpeed = 25
+o.throwHeart = true
+o.enableGibWhenHPBelow = -39
+o.Health = 111
+o.Animation = "i1"
+o.enableGibWhenHPBelow = -30
+o.customgibexpsound = {"actor/gibs/legless_gib"}
+
+o.exp1speed = 1.8
+o.exp2speed = 1.8
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 120,
+}
+
+o.s_SubClass = {
+	SoundDir = "ninja",
+    rotateHead = 0.65,
+    rotateHeadBone = "szyja",
+    rotateHeadMaxSpeed = 0.24,
+
+
+
+Animations = {
+	 death1     = {1.0, false, {
+				{0.0,'PlaySound',"death_snd"},
+				{0.0,'PlaySound',"$/actor/deaths/legless_a"},
+				{1.4,'PlaySound',"$/actor/deaths/legless_b"},
+				{1.3,'PlaySound',"$/actor/deaths/legless_c"},
+				{2.0,'PlaySound',"$/actor/deaths/legless_d"},
+	 }},
+	 death2     = {1.0, false, {
+				{0.0,'PlaySound',"death_snd"},
+				{0.0,'PlaySound',"$/actor/deaths/legless_a"},
+				{0.5,'PlaySound',"$/actor/deaths/legless_b"},
+				{0.8,'PlaySound',"$/actor/deaths/legless_c"},
+				{0.9,'PlaySound',"$/actor/deaths/legless_d"},
+	 }},
+
+	i1   = {1.0,false,{
+				{0.1,'PlaySound',"idle"},
+		}},			-- speed, movingcurve, events
+	id1   = {1.0,false,{
+				{0.1,'PlaySound',"idle"},
+	}},			-- speed, movingcurve, events
+	id2   = {1.0,false,{
+					{0.1,'PlaySound',"idle"},
+	}},			-- speed, movingcurve, events
+	m1   = {1.5,true, {
+			{0.1,'PlaySound',"step"},
+			{1.3,'PlaySound',"stepl"},
+			{0.7,'PlaySound',"step"},
+			{0.7,'PlaySound',"stepr"},
+
+				}},
+
+	m2    = {2.0,true, {
+			{0.1,'PlaySound',"step"},
+			{0.7,'PlaySound',"step"},
+			{1.0,'PlaySound',"stepl"},
+			{1.1,'PlaySound',"stepr"},
+				}},
+	a1  = {1.0,false, {
+			{0.1,'PlaySound',"at1"},
+			{0.8,'PlaySound',"swish1"},
+				{0.0,'Glowhand'},
+				{1.0,'TakeToThrow'},
+				{1.1,'ThrowTaken','nil','true'},
+			{1.0,'PlaySound',"plazmball"},
+				{1.2,'SetnextThrow'},
+				{1.4,'Dieglow'},
+				}},
+	a2  = {1.5,false, {
+			{0.6,'PlaySound',"swish2"},
+			{0.1,'PlaySound',"at1"},
+				{0.6,'damage'},
+				}},
+	a3  = {1.0,false, {
+			{0.8,'PlaySound',"at2"},
+			{0.1,'PlaySound',"meat"},
+				{0.8,'TakeMeat'},
+				{0.8,'BindFX','bloodsplat'},
+				{1.4,'ThrowTaken'},
+				{1.5,'SetnextThrow'},
+				}},
+	h1 = {2.0, false, {
+				{0.0,'PlaySoundHit','hit'},
+				}},
+	h2 = {2.0, false, {
+				{0.0,'PlaySoundHit','hit'},
+				}},
+},
+
+
+
+NearAttacks = {"a2"},
+Ambients = {"i1","id2","id1",},
+Hits = {"h1","h2",},
+walk = {"m1",},	
+run = {"m2",},	
+
+
+
+
+RagdollCollisions = {
+	MinStren = 2.0,
+	MinTime = 0.7,
+	Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_p_lokiec", "bodyfalls", true},
+				{"szabla", "weaponlost", false},
+			}
+},
+
+    GibExplosionStrength = 9000,
+	GibExplosionRange = 3.0,
+	GibExplosionDeltaY = -1.0,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+		{"r_l_bark","FX_gib_blood",-1},
+		{"r_p_bark","FX_gib_blood_green",-1},
+		{"n_l_biodro","FX_gib_blood",-1},
+		{"n_p_biodro","FX_gib_blood_green",1},
+		{"root","FX_gib_blood",1},
+		{"k_szyja","FX_gib_blood_green",-1},
+	},
+	gibShader = "palskinned_bloody",
+
+RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"r_l_bark", "gibSplash", true},
+				{"r_p_bark", "gibSplash", true},
+				{"n_l_biodro", "gibSplash", true},
+				{"n_p_biodro", "gibSplash", true},
+				{"root", "gibSplash", true},
+				{"k_szyja", "gibSplash", true},
+				{"szabla", "weaponlost", false},
+			},
+	    },
+}
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","attack", "hunt", "hear","flee","throw"}
+o.AiParams.weapon = nil
+o.AiParams.updateSpeed = 0.35
+o.AiParams.alwaysSee = false
+o.AiParams.huntPlayer = false
+o.AiParams.hearing = 1.5
+o.AiParams.perception = 1.0
+o.AiParams.viewDistance = 36
+o.AiParams.viewDistance360 = 8
+o.AiParams.viewAngle = 110
+	
+o.AiParams.attackRange = 5.2
+o.AiParams.weaponDamage = 11
+o.AiParams.walkStep = 3
+o.AiParams.walkArea = ""
+o.AiParams.walkAreaRandom = false
+o.AiParams.WalkAreaWhenAttack = false
+o.AiParams.useOnlyWaypointsWhenGuard = false
+
+o.AiParams.throwAnim = "a3"
+o.AiParams.throwAmmo = 99999
+o.AiParams.throwRangeMin = 5
+o.AiParams.throwRangeMax = 30
+o.AiParams.minDelayBetweenThrow = 1.0
+o.AiParams.ThrowableItem = "meat.CItem"
+o.AiParams.throwItemBindTo = 'r_hand'
+o.AiParams.holdJointDisplace = Vector:New(0,4,0)
+o.AiParams.hideMesh = nil
+o.AiParams.ThrowSpeed = 30
+o.AiParams.throwAngularVelocitySpeed = 20
+o.AiParams.throwAngle = 30
+o.AiParams.throwDistMinus = 0
+o.AiParams.moveDisplacement = 3 
+o.AiParams.delayBetweenAttacks = 2
+o.AiParams.chanceOfEscapeAfterFire = 0
+o.AiParams.guardRange = 0
+o.shadow = 128
+
+-- zelena sracka
+
+o.AiParams.doNotRotateWhenShooting = false
+o.AiParams.weapon = {
+		bulletsPerShot = 1,
+		maxDist = 666.0,
+		minDist = 25.0,
+		spreadAngle = 3,
+		damagePerBullet = 1,
+		PO_HitForce = 200,
+		maxYaw = 45,				-- maksymalna odchylka broni lewo/prawo w stos. do kata patrzenia
+		maxPitch = 75,				-- maksymalna odchylka broni gora/dol
+		fireParticle = "shot",	
+		fireParticleSize = 0.25,
+   		bulletHitWallParticle =	"HB_hitground",
+		bulletHitWallParticleSize = 0.2,
+	}
+o.AiParams.weaponBindPosShift = Vector:New(0,0,0)
+o.AiParams.FarAttacks = {"a1"}	
+o.AiParams.weaponBindPos = "r_hand"			
+o.AiParams.disableEscapeWhenTooClose = true
+o.AiParams.throwVelOnly = false

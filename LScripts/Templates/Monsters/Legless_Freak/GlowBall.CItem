@@ -1,0 +1,48 @@
+o.Mesh = "polySurfaceShape14692"
+o.Pack = "pilka.dat"
+o.Scale = 0.001
+o.Timeout = 4*30+5
+
+o.Restitution = 1 -- sprezystosc
+o.Friction = 0.01 -- tarcie
+o.LinearDamping = 0.0  -- tlumienie liniowe
+
+o.Mass = 1
+o.TestDeathZone = true
+o.SoundInWater = "impacts/bulletbig-water"
+--o.LinearDamping = 0.0
+o.Damage = 30
+o.fxx = 'Legless_freak_handglow'
+
+
+function o:OnPrecache()
+end
+-------------------------------------------------------------------------------
+function o:OnCreateEntity()
+    self:PO_Create(BodyTypes.FromMesh,nil,ECollisionGroups.Noncolliding)
+    ENTITY.PO_EnableGravity(self._Entity,false)
+    ENTITY.PO_SetMovedByExplosions(self._Entity, false)
+	ENTITY.PO_SetCollisionGroup(self._Entity, ECollisionGroups.HCGNormalNCWithSelf)
+    ENTITY.EnableCollisions(self._Entity,true)
+	self._fx2 = self:BindFX(o.fxx)
+
+end
+-------------------------------------------------------------------------------
+function o:Update()
+    self.Timeout = self.Timeout - 1
+    if self.Timeout <= 0 then GObjects:ToKill(self) end
+end
+-------------------------------------------------------------------------------
+function o:OnCollision(x,y,z,nx,ny,nz,e)
+	ENTITY.PO_SetLinearDamping(self._Entity, 1.5)
+    local obj = EntityToObject[e]
+    if obj and self.ObjOwner ~= obj then
+        if obj._Class == "CPlayer" then 
+            obj:OnDamage(self.Damage,self.ObjOwner,AttackTypes.Grenade)
+	end
+    end
+GObjects:ToKill(self)
+end
+-------------------------------------------------------------------------------
+
+

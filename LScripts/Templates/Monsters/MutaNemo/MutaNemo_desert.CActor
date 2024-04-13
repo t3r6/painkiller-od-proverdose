@@ -1,0 +1,22 @@
+o.BaseObj="MutaNemo.CActor"
+
+o.s_SubClass.Animations = {
+        idle = {1.0, false},
+        hit    = {1.0, false, {
+							}},
+        alarm    = {1.0, false, {
+						{0.5, 'Alarm',}
+					}},
+        swim     = {1.0, true, {
+					}},
+        atak    = {1.5, false,{
+                        {0.00,'CalcVel'},
+						{0.05,'SetVel'},
+                        {0.6,'damage'},
+                        {0.99,'StopFlying'},
+
+                    }},
+    }
+o.spawnDecalFreq = 0
+o.spawnParticlesFreq = 0
+

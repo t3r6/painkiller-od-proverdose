@@ -1,0 +1,6 @@
+o.Mesh = "polySurfaceShape12"
+o.Pack = "kusza_belt.dat"
+o.Scale = 0.09
+o.Mass = 4
+o.Restitution = 0.1
+

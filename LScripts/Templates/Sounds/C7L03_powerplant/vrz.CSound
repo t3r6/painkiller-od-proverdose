@@ -1,0 +1,10 @@
+vrz.Volume = 80
+vrz.Interval = 0
+vrz.RandomShift = 0
+vrz.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+vrz.Sound ="C7L03_powerplant/vrz1;C7L03_powerplant/vrz2;C7L03_powerplant/vrz3;C7L03_powerplant/vrz4"
+

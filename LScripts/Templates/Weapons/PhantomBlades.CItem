@@ -1,0 +1,27 @@
+--o.Mesh = "polySurfaceShape9"
+--o.Pack = "BonesHead.dat"
+o.Mesh = "polySurfaceShape9"
+o.Pack = "P_Phantom_Blade.dat"
+
+
+o.Scale = 0.27
+--Stake.Restitution = 0.5
+--Stake.Mass = 0.001
+o.TestDeathZone = true
+o.SoundInWater = "impacts/bulletbig-water"
+
+--[[
+o.DestroyPack = "kolek_zlom.dat"
+o.Destroy.Strength = 1
+o.Destroy.AverageDelay = 0
+o.Destroy.AverageVariation = 0
+o.Destroy.VelocityFactor = Vector:New(0,0,0)
+o.Destroy.Effect = "explode_dust"
+o.Destroy.EffectScale = 0.1 ]]--
+o.LifetimeAfterExplosion = 3
+
+o.TimeToLive = 6 * 30 
+o.wiredamage = 20
+
+
+--o.BillBoard = {"Blade_Corona.CBillboard", nil, "root",0,0,0}

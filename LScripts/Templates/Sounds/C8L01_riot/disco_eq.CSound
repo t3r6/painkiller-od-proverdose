@@ -1,0 +1,10 @@
+disco_eq.Volume = 80
+disco_eq.Interval = 0
+disco_eq.RandomShift = 0
+disco_eq.Falloff =
+{
+  Start = 10,
+  End = 20
+}
+disco_eq.Sound ="C8L01_riot/disco_eq11"
+

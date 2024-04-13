@@ -1,0 +1,10 @@
+lake1.Volume = 60
+lake1.Interval = 0
+lake1.RandomShift = 0
+lake1.Falloff =
+{
+  Start = 15,
+  End = 50
+}
+lake1.Sound ="C7L04_haunted_valley/lake1"
+

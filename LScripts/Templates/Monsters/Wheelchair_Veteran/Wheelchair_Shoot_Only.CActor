@@ -1,0 +1,18 @@
+o.BaseObj = "Wheelchair_Veteran.CActor"
+o.NeverMove = true
+
+o.AiParams.weapon = {
+		bulletsPerShot = 1,
+		maxDist = 80,
+		minDist = 1,
+		spreadAngle = 1,
+		damagePerBullet = 2,
+		PO_HitForce = 300,
+		maxYaw = 45,				-- maksymalna odchylka broni lewo/prawo w stos. do kata patrzenia
+		maxPitch = 45,				-- maksymalna odchylka broni gora/dol
+		fireParticle = "RifleHitWall",	
+		fireParticleSize = 0.1,
+	}
+o.AiParams.aiGoals = {"idle","FarAttack","hear","hunt",}
+o.AiParams.viewDistance = 120
+

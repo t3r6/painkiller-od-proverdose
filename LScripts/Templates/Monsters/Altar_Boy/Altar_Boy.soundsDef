@@ -1,0 +1,85 @@
+o.s_SubClass.SoundsDefinitions = {
+   path = "actor/mw_altar_boy",
+	idle_voice = {
+		samples = {'aboy_idlevoice1','aboy_idlevoice2','aboy_idlevoice3',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	idle_swish = {
+		samples = {'aboy_swish2','aboy_swish3','aboy_swish4',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	flap1 = {
+		samples = {'aboy_wing2',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	flap2 = {
+		samples = {'aboy_wing3',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	atak = {
+		samples = {'aboy_attack1','aboy_attack2',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	atak3 = {
+		samples = {'aboy_weapon-at1',},
+		dist1 = 10,
+		dist2 = 30,
+	},
+	swishpr = {
+		samples = {'aboy_swish-prepare',},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	swish = {
+		samples = {'aboy_swish'},
+		dist1 = 10,
+		dist2 = 20,
+	},
+	hit = {
+		samples = {'aboy_hit1','aboy_hit2','aboy_hit3'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	bodyfalls = {
+		samples = {'aboy_bodyfalls1','aboy_bodyfalls2',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	weaponlost = {
+		samples = {'aboy_weapon-lost1','aboy_weapon-lost2','aboy_weapon-lost3',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	onAttackOnce = {
+		samples = {'aboy_halt1','aboy_halt2','aboy_halt3'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	missed = {
+		samples = {'$/actor/mw_altar_boy/aboy_sword-missed1','$/actor/mw_altar_boy/aboy_sword-missed2'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+    attackAmbient = {
+		samples = {'aboy_attackscream1','aboy_attackscream2','aboy_attackscream3',},
+		dist1 = 30,
+		dist2 = 70,
+	},
+    death = {
+		samples = {'aboy_death1','aboy_death2','aboy_death3','aboy_death4'},
+   		dist1 = 30,
+		dist2 = 70,
+	},
+	damage = {
+		samples = {'$/actor/mw_altar_boy/aboy_sword_hits_hero'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+
+
+}

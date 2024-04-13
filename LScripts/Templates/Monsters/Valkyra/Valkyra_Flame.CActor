@@ -1,0 +1,41 @@
+o.BaseObj = "Valkyra.CActor"
+o.Scale = 0.17
+o.AiParams.weaponDamage = 16
+o.Health = 190
+
+
+
+
+o.s_SubClass.Animations.atak1 = {1.1, false,{
+                    			{0.0,'BindTrailSword','trail_zombie','Weapon','Weapon_tip'},
+                           {0.0,'PlaySound',"atak1"},
+                           {0.2,'PlaySound',"swish"},
+                           {0.0,'PlaySound',"swish_flame"},
+                           {0.43,'damage',},
+                           {1,'EndTrailSword'},
+						}}
+
+o.s_SubClass.Animations.atak2 = {1.05, false,{
+                    		{0.0,'BindTrailSword','trail_zombie','Weapon','Weapon_tip'},
+                            {0.0,'PlaySound',"atak1"},
+                            {0.2,'PlaySound',"swish"},
+                           {0.0,'PlaySound',"swish_flame"},
+                            {0.43,'damage',},
+                            --{1.4,'PlaySound',"swish"},
+                            --{1.5,'damage',},
+                            {1.1,'EndTrailSword'},
+						}}
+
+
+o.s_SubClass.Animations.atak3 = {1.0, false,{				-- z tarcza
+                            {0.3,'BindTrailSword','trail_zombie','Weapon','Weapon_tip'},
+                            {0.43,'damage',3,4},
+                            {0.2,'PlaySound',"atak3"},
+                            {0.3,'PlaySound',"swish"},
+                            {0.33,'ShieldBlow',},
+                            {0.7,'PlaySound',"atak1"},
+                            {0.8,'PlaySound',"swish"},
+                           {0.6,'PlaySound',"swish_flame"},
+                            {0.96,'damage',},
+                            {1.5,'EndTrailSword'},
+						}}

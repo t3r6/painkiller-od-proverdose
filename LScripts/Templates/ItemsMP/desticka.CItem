@@ -1,0 +1,7 @@
+o.BaseObj = "CItem"
+o.Mesh = "plosinkaShape"
+o.Pack = "plosinka.dat"
+o.Scale = 1
+o.blockrange = 23
+o.Pinned = true
+o.Immortal = true

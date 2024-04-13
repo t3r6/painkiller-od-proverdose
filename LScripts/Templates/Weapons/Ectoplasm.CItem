@@ -1,0 +1,29 @@
+o.Scale = 0.01
+o.Mass = 1600
+o.HPDrainDistance = 4
+o.HPDrain = 1
+
+o.Mesh = "pSphereShape1"
+o.Pack = "Kamyk.dat"
+o.Restitution = 5 -- sprezystosc
+o.Friction = 0.8 -- tarcie
+o.LinearDamping = 0.5  -- tlumienie liniowe
+
+
+o.CollisionDetect = {
+	MinTime = 0.3,
+	MinStren = 5.0,
+}
+
+o.SoundImpactMinDelay = 0.5
+
+o.DetailMap.DefaultDetailTex = false
+o.DestroyPack = "kolek_zlom.dat"
+o.Destroy.Strength = 50
+o.Destroy.AverageDelay = 0
+o.Destroy.AverageVariation = 0
+o.Destroy.VelocityFactor = Vector:New(0,0,0)
+o.LifetimeAfterExplosion = 3
+o.TimeToLive = 6 * 30
+o.SmallWaterSplash = true
+

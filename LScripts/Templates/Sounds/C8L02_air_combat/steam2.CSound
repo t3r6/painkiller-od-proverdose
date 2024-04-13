@@ -1,0 +1,10 @@
+steam2.Volume = 80
+steam2.Interval = 3
+steam2.RandomShift = 0
+steam2.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+steam2.Sound ="C8L02_air_combat/steam2"
+

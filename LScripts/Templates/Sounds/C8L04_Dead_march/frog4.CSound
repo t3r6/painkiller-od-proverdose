@@ -1,0 +1,10 @@
+frog4.Volume = 80
+frog4.Interval = 0
+frog4.RandomShift = 0
+frog4.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+frog4.Sound ="C8L04_Dead_march/frog4"
+

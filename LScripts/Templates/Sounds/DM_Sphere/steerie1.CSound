@@ -1,0 +1,10 @@
+steerie1.Volume = 80
+steerie1.Interval = 0
+steerie1.RandomShift = 0
+steerie1.Falloff =
+{
+  Start = 10,
+  End = 90
+}
+steerie1.Sound ="DM_Sphere/steerie1"
+

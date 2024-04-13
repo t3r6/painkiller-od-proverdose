@@ -1,0 +1,9 @@
+o.BaseObj = "InsaneCultist.CActor"
+
+o.Scale = 2.4
+o.Health = 290
+
+o.ToughOne = true
+o.ScreamDamage = 50
+
+

@@ -1,0 +1,42 @@
+o.BaseObj = "Tank.CActor"
+o.Model = "tank_FA"
+o.deathtype = "normal"
+o.IsBoss = true
+o.s_SubClass.SoundDir = "tank"
+o.turretExplodeUp = 20
+o.Health = 1000
+o.ShotgunCheckAllPellets = false
+o.DeathTimer = 99999
+
+o.ToughOne = true
+o.ScreamDamage = 10
+
+o.s_SubClass = {
+    rotateHead = math.pi * 2.0,
+    rotateHeadBone = "root",
+    rotateHeadMaxSpeed = 0.02,
+    rotateHeadRight = Vector:New(-1, 0, 0),
+    rotateHeadLeft = Vector:New(-1, 0, 0),
+    rotateHeadCoords = Vector:New(2, 1, 1),
+
+    CollidableRagdoll = true,
+	Animations = {
+		idle   = {1.0,false},			-- speed, movingcurve, events
+    },
+
+    DeathJoints = {
+        'k_head'
+    },
+    walk = {"idle"},
+   killJoint = "root",
+       
+}
+
+
+o.AiParams.weaponBindPos1 = 'l_muzzle_tip'
+o.AiParams.weaponBindPosShift =  Vector:New(0,0,0)
+o.AiParams.weaponBindPos2 = 'r_muzzle_tip'
+o.AiParams.weaponRotPos = 'muzzles'
+
+o.AiParams.ThrowableItem = "TankMissile2.CItem"
+

@@ -1,0 +1,10 @@
+fan.Volume = 80
+fan.Interval = 0
+fan.RandomShift = 0
+fan.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+fan.Sound ="DM_Sphere/fan"
+

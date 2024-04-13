@@ -1,0 +1,10 @@
+o.BaseObj = "Winged_Demon.CActor"
+o.FlySpeed = 10.0
+
+o.AiParams.attackRange = 3.6
+
+o.WalkSpeed = 2.0
+o.RotateSpeed = 34
+o.enableGibWhenHPBelow = 0
+o.smoothFly = 2.8		-- dobrac
+o.AiParams.ThrowableItem = "Winged_Demon_New.CItem"

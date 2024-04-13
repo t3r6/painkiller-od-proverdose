@@ -1,0 +1,14 @@
+o.s_SubClass.ParticlesDefinitions = {
+	whitesmoke = {
+		pfx = "chopper_engine_white",
+		scale = 0.5,
+		joint = "exhaust",
+		offset = Vector:New(0,0,0),
+	},
+	darksmoke = {
+		pfx = "chopper_engine_dark",
+		scale = 0.5,
+		joint = "exhaust",
+		offset = Vector:New(0,0,0),
+	},
+}

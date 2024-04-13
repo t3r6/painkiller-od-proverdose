@@ -1,0 +1,10 @@
+bubbles.Volume = 80
+bubbles.Interval = 8
+bubbles.RandomShift = 6
+bubbles.Falloff =
+{
+  Start = 2,
+  End = 20
+}
+bubbles.Sound ="C7L03_powerplant/bubbles1;C7L03_powerplant/bubbles2;C7L03_powerplant/bubbles3;C7L03_powerplant/bubbles4;C7L03_powerplant/bubbles5;C7L03_powerplant/bubbles6"
+

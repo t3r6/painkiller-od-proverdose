@@ -1,0 +1,5 @@
+RSpear.Mesh = [[polySurfaceShape991]]
+RSpear.Pack = [[laska.dat]]
+RSpear.Scale = 0.125
+RSpear.Mass = 40
+RSpear.Restitution = 0.1

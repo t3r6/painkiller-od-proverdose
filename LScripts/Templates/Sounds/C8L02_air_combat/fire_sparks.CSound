@@ -1,0 +1,10 @@
+fire_sparks.Volume = 80
+fire_sparks.Interval = 0
+fire_sparks.RandomShift = 0
+fire_sparks.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+fire_sparks.Sound ="C8L02_air_combat/fire_sparks"
+

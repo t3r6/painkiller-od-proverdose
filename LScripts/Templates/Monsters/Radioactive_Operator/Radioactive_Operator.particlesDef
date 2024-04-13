@@ -1,0 +1,23 @@
+o.s_SubClass.ParticlesDefinitions = {
+	atak = {
+		pfx = 'radioactive_operator_greengass',
+		scale = 0.6,
+		joint = "k_ogo",
+	},
+	prd = {
+		pfx = 'radioactive_operator_greenprd',
+		scale = 1,
+		joint = "k_root",
+	},
+	smoke = {
+		pfx = 'radioactive_operator_smoke',
+		scale = 0.1,
+		joint = "Wea",
+		offset = Vector:New(1.5,0,-0.1),
+		
+	},
+}
+o.s_SubClass.BillBoard = {
+	template = "Radioactive_Operator_Corona.CBillboard",
+	joint = "Wea",
+}

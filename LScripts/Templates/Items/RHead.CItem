@@ -1,0 +1,4 @@
+o.Mesh = "polySurfaceShape543"
+o.Pack = "zombi_soldier_head.dat"
+o.Scale = 0.1 * 1.25
+o.Restitution = 0.1

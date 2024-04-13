@@ -1,0 +1,10 @@
+gong.Volume = 100
+gong.Interval = 5
+gong.RandomShift = 0
+gong.Falloff =
+{
+  Start = 15,
+  End = 100
+}
+gong.Sound ="C7L02_village_of_damned/gong"
+

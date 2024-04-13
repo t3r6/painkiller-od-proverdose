@@ -1,0 +1,5 @@
+o.BaseObj = "Girl.CActor"
+o.AiParams.seeThruWalls = true
+o.AiParams.viewDistance = 216
+o.AiParams.viewDistance360 = 216
+o.AiParams.viewAngle = 360

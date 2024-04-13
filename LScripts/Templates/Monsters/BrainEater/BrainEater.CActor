@@ -1,0 +1,194 @@
+o.Model = "brainEater"
+o.Scale = 1.2
+o.CreatePO = true
+o.Health = 129
+o.WalkSpeed = 1
+o.RunSpeed = 1.1
+o.RotateSpeed = 10
+o.Animation = "idle"
+
+o.enableGibWhenHPBelow = -39
+
+o.throwHeart = true
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 100,
+}
+
+o.s_SubClass = {
+	rotateHead = 0.5,
+	rotateHeadBone = "k_szyja",
+	rotateHeadMaxSpeed = 0.14,
+
+	Animations = {
+		walk   = {1.0,true,{
+				{0.45,'PlaySound',"step1"},
+				{1.1,'PlaySound',"step2"},
+						{0.3,'PlaySound',"idle"},
+						{0.65,'FootFX','s_p_srodstopie'},
+			}},
+		idle1   = {1.0,false,{
+				{0.0,'PlaySound',"idle"},
+}},
+		enter   = {1.5,false,{}},
+		enter1   = {1.5,true,{}},
+		idle   = {1.0,false,{
+				{0.0,'PlaySound',"idle"},
+}},
+		run   = {1.2,true,{
+				{0.2,'PlaySound',"idle"},
+				{0.6,'PlaySound',"step1"},
+				{0.2,'PlaySound',"step2"},
+				{0.65,'FootFX','s_p_srodstopie'},
+				{1.0,'FootFX','s_l_srodstopie'},
+			}},
+		attack1   = {1.5,false,{
+				{0.2,'PlaySound',"atak_short"},
+				{0.3,'PlaySound',"brainsfx"},
+				{0.3,'PlaySound',"swish2"},
+				{0.7,'PlaySound',"swish1"},
+					{0.0,'BindTrails1'},
+					{0.4,'damage'},
+					{0.8,'damage'},
+					{1.2,'EndTrails1'},
+				}},
+		attack2   = {1.5,false,{
+				{0.2,'PlaySound',"atak_short"},
+				{0.3,'PlaySound',"brainsfx"},
+				{0.1,'PlaySound',"swish2"},
+				{0.1,'PlaySound',"swish1"},
+					{0.0,'BindTrails2'},
+					{0.2,'damage'},
+					{1.0,'EndTrails2'},
+				}},
+		attack3   = {1.7,false,{
+				{0.2,'PlaySound',"atak_long"},
+				{0.3,'PlaySound',"brainsfx"},
+				{1.2,'ThrowImmid'},
+				}},
+
+		hit1   = {1.0,false,{
+				{0.0,'PlaySound',"hitsound"},
+				}},
+		hit2   = {1.0,false,{
+				{0.0,'PlaySound',"hitsound"},
+				}},
+    },
+
+    RagdollCollisions = {
+        MinStren = 2.5,
+        MinTime = 0.7,
+        Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_forearm", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"l_forearm", "bodyfalls", true},	-- joint, {sounds}, blood
+				{"l_nipper", "bodyfalls", true},	-- joint, {sounds}, blood
+				{"r_nipper", "bodyfalls", true},	-- joint, {sounds}, blood
+			},
+    },
+
+
+	GibExplosionStrength = 5000,
+	GibExplosionRange = 2.0,
+	GibExplosionDeltaY = -1.0,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+				{"RightUpLeg","FX_gib_blood",-1},
+				{"nLeftUpLeg","FX_gib_blood",-1},
+				{"r_L_bark","FX_gib_blood",-1},
+				{"r_P_bark","FX_gib_blood",1},
+				{"root","FX_gib_blood",1},
+				{"k_ogo","FX_gib_blood",-1},
+				{"k_szyja","FX_gib_blood",-1},
+	},
+	gibShader = "palskinned_bloody",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"k_szyja", "gibSplash", true},
+				{"r_forearm", "gibSplash", true},
+				{"l_forearm", "gibSplash", true},
+				{"l_nipper", "gibSplash", true},
+				{"r_nipper", "gibSplash", true},
+				{"l_leg", "gibSplash", true},
+				{"r_leg", "gibSplash", true},
+				--{"miecz", {"zombs-weapon-lost1","zombs-weapon-lost2","zombs-weapon-lost3",}, false},
+			},
+	    },
+
+
+    notBleedingJoints = {
+		--joint21 = {},           -- narazie wnetrze tablicy nie wykorzystane (hit w konkretna kosc)
+    },
+
+	NearAttacks = {"attack1","attack2"},
+    Hits = {"hit1", "hit2"},
+
+    DeathJoints = {
+        'k_szyja','l_leg','r_leg','spine','k_ogo','l_hand','r_hand',
+    },
+	Ambients = {"idle1","idle"},
+
+}
+
+
+o.DeathTimer = 140                  -- po ilu 1/30 postac znika po smierci
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","hunt", "hear","throw","attack"}
+o.AiParams.viewDistance = 90
+o.AiParams.viewDistance360 = 6
+o.AiParams.viewAngle = 100
+
+o.AiParams.weaponDamage = 15
+o.AiParams.attackRange = 2.5
+o.AiParams.attackRangeAngle = 120
+o.AiParams.hearing = 1.5
+o.AiParams.perception = 2.0
+    
+o.AiParams.GuardStill = false
+o.AiParams.guardAngle = {0,0}
+o.AiParams.guardAngleRandom = false
+o.AiParams.guardChangePosition = {30,60}
+o.AiParams.guardRange = -1			-- max. walk distance when idle
+o.AiParams.stopAfterWalking = 0.4
+o.AiParams.stopAfterWalkingTime = {30,90}
+
+
+o.AiParams.walkStep = 5.0
+--o.AiParams.walkArea = "TestArea"
+o.AiParams.walkAreaRandom = false
+o.AiParams.WalkAreaWhenAttack = false
+o.AiParams.useOnlyWaypointsWhenGuard = false
+
+o.AiParams.delayBetweenAttacks = 10
+o.AiParams.moveDisplacement = 2.0
+
+o.AiParams.chanceOfEscapeAfterFire = 0.0
+o.AiParams.escapeTime = 100
+
+o.AiParams.updateSpeed = 0.1
+o.AiParams.alwaysSee = false
+o.AiParams.huntPlayer = false
+
+o.AiParams.ThrowableItem = "saliva.CItem"
+o.AiParams.throwItemBindTo = "probe"
+o.AiParams.throwAnim = "attack3"
+o.AiParams.throwAmmo = 9999
+o.AiParams.throwRangeMin = 6
+o.AiParams.throwRangeMax = 35
+o.AiParams.minDelayBetweenThrow = 4
+o.AiParams.escapeAfterThrowTime = 0		-- 0 - no escape
+o.AiParams.throwAngle = 10
+o.AiParams.throwVelocity =  50
+o.AiParams.throwDistMinus = -1.0			-- <0 celuje za gracza, 0> przed gracza
+--o.AiParams.throwAngularVelocitySpeed = 20
+
+
+o.shadow = 128
+
+
+o.AiParams.findPathSpeed = 0.07

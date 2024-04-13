@@ -1,0 +1,10 @@
+o.BaseObj = "Airship_Soldier.CActor"
+
+o.Scale = 1.7
+o.Health = 70
+
+
+
+o.NeverMove = true
+
+

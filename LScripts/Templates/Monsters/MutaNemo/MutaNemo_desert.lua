@@ -1,0 +1,2 @@
+function o:OnCreateEntity()
+end

@@ -1,0 +1,32 @@
+o.s_SubClass.ParticlesDefinitions = {
+	splat = {
+		pfx = "Pig_Avenger_bloodsplat",
+		scale = 0.8,
+		offset = Vector:New(0.4,2.4,-0.2),
+		joint = "Spine",
+	},
+	drop = {
+		pfx = "Insane_Villager_blooddrop",
+		scale = 0.7,
+		offset = Vector:New(0,2,-0.4),
+		joint = "Spine",
+	},
+	breath = {
+		pfx = "Insane_Villager_breath",
+		scale = 0.7,
+		offset = Vector:New(0,0,0),
+		joint = "Neck",
+	},
+	fap = {
+		pfx = "Pig_Avenger_bloodsplat",
+		scale = 1,
+		offset = Vector:New(0,0,0),
+		joint = "RightHand",
+	},
+	fap2 = {
+		pfx = "Pig_Avenger_bloodsplat",
+		scale = 1,
+		offset = Vector:New(0,0,0),
+		joint = "LeftHand",
+	},
+}

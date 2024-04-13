@@ -1,0 +1,10 @@
+pe_wom_crying.Volume = 100
+pe_wom_crying.Interval = 6
+pe_wom_crying.RandomShift = 4
+pe_wom_crying.Falloff =
+{
+  Start = 5,
+  End = 30
+}
+pe_wom_crying.Sound ="C7L02_village_of_damned/pe_wom_crying1;C7L02_village_of_damned/pe_wom_crying2;C7L02_village_of_damned/pe_wom_crying3;C7L02_village_of_damned/pe_wom_crying4"
+

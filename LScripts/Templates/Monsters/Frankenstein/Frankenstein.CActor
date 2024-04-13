@@ -1,0 +1,241 @@
+o.Model = "frankenstein"
+o.throwHeart = "red"
+o.Health = 350
+o.Scale = 1.2
+o.enableGibWhenHPBelow = -43
+o.CreatePO = true
+o.WalkSpeed = 1.0
+o.RunSpeed = 1.0
+o.RotateSpeed = 14
+
+o.ToughOne = true
+o.ScreamDamage = 50
+
+o.DeadAnimChance = 50
+
+o.throwHeart = true
+o.Animation = "idle_default"
+o.disableFreeze = true
+o.customgibexpsound = {"actor/gibs/frankenstein_gib"}
+
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 1150,
+    InertiaTensorMultiplier = 0.9,
+}
+
+
+o.s_SubClass = {
+    rotateHead = 3.1415 * 0.3,			-- zakres
+    rotateHeadBone = "neck",
+    rotateHeadMaxSpeed = 0.2,
+    Animations = {
+	 death1     = {1.4, false, {
+{0.0,'PlaySound',"$/actor/deaths/frankenstein_elec2"},
+{0.4,'PlaySound',"$/actor/mw_wheelchair_veteran/wheelchair_weapon-lost1"},
+{0.4,'PlaySound',"$/actor/mw_wheelchair_veteran/wheelchair_weapon-lost2"},
+	 
+{0.0,'BindFX','dsparks1'},
+{0.0,'BindFX','dsparks2'},
+{0.0,'BindFX','dsparks3'},
+{0.0,'BindFX','dsparks4'},
+{0.0,'BindFX','dsparks5'},
+{0.0,'BindFX','dsparks6'},
+{0.0,'BindFX','dsparks7'},
+{0.0,'BindFX','dsparks8'},
+{0.0,'BindFX','dsparks9'},
+
+
+}},
+	 death2     = {1.8, false, {
+{0.0,'PlaySound',"$/actor/deaths/frankenstein_elec"},
+	 
+	 
+{0.2,'BindFX','dsplat'},
+{0.4,'BindFX','dsplat'},
+{0.8,'BindFX','dsplat'},
+{1.2,'BindFX','dsplat'},
+
+}},
+
+        idle_default = {1.0, false,{
+						{0.1,'PlaySoundHit',"idle_voice"},
+        }},
+
+        hit1    = {1.0, false, {
+						{0.1,'PlaySoundHit',"hit"},
+					}},
+        hit2    = {1.0, false, {
+						{0.0,'Bindsparks'},
+						{0.1,'PlaySoundHit',"hit"},
+						{0.5,'Endsparks'},
+					}},
+        walk     = {1.21, true, {
+						{0.1,'PlaySoundHit',"idle_voice"},
+        				{1.2,'FootFX','s_l_srodstopie'},
+						{0.6,'FootFX','s_p_srodstopie'},
+						{0.6,'PlaySound',"stepr"},
+						{1.5,'PlaySound',"stepl"},
+					}},
+        run      = {1.85, true, {	-- 1.6
+						{0.1,'PlaySoundHit',"idle_voice"},
+        				{1.2,'FootFX','s_l_srodstopie'},
+						{0.6,'FootFX','s_p_srodstopie'},
+						{0.6,'PlaySound',"stepr"},
+						{1.2,'PlaySound',"stepl"},
+					}},
+
+	attack1 = {1.0, false, {
+							{0.0,'PlaySound',"zap"},
+							{0.0,'Charge'},
+							{0.2,'PlaySound',"attack1"},
+							{0.0,'PlaySound',"attack1_voice"},
+							{0.2,'PlaySound',"fire"},
+						--[[	{0.8, 'lockTarget'},
+							{0.9, 'lighting'},
+							{1.1, 'lockTarget'},
+							{1.2, 'lighting'},
+							{1.4, 'lockTarget'},
+							{1.5, 'lighting'},--]]
+							{0.9, 'ThrowImmid',nil,true},
+							{1.2, 'ThrowImmid',nil,true},
+							{1.5, 'ThrowImmid',nil,true},
+
+							{1.7,'EndCharge'},
+                        }},
+
+	attack2 = {1.5, false, {
+							{0.0,'PlaySound',"zap"},
+							{0.0,'PlaySound',"attack2_voice"},
+							{0.6,'PlaySound',"swish1"},
+							{0.7, 'damage'},
+							{1.1,'PlaySound',"swish2"},
+							{1.1, 'damage'},
+                        }},
+
+    },
+
+    RagdollCollisions = {
+        MinStren = 4.0,
+        MinTime = 0.6,
+        Bones = {
+				{"neck", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"joint21", "weaponlost", false},
+			},
+    },
+    Hits = {"hit2"},
+    NearAttacks = {"attack2",},
+    Ambients = {"idle_default",},
+
+    ragdollJoint = "root",
+
+    BreakableJoints = {},
+    notBleedingJoints = {
+		joint21 = {},
+    },
+
+    DeathJoints = {
+        's_p_kostka','n_p_kolano','n_p_biodro','s_l_kostka',
+        'n_l_kolano','n_l_biodro','dlo_lewa_root','r_l_lokiec',
+        'r_l_bark','dlo_prawa_root','r_p_lokiec','r_p_bark',
+        'k_ogo','k_zebra','k_ramiona',
+        'k_glowa','neck',
+    },
+
+	GibExplosionStrength = 7000,
+	GibExplosionRange = 2.0,
+	GibExplosionDeltaY = -1.0,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+				{"r_up_leg","FX_gib_blood",-1},
+				{"l_up_leg","FX_gib_blood",-1},
+				{"l_arm","FX_gib_blood",-1},
+				{"r_arm","FX_gib_blood",1},
+				{"spine_1","FX_gib_blood",1},				
+				{"neck","FX_gib_blood",-1},
+				{"spine_3","Frankenstein_sparks",-1},
+				{"root","Frankenstein_sparks",-1},
+	},
+	gibShader = "palskinned_bloody",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"r_up_leg", "gibSplash", true},
+				{"l_up_leg", "gibSplash", true},
+				{"r_arm", "gibSplash", true},
+				{"l_arm", "gibSplash", true},
+				{"spine_1", "gibSplash", true},
+				{"neck", "gibSplash", true},				
+			},
+    },
+
+}
+
+
+
+o.AiParams = {}
+o.AiParams.viewDistance = 50
+o.AiParams.viewDistance360 = 5
+o.AiParams.viewAngle = 170
+o.AiParams.hearing = 1.0
+o.AiParams.perception = 1.0
+o.AiParams.walkStep = 6.0
+o.AiParams.delayBetweenAttacks = 30
+o.AiParams.moveDisplacement = -1
+
+o.AiParams.chanceOfEscapeAfterFire = 0.03
+o.AiParams.escapeTime = 150
+
+o.AiParams.updateSpeed = 0.33
+o.AiParams.alwaysSee = false
+o.AiParams.huntPlayer = true
+    
+o.AiParams.weapon = {
+		bulletsPerShot = 1,
+		maxDist = 50,
+		minDist = 6.0,
+		spreadAngle = 0,
+		damagePerBullet = 0,
+		PO_HitForce = 0,
+	}
+o.AiParams.weaponAmmo = 999
+o.AiParams.doNotRotateWhenShooting = false
+o.AiParams.GuardStill = false
+o.AiParams.guardAngle = {0,0}
+o.AiParams.guardAngleRandom = true
+o.AiParams.guardChangePosition = {30,60}
+o.AiParams.guardRange = 12
+o.AiParams.stopAfterWalking = 0.5
+o.AiParams.stopAfterWalkingTime = {20,40}
+
+o.AiParams.delayBetweenAttacks = 5
+o.AiParams.moveDisplacement = 3.5
+o.AiParams.attackRange = 3
+o.AiParams.weaponDamage = 15
+
+o.AiParams.FarAttackPriority = 1
+
+o.AiParams.aiGoals = {"idle","throw","hear","hunt","attack"}
+
+o.AiParams.throwAnim = "attack1"
+o.AiParams.throwRangeMin = 5
+o.AiParams.throwRangeMax = 30
+o.AiParams.minDelayBetweenThrow = 2
+o.AiParams.throwAmmo = 99999
+
+o.AiParams.lightingDamage = 8 
+o.lightingFX = "DM3spell"
+o.AiParams.lightingDist = 50
+o.AiParams.FarAttacks = {"attack1",}
+
+
+o.AiParams.disableEscapeWhenTooClose = true
+
+o.AiParams.ThrowableItem = "Fthrow.CItem"
+o.AiParams.throwItemBindTo = "weapon_head"
+o.AiParams.weaponBindPos = o.AiParams.throwItemBindTo
+o.AiParams.throwVelocity = 42
+

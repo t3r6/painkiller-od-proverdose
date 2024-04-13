@@ -1,0 +1,4 @@
+o.BaseObj = "Corn.CActor"
+o.Health = 129
+o.AiParams.ThrowableItem = "GreenCornThrowable.CItem"
+o.Model = "green_corn"

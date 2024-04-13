@@ -1,0 +1,51 @@
+o.Mesh = [[polySurfaceShape12]]
+o.Pack = [[ammo_canonball.dat]]
+o.takeDistance = 1.8
+o.Scale = 0.05
+o.DisabledInVoosh = true
+o.AmmoAdd = 15
+o.MPAmmoAdd = 12
+o.RespawnTime = 15
+o.s_SubClass ={}
+
+--============================================================================
+function o:OnInitTemplate()
+    self.CubeMap = nil
+    self.DetailMap = nil
+    self.NormalMap = nil
+    self.Destroy = nil
+    self.Impulse = nil
+    self:ReplaceFunction("_Synchronize","Synchronize")
+    self:ReplaceFunction("Synchronize","nil")
+end
+--============================================================================
+function AmmoCannonball:OnCreateEntity()
+    ENTITY.EnableNetworkSynchronization(self._Entity)
+-- self:BindFX("flame_loony_torch",0.2)
+end
+--============================================================================
+function AmmoCannonball:OnTake(player)
+    if player.Ammo.Cannonball >= CPlayer.s_SubClass.MaxAmmo.Cannonball then return true end
+local add
+if Game.GMode == GModes.SingleGame then add=self.AmmoAdd else add = self.MPAmmoAdd end
+    self.TakeFX(player._Entity, add)
+	Game.PlayerAmmoFound =  Game.PlayerAmmoFound + 1
+end
+--============================================================================
+function AmmoCannonball:TakeFX(pe,add)
+    local player = EntityToObject[pe]
+    
+    if player then
+	if Game.GMode == GModes.SingleGame then
+        player.Ammo.Cannonball = player.Ammo.Cannonball + add * AmmoDifficultyModifier[Game.Difficulty] * Game.AmmoFoundFactor
+	else
+        player.Ammo.Cannonball = player.Ammo.Cannonball + add
+	end
+        player:CheckMaxAmmo()
+        if player == Player then player:PickupFX() end
+    end
+
+    Templates["AmmoCannonball.CItem"]:SndEnt("pickup",pe)
+end
+Network:RegisterMethod("AmmoCannonball.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eu")
+--============================================================================

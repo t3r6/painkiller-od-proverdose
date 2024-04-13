@@ -1,0 +1,33 @@
+o.s_SubClass.ParticlesDefinitions = {
+    splat = {   
+		pfx = "bloody_surgeon_explode",
+		scale = 0.9,
+		joint = "r_finger",
+		offset = Vector:New(0,0,0),
+	},
+    explode = {   
+		pfx = "bloody_surgeon_explode",
+		scale = 0.55,
+		joint = "r_finger",
+		offset = Vector:New(0,0,0),
+	},
+    splat2 = {   
+		pfx = "bloody_surgeon_explode",
+		scale = 0.55,
+		joint = "r_finger",
+		offset = Vector:New(0,0,0),
+	},
+    splat3 = {   
+		pfx = "bloody_surgeon_explode",
+		scale = 0.55,
+		joint = "l_finger",
+		offset = Vector:New(0,0,0),
+	},
+  deathblood = {   
+		pfx = "Butcher_blood_small",
+		scale = 1,
+		joint = "root",
+		offset = Vector:New(0,0,0.4),
+	},
+
+}

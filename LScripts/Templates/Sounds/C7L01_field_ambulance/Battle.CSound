@@ -1,0 +1,10 @@
+Battle.Volume = 60
+Battle.Interval = 0
+Battle.RandomShift = 0
+Battle.Falloff =
+{
+  Start = 50,
+  End = 400
+}
+Battle.Sound ="C7L01_field_ambulance/battle"
+

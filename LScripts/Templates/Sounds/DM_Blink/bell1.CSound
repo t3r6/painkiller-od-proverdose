@@ -1,0 +1,10 @@
+bell1.Volume = 80
+bell1.Interval = 16
+bell1.RandomShift = 3
+bell1.Falloff =
+{
+  Start = 6,
+  End = 30
+}
+bell1.Sound ="DM_Blink/mbird1;DM_Blink/bell1"
+

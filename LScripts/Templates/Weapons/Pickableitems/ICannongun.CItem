@@ -1,0 +1,22 @@
+o.Model = "cannongunitem"
+o.Scale = 1
+o.DisabledInVoosh = true
+o.SlotIndex = 3
+o.RespawnTime = Cfg.WeaponRespawnTime
+o.Ammo = 
+{
+   Minigun = 0,
+    Cannonball = 5
+}
+
+o.s_SubClass.SoundsDefinitions = 
+{
+    path  = "weapons/stake",
+    disablePitch = true,
+    pickup = 
+    {
+        samples = {"take-stake"},
+        dist1 = 15,
+        dist2 = 50,
+    },
+}

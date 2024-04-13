@@ -1,0 +1,28 @@
+o.Mesh = "pSphereShape1"
+o.Pack = "Kamyk.dat"
+o.Restitution = 0.8 -- sprezystosc
+o.LinearDamping = 0.8  -- tlumienie liniowe
+o._fx = "AirCombat"
+o.BOD = 10
+o.NotCountable = true
+o.EQRange = 30
+o.CameraRot = 0
+o.CameraMov = 0
+
+o.initDistance = 10
+
+function o:OnCreateEntity()
+	ENTITY.EnableDraw(self._Entity, false)
+end
+
+function o:Tick(delta)
+       local dist = Dist3D(PX,PY,PZ,self.Pos.X,self.Pos.Y,self.Pos.Z)
+	    if dist < self.initDistance then
+		if math.random(100) < 2 then
+			local scales = {0.1, 0.2, 0.2,0.3,0.3,0.4,0.5,0.5,0.4,0.2}
+			local rnd = 10.8
+ 			AddPFX(self._fx, scales[math.random(1,9)], Vector:New(self.Pos.X + FRand(-rnd, rnd), self.Pos.Y + FRand(-rnd, rnd), self.Pos.Z + FRand(-rnd, rnd)))
+		end
+	end
+end
+

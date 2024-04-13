@@ -1,0 +1,75 @@
+o.s_SubClass.ParticlesDefinitions = {
+	redeye_left = {
+		pfx = "Kerberos_redeyes",
+		scale = 0.9,
+		joint = "RightRing",
+--		offset = Vector:New(0.3,-0.8,-1.8),   --kladne je dozadu / doprava / dolu
+		offset = Vector:New(0.7,-0.2,-0.5),	
+	},
+	redeye_right = {
+		pfx = "Kerberos_redeyes",
+		scale = 0,
+		joint = "RightRing",
+		offset = Vector:New(-0.6,0.6,-1.8),
+	},
+	blueeye_left = {
+		pfx = "Kerberos_blueeyes",
+		scale = 0.9,
+		joint = "LeftRing",
+		offset = Vector:New(0.6,0,0.5), 
+	},
+	blueeye_right = {
+		pfx = "Kerberos_blueeyes",
+		scale = 0,
+		joint = "LeftRing",
+		offset = Vector:New(-0.6,0.6,0),
+	},
+	greeneye_left = {
+		pfx = "Kerberos_greeneyes",
+		scale = 1.1,
+		joint = "k_szyja",
+		offset = Vector:New(0,-1.1,1.7),  -- doprava / nahoru
+	},
+	greeneye_right = {
+		pfx = "Kerberos_greeneyes",
+		scale = 0,
+		joint = "k_szyja",
+		offset = Vector:New(-0.6,0.6,-1.8),
+	},
+	Right_head_dead = {
+		pfx = "Kerberos_headdead",
+		scale = 2,
+		joint = "RightHand",
+		offset = Vector:New(0,0,0),
+	},
+	Left_head_dead = {
+		pfx = "Kerberos_headdead",
+		scale = 2,
+		joint = "LeftHand",
+		offset = Vector:New(0,0,0),
+	},
+	
+	
+
+	iceattack = {
+		pfx = "Kerberos_iceattack",
+		scale = 0.9,
+		joint = "LeftRing",
+		offset = Vector:New(0.6,0,0.5), 
+	},
+	fireattack = {
+		pfx = "Kerberos_fireattack",
+		scale = 0.9,
+		joint = "RightRing",
+		offset = Vector:New(0.7,-0.2,-1),	
+	},
+	poisonattack = {
+		pfx = "Kerberos_poisonattack",
+		scale = 0.9,
+		joint = "k_szyja",
+		offset = Vector:New(0,-0.5,1.7),  -- doprava / nahoru
+	},
+
+	
+
+}

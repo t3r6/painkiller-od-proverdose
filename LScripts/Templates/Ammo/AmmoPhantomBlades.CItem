@@ -1,0 +1,40 @@
+o.Mesh = "polySurfaceShape6"
+o.Pack = "ammo_Phantom_Blades.dat"
+o.takeDistance = 1.8
+o.Scale = 0.3
+o.DisabledInVoosh = true
+o.RespawnTime = 15
+o.AmmoAdd = 30
+
+--============================================================================
+function AmmoPhantomBlades:OnInitTemplate()
+    self.CubeMap = nil
+    self.DetailMap = nil
+    self.NormalMap = nil
+    self.Destroy = nil
+    self.Impulse = nil
+    self:ReplaceFunction("_Synchronize","Synchronize")
+    self:ReplaceFunction("Synchronize","nil")
+end
+--============================================================================
+function AmmoPhantomBlades:OnCreateEntity()
+    ENTITY.EnableNetworkSynchronization(self._Entity)
+end
+--============================================================================
+function AmmoPhantomBlades:OnTake(player)    
+    if player.Ammo.PhantomBlades >= CPlayer.s_SubClass.MaxAmmo.PhantomBlades then return true end
+    self.TakeFX(player._Entity, self.AmmoAdd)
+	Game.PlayerAmmoFound =  Game.PlayerAmmoFound + 1
+end
+--============================================================================
+function AmmoPhantomBlades:TakeFX(pe,add)
+    local player = EntityToObject[pe]    
+    if player then
+        player.Ammo.PhantomBlades = player.Ammo.PhantomBlades + add * AmmoDifficultyModifier[Game.Difficulty] * Game.AmmoFoundFactor
+        player:CheckMaxAmmo()
+        if player == Player then player:PickupFX() end
+    end
+    Templates["AmmoPhantomBlades.CItem"]:SndEnt("pickup",pe)
+end
+Network:RegisterMethod("AmmoPhantomBlades.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eu")
+--============================================================================

@@ -1,0 +1,4 @@
+o.BaseObj = "HenDemon.CActor"
+o.Model = "hendemon_big"
+o.Health = 40
+

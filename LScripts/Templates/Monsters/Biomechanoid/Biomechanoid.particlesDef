@@ -1,0 +1,45 @@
+o.s_SubClass.ParticlesDefinitions = {
+	ambient1 = {
+        pfx = "Biomechanoid_pinkcloud",
+        scale = 1,
+        offset = Vector:New(0,-1,0),
+        joint = "disc_razor_end",
+    },
+	ambient2 = {
+        pfx = "Biomechanoid_smallflame",
+        scale = 0.15,
+        offset = Vector:New(0,0,0),
+        joint = "l_finger",
+    },
+    
+    	ambient3 = {
+        pfx = "Biomechanoid_warp",
+        scale = 1,
+        offset = Vector:New(0,0,0),
+        joint = "disc_razor_end",
+    },
+    	canexplo1 = {
+        pfx = "explo_ammobox2",
+        scale = 0.4,
+        offset = Vector:New(0,-0.4,0),
+        joint = "disc_rotor",
+    },
+    	canexplo2 = {
+        pfx = "explo_ammobox2",
+        scale = 0.4,
+        offset = Vector:New(0,0.4,0),
+        joint = "disc_rotor",
+    },
+    	bigcanexplo = {
+        pfx = "explo_biomech",
+        scale = 0.4,
+        offset = Vector:New(0,0,0),
+        joint = "disc_rotor",
+    },
+}
+
+
+o.s_SubClass.BillBoard = {
+	template = "Biomechanoid_Corona.CBillboard",
+	joint = "disc_rotor",
+}

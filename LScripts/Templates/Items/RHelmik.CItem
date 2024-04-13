@@ -1,0 +1,4 @@
+RHelmik.Mesh = "polySurface990|polySurfaceShape990"
+RHelmik.Pack = "helmik.dat"
+RHelmik.Scale = 0.2
+RHelmik.Restitution = 0.1

@@ -1,0 +1,28 @@
+o.BaseObj = "Alastor_fire.CActor"
+o.StompTimeOut = 12				-- eartq params
+o.StompRange = 40
+o.CameraRot = 0.3
+o.CameraMov = 0.3
+o.Scale = 13.0
+o.burnPFX = "redburn"
+o.burnsize= 0.2
+o.Health = 6000
+o.WalkSpeed = 1.0
+o.walkdist = 5
+o.AiParams.towerRadius = 180.5	-- poza ten obreb nie wyjdzie (teoretycznie)
+o.AiParams.towerRange = 190		-- poza ten obreb nie bedzie atakowal
+o.delayBetweenFlyAttacks = 10
+o.AiParams.towerRadiusBottom = 180
+o.AiParams.towerRangeBottom = 190
+
+o.AiParams.aiGoals = {"idleAlastor","groundAttackAlastor","attackFlyAlastor"}
+o.Poison = {
+	checkSpeed = 2,
+	Range = 8,
+	TimeOut = 60,
+	Freq = 9999,
+	SlowDown = 0.2,
+}
+
+o.AiParams.breathAttackDistMin = 14.0
+

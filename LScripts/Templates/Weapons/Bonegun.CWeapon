@@ -1,0 +1,53 @@
+o.Model = "Bonegun"
+o.Scale = 0.75 -- skala broni
+o.Pos = Vector:New(1.3, -0.5 ,-0.9) -- pozycja wzgledem kamery
+o.Ang = Vector:New(-0.15, 3.22, 0)  -- kat wzgledem kamery
+o.s_SubClass = {
+    -- trzesienie kamera przy wystrzale:
+     ShotCamMove = 0.25,
+     ShotCamRotate = 0.25,
+     FireTimeout    = 20,
+     AltFireTimeout = 30,
+     FireRange = 55,
+     HowManyPellets = 18,
+     FireRadius = 5,
+     PelletDamage = 8,
+    -- freezer
+     FrozenTime = 5,
+     FrozenFadeInTime = 1.5,
+     FrozenFadeOutTime = 1,
+     StoneBulletSpeed = 50,
+     EnemyThrowBack = 200,
+     EnemyThrowUp   = 100,
+     PhysicsImpulse = 200,
+     Animations = 
+     {   
+        idle        = {1.0, 0.2},
+        walk        = {1.0, 0.2},
+        shot        = {1  , 0.1},
+        iceshot     = {0.7, 0.1},
+     }
+}
+
+o.s_MPSubClass = {
+    -- trzesienie kamera przy wystrzale:
+     ShotCamMove = 0.25,
+     ShotCamRotate = 0.25,
+     FireTimeout    = 20,
+     AltFireTimeout = 30,
+     FireRange = 50,
+     HowManyPellets = 18,
+     FireRadius = 2.0,
+     PelletDamage = 3,
+     StoneBulletSpeed = 50,
+     EnemyThrowBack = 100,
+     EnemyThrowUp   = 0,
+     PhysicsImpulse = 200,
+     Animations = 
+     {   
+        idle        = {1.0, 0.2},
+        walk        = {1.0, 0.2},
+        shot        = {1  , 0.1},
+        iceshot     = {0.7, 0.1},
+     }
+}

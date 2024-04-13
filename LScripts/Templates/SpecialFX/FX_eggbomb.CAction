@@ -1,0 +1,9 @@
+o.Sequence = {
+    {"Object:'FX_eggbomb.CActor',1,px,py-2,pz,p.angle"},        
+    {'AI:p,false'},
+    {"PSnd:{'specials/respawns/marchshine'},10,30"},
+    {'EnableDraw:p,true'},    
+    {"Wait:0.5"},
+    {"PlaySpawnSound:p,10,35"},
+    {'AI:p,true'},
+}

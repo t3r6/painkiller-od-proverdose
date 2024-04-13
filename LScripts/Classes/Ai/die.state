@@ -1,0 +1,98 @@
+-- atak bliski, bez podchodzenia
+
+AiStates.die = {
+    name = "die",
+    timer = 260
+}
+
+function AiStates.die:OnInit(brain)
+	local actor = brain._Objactor
+	local aiParams = actor.AiParams
+	
+    actor:FullStop()
+    local att = actor.s_SubClass.Deaths
+    if not att then
+        Game:Print(actor._Name.." DEATHS NOT DEFINED!!!!!!")
+	actor._CustomDeathAnim = false
+	actor._deathDone = true
+	actor.Immortal = false
+	actor:OnDamage(99999,nil,AttackTypes.OutOfLevel)
+        return
+    end
+	if actor.OnDieAnim then
+		actor:OnDieAnim()
+	end
+
+local a=math.random(1,2)
+    local animName = att[a]
+	actor.Immortal = true
+	actor.disableFreeze = true
+	actor.throwHeartground = true
+	if not actor:ForceAnim(animName, false) then
+		a=3-a
+    		animName = att[a]
+		if not	actor:ForceAnim(animName, false) then
+		actor._CustomDeathAnim = false
+		actor._deathDone = true
+			actor.Immortal = false
+			actor:OnDamage(99999,nil,AttackTypes.OutOfLevel)
+		end
+	end
+	self.active = true
+end
+
+function AiStates.die:OnUpdate(brain)
+	self.timer=self.timer-1
+	local actor = brain._Objactor
+	if self.timer < 1 then
+		actor._CustomDeathAnim = false
+		actor._deathDone = true
+		actor.Immortal = false
+		actor:OnDamage(99999,nil,AttackTypes.OutOfLevel)
+	end
+	if not actor._isAnimating then
+		self.active = false
+		actor._CustomDeathAnim = false
+		actor._deathDone = true
+		actor.Immortal = false
+		actor:OnDamage(99999,nil,AttackTypes.OutOfLevel)
+		if actor.Deatht then 
+			GObjects:ToKill(actor)
+		end
+
+
+--[[	else
+		self.active = false
+		for i,v in actor.s_SubClass.Deaths do
+			if actor.Animation == v then
+				self.active = true
+				break
+			end
+		end
+]]--
+	end
+end
+
+function AiStates.die:OnRelease(brain)
+	self.active = false
+	local actor = brain._Objactor
+	actor.Immortal = false
+	actor:OnDamage(99999,nil,AttackTypes.OutOfLevel)
+	actor._CustomDeathAnim = false
+	actor._deathDone = true
+
+end
+
+function AiStates.die:Evaluate(brain)
+	local actor = brain._Objactor
+	if self.active then
+		return 0.95
+	end
+	if actor._CustomDeathAnim then
+		actor.deathtype=nil
+		actor.DeadAnimChance=0
+		actor.Health=1
+		return 0.95
+	end
+	return 0.0
+end

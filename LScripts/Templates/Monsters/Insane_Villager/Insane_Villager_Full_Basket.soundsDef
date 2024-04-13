@@ -1,0 +1,94 @@
+o.s_SubClass.SoundsDefinitions = {
+	path = "actor/mw_insanevillager/",
+    damage = {
+		samples = {'$/actor/mw_insanevillager/villager_hand_hit'},
+		dist1 = 16,
+		dist2 = 60,
+    },
+	step = {
+		samples = {'villager_walk_krok1','villager_walk_krok2','villager_walk_krok3',},
+		dist1 = 6,
+		dist2 = 20,
+	},
+	hit = {
+		samples = {'villager-hit1','villager-hit2','villager-hit3','villager-hit4',},
+		dist1 = 6,
+		dist2 = 60,
+	},
+	walk_voice1 = {
+		samples = {'villager-walk-voice1','villager-walk-voice2','villager-walk-voice3'},
+		playChance = 0.35,
+		dist1 = 6,
+		dist2 = 50,
+	},
+	walk_voice2 = {
+		samples = {'villager-walk-voice4','villager-walk-voice5','villager-walk-voice6'},
+		playChance = 0.35,
+		dist1 = 6,
+		dist2 = 50,
+	},
+	walk_voice3 = {
+		samples = {'villager-walk-voice3','villager-walk-voice4','villager-walk-voice7'},
+		playChance = 0.35,
+		dist1 = 6,
+		dist2 = 50,
+	},
+	idle4 = {
+		samples = {'villager-idle4'},
+		playChance = 0.12,
+		dist1 = 6,
+		dist2 = 40,
+	},
+	idle5 = {
+		samples = {'villager-idle5'},
+		playChance = 0.12,
+		dist1 = 6,
+		dist2 = 40,
+	},
+	idle6 = {
+		samples = {'villager-idle6'},
+		playChance = 0.12,
+		dist1 = 6,
+		dist2 = 40,
+	},
+	atak1 = {
+		samples = {'villager-atak1_1','villager-atak1_2','villager-atak1_3'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	swish_atak1 = {
+		samples = {'villager_swish1'},
+		dist1 = 16,
+		dist2 = 40,
+	},
+	atak2 = {
+		samples = {'villager-atak2_1','villager-atak2_2','villager-atak2_3'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	swish_atak2 = {
+		samples = {'villager-hand-swish1','villager-hand-swish2'},
+		dist1 = 12,
+		dist2 = 40,
+	},
+	onAttackOnce = {
+		samples = {"villager-halt1", "villager-halt2", "villager-halt3"},
+		playChance = 0.75,
+		dist1 = 30,
+		dist2 = 70,
+	},
+    
+	death = {
+		samples = {"villager-death1","villager-death2","villager-death3","villager-death4",},
+		dist1 = 20,
+		dist2 = 60,
+	},
+
+    bodyfalls = {
+		samples = {"villager_bodyfalls"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+}
+

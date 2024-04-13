@@ -1,0 +1,20 @@
+o.Mesh = "hydrantShape"
+o.Pack = "o_hydrant.dat"
+o.DestroyPack = "o_hydrant_zlom.dat"
+o.Scale = 0.4
+o.Health = 10
+o.Pinned = true
+o.Destroy.ExplosionStrength = 0
+o.Destroy.AverageDelay = 1
+o.Destroy.AverageVariation = nil
+o.Destroy.Strength = 200
+o.Destroy.Effect = "explode_dust"
+o.Destroy.EffectScale = 0.3
+o.Destroy.Treasures = 
+{
+    Coins  = {5, 'g'},
+}
+o.Destroy.MinSpeedOnCollision = 12
+o.Destroy.ExplosionDamage = 0
+o.Destroy.ExplosionRadius = 0
+o.Destroy.LifetimeAfterExplosion = 2

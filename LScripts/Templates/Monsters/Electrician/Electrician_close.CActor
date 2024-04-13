@@ -1,0 +1,8 @@
+o.BaseObj = "Electrician.CActor"
+o.RunSpeed = 1.4
+o.enableGibWhenHPBelow = -49
+o.AiParams.viewDistance = 60
+
+o.AiParams.alwaysSee = true
+
+o.AiParams.aiGoals = {"idle","attack", "hunt", "flee", "hear"}

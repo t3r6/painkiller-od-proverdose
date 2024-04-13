@@ -1,0 +1,10 @@
+elect5.Volume = 80
+elect5.Interval = 0
+elect5.RandomShift = 0
+elect5.Falloff =
+{
+  Start = 10,
+  End = 50
+}
+elect5.Sound ="C8L02_air_combat/elect5"
+

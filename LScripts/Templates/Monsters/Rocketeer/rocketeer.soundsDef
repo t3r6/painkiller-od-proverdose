@@ -1,0 +1,62 @@
+o.s_SubClass.SoundsDefinitions = {
+
+weaponlost = {
+		samples = {"$/actor/mw_rocketeer/rock_weaponlost"},
+		dist1 = 10,
+		dist2 = 20,
+	},
+
+damage = {
+		samples = {"$/actor/mw_rocketeer/rock_dam"},
+    },
+
+jump_flameburst = {
+		samples = {"$/actor/mw_rocketeer/jump_burst"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+flameburst = {
+		samples = {"$/actor/mw_rocketeer/flameburst"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+laser_fire = {
+		samples = {"$/actor/mw_rocketeer/rock_fire"},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	
+rock_step1 = {
+		samples = {"$/actor/mw_rocketeer/rock_step1"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+rock_step2 = {
+		samples = {"$/actor/mw_rocketeer/rock_step2"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+rock_atvoice_a = {
+		samples = {"$/actor/mw_rocketeer/rock_atvoice1","$/actor/mw_rocketeer/rock_atvoice2"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+rock_atvoice_b = {
+		samples = {"$/actor/mw_rocketeer/rock_atvoice3","$/actor/mw_rocketeer/rock_atvoice4"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+rock_noise = {
+		samples = {"$/actor/mw_rocketeer/rock_noise"},
+		dist1 = 10,
+		dist2 = 40,
+	},
+
+
+}

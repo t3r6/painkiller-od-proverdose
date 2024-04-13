@@ -1,0 +1,90 @@
+o.s_SubClass.SoundsDefinitions = {
+	ten_enter = {
+		samples = {"$/actor/mw_tentacle/tentacle_enter"},
+		dist1 = 10,
+		dist2 = 60,
+	},
+
+	ten_leave = {
+		samples = {"$/actor/mw_tentacle/tentacle_leave"},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	
+	ten_steam = {
+		samples = {"$/actor/mw_tentacle/tentacle_steam"},
+		dist1 = 10,
+		dist2 = 60,
+	},
+
+	ten_swish = {
+		samples = {"$/actor/mw_tentacle/tentacle_swish"},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	
+	
+	
+	hit = {
+		samples = {"$/actor/mw_giant_scorpion/scor_hit1","$/actor/mw_giant_scorpion/scor_hit2","$/actor/mw_giant_scorpion/scor_hit3",},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	scor_swish = {
+		samples = {"$/actor/mw_giant_scorpion/scor_swish"},
+		dist1 = 10,
+		dist2 = 60,
+	},
+	step = {
+		samples = {"$/actor/mw_giant_scorpion/scor_krok1","$/actor/mw_giant_scorpion/scor_krok2",},
+		dist1 = 6,
+		dist2 = 30,
+	},
+	shoot = {
+		samples = {"$/actor/mw_giant_scorpion/scor_shoot1","$/actor/mw_giant_scorpion/scor_shoot2",},
+		dist1 = 40,
+		dist2 = 120,
+	},
+	shootvoice = {
+		samples = {"$/actor/mw_giant_scorpion/scor_shoot_voice1","$/actor/mw_giant_scorpion/scor_shoot_voice2","$/actor/mw_giant_scorpion/scor_shoot_voice3","$/actor/mw_giant_scorpion/scor_shoot_voice4",},
+		playChance = 0.33,
+		dist1 = 30,
+		dist2 = 100,
+	},
+	atakvoice = {
+		samples = {"$/actor/mw_giant_scorpion/scor_hit1","$/actor/mw_giant_scorpion/scor_hit2","$/actor/mw_giant_scorpion/scor_hit3",},
+		dist1 = 30,
+		dist2 = 100,
+	},
+	onAttackOnce = {
+		samples = {"$/actor/mw_giant_scorpion/scor_halt2","$/actor/mw_giant_scorpion/scor_halt1","$/actor/mw_giant_scorpion/scor_halt3","$/actor/mw_giant_scorpion/scor_halt4",},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_giant_scorpion/scor_bodyfalls",},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	weaponlost = {
+		samples = {"$/actor/mw_giant_scorpion/scor_weapon-lost",},
+		dist1 = 30,
+		dist2 = 80,
+	},
+	
+	death = {
+		samples = {"$/actor/mw_giant_scorpion/scor_death1","$/actor/mw_giant_scorpion/scor_death2","$/actor/mw_giant_scorpion/scor_death3",},
+      dist1 = 30,
+		dist2 = 100,
+	},
+    
+	onAttack = {
+		samples = {"$/actor/mw_giant_scorpion/scor_shoot_voice3","$/actor/mw_giant_scorpion/scor_shoot_voice4",},
+        dist1 = 30,
+		dist2 = 80,
+	},
+    
+    damage = {
+		samples = {"$/actor/mw_giant_scorpion/scor_armhit",},
+	},
+}

@@ -1,0 +1,45 @@
+Rage.FreezeTime = 30 * 6 
+Rage.Obj = nil
+
+o.BaseName = "Rage.CProcess"
+o.s_SubClass = {}
+
+--============================================================================
+function Rage:New(obj)
+    local o = Clone(self)
+    o._timer = 0    
+    o.Obj = obj
+   	obj.SlowTimer = self.FreezeTime
+	obj._randomizedParams.WalkSpeed = obj.WalkSpeed * obj.SlowMod
+	obj._randomizedParams.RunSpeed = obj.RunSpeed * obj.SlowMod
+	obj._randomizedParams.RotateSpeed = obj.RotateSpeed * obj.SlowMod
+	obj.AiParams.weaponDamage = obj.AiParams.weaponDamage * 1.5
+	obj.Health = obj.Health * 4
+    return o 
+end
+--============================================================================
+function Rage:Tick(delta)
+	 if not self.Obj then
+        Game:Print(">> ERROR: Rage: no self.Obj!")
+        GObjects:ToKill(self)
+        return
+    end
+    if self.Obj.ToKill then GObjects:ToKill(self) end    
+
+    self._timer = self._timer + delta    
+
+    if self._timer >= self.FreezeTime then
+	self.Obj.SlowMod = 1
+	MDL.SetMaterial(self.Obj._Entity, "")
+        self.Obj._randomizedParams.WalkSpeed = self.Obj.WalkSpeed * self.Obj.SlowMod
+	self.Obj._randomizedParams.RunSpeed = self.Obj.RunSpeed * self.Obj.SlowMod
+	self.Obj._randomizedParams.RotateSpeed = self.Obj.RotateSpeed * self.Obj.SlowMod
+	self.Obj.AiParams.weaponDamage = obj.AiParams.weaponDamage * self.Obj.SlowMod
+	self.Obj.Health = math.floor (self.Obj.Health/4)
+	if self.Obj._ragepart then
+		PARTICLE.Die(self.Obj._ragepart)
+	end
+	GObjects:ToKill(self)
+    end
+end    
+--============================================================================

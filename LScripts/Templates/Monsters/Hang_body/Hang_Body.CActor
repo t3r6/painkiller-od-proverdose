@@ -1,0 +1,41 @@
+o.BaseObj = "CActor"
+o.Model = "hang_body"
+o.Scale = 1.2
+o.Health = -1
+o.NotCountable = true
+
+o.s_Physics = {
+    BodyType = BodyTypes.Simple,
+    Mass     = 1500,
+}
+
+
+
+o.s_SubClass = {
+    RagdollCollisions = {
+        MinStren = 2.5,
+        MinTime = 0.7,
+        Bones = {
+				{"hips", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"spine", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"spine1", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"neck", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"head", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_leg", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"l_leg", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"l_forearm", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_forearm", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"l_shoulder", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_shoulder", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_arm", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"l_arm", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"l_hand", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"chain_1", "bodyfalls", false},		-- joint, {sounds}, blood
+				{"chain_2", "bodyfalls", false},		-- joint, {sounds}, blood
+				{"chain_3", "bodyfalls", false},		-- joint, {sounds}, blood
+			},
+    },
+    DeathJoints = {
+		'hips','chain_1','chain_2','chain_3','l_leg','r_leg','l_arm','r_arm','l_shoulder','r_shoulder','spine','spine1','neck','head','r_forearm','l_forearm','l_hand',
+    },
+}

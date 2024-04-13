@@ -1,0 +1,7 @@
+o.BaseObj = "Corn_Greenparticles.CActor"
+
+o.AiParams.ThrowableItem = "GreenCornThrowable.CItem"
+o.AiParams.throwDeltaY = 1.0
+o.AiParams.throwAngularVelocitySpeed = 25
+o.Health = 210
+

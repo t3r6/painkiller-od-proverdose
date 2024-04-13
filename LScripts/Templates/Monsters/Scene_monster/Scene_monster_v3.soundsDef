@@ -1,0 +1,115 @@
+o.s_SubClass.SoundsDefinitions = {
+monster_voice = {
+		samples = {'$/actor/mw_scenemonster/white_voice1','$/actor/mw_scenemonster/white_voice2','$/actor/mw_scenemonster/white_voice3','$/actor/mw_scenemonster/white_voice4','$/actor/mw_scenemonster/white_voice5','$/actor/mw_scenemonster/white_voice6','$/actor/mw_scenemonster/white_voice7','$/actor/mw_scenemonster/white_voice8','$/actor/mw_scenemonster/white_voice9',},
+		dist1 = 10,
+		dist2 = 30,
+		playChance = 0.3,
+	},
+
+monster_voice1 = {
+		samples = {'$/actor/mw_scenemonster/vampire_voice1','$/actor/mw_scenemonster/vampire_voice2','$/actor/mw_scenemonster/vampire_voice3','$/actor/mw_scenemonster/vampire_voice4','$/actor/mw_scenemonster/vampire_voice5','$/actor/mw_scenemonster/vampire_voice6','$/actor/mw_scenemonster/vampire_voice7','$/actor/mw_scenemonster/vampire_voice8','$/actor/mw_scenemonster/vampire_voice9',},
+		dist1 = 10,
+		dist2 = 30,
+		playChance = 0.3,
+	},
+monster_voice2 = {
+		samples = {'$/actor/mw_scenemonster/beast_voice1','$/actor/mw_scenemonster/beast_voice2','$/actor/mw_scenemonster/beast_voice3','$/actor/mw_scenemonster/beast_voice4','$/actor/mw_scenemonster/beast_voice5','$/actor/mw_scenemonster/beast_voice6','$/actor/mw_scenemonster/beast_voice7','$/actor/mw_scenemonster/beast_voice8','$/actor/mw_scenemonster/beast_voice9',},
+		dist1 = 10,
+		dist2 = 30,
+		playChance = 0.3,
+	},
+monster_voice3 = {
+		samples = {'$/actor/mw_scenemonster/white_voice1','$/actor/mw_scenemonster/white_voice2','$/actor/mw_scenemonster/white_voice3','$/actor/mw_scenemonster/white_voice4','$/actor/mw_scenemonster/white_voice5','$/actor/mw_scenemonster/white_voice6','$/actor/mw_scenemonster/white_voice7','$/actor/mw_scenemonster/white_voice8','$/actor/mw_scenemonster/white_voice9',},
+		dist1 = 10,
+		dist2 = 30,
+		playChance = 0.3,
+	},
+
+	
+	
+	
+	hit = {
+		samples = {"$/actor/mw_butcher/butcher_hit1","$/actor/mw_butcher/butcher_hit2","$/actor/mw_butcher/butcher_hit3",},
+		dist1 = 30,
+		dist2 = 70,
+	},
+
+wheels1 = {
+		samples = {'$/actor/mw_scenemonster/wheel1','$/actor/mw_scenemonster/wheel2','$/actor/mw_scenemonster/wheel4'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},
+
+wheels2 = {
+		samples = {'$/actor/mw_scenemonster/wheel3','$/actor/mw_scenemonster/wheel4','$/actor/mw_scenemonster/wheel5'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},
+bfall = {
+		samples = {'$/actor/mw_scenemonster/fall'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},
+rotate = {
+		samples = {'$/actor/mw_scenemonster/rotate'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	stepwalk = {
+		samples = {'$/actor/mw_butcher/butcher_krok1','$/actor/mw_butcher/butcher_krok2','$/actor/mw_butcher/butcher_krok3'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},
+	onAttackOnce = {
+		samples = {"$/actor/mw_butcher/butcher_halt1", "$/actor/mw_butcher/butcher_halt2",},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	swish0 = {
+		samples = {'$/actor/mw_butcher/butcher_swish0'},
+		dist1 = 6,
+		dist2 = 32,
+	},
+	swish1 = {
+		samples = {'$/actor/mw_butcher/butcher_swish1'},
+		dist1 = 6,
+		dist2 = 32,
+	},
+	swish2 = {
+		samples = {'$/actor/mw_butcher/butcher_swish2'},
+		dist1 = 6,
+		dist2 = 32,
+	},
+	attack = {
+		samples = {'$/actor/mw_butcher/butcher_attack1a','$/actor/mw_butcher/butcher_attack1b'},
+		dist1 = 6,
+		dist2 = 32,
+	},
+	attack_voice = {
+		samples = {'$/actor/mw_butcher/butcher_at1','$/actor/mw_butcher/butcher_at2','$/actor/mw_butcher/butcher_at3'},
+		dist1 = 6,
+		dist2 = 32,
+	},
+	meat = {
+		samples = {'$/actor/mw_butcher/butcher_meat'},
+	},
+	death = {
+		samples = {'$/actor/mw_butcher/butcher_death1','$/actor/mw_butcher/butcher_death2'},
+	},
+}

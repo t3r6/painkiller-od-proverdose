@@ -1,0 +1,76 @@
+o.s_SubClass.SoundsDefinitions = {
+   path = "actor/mw_wheelchair_veteran",
+	hit = {
+		samples = {'wheelchair_hit1','wheelchair_hit2','wheelchair_hit3','wheelchair_hit4',},
+		dist1 = 30,
+		dist2 = 70,
+	},
+	run = {
+		samples = {'wheelchair_run1_1','wheelchair_run2_2','wheelchair_run1_2','wheelchair_run2_1'},
+		dist1 = 10,
+		dist2 = 40,
+	},
+	shot = {
+		samples = {'wheelchair_shot'},
+		dist1 = 16,
+		dist2 = 52,
+	},
+	bodyfalls = {
+		samples = {'wheelchair_boddyfalls1','wheelchair_boddyfalls2'},
+		dist1 = 16,
+		dist2 = 60,
+	},
+	atak1hit = {
+		samples = {'wheelchair_atakhit1','wheelchair_atakhit2','wheelchair_atakhit3'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},
+	atak1swish1 = {
+		samples = {'wheelchair_swish1'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},
+	atak1swish2 = {
+		samples = {'wheelchair_swish2'},
+		dist1 = 10,
+		dist2 = 30,
+		disablePitch = true,
+	},
+	atak1missed = {
+		samples = {'wheelchair_pipe-onground2','wheelchair_pipe-onground1',},
+		dist1 = 5,
+		dist2 = 30,
+		disablePitch = true,
+	},
+	weaponlost = {
+		samples = {'$/actor/mw_wheelchair_veteran/wheelchair_weapon-lost1','$/actor/mw_wheelchair_veteran/wheelchair_weapon-lost2'},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	death = {
+		samples = {'$/actor/mw_wheelchair_veteran/wheelchair_death1','$/actor/mw_wheelchair_veteran/wheelchair_death2','$/actor/mw_wheelchair_veteran/wheelchair_death3',},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+   damage = {
+		samples = {'$/actor/mw_wheelchair_veteran/wheelchair_pipe-hit'},
+	},
+
+	wheel = {
+		samples = {'wheelchair_wheel1','wheelchair_wheel2','wheelchair_wheel3','wheelchair_wheel4'},
+		dist1 = 10,
+		dist2 = 30,
+	},
+
+	onAttackOnce = {
+		samples = {'wheelchair_halt1', 'wheelchair_halt2','wheelchair_halt3','wheelchair_halt4'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+
+}
+

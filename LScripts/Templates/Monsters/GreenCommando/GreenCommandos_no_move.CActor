@@ -1,0 +1,9 @@
+o.BaseObj = "GreenCommandos.CActor"
+o.Health = 200
+o.NeverMove = true
+o.Pinned = true
+
+o.AiParams.aiGoals = {"idle","FarAttack", "throw"}
+o.AiParams.alwaysSee = true
+
+o.AiParams.minDelayBetweenThrow = 0.5

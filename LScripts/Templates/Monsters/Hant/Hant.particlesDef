@@ -1,0 +1,25 @@
+o.s_SubClass.ParticlesDefinitions = {
+	breath = {
+		pfx = "Hant_blood_attack",
+		scale = 0.7,
+		joint = "neck",
+		bind = true,
+		offset = Vector:New(0.2,0,0),
+		rotation = Vector:New(-math.pi/2, -math.pi/2, math.pi/6),
+	},
+	cloud = {   
+		pfx = "Hant_cloud",
+		scale = 1,
+		joint = "hips",
+		offset = Vector:New(0,-1.25,0),
+	},
+	hitblood = {
+		pfx = "Hant_blood",
+		scale = 0.4,
+		joint = "head",
+		bind = true,
+		offset = Vector:New(0,0,0),
+		rotation = Vector:New(-math.pi/2, -math.pi/2, math.pi/6),
+	},
+
+}

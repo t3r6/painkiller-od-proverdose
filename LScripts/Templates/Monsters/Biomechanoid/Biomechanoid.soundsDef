@@ -1,0 +1,64 @@
+o.s_SubClass.SoundsDefinitions = {
+	bio_flame = {
+		samples = {"$/actor/mw_biomechanoid/biomech_flamethr"},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	bio_voice = {
+		samples = {"$/actor/mw_biomechanoid/biomech_voice1","$/actor/mw_biomechanoid/biomech_voice1",},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	bio_attack1 = {
+		samples = {"$/actor/mw_biomechanoid/biomech_attack1"},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	shield = {
+		samples = {"$/actor/mw_biomechanoid/biomech_hit"},
+		dist1 = 8,
+		dist2 = 30,
+	},
+	step1 = {
+		samples = {'$/actor/mw_biomechanoid/biomech_krok1',},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	step2 = {
+		samples = {'$/actor/mw_biomechanoid/biomech_krok2',},
+		dist1 = 3,
+		dist2 = 20,
+	},
+	bodyfalls = {
+		samples = {"$/actor/mw_biomechanoid/biomech_bodyfall",},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+	bio_halt = {
+		samples = {"$/actor/mw_biomechanoid/biomech_halt1", "$/actor/mw_biomechanoid/biomech_halt2"},
+		dist1 = 5,
+		dist2 = 20,
+		playChance = 0.1,
+	},
+
+	
+	onAttackOnce = {
+		samples = {"$/actor/mw_biomechanoid/biomech_halt1", "$/actor/mw_biomechanoid/biomech_halt2"},
+		dist1 = 20,
+		dist2 = 50,
+	},
+
+	hit = {
+		samples = {'$/actor/mw_biomechanoid/biomech_hit1','$/actor/mw_biomechanoid/biomech_hit2','$/actor/mw_biomechanoid/biomech_hit3','$/actor/mw_biomechanoid/biomech_hit4'},
+		dist1 = 30,
+		dist2 = 70,
+	},
+
+	death = {
+		samples= {"$/actor/mw_biomechanoid/biomech_death1","$/actor/mw_biomechanoid/biomech_death2"},
+		dist1 = 16,
+		dist2 = 60,
+	},
+
+}

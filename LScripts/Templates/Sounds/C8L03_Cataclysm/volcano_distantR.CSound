@@ -1,0 +1,10 @@
+volcano_distantR.Volume = 80
+volcano_distantR.Interval = 0
+volcano_distantR.RandomShift = 0
+volcano_distantR.Falloff =
+{
+  Start = 50,
+  End = 150
+}
+volcano_distantR.Sound ="C8L03_Cataclysm/volcano_distantR"
+

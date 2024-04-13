@@ -1,0 +1,10 @@
+gener.Volume = 80
+gener.Interval = 0
+gener.RandomShift = 0
+gener.Falloff =
+{
+  Start = 5,
+  End = 50
+}
+gener.Sound ="C8L02_air_combat/generator"
+

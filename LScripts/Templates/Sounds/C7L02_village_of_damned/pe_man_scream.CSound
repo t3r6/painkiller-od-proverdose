@@ -1,0 +1,10 @@
+pe_man_scream.Volume = 100
+pe_man_scream.Interval = 7
+pe_man_scream.RandomShift = 5
+pe_man_scream.Falloff =
+{
+  Start = 5,
+  End = 30
+}
+pe_man_scream.Sound ="C7L02_village_of_damned/pe_man_scream1;C7L02_village_of_damned/pe_man_scream2;C7L02_village_of_damned/pe_man_scream3;C7L02_village_of_damned/pe_man_scream4;C7L02_village_of_damned/pe_man_scream5"
+

@@ -1,0 +1,30 @@
+o.s_SubClass.ParticlesDefinitions = {
+	smoke = {
+		pfx = "Walking_Tree_greendymm",
+		scale = 1,
+		joint = "Branch",
+		offset = Vector:New(0,0,0),
+	},
+	eye1 = {
+		pfx = "Walking_Tree_greeneyes",
+		scale = 0.035,
+		joint = "k_szyja",
+		offset = Vector:New(0.04,0.25,0.55),
+	},
+	eye2 = {
+		pfx = "Walking_Tree_greeneyes",
+		scale = 0.035,
+		joint = "k_szyja",
+		offset = Vector:New(0.22,0.25,0.55),
+	},
+	atak = {
+		pfx = 'Walking_Tree_greenattack',
+		scale = 1,
+		joint = "Jaw",
+	},
+	death = {
+		pfx = 'leaves',
+		scale = 1,
+		joint = "Jaw",
+	},
+}

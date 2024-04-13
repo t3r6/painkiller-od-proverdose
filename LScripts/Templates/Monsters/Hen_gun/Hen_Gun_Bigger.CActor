@@ -1,0 +1,23 @@
+o.BaseObj = "Hen_Gun.CActor"
+o.Scale = 2
+o.MaxHealth = 500
+o.Health = 500
+o.ChargeHealth=300
+o.AiParams.ThrowableItem = "HenDemon_Bigger.CActor"
+o.AiParams.aiGoals = {"idle","FireHen","Chargeme"}
+
+
+o.Houses = {}
+o.Houses.H1={}
+o.Houses.H2={}
+o.Houses.H3={}
+o.Houses.H4={}
+o.Houses.H1.pos=Vector:New(-0.5125732421875,-1.8418579101563,-140.60998535156)
+o.Houses.H2.pos=Vector:New(-20.877136230469,-1.9007568359375,-139.53411865234)
+o.Houses.H3.pos=Vector:New(-0.6719970703125,-1.9188842773438,-102.46545410156)
+o.Houses.H4.pos=Vector:New(-19.463165283203,-1.884521484375,-119.08748626709)
+
+
+o.s_SubClass.Animations.atak   = {0.7,false,{
+				 {1.0,'ThrowImmid'},
+					}}

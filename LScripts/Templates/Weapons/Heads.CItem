@@ -1,0 +1,16 @@
+o.Mesh = "head3Shape"
+o.Pack = "P_head.dat"
+o.Scale = 0.1
+o.Timeout = 10*30
+o.Restitution = 2 -- sprezystosc
+o.Friction = 1 -- tarcie
+o.LinearDamping = 0.5  -- tlumienie liniowe
+--o.AngularDamping = 0.4 -- tlumienie katowe
+o.Mass = 120
+o.Softness = 0.1
+o.ExplosionCamMove = 0.18
+o.ExplosionCamRotate = 0.18
+o.ExplosionCamDistance = 18
+o.TestDeathZone = true
+o.SoundInWater = "impacts/bulletbig-water"
+o.SmallWaterSplash = true

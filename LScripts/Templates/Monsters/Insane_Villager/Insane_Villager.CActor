@@ -1,0 +1,2 @@
+o.BaseObj = "Insane_Villager_Full_Basket.CActor"
+o.AiParams.aiGoals = {"idle","attack","hunt"}

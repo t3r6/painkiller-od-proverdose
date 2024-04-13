@@ -1,0 +1,5 @@
+o.BaseObj = "CItem"
+o.Model = "cube"
+o.Scale = 1
+o.FanRotateSpeed = 1.0
+

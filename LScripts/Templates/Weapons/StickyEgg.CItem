@@ -1,0 +1,13 @@
+o.Mesh = "eggbombShape"
+o.Pack = "P_eggbomb.dat"
+o.Scale = 0.07
+o.Timeout = 4
+o.Restitution = 1
+o.Mass = 0.001
+o.TestDeathZone = true
+o.SoundInWater = "impacts/bulletbig-water"
+o.SmallWaterSplash = true
+
+o.Damage = 200
+o.ExplosionStrength = 200
+o.ExplosionRange = 10

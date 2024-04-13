@@ -1,0 +1,16 @@
+o.s_SubClass.ParticlesDefinitions = {
+--	explode = {   
+--		pfx = "bagbabyexplode",
+--		scale = 0.3,
+--		joint = "root",
+--	},
+	peri = {
+		pfx = "peri2",
+		scale = 0.1,
+		joint = "tail",
+		offset = Vector:New(-1,0,0),
+	},
+		
+
+}
+

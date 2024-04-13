@@ -1,0 +1,222 @@
+o.Model = "scorpion"
+o.Scale = 0.12
+o.Health = 299
+o.CreatePO = true
+o.WalkSpeed = 1.0
+o.RunSpeed = 1.0
+o.RotateSpeed = 15
+o.enableGibWhenHPBelow = -45
+o.throwHeart = true
+o.deathtype= "normal"
+o.NeverRun = true
+o.transformIntoBigVampFX = "FX_transform"
+o.eyeFX = "redburn"
+o.enableTransformHP = -150
+o._GreenBlood = true
+
+o.ToughOne = true
+o.ScreamDamage = 30
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,
+    Mass     = 150,
+}
+
+o.s_SubClass = {
+    rotateHead = 0.9,			-- zakres
+    rotateHeadBone = "k_szyja",
+    rotateHeadMaxSpeed = 0.2,
+    SoundDir = "pirate",
+	Animations = {
+	 death1     = {1.0, false, {}},
+	 death2     = {1.0, false, {}},
+
+		idle    = {1.0, false},
+		hit1    = {1.0, false, {
+						{0.2,'PlaySoundHit',"hit" },
+					}},
+		hit2    = {1.0, false, {
+						{0.2,'PlaySoundHit',"hit"},
+					}},
+
+		walk    = {1.4, true, {
+    						{0.0,'FootFX','LeftToeBase'},
+						{0.3,'FootFX','RightToeBase'},
+						{0.0,'PlaySound',"step"},
+						{0.3,'PlaySound',"step"},
+    						{0.2,'FootFX','LeftToeBaseF'},
+						{0.7,'FootFX','RightToeBaseF'},
+						{0.2,'PlaySound',"step"},
+						{0.7,'PlaySound',"step"},
+    						{0.4,'FootFX','LeftToeBaseB'},
+						{0.8,'FootFX','RightToeBaseB'},
+						{0.4,'PlaySound',"step"},
+						{0.8,'PlaySound',"step"},
+					}},
+		jump     = {2, true,   {
+						{0.4,'PlaySound',"scor_jump"},
+						{0.2,'PlaySound',"scor_swish"},
+  						{0.1,'StartMovement'},
+  						{0.6,'StopMovement'},
+  						{0.7,'FootFX','LeftToeBase'},
+						{0.7,'FootFX','RightToeBase'},
+						{0.7,'PlaySound',"step"},
+						{0.7,'PlaySound',"step"},
+    						{0.7,'FootFX','LeftToeBaseF'},
+						{0.7,'FootFX','RightToeBaseF'},
+						{0.7,'PlaySound',"step"},
+						{0.9,'PlaySound',"step"},
+    						{0.9,'FootFX','LeftToeBaseB'},
+						{0.9,'FootFX','RightToeBaseB'},
+						{0.9,'PlaySound',"step"},
+						{0.9,'PlaySound',"step"},
+					}},
+		atak1 = {1.0, false, {
+		                        {0.3,'ThrowImmid',nil,nil,"TailF"},
+					{0.0,'PlaySound',"shoot"},
+					}},
+
+		atak2 = {1.5, false, {		-- close
+						{0.0,'PlaySound',"atakvoice"},
+						{0.1,'damage',},
+						{0.12,'damage',},
+					}},
+		},
+
+
+	RagdollCollisions = {
+		MinStren = 4.2,
+		MinTime = 0.6,
+		Bones = {
+				{"k_szyja", "bodyfalls", true},		-- joint, {sound}, blood
+				{"cannon_p_1","weaponlost",false},
+                {"cannon_l_1","weaponlost",false},
+			}
+	},
+    notBleedingJoints = {
+		cannon_p_1 = true,
+        cannon_l_1 = true,
+    },
+
+	Ambients = {"idle"},
+	Hits = {"hit1", "hit2"},
+	NearAttacks = {"atak2",},
+
+	DeathJoints = {
+	    'root','LeftHand','RightHand',
+	    'TailB','TailC',
+	    'TailD',
+	},
+
+    gibFX = "gibExplosion",
+	GibEmitters = {
+				{"root","FX_gib_blood_green",-1},
+				{"LeftHand","FX_gib_blood_green",-1},
+				{"RightHand","FX_gib_blood_green",-1},			
+				{"TailTongue","FX_gib_blood_green",-1},	
+				{"RightFoot","FX_gib_blood_green",-1},	
+				{"LeftFoot","FX_gib_blood_green",-1},		
+    },
+	gibShader = "palskinned_bloody",
+    	
+	GibExplosionStrength = 7000,
+	GibExplosionRange = 2.0,
+	GibExplosionDeltaY = -1.0,
+    RagdollCollisionsGib = {
+        MinStren = 6.0,
+        MinTime = 0.8,
+        Bones = {
+				{"root", "gibSplash", true},
+				{"LeftHand", "gibSplash", true},
+				{"RightHand", "gibSplash", true},				
+			},
+    },
+
+}
+
+o.DeathTimer = 120
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","FarAttack", "hunt", "hear", "attack","Jump"}
+o.AiParams.viewDistance = 70			-- zasieg widzenia
+o.AiParams.viewAngle = 100			-- kat widzenia
+o.AiParams.viewDistance360 = 20			-- zasieg widzenia z katem widzenia 360 stopni
+    
+o.AiParams.hearing = 1.0				-- zasieg sluchu
+o.AiParams.perception = 1.0				-- szansa uslyszenia halasu
+o.AiParams.walkStep = 7.0
+
+o.AiParams.GuardStill = true			-- true, nie bedzie sie poruszal w trybie guard
+o.AiParams.guardAngle = {0,10}			-- (min, max) kat o jaki sie nie bedzie sie poruszal w "idle"
+o.AiParams.guardAngleRandom = true
+o.AiParams.guardChangePosition = {30,60}-- (min, max) dlugosc pauzy pomiedzy obrotami
+o.AiParams.guardRange = -1				-- max. zasieg patrolu
+o.AiParams.useOnlyWaypointsWhenGuard = false	-- wykorzystuje tylko WayPointy przy chodzeniu w trybie guard
+o.AiParams.stopAfterWalking = 0.5			-- szansa zatrzymania po przejsciu do kolejnego punktu
+o.AiParams.stopAfterWalkingTime = {30,90}	-- (min, max) czas zatrzymania
+
+--o.AiParams.walkArea = ""
+o.AiParams.walkAreaRandom = false
+o.AiParams.WalkAreaWhenAttack = false
+o.AiParams.FinishMovementBeforeAttack = false	-- atakuje dopiero gdy dojdzie do wczesniej zaplanowanego punktu
+
+o.AiParams.changePosAfterFire = 0.3		-- szansa, ze zmieni pozycje po strzale
+o.AiParams.delayBetweenAttacks = 10
+o.AiParams.moveDisplacement = 5.0
+
+o.AiParams.chanceOfEscapeAfterFire = 0.0	-- szansa, ze moster ucieknie po strzale
+o.AiParams.escapeTime = 120			-- typowy czas ucieczki
+
+o.AiParams.updateSpeed = 0.33
+o.AiParams.alwaysSee = false
+o.AiParams.huntPlayer = false
+    
+o.AiParams.doNotRotateWhenShooting = true
+o.AiParams.weapon = {
+		bulletsPerShot = 1,
+		maxDist = 40,
+		minDist = 7.0,
+		spreadAngle = 2.0,
+		maxYaw = 45,				-- maksymalna odchylka broni lewo/prawo w stos. do kata patrzenia
+		maxPitch = 45,				-- maksymalna odchylka broni gora/dol
+		fireParticle = "scorpion_shot",	
+		fireParticleSize = 1.2,
+		
+	}
+
+
+o.AiParams.weaponBindPos = "TailF"					-- skad wylatuja pociski (i Particle)
+o.AiParams.NearAttack_Priority = 1
+o.AiParams.FarAttack_Priority = 0.9
+o.AiParams.ThrowableItem = "AcidBall.CItem"
+o.AiParams.throwAngle = -1
+o.AiParams.throwAngularVelocitySpeed = 40
+o.AiParams.throwDistMinus = 0
+
+
+
+
+o.shadow = 128
+o.AiParams.FarAttacks = {"atak1",}
+
+-- bliski atak --
+o.AiParams.attackRange = 5
+o.AiParams.weaponDamage = 15
+o.AiParams.attackRangeAngle = 80
+--
+o.AiParams.disableEscapeWhenTooClose = true
+o.minimumTimeBetweenHitAnimation = 25
+
+
+---jump
+o.AiParams.jumpRangeMin = 4
+o.AiParams.jumpRangeMax = 12
+o.AiParams.jumpAnim = "jump"
+o.AiParams.jumpDamageRange  = 0
+o.AiParams.doNotRotateWhileJumping = true
+o.AiParams.minDelayBetweenJumps = 4.0
+--o.AiParams.jumpAngle = 60.0
+--o.AiParams.jumpDistanceMinus = 1.0				-- na jaka odleglosc przed graczem ma skakac
+o.AiParams.jumpAnimLen = 0.7	
+o.AiParams.jumpSpeed = 16
+

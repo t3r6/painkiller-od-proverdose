@@ -1,0 +1,51 @@
+o.Mesh = [[polySurfaceShape43]]
+o.Pack = [[ammo_skulls.dat]]
+o.takeDistance = 1.8
+o.Scale = 0.05
+o.DisabledInVoosh = true
+o.AmmoAdd = 30
+o.MPAmmoAdd = 10
+o.RespawnTime = 15
+o.s_SubClass ={}
+
+--============================================================================
+function o:OnInitTemplate()
+    self.CubeMap = nil
+    self.DetailMap = nil
+    self.NormalMap = nil
+    self.Destroy = nil
+    self.Impulse = nil
+    self:ReplaceFunction("_Synchronize","Synchronize")	
+    self:ReplaceFunction("Synchronize","nil")
+end
+--============================================================================
+function AmmoSkulls:OnCreateEntity()
+    ENTITY.EnableNetworkSynchronization(self._Entity)
+-- self:BindFX("energyhealth",1)
+end
+--============================================================================
+function AmmoSkulls:OnTake(player)
+    if player.Ammo.Skulls >= CPlayer.s_SubClass.MaxAmmo.Skulls then return true end
+local add
+if Game.GMode == GModes.SingleGame then add=self.AmmoAdd else add = self.MPAmmoAdd end
+    self.TakeFX(player._Entity, add)
+	Game.PlayerAmmoFound =  Game.PlayerAmmoFound + 1
+end
+--============================================================================
+function AmmoSkulls:TakeFX(pe,add)
+    local player = EntityToObject[pe]
+    
+    if player then
+	if Game.GMode == GModes.SingleGame then
+        	player.Ammo.Skulls = player.Ammo.Skulls + add * AmmoDifficultyModifier[Game.Difficulty] * Game.AmmoFoundFactor
+	else
+        	player.Ammo.Skulls = player.Ammo.Skulls + add
+	end
+        player:CheckMaxAmmo()
+        if player == Player then player:PickupFX() end
+    end
+
+    Templates["AmmoSkulls.CItem"]:SndEnt("pickup",pe)
+end
+Network:RegisterMethod("AmmoSkulls.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eu")
+--============================================================================

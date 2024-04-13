@@ -1,0 +1,10 @@
+stwind3.Volume = 80
+stwind3.Interval = 0
+stwind3.RandomShift = 0
+stwind3.Falloff =
+{
+  Start = 10,
+  End = 90
+}
+stwind3.Sound ="C7L03_powerplant/stwind3"
+

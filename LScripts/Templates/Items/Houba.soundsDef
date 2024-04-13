@@ -1,0 +1,9 @@
+o.s_SubClass.SoundsDefinitions = {
+	path = "impacts/",
+	SoundImpact = {
+		samples = {"meat-splash1","meat-splash2","meat-splash3"},
+	},
+	DestroySound = {
+		samples = {"special_items/houba_expl1","special_items/houba_expl2"},
+	},
+}

@@ -1,0 +1,2 @@
+GunFlame["Effect"] = "tankshot"
+GunFlame.Scale = 0.2

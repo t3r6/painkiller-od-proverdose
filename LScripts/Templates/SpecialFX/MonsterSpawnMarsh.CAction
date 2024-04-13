@@ -1,0 +1,13 @@
+-- with jump
+o.Sequence = {
+    {"Object:'FX_SpawnMarsh.CActor',6,px,py-2,pz,p.angle"},        
+    {'AI:p,false'},
+    {"PSnd:'specials/respawns/march',20,30"},
+    --{"Light:px,py,pz, 255,255,0, 7,10, 2, 0.3,0.5,0.3"},    
+    {'EnablePO:p,false'},    
+    {'FAnim:p,"enter",false,0,1.4'},
+    {'EnableDraw:p,true'},    
+    {"WaitForAnim:p"},
+    {'AI:p,true'},
+    {'EnablePO:p,true'},
+}

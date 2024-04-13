@@ -1,0 +1,202 @@
+o.Model = "hant"
+o.Scale = 1.3
+o.CreatePO = true
+o.Health = 125
+o.WalkSpeed = 1.3
+o.RunSpeed = 1.6
+o.RotateSpeed = 8
+o.enableGibWhenHPBelow = -41
+o.throwHeart = true
+o.NeverWalk = true
+o.Animation = "idle_default"
+
+o.s_Physics = {
+    BodyType = BodyTypes.Fatter,	-- pozniej sphere
+    Mass     = 400,
+}
+
+o.s_SubClass = {
+	rotateHead = 0.45,			-- zakres
+	rotateHeadBone = "neck",
+	rotateHeadMaxSpeed = 0.2,
+	Animations = {
+		death1   = {1.0, false, {
+				{0.3,'PlaySound',"$/actor/mw_hant/hant-death1"},
+  				{1.2,'PlaySound',"$/actor/falls/fall4"},
+  				{1.3,'PlaySound',"$/actor/falls/fall3"},
+		}},
+		death2   = {1.0, false, {
+				{0.3,'PlaySound',"$/actor/mw_hant/hant-death1"},
+  				{2.0,'PlaySound',"$/actor/falls/fall8"},
+  				{3.0,'PlaySound',"$/actor/falls/fall3"},
+
+		}},
+
+
+	
+		idle_default   = {1.0,false,{
+				{0.5,'PlaySound',"idle"},
+		}},
+		run   = {1.0,true,{
+				{0.0,'PlaySound',"run_idle"},
+				{0.8,'PlaySound',"step1"},
+				{0.65,'FootFX','s_p_srodstopie'},
+				{0.0,'PlaySound',"step2"},
+				{0.0,'FootFX','s_l_srodstopie'},
+			}},
+
+		attack2   = {0.7,false,{
+					{0.5,'PlaySound',"bliti"},
+					{0.6,'StartBreath','breath'},
+					{0.7,'CheckDamageFromFlame'},				
+					{0.75,'CheckDamageFromFlame'},				
+					{0.8,'CheckDamageFromFlame'},				
+					{0.85,'CheckDamageFromFlame'},				
+					{0.9,'CheckDamageFromFlame'},				
+					{0.95,'CheckDamageFromFlame'},				
+					{1.0,'CheckDamageFromFlame'},				
+					{1.05,'CheckDamageFromFlame'},				
+					{1.1,'CheckDamageFromFlame'},
+					{1.15,'CheckDamageFromFlame'},				
+					{1.2,'CheckDamageFromFlame'},	
+					{1.25,'CheckDamageFromFlame'},				
+					{1.3,'CheckDamageFromFlame'},				
+					{1.35,'CheckDamageFromFlame'},				
+					{1.4,'CheckDamageFromFlame'},				
+					{1.45,'CheckDamageFromFlame'},				
+					{1.55,'StopBreath'},	
+				}},
+		attack1   = {1.4,false,{
+					{0.0,'PlaySound',"atak1"},
+					{0.0, 'BindTrails'},
+					{0.5,'PlaySound',"swish"},
+					{0.4,'damage',1,0},
+					{1.0,'damage',1,0},
+					{1.52,'IfMissedPlaySound',},
+					{1.1,'PlaySound',"swish"},
+					{1.5, 'EndTrails'},
+				}},
+		hit1   = {1.0,false,{
+					{0.0,'PlaySoundHit',"hit"},
+				}},
+		hit2   = {1.0,false,{
+					{0.0,'PlaySoundHit',"hit"},
+					{0.7,'BindFX',"hitblood"},
+				}},
+    },
+
+	RagdollCollisions = {
+        MinStren = 2.5,
+        MinTime = 0.7,
+        Bones = {
+				{"neck", "bodyfalls", true},		-- joint, {sounds}, blood
+				{"r_p_lokiec", "bodyfalls", true},
+				{"r_l_lokiec", "bodyfalls", true},
+				{"www333","weaponlost",false},
+--				{"tar","weaponlost",false},
+			},
+    },
+
+	hitGroundJoint = "www333",
+
+	NearAttacks = {"attack1","attack2"},
+    Hits = {"hit1", "hit2"},
+    Ambients = {"idle_default",},
+    
+    DeathJoints = {
+        'r_up_leg','l_up_leg','spine_2','r_forearm','l_forearm',
+        'neck','r_p_bark','r_l_bark',
+    },
+
+    GibExplosionStrength = 12000,
+	GibExplosionRange = 1.8,
+	GibExplosionDeltaY = -1.0,
+	gibFX = "gibExplosion",
+	GibEmitters = {
+				{"root","hantrozp",1},
+				{"spine_2","hantrozp",-1},
+				{"r_p_bark","hantrozp",-1},
+				{"r_l_bark","hantrozp",-1},				
+				{"neck","hantrozp",-1},
+	},
+
+	gibShader = "palskinned_bloody",
+    
+	RagdollCollisionsGib = {
+        	MinStren = 6.0,
+	        MinTime = 0.8,
+	        Bones = {
+				{"spine_2", "gibSplash", true},
+				{"r_p_bark", "gibSplash", true},
+				{"r_l_bark", "gibSplash", true},
+				{"root", "gibSplash", true},
+				{"neck", "gibSplash", true},				
+			},
+	    },
+}
+
+
+o.DeathTimer = 140                  -- po ilu 1/30 postac znika po smierci
+
+o.AiParams = {}
+o.AiParams.aiGoals = {"idle","hunt", "hear","flee","closeAttack"}
+--o.AiParams.aiGoals = {"idle","hunt", "hear","flee","FarAttack","closeAttack"}
+
+o.AiParams.viewDistance = 90
+o.AiParams.viewDistance360 = 6
+o.AiParams.viewAngle = 100
+
+o.AiParams.weaponDamage = 20
+o.AiParams.weapon2Damage = 2
+o.AiParams.attackRange = 4 
+o.AiParams.secondattackRange = 7 
+o.AiParams.attackRangeAngle = 100
+o.AiParams.hearing = 1.0
+o.AiParams.perception = 1.0
+o.AiParams.changePosAfterFire = 0.4
+    
+o.AiParams.GuardStill = false
+o.AiParams.guardAngle = {-120,120}
+o.AiParams.guardAngleRandom = false
+o.AiParams.guardChangePosition = {30,60}
+o.AiParams.guardRange = -1			-- max. walk distance when idle
+o.AiParams.stopAfterWalking = 1.0
+o.AiParams.stopAfterWalkingTime = {90,120}
+
+o.AiParams.walkStep = 7.0
+--o.AiParams.walkArea = "TestArea"
+o.AiParams.walkAreaRandom = false
+o.AiParams.WalkAreaWhenAttack = false
+o.AiParams.useOnlyWaypointsWhenGuard = false
+
+o.AiParams.moveDisplacement = 3.0
+
+o.AiParams.chanceOfEscapeAfterFire = 0.04
+o.AiParams.escapeTime = 60
+
+o.AiParams.updateSpeed = 0.6
+o.AiParams.alwaysSee = false
+o.AiParams.huntPlayer = false
+
+o.shadow = 128
+
+o.AiParams.delayBetweenAttacks = 15
+o.AiParams.weapon = {
+		maxDist = 13.0,
+		minDist = 3,
+		maxYaw = 60,
+		maxPitch = 45,
+	}
+
+o.shadow = 128
+o.AiParams.FarAttacks = {"attack2",}
+
+o.AiParams.weaponBindPos = "neck"					-- skad wylatuja pociski (i Particle)
+o.AiParams.weaponBindPosShift = Vector:New(0.0,0.0,0.0)
+
+o.AiParams.flameRange = 10.0
+o.AiParams.flameDamage = 20.0
+
+o.AiParams.disableEscapeWhenTooClose = true
+o.AiParams.doNotBreakFarAttack = true
+o.AiParams.doNotRotateWhenShooting = false

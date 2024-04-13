@@ -1,0 +1,8 @@
+o.s_SubClass.ParticlesDefinitions = {
+	handsmoke = {
+		pfx = "master_invisiblehand",
+		scale = 1,
+		joint = "r_hand",
+		offset = Vector:New(0.0,0,0.0),
+	},
+}

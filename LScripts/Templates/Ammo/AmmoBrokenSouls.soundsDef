@@ -1,0 +1,11 @@
+o.s_SubClass.SoundsDefinitions = 
+{
+    path  = "weapons/picks",
+    disablePitch = true,
+    pickup = 
+    {
+        samples = {"pick_brokensouls"},
+        dist1 = 15,
+        dist2 = 50,
+    },
+}

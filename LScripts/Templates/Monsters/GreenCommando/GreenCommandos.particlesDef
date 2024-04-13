@@ -1,0 +1,11 @@
+o.s_SubClass.ParticlesDefinitions = {
+	deathwater = {
+		pfx = "greencom_death",
+		scale = 0.8,
+		joint = "pipe3",
+		offset = Vector:New(0,0,0),  -- doprava / nahoru
+	},
+
+	
+
+}
