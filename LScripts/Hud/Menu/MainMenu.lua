@@ -48,7 +48,7 @@ MainMenu =
 			desc = "Set your PROverdose options",
 			x	 = -1,
 			y	 = 230,
-			action = "PainMenu:ActivateScreen(ProOptions);",
+			action = "PainMenu:ActivateScreen(ProOptions); EnableLowAmmoOptions()",
 --			disabled = 1,
 			sndLightOn = "menu/menu/option-light-on_main2",
 		},

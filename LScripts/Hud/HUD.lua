@@ -166,6 +166,10 @@ function Hud:LoadData()
 ---	
 
 --ADDED=####################################################################################################
+--Scores
+	Hud._matMinus     	  = MATERIAL.Create("..ProOptions/Scores/minus", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
+	Hud._matMinusDef     	  = MATERIAL.Create("..ProOptions/Scores/minusdef", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
+	
 --Colored Icones=début==============================================================================================================================================
 --weapon
 	Hud._matCubew      	  = MATERIAL.Create("../ProOptions/Weapon/kostka_open", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
@@ -305,12 +309,53 @@ function Hud:LoadData()
 	CONSOLE.SetMPMsgPosition( self.mpMsgPosition[1], self.mpMsgPosition[2] )
 	CONSOLE.SetMPMsgFont( self.mpMsgFont, self.mpMsgFontTex, self.mpMsgFontSize )
 
-	self.CrossScale = Cfg.CrosshairSize
+	self.CrossScale = Cfg.PROD_CrosshairSize
 
 	HUD.SetTransparency( Cfg.HUDTransparency )
 --ADDED=#########################################################################################	
 	tmfmessageend = 0
 	youarekilled = ""
+	enemyscore = 0
+	
+	endbonesnd = 0
+	endbonetxt = 0
+	endcannonsnd = 0
+	endcannontxt = 0
+	endarrowsnd = 0
+	endarrowtxt = 0
+	endbrainsnd = 0
+	endbraintxt = 0
+	endskullsnd = 0
+	endskulltxt = 0
+	endectoplasmsnd = 0
+	endectoplasmtxt = 0
+	endbombsnd = 0
+	endbombtxt = 0
+	endminigunsnd = 0
+	endminiguntxt = 0
+	endbulletsnd = 0
+	endbullettxt = 0
+	endheadsnd = 0
+	endheadtxt = 0
+	endbrokensnd = 0
+	endbrokentxt = 0
+	endenergysnd = 0
+	endenergytxt = 0
+	endglobaltxt = 0
+	endgreengoosnd = 0
+	endgreengootxt = 0
+	endglobalalttxt = 0
+	tmallwend = 0
+	tmallwaltend = 0
+	wtmcannonend = 0
+	wtmectoplasmend = 0
+	wtmcrossbowend = 0
+	tmcramend = 0
+	tmceamend = 0
+	tmendalttxt = 0
+	tmendaltsnd = 0
+	tmendsnd = 0
+	tmendtxt = 0
 --ADDED=end#########################################################################################	
 
 end
@@ -385,13 +430,13 @@ function Hud:Render(delta)
 		else
 			HUD.SetFont("../ProOptions/Fonts/impact",22)
 		end
-		if Cfg.PROD_Infos_Posx == 0 then
-			HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[2]+1)-1*768)*h/768,fps,fonttypo,15,15,15,fontsizes)
-			HUD.PrintXY(w/posxy[1],((768+1*posxy[2])-1*768)*h/768,fps,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-		else
+		--if Cfg.PROD_Infos_Posx == 0 then
+		--	HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[2]+1)-1*768)*h/768,fps,fonttypo,15,15,15,fontsizes)
+		--	HUD.PrintXY(w/posxy[1],((768+1*posxy[2])-1*768)*h/768,fps,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
+		--else
 			HUD.PrintXY(11,((768+1*posxy[2]+1)-1*768)*h/768,fps,fonttypo,15,15,15,fontsizes)
 			HUD.PrintXY(10,((768+1*posxy[2])-1*768)*h/768,fps,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-		end
+		--end
     end 
 
     if Cfg.PROD_ShowPing then 
@@ -405,29 +450,29 @@ function Hud:Render(delta)
 		end
 		 
 		if Cfg.PROD_ShowFPS == true then
-			if Cfg.PROD_Infos_Posx == 0 then
-				HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[3]+1)-1*768)*h/768,ploss,fonttypo,15,15,15,fontsizes)
-				HUD.PrintXY(w/posxy[1],((768+1*posxy[3])-1*768)*h/768,ploss,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes) 
-				HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[4]+1)-1*768)*h/768,ping,fonttypo,15,15,15,fontsizes)
-				HUD.PrintXY(w/posxy[1],((768+1*posxy[4])-1*768)*h/768,ping,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-			else
+			--if Cfg.PROD_Infos_Posx == 0 then
+			--	HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[3]+1)-1*768)*h/768,ploss,fonttypo,15,15,15,fontsizes)
+			--	HUD.PrintXY(w/posxy[1],((768+1*posxy[3])-1*768)*h/768,ploss,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes) 
+			--	HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[4]+1)-1*768)*h/768,ping,fonttypo,15,15,15,fontsizes)
+			--	HUD.PrintXY(w/posxy[1],((768+1*posxy[4])-1*768)*h/768,ping,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
+			--else
 				HUD.PrintXY(11,((768+1*posxy[3]+1)-1*768)*h/768,ploss,fonttypo,15,15,15,fontsizes)
 				HUD.PrintXY(10,((768+1*posxy[3])-1*768)*h/768,ploss,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes) 
 				HUD.PrintXY(11,((768+1*posxy[4]+1)-1*768)*h/768,ping,fonttypo,15,15,15,fontsizes)
 				HUD.PrintXY(10,((768+1*posxy[4])-1*768)*h/768,ping,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-			end
+			--end
 		else
-			if Cfg.PROD_Infos_Posx == 0 then
-				HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[2]+1)-1*768)*h/768,ploss,fonttypo,15,15,15,fontsizes)
-				HUD.PrintXY(w/posxy[1],((768+1*posxy[2])-1*768)*h/768,ploss,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)  
-				HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[3]+1)-1*768)*h/768,ping,fonttypo,15,15,15,fontsizes) 
-				HUD.PrintXY(w/posxy[1],((768+1*posxy[3])-1*768)*h/768,ping,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes) 
-			else
+			--if Cfg.PROD_Infos_Posx == 0 then
+			--	HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[2]+1)-1*768)*h/768,ploss,fonttypo,15,15,15,fontsizes)
+			--	HUD.PrintXY(w/posxy[1],((768+1*posxy[2])-1*768)*h/768,ploss,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)  
+			--	HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[3]+1)-1*768)*h/768,ping,fonttypo,15,15,15,fontsizes) 
+			--	HUD.PrintXY(w/posxy[1],((768+1*posxy[3])-1*768)*h/768,ping,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes) 
+			--else
 				HUD.PrintXY(11,((768+1*posxy[2]+1)-1*768)*h/768,ploss,fonttypo,15,15,15,fontsizes)
 				HUD.PrintXY(10,((768+1*posxy[2])-1*768)*h/768,ploss,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)  
 				HUD.PrintXY(11,((768+1*posxy[3]+1)-1*768)*h/768,ping,fonttypo,15,15,15,fontsizes) 
 				HUD.PrintXY(10,((768+1*posxy[3])-1*768)*h/768,ping,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-			end
+			--end
 		end        
     end         
 --ShowFPS and ShowPing=fin============================================================================
@@ -671,6 +716,12 @@ function Hud:Render(delta)
 		if Cfg.PROD_AmmoList_Posix ~= 0 then
 		self:AmmoList()
 		end
+		
+		if Cfg.PROD_Score then
+			self:DrawScores()
+		end
+		self:LowAmmo()
+			
 --Simple HUD =fin=============================================================================================================================================
 --MODFIED=end####################################################################################################
 
@@ -812,48 +863,48 @@ function Hud:Render(delta)
 		end
 	
 			if Cfg.PROD_ShowFPS == true and Cfg.PROD_ShowPing == false then
-				if Cfg.PROD_Infos_Posx == 0 then
-					HUD.DrawQuadRGBA(nil,w/posxy[1],((768+1*posxy[4])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
-					HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[3]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
-					HUD.PrintXY(w/posxy[1],((768+1*posxy[3])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-				else
+				--if Cfg.PROD_Infos_Posx == 0 then
+				--	HUD.DrawQuadRGBA(nil,w/posxy[1],((768+1*posxy[4])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
+				--	HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[3]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
+				--	HUD.PrintXY(w/posxy[1],((768+1*posxy[3])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
+				--else
 					HUD.DrawQuadRGBA(nil,10,((768+1*posxy[4])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
 					HUD.PrintXY(11,((768+1*posxy[3]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
 					HUD.PrintXY(10,((768+1*posxy[3])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-				end
+				--end
 				
 			elseif Cfg.PROD_ShowPing == true and Cfg.PROD_ShowFPS == false then
-				if Cfg.PROD_Infos_Posx == 0 then
-					HUD.DrawQuadRGBA(nil,w/posxy[1],((768+1*posxy[5])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
-					HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[4]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
-					HUD.PrintXY(w/posxy[1],((768+1*posxy[4])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-				else
+				--if Cfg.PROD_Infos_Posx == 0 then
+				--	HUD.DrawQuadRGBA(nil,w/posxy[1],((768+1*posxy[5])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
+				--	HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[4]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
+				--	HUD.PrintXY(w/posxy[1],((768+1*posxy[4])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
+				--else
 					HUD.DrawQuadRGBA(nil,10,((768+1*posxy[5])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
 					HUD.PrintXY(11,((768+1*posxy[4]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
 					HUD.PrintXY(10,((768+1*posxy[4])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-				end
+				--end
 				
         	elseif Cfg.PROD_ShowFPS == true and Cfg.PROD_ShowPing == true then
-				if Cfg.PROD_Infos_Posx == 0 then
-					HUD.DrawQuadRGBA(nil,w/posxy[1],((768+1*posxy[6])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
-					HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[5]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
-					HUD.PrintXY(w/posxy[1],((768+1*posxy[5])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-				else
+				--if Cfg.PROD_Infos_Posx == 0 then
+				--	HUD.DrawQuadRGBA(nil,w/posxy[1],((768+1*posxy[6])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
+				--	HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[5]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
+				--	HUD.PrintXY(w/posxy[1],((768+1*posxy[5])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
+				--else
 					HUD.DrawQuadRGBA(nil,10,((768+1*posxy[6])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
 					HUD.PrintXY(11,((768+1*posxy[5]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
 					HUD.PrintXY(10,((768+1*posxy[5])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-				end
+				--end
 				
 			else
-				if Cfg.PROD_Infos_Posx == 0 then
-					HUD.DrawQuadRGBA(nil,w/posxy[1],((768+1*posxy[3])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
-					HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[2]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
-					HUD.PrintXY(w/posxy[1],((768+1*posxy[2])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-				else
+				--if Cfg.PROD_Infos_Posx == 0 then
+				--	HUD.DrawQuadRGBA(nil,w/posxy[1],((768+1*posxy[3])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
+				--	HUD.PrintXY(w/posxy[1]+1,((768+1*posxy[2]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
+				--	HUD.PrintXY(w/posxy[1],((768+1*posxy[2])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
+				--else
 					HUD.DrawQuadRGBA(nil,10,((768+1*posxy[3])-1*768)*h/768,hll*1.6,3*h/768,0,255,0)
 					HUD.PrintXY(11,((768+1*posxy[2]+1)-1*768)*h/768,ups,fonttypo,15,15,15,fontsizes)
 					HUD.PrintXY(10,((768+1*posxy[2])-1*768)*h/768,ups,fonttypo,fontcolortxt[1],fontcolortxt[2],fontcolortxt[3],fontsizes)
-				end
+				--end
 			end
 
 	end

@@ -55,6 +55,18 @@ function CWeapon:SetAnim(anim,loop,speed,blendtime)
     if anim == self.Animation then return end
 
     Game:Print(anim)
+	
+--ADDED=################################################################	
+	if Cfg.PROD_Static_Weapon then
+		self.s_MPSubClass.Animations.idle = {0,0}
+		self.s_MPSubClass.Animations.triggeridle = {0,0}
+		if anim == "walk" or anim == "idle1" then
+			anim = "idle"
+		elseif anim == "triggerwalk" then
+			anim = "triggeridle"
+		end
+	end
+--ADDED=end##############################################################        
     
     local s = self:GetSubClass()
     if s and s.Animations and s.Animations[anim] then
@@ -329,8 +341,88 @@ GAZ = -0.03
 function CWeapon:ClientTick2(delta)
     local back = 0
     if Cfg.FOV > 90 then back = -(Cfg.FOV - 90)/150 end
+	
+	
+	if Cfg.PROD_Static_Weapon then
+		--posxyz
+		local w2posxyz = {Cfg.PROD_Weapon2_Posx, Cfg.PROD_Weapon2_Posy, Cfg.PROD_Weapon2_Posz}
+		local w3posxyz = {Cfg.PROD_Weapon3_Posx, Cfg.PROD_Weapon3_Posy, Cfg.PROD_Weapon3_Posz}
+		local w4posxyz = {Cfg.PROD_Weapon4_Posx, Cfg.PROD_Weapon4_Posy, Cfg.PROD_Weapon4_Posz}
+		local w7posxyz = {Cfg.PROD_Weapon7_Posx, Cfg.PROD_Weapon7_Posy, Cfg.PROD_Weapon7_Posz}
+		--angxyz
+		local w2angxyz = {Cfg.PROD_Weapon2_Angx, Cfg.PROD_Weapon2_Angy, Cfg.PROD_Weapon2_Angz}
+		local w3angxyz = {Cfg.PROD_Weapon3_Angx, Cfg.PROD_Weapon3_Angy, Cfg.PROD_Weapon3_Angz}
+		local w4angxyz = {Cfg.PROD_Weapon4_Angx, Cfg.PROD_Weapon4_Angy, Cfg.PROD_Weapon4_Angz}
+		local w7angxyz = {Cfg.PROD_Weapon7_Angx, Cfg.PROD_Weapon7_Angy, Cfg.PROD_Weapon7_Angz}
+		if Player then
+			if Player._CurWeaponIndex == 2 then
+				if Cfg.PROD_Weapon_Pos == 0 then
+					posxyzwea = {0.524, -0.5, -0.9}
+					angxyzcan = {-0.15, 3.22, 0}
+				elseif Cfg.PROD_Weapon_Pos == 1 then
+					posxyzwea = {1.3, -0.5, -0.9}
+					angxyzcan = {-0.15, 3.22, 0}
+				elseif Cfg.PROD_Weapon_Pos == 2 then
+					posxyzwea = {0.912, -0.5, -0.9}
+					angxyzcan = {0, 3.14, 0}
+				else
+					posxyzwea = {0.912+w2posxyz[1], w2posxyz[2], w2posxyz[3]} --default(1.3, -0.5, -0.9)
+					angxyzcan = {w2angxyz[1], 3.14+w2angxyz[2], w2angxyz[3]} --default(-0.15, 3.22, 0)
+				end
+			elseif Player._CurWeaponIndex == 3 then
+				if Cfg.PROD_Weapon_Pos == 0 then
+					posxyzwea = {-0.35, -0.36, -1.10}
+					angxyzcan = {-0.1, 2.94, 0}
+				elseif Cfg.PROD_Weapon_Pos == 1 then
+					posxyzwea = {0.4, -0.36, -1.10}
+					angxyzcan = {-0.1, 3.34, 0}
+				elseif Cfg.PROD_Weapon_Pos == 2 then
+					posxyzwea = {0.025, -0.36, -1.10}
+					angxyzcan = {0, 3.14, 0}
+				else
+					posxyzwea = {0.025+w3posxyz[1], w3posxyz[2], w3posxyz[3]}  --default(0.4, -0.36, -1.10) 
+					angxyzcan = {w3angxyz[1], 3.14+w3angxyz[2], w3angxyz[3]} --default(-0.1,3.34,0) 
+				end
+			elseif Player._CurWeaponIndex == 4 then
+				if Cfg.PROD_Weapon_Pos == 0 then
+					posxyzwea = {-0.6, -0.32, -1.18}
+					angxyzcan = {0, 3.14, 0.4}
+				elseif Cfg.PROD_Weapon_Pos == 1 then
+					posxyzwea = {0.65, -0.32, -1.18}
+					angxyzcan = {0, 3.14, 0}
+				elseif Cfg.PROD_Weapon_Pos == 2 then
+					posxyzwea = {0.025, -0.32, -1.18}
+					angxyzcan = {0, 3.14, 0.2}
+				else
+					posxyzwea = {0.025+w4posxyz[1], w4posxyz[2], w4posxyz[3]} --default(0.65,-0.32, -1.18)
+					angxyzcan = {w4angxyz[1], 3.14+w4angxyz[2], 0.2+w4angxyz[3]} --default(0   , 3.14,     0)
+				end
+			elseif Player._CurWeaponIndex == 7 then
+				if Cfg.PROD_Weapon_Pos == 0 then
+					posxyzwea = {-0.95, -1.10, -1.20}
+					angxyzcan = {-0.08, 2.93, -0.2}
+				elseif Cfg.PROD_Weapon_Pos == 1 then
+					posxyzwea = {0.95, -1.10, -1.20}
+					angxyzcan = {-0.08, 3.35, 0.2}
+				elseif Cfg.PROD_Weapon_Pos == 2 then
+					posxyzwea = {0, -1.10, -1.20}
+					angxyzcan = {0, 3.14, 0}
+				else
+					posxyzwea = {0+w7posxyz[1]*1.5, w7posxyz[2], w7posxyz[3]} --default(0.95, -1.1 ,-1.2)
+					angxyzcan = {w7angxyz[1], 3.14+w7angxyz[2], w7angxyz[3]} --default(-0.08,3.35,0.2)
+				end
+			else
+				posxyzwea = {self.Pos.X, self.Pos.Y, self.Pos.Z}
+				angxyzcan = {self.Ang.X, self.Ang.Y, self.Ang.Z}
+			end
+		end
+	else 
+		posxyzwea = {self.Pos.X, self.Pos.Y, self.Pos.Z}
+		angxyzcan = {self.Ang.X, self.Ang.Y, self.Ang.Z}
+	end
+	
     --MDL.ResetFrame(self._Entity)
-    ENTITY.SetPosAndRotRelativeToCamera(self._Entity,self.Pos.X,self.Pos.Y,self.Pos.Z-back,self.Ang.X,self.Ang.Y,self.Ang.Z)  
+    ENTITY.SetPosAndRotRelativeToCamera(self._Entity,posxyzwea[1],posxyzwea[2],posxyzwea[3]-back,angxyzcan[1],angxyzcan[2],angxyzcan[3])   
     --if self.ObjOwner._CurWeaponIndex == 7 then
     --    ENTITY.SetPosAndRotRelativeToCamera(self._Entity,GX,GY,GZ,GAX,GAY,GAZ)  
     --end

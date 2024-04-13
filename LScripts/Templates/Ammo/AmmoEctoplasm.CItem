@@ -42,6 +42,9 @@ function AmmoEctoplasm:TakeFX(pe,add)
         if player == Player then player:PickupFX() end
     end
     Templates["AmmoEctoplasm.CItem"]:SndEnt("pickup",pe)
+--ADDED=################################################################
+	tmceamend = tonumber(string.format("%.02f",(Game.currentTime/60)+Cfg.PROD_LA_Msg_Time/3))
+--ADDED=end##############################################################	
 end
 Network:RegisterMethod("AmmoEctoplasm.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eu")
 --============================================================================

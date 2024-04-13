@@ -65,9 +65,14 @@ function Ectoplasmer:EnableFX(mode)
     self._fxEnd = nil
 
     if mode == 1 then -- normal
-    self._part1x=BindFX(self._Entity,"Ectoplasmer_UglyGreen",0.35,"ep_forcer_joint",0.55,0.15,0)
-    self._part2x=BindFX(self._Entity,"Ectoplasmer_UglyGreen",0.35,"ep_forcer_joint",0.35,0.18,0)
-
+	
+--MODIFIED=#########################################################################
+		if not Cfg.PROD_Static_Weapon then
+			self._part1x=BindFX(self._Entity,"Ectoplasmer_UglyGreen",0.35,"ep_forcer_joint",0.55,0.15,0)
+			self._part2x=BindFX(self._Entity,"Ectoplasmer_UglyGreen",0.35,"ep_forcer_joint",0.35,0.18,0)
+		end
+--MODIFIED=end#########################################################################
+	
         ENTITY.EnableGunPass(self._fxStart,true)
     end
 

@@ -228,3 +228,172 @@ function Hud:VsPlayer()
 	end
 end
 --Palyer VS Player =end########################################################################
+--CheckScore=end########################################################################
+function Hud:CheckScore()
+	local playerlist = {}
+	local scorelist = {}
+	
+		for id,li in Game.PlayerStats do 
+			if li.Spectator == 0 then 
+				playerlist[id] = li.ClientID 
+			end
+		end
+	
+		for ie,mi in playerlist do
+			if Game.PlayerStats[playerlist[mi]].Spectator == 0 then 
+				if playerlist[ie] ~= Player.ClientID then
+					scorelist[ie] = Game.PlayerStats[playerlist[ie]].Score
+				end
+			end
+		end
+		
+		for ig,ni in scorelist do
+			checksc = scorelist[ig]
+			if checksc > enemyscore then
+				enemyscore = scorelist[ig]
+			end
+		end
+		
+		for ih,oi in Game.PlayerStats do 
+			if oi.Spectator == 0 then 
+				if Game.PlayerStats[oi.ClientID].Score == enemyscore then
+					playerlistid = oi.ClientID
+				end
+			end
+		end
+end
+--CheckScore=end########################################################################
+--DrawScores =############################################################################
+function Hud:DrawScores()
+	local gteam1Score = Game._team1Score
+	local gteam2Score = Game._team2Score
+	local w,h = R3D.ScreenSize()
+    local sizex, sizey = MATERIAL.Size(Hud._matHUDLeft)
+	local scsizehud = Cfg.PROD_Score_Size
+	local myscore = Game.PlayerStats[Player.ClientID].Score
+	
+	local scplayer1 = 0
+	local scplayer2 = 0
+	for i,psc in Game.PlayerStats do
+		checkifenemy = psc.ClientID
+		if psc.Spectator == 0 then
+			if checkifenemy == Player.ClientID then
+				scplayer1 = Game.PlayerStats[psc.ClientID].Score
+			else
+				scplayer2 = Game.PlayerStats[psc.ClientID].Score
+			end
+		end				
+	end
+
+	Hud:CheckScore()
+		
+	if not Cfg.PROD_SimpleIcons then
+		--scsizehud = Cfg.HUDSize
+		matminus = Hud._matMinusDef
+	else
+		--scsizehud = Cfg.PROD_HUDSize
+		matminus = Hud._matMinus
+	end
+	
+	if Cfg.PROD_Score_Size == 1.0 then
+		upscore = 0
+	else
+		upscore = -190
+	end
+	
+	if MPCfg.GameMode == "Team Deathmatch" or MPCfg.GameMode == "Capture The Flag" then
+		if Cfg.Team == 0 then	
+			scposxy1 = {-647+upscore, -640+upscore, 88, 81.5, -650+upscore}
+			scposxy2 = {-597+upscore, -590+upscore, 88, 81.5, -600+upscore}
+			markframe = scposxy1
+			cmarframe = {0, 0, 140}
+			--scposxy1 = {23, 29, 200, 200}
+			--scposxy2 = {60, 65, 200, 200}
+		elseif Cfg.Team == 1 then
+			scposxy1 = {-597+upscore, -590+upscore, 88, 81.5, -600+upscore}
+			scposxy2 = {-647+upscore, -640+upscore, 88, 81.5, -650+upscore}
+			markframe = scposxy2
+			cmarframe = {255, 0, 0}
+			--scposxy1 = {60, 65, 200, 200}
+			--scposxy2 = {23, 29, 200, 200}
+		end
+	else
+			scposxy1 = {-647+upscore, -640+upscore, 88, 81.5, -650+upscore}
+			scposxy2 = {-597+upscore, -590+upscore, 88, 81.5, -600+upscore}
+			markframe = scposxy1
+			cmarframe = {0, 0, 140}
+			--scposxy1 = {23, 29, 200, 200}
+			--scposxy2 = {60, 65, 200, 200}
+	end
+	
+--minus position======================================================================	
+	if gteam1Score < -9 or gteam2Score < -9 or scplayer1 < -9 or scplayer2 < -9 then
+		scx = 4
+	else
+		scx = -14
+	end
+		
+--TDM or CTF	
+	if MPCfg.GameMode == "Team Deathmatch" or MPCfg.GameMode == "Capture The Flag" then
+		HUD.DrawQuadRGBA(nil,(1024-scposxy1[3]*scsizehud)*w/1024,((768+scsizehud*scposxy1[1])-scsizehud*sizey)*h/768,(77*scsizehud)*w/1024,(50*scsizehud)*h/768,0,0,140,100)
+		HUD.DrawQuadRGBA(nil,(1024-scposxy2[3]*scsizehud)*w/1024,((768+scsizehud*scposxy2[1])-scsizehud*sizey)*h/768,(77*scsizehud)*w/1024,(50*scsizehud)*h/768,255,0,0,100)
+	
+		--Hud:QuadTrans(Hud._matTRed,(1024-scposxy1[3]*scsizehud)*w/1024,((768+scsizehud*scposxy1[1])-scsizehud*sizey)*h/768,scsizehud,false,255)
+		--Hud:QuadTrans(Hud._matTBlue,(1024-scposxy2[3]*scsizehud)*w/1024,((768+scsizehud*scposxy2[1])-scsizehud*sizey)*h/768,scsizehud,false,255)
+		
+		if gteam1Score < 0 then
+			Hud:QuadTrans(matminus,((1024-(scposxy1[3]+scx)*scsizehud)*w/1024),((768+scsizehud*scposxy1[5])-scsizehud*sizey)*h/768,scsizehud*1.5,false,255)
+		end
+		if gteam2Score < 0 then
+			Hud:QuadTrans(matminus,((1024-(scposxy2[3]+scx)*scsizehud)*w/1024),((768+scsizehud*scposxy2[5])-scsizehud*sizey)*h/768,scsizehud*1.5,false,255)
+		end
+			
+		Hud:DrawDigitsText((1024-scposxy1[4]*scsizehud)*w/1024,((768+scsizehud*scposxy1[2])-scsizehud*sizey)*h/768,string.format("%3d",gteam1Score),0.9*scsizehud,nil)
+		Hud:DrawDigitsText((1024-scposxy2[4]*scsizehud)*w/1024,((768+scsizehud*scposxy2[2])-scsizehud*sizey)*h/768,string.format("%3d",gteam2Score),0.9*scsizehud,nil)
+
+--DUEL	
+	elseif MPCfg.GameMode == "Duel" then
+		HUD.DrawQuadRGBA(nil,(1024-scposxy1[3]*scsizehud)*w/1024,((768+scsizehud*scposxy1[1])-scsizehud*sizey)*h/768,(77*scsizehud)*w/1024,(50*scsizehud)*h/768,0,0,140,100)
+		HUD.DrawQuadRGBA(nil,(1024-scposxy2[3]*scsizehud)*w/1024,((768+scsizehud*scposxy2[1])-scsizehud*sizey)*h/768,(77*scsizehud)*w/1024,(50*scsizehud)*h/768,255,0,0,100)
+	
+		--Hud:QuadTrans(Hud._matTRed,(1024-scposxy2[3]*scsizehud)*w/1024,((768+scsizehud*scposxy2[1])-scsizehud*sizey)*h/768,scsizehud,false,255)
+		--Hud:QuadTrans(Hud._matTBlue,(1024-scposxy1[3]*scsizehud)*w/1024,((768+scsizehud*scposxy1[1])-scsizehud*sizey)*h/768,scsizehud,false,255)
+		
+		if scplayer1 < 0 then
+			Hud:QuadTrans(matminus,((1024-(scposxy1[3]+scx)*scsizehud)*w/1024),((768+scsizehud*scposxy1[5])-scsizehud*sizey)*h/768,scsizehud*1.5,false,255)
+		end
+		if scplayer2 < 0 then
+			Hud:QuadTrans(matminus,((1024-(scposxy2[3]+scx)*scsizehud)*w/1024),((768+scsizehud*scposxy2[5])-scsizehud*sizey)*h/768,scsizehud*1.5,false,255)
+		end
+		
+		Hud:DrawDigitsText((1024-scposxy1[4]*scsizehud)*w/1024,((768+scsizehud*scposxy1[2])-scsizehud*sizey)*h/768,string.format("%3d",scplayer1),0.9*scsizehud,nil)
+		Hud:DrawDigitsText((1024-scposxy2[4]*scsizehud)*w/1024,((768+scsizehud*scposxy2[2])-scsizehud*sizey)*h/768,string.format("%3d",scplayer2),0.9*scsizehud,nil)
+
+--OTHER MODE
+	else
+		HUD.DrawQuadRGBA(nil,(1024-scposxy1[3]*scsizehud)*w/1024,((768+scsizehud*scposxy1[1])-scsizehud*sizey)*h/768,(77*scsizehud)*w/1024,(50*scsizehud)*h/768,0,0,140,100)
+		HUD.DrawQuadRGBA(nil,(1024-scposxy2[3]*scsizehud)*w/1024,((768+scsizehud*scposxy2[1])-scsizehud*sizey)*h/768,(77*scsizehud)*w/1024,(50*scsizehud)*h/768,255,0,0,100)
+		
+	--Hud:QuadTrans(Hud._matTRed,(1024-scposxy2[3]*scsizehud)*w/1024,((768+scsizehud*scposxy2[1])-scsizehud*sizey)*h/768,scsizehud*1.3,false,255)
+	--Hud:QuadTrans(Hud._matTBlue,(1024-scposxy1[3]*scsizehud)*w/1024,((768+scsizehud*scposxy1[1])-scsizehud*sizey)*h/768,scsizehud*1.3,false,255)
+		
+		if myscore < 0 then
+			Hud:QuadTrans(matminus,((1024-(scposxy1[3]+scx)*scsizehud)*w/1024),((768+scsizehud*scposxy1[5])-scsizehud*sizey)*h/768,scsizehud*1.5,false,255)
+		end
+		if enemyscore < 0 then
+			Hud:QuadTrans(matminus,((1024-(scposxy2[3]+scx)*scsizehud)*w/1024),((768+scsizehud*scposxy2[5])-scsizehud*sizey)*h/768,scsizehud*1.5,false,255)
+		end
+		
+		Hud:DrawDigitsText((1024-scposxy1[4]*scsizehud)*w/1024,((768+scsizehud*scposxy1[2])-scsizehud*sizey)*h/768,string.format("%3d",myscore),0.9*scsizehud,nil)
+		Hud:DrawDigitsText((1024-scposxy2[4]*scsizehud)*w/1024,((768+scsizehud*scposxy2[2])-scsizehud*sizey)*h/768,string.format("%3d",enemyscore),0.9*scsizehud,nil)
+	end
+	
+--marking===========================================================================	
+	HUD.DrawQuadRGBA(nil,(1024-markframe[3]*scsizehud)*w/1024,((768+scsizehud*markframe[1])-scsizehud*sizey)*h/768,(77*scsizehud)*w/1024,(3*scsizehud)*h/768,cmarframe[1], cmarframe[2], cmarframe[3],255)
+	HUD.DrawQuadRGBA(nil,(1024-markframe[3]*scsizehud)*w/1024,((768+scsizehud*(markframe[1]+47))-scsizehud*sizey)*h/768,(77*scsizehud)*w/1024,(3*scsizehud)*h/768,cmarframe[1], cmarframe[2], cmarframe[3],255)
+	HUD.DrawQuadRGBA(nil,(1024-markframe[3]*scsizehud)*w/1024,((768+scsizehud*markframe[1])-scsizehud*sizey)*h/768,(3*scsizehud)*w/1024,(50*scsizehud)*h/768,cmarframe[1], cmarframe[2], cmarframe[3],255)
+	HUD.DrawQuadRGBA(nil,(1024-(markframe[3]-74)*scsizehud)*w/1024,((768+scsizehud*markframe[1])-scsizehud*sizey)*h/768,(3*scsizehud)*w/1024,(50*scsizehud)*h/768,cmarframe[1], cmarframe[2], cmarframe[3],255)
+	
+end
+--DrawScores =end########################################################################
+

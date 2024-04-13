@@ -990,6 +990,11 @@ end
 function Game:LoadLevel(name)
     local path = "../Data/Levels/"..name.."/"        
     local files = FS.FindFiles(path.."*.CLevel",1,0)
+	
+--ADDED=###########################################################
+	enemyscore = 0
+--ADDED=end###########################################################	
+	
 	if table.getn(files)<=0 then 
         CONSOLE.AddMessage("Level '"..name.."' not found!!!")
         return 0 

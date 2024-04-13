@@ -46,6 +46,9 @@ function AmmoHeads:TakeFX(pe,add)
     end
 
     Templates["AmmoHeads.CItem"]:SndEnt("pickup",pe)
+--ADDED=################################################################
+	tmcramend = tonumber(string.format("%.02f",(Game.currentTime/60)+Cfg.PROD_LA_Msg_Time/3))
+--ADDED=end##############################################################
 end
 Network:RegisterMethod("AmmoHeads.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "eu")
 --============================================================================

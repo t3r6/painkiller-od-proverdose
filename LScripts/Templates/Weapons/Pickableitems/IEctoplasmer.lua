@@ -79,7 +79,10 @@ function IEctoplasmer:TakeFX(pe,aEctoplasm,aGreenGoo)
         end
     end
 
-    t:SndEnt("pickup",pe)    
+    t:SndEnt("pickup",pe) 
+--ADDED=####################################################################	
+	wtmectoplasmend = tonumber(string.format("%.02f",(Game.currentTime/60)+Cfg.PROD_LA_Msg_Time/3))
+--ADDED=end##################################################################
 end
 Network:RegisterMethod("IEctoplasmer.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "euu")
 --============================================================================

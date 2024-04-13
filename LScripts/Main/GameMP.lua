@@ -711,8 +711,14 @@ Network:RegisterMethod("Game.SetTimeLimit", NCallOn.ServerAndAllClients, NMode.R
 --============================================================================
 -- [NET - SERVER & ALL CLIENTS]  
 function Game:OnPlayerLeaveGame(clientID)
-    Game:Print("OnPlayerLeaveGame: "..clientID)            
-    
+    Game:Print("OnPlayerLeaveGame: "..clientID)     
+	
+--ADDED=###########################################################
+	if enemyscore == Game.PlayerStats[clientID].Score then
+		enemyscore = 0
+	end
+--ADDED=end###########################################################	
+
     -- kasuje rozlaczonego gracza na serwerze i na wlasciwym kliencie
     for i,o in Game.Players do
         if o.ClientID == clientID then

@@ -553,7 +553,8 @@ function CPlayer:TryToSelectNextWeaponWithAmmo(slot,fire)
     return newslot
 end
 --============================================================================
-function CPlayer:Client_OnTakeWeapon(slot)    
+function CPlayer:Client_OnTakeWeapon(slot)   
+	local cw = Player._CurWeaponIndex
     if Cfg.AutoChangeWeapon then    
         for i,o in Cfg.WeaponPriority do
             if o == 0 then return end
@@ -567,7 +568,7 @@ function CPlayer:Client_OnTakeWeapon(slot)
                 end
             end
         end
-    end
+    end	
 end
 --============================================================================
 -- [ CLIENT ] --
@@ -2150,9 +2151,10 @@ function CPlayer:Common_UpdateStats(checkOnly,deadID,killerID,attack_type,score)
         else
             ds.Score  = ds.Score  - 1
         end
-        
+--MODIFIED=#################################################################################        
         --if MPCfg.GameMode == "Capture The Flag" or MPCfg.GameMode == "Team Deathmatch" then -- no scores for frags
 		if MPCfg.GameMode == "Capture The Flag" then
+--MODIFIED=end#################################################################################   
             if ds then 
                 Game.PlayerStats[deadID].Score = b_ds[1]
             end
@@ -2303,6 +2305,9 @@ function CPlayer:Client_OnDeath(deadID,killerID,attack_type,gib,score,damage)
 		youarekilled = ds.Name
 		local tmfmessage = tonumber(string.format("%.02f",Game.currentTime/60))
 		tmfmessageend = tonumber(string.format("%.02f",tmfmessage+1))
+	end
+	if Player and enemyscore == Game.PlayerStats[deadID].Score and deadID ~= Player.ClientID then
+		enemyscore = enemyscore-1
 	end
 --ADDED=end########################################################################################
 	
@@ -2478,6 +2483,48 @@ function CPlayer:WeaponChangeConfirmation(entity,slot)
     end 
     cw._lastTime = nil
 
+--ADDED= ref LowAmmo######################################################################
+	tmallwend = tonumber(string.format("%.02f",(Game.currentTime/60)+Cfg.PROD_LA_Msg_Time/3))
+	tmallwaltend = tonumber(string.format("%.02f",(Game.currentTime/60)+Cfg.PROD_LA_Msg_Time/3))
+	endbonesnd = 0
+	endbonetxt = 0
+	endcannonsnd = 0
+	endcannontxt = 0
+	endarrowsnd = 0
+	endarrowtxt = 0
+	endbrainsnd = 0
+	endbraintxt = 0
+	endskullsnd = 0
+	endskulltxt = 0
+	endectoplasmsnd = 0
+	endectoplasmtxt = 0
+	endbombsnd = 0
+	endbombtxt = 0
+	endminigunsnd = 0
+	endminiguntxt = 0
+	endbulletsnd = 0
+	endbullettxt = 0
+	endheadsnd = 0
+	endheadtxt = 0
+	endbrokensnd = 0
+	endbrokentxt = 0
+	endenergysnd = 0
+	endenergytxt = 0
+	endglobaltxt = 0
+	endgreengoosnd = 0
+	endgreengootxt = 0
+	endglobalalttxt = 0
+	wtmcannonend = 0
+	wtmectoplasmend = 0
+	wtmcrossbowend = 0
+	tmcramend = 0
+	tmceamend = 0
+	tmendalttxt = 0
+	tmendaltsnd = 0
+	tmendsnd = 0
+	tmendtxt = 0
+--ADDED=end##########################################################################	
+	
     player._CurWeaponIndex = slot 
     if player == Player then WORLD.AddEntity(cw._Entity) end
     player.State = slot   

@@ -283,14 +283,16 @@ function CannonGun:OnFinishAnim(anim)
     end
 end
 --============================================================================
+--MODIFIED=############################################################
 function CannonGun:DropNaboj()
-	local obj = GObjects:Add(TempObjName(),CloneTemplate("nabojnice.CItem"))
+	--[[local obj = GObjects:Add(TempObjName(),CloneTemplate("nabojnice.CItem"))
         local j = MDL.GetJointIndex(self._Entity,"pas_p1")
         local x,y,z,rw,rx,ry,rz = MDL.TransformPointByJoint(self._Entity,j,-1.4,0.1,1)--0,0,0)
 	local fv = self.ObjOwner.ForwardVector 
 	obj.Pos:Set(x,y,z) 
-	obj:Apply()
+	obj:Apply()]]--
 end
+--MODIFIED=end##########################################################
 --============================================================================
 function CannonGun:OnUpdate()
     --Game:Print(self._ActionState)
@@ -312,7 +314,9 @@ function CannonGun:OnUpdate()
             -- strzal dziala tylko na serwerze
             if Game.GMode ~= GModes.MultiplayerClient then
                 self:HitTest()
-		self:DropNaboj()
+--MODIFIED=############################################################			
+		--self:DropNaboj()
+--MODIFIED=end##########################################################		
                 if self.ObjOwner.Ammo.MiniGun <= 0 then
                     self.ObjOwner.Ammo.MiniGun = 0
                     self:OnFinishAltFire();

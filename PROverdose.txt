@@ -18,6 +18,32 @@ Join the PK-OD Ladders: http://www.esl.eu/eu/pkod/
 
 
 =============
+CHANGELOG 0.3
+=============
+
+- FIX: Mod version was stay in 0.1 on GUI
+- FIX: Crosshair size is saved now
+- FIX: Team score work correctly (PK:OD bug)
+- FIX: Fps drop during cannongun shoot
+
+- CHG: Crosshair size improved: size 0 to 2 (new code)
+
+- ADD: HUD score option
+- ADD: New weapon view menu
+- ADD: Static weapon option
+- ADD: Weapon view option:
+       - Right/Left/Custom
+       - By position x/y/z
+       - By angle x/y/z
+
+- ADD: Low Ammo option:
+       - By sound
+       - By message (+time option)
+       - By message on switch
+       - By message on pickup 
+
+
+=============
 CHANGELOG 0.2
 =============
 
@@ -105,18 +131,16 @@ TODOLIST
 ========
 
 - HUD:
-* Hud score
 * Current time
 * Team HUD color
-* Weapon position
-* Low ammo warning
+* Draw crosshair name
 * Power up icons to HUD
 * Timer left/right position
 
 - GAME:
+* MOTD
 * Stats
 * ROcket fix
-* Low ammo sound
 * Auto action
 * Warmup damage
 * Full simple items
@@ -132,11 +156,12 @@ TODOLIST
 * More Crosshairs 
 * Show pickup's FX
 * Show Smoke option 
+* Show Explosions option 
+* Show muzzleflash option
 * Picmip-like option
 * set Warmup time option 
 * Show Bullets option
 * Fix some font color 
-* Show Explosions option 
 * TEAM color/Enemy color 
 * Add some binds commands 
 * Fix "Decals Stay" option bug 

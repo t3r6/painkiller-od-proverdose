@@ -80,7 +80,10 @@ function ICrossbow:TakeFX(pe,aArrows,aHeads)
         end
     end
 
-    t:SndEnt("pickup",pe)    
+    t:SndEnt("pickup",pe) 
+--ADDED=####################################################################	
+	wtmcrossbowend = tonumber(string.format("%.02f",(Game.currentTime/60)+Cfg.PROD_LA_Msg_Time/3))
+--ADDED=end##################################################################	
 end
 Network:RegisterMethod("ICrossbow.TakeFX", NCallOn.ServerAndAllClients, NMode.Reliable, "euu")
 --============================================================================

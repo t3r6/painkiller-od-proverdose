@@ -64,6 +64,7 @@ DoFile(path.."HUD/Menu/Multiplayer/PlayerOptions.lua")
 DoFile(path.."HUD/Menu/SaveGame/LoadSaveMenu.lua")
 --ADDED=######################################################################################################
 DoFile(path.."HUD/Menu/ProOptions/ProOptions.lua")
+DoFile(path.."HUD/Menu/ProOptions/StaticWeaponSettings.lua")
 --ADDED=end####################################################################################################
 
 --============================================================================
@@ -1661,6 +1662,59 @@ function PainMenu:AfterControlChange(name)
 		if Game.GMode ~= GModes.SingleGame and not Game:IsServer() then
 			PainMenu:ShowInfo( Languages.Texts[748], "PainMenu:ApplySettings(); PainMenu:ActivateScreen(PlayerOptions)", 26, "PredictionWarning", Languages.Texts[470] )
 		end
+	elseif self.currScreen == StaticWeaponSettings then
+		if name == "selectweapon" then
+			local item = StaticWeaponSettings.items["selectweapon"]
+			local itemposx = StaticWeaponSettings.items["positionx"]
+			local itemposy = StaticWeaponSettings.items["positiony"]
+			local itemposz = StaticWeaponSettings.items["positionz"]
+			local itemangx = StaticWeaponSettings.items["anglex"]
+			local itemangy = StaticWeaponSettings.items["angley"]
+			local itemangz = StaticWeaponSettings.items["anglez"]
+			if item.values[item.currValue] == 0 then
+				Cfg.PROD_Select_Weapon = 0
+				itemposx.option = "PROD_Weapon2_Posx"
+				itemposy.option = "PROD_Weapon2_Posy"
+				itemposz.option = "PROD_Weapon2_Posz"
+				itemangx.option = "PROD_Weapon2_Angx"
+				itemangy.option = "PROD_Weapon2_Angy"
+				itemangz.option = "PROD_Weapon2_Angz"
+				PainMenu:ActivateScreen( StaticWeaponSettings )
+			elseif item.values[item.currValue] == 1 then
+				Cfg.PROD_Select_Weapon = 1
+				itemposx.option = "PROD_Weapon3_Posx"
+				itemposy.option = "PROD_Weapon3_Posy"
+				itemposz.option = "PROD_Weapon3_Posz"
+				itemangx.option = "PROD_Weapon3_Angx"
+				itemangy.option = "PROD_Weapon3_Angy"
+				itemangz.option = "PROD_Weapon3_Angz"
+				PainMenu:ActivateScreen( StaticWeaponSettings )
+			elseif item.values[item.currValue] == 2 then
+				Cfg.PROD_Select_Weapon = 2
+				itemposx.option = "PROD_Weapon4_Posx"
+				itemposy.option = "PROD_Weapon4_Posy"
+				itemposz.option = "PROD_Weapon4_Posz"
+				itemangx.option = "PROD_Weapon4_Angx"
+				itemangy.option = "PROD_Weapon4_Angy"
+				itemangz.option = "PROD_Weapon4_Angz"
+				PainMenu:ActivateScreen( StaticWeaponSettings )
+			elseif item.values[item.currValue] == 3 then
+				Cfg.PROD_Select_Weapon = 3
+				itemposx.option = "PROD_Weapon7_Posx"
+				itemposy.option = "PROD_Weapon7_Posy"
+				itemposz.option = "PROD_Weapon7_Posz"
+				itemangx.option = "PROD_Weapon7_Angx"
+				itemangy.option = "PROD_Weapon7_Angy"
+				itemangz.option = "PROD_Weapon7_Angz"
+				PainMenu:ActivateScreen( StaticWeaponSettings )
+			end	
+		end
+		if name == "wposition" then
+			local item = StaticWeaponSettings.items["wposition"]
+			EnableCustomOptions()
+			Cfg.PROD_Weapon_Pos = item.values[item.currValue]
+			Cfg:Save()
+		end
 	end
 end
 
@@ -2854,7 +2908,143 @@ function PainMenu:weaponsicons()
 	end
 end
 
+function PainMenu:modifcgf()
+	local item = StaticWeaponSettings.items["staticweapon"]
+	if item.valueOff ~= Cfg.PROD_Static_Weapon then
+		Cfg.PROD_Static_Weapon = item.valueOff
+		Cfg:Save()
+	else
+		Cfg.PROD_Static_Weapon = item.valueOn
+		Cfg:Save()
+	end
+	if self.lastScreen == "server" then
+		PainMenu:ActivateScreen(CreateServerMenu)
+	else
+		PainMenu:ReJoinServer()				
+	end
+end
+
+function PainMenu:staticweapon()	
+	for i,o in Game.PlayerStats do
+		if o.Spectator == 0 then
+			spect = false
+		else
+			spect = true
+		end
+	end
+	if (Player and Player._Entity) or spect == true then	
+		PainMenu:AskYesNo( "Need reconnection.", 'PainMenu:modifcgf()', 'PMENU.ResumeSounds(); PMENU.ReturnToGame(); PainMenu:ReloadBrightskins()' )
+	end
+end
+
 function PainMenu:coloreditems()
 	PainMenu:ShowInfo( "Need restart game.", "PainMenu:ActivateScreen(ProOptions)" )
+end
+
+function FirstWeaponsOption()
+	local itemposx = StaticWeaponSettings.items["positionx"]
+	if itemposx.option == "PROD_Weapon2_Posx" then
+		Cfg.PROD_Select_Weapon = 0
+	end
+end
+
+function EnablePositionOptions()
+	local item = StaticWeaponSettings.items["wposition"]
+	if Cfg.PROD_Static_Weapon == true then
+		PMENU.EnableItem( "wposition" )
+		if item.values[item.currValue] == 3 then
+			PMENU.EnableItem( "selectweapon" )
+			PMENU.EnableItem( "positionx" )
+			PMENU.EnableItem( "positiony" )
+			PMENU.EnableItem( "positionz" )
+			PMENU.EnableItem( "anglex" )
+			PMENU.EnableItem( "angley" )
+			PMENU.EnableItem( "anglez" )
+			PMENU.EnableItem( "defaultvalue" )
+		end
+	else
+		PMENU.DisableItem( "wposition" )
+		PMENU.DisableItem( "selectweapon" )
+		PMENU.DisableItem( "positionx" )
+		PMENU.DisableItem( "positiony" )
+		PMENU.DisableItem( "positionz" )
+		PMENU.DisableItem( "anglex" )
+		PMENU.DisableItem( "angley" )
+		PMENU.DisableItem( "anglez" )
+		PMENU.DisableItem( "defaultvalue" )
+	end
+end
+
+function EnableCustomOptions()
+	local item = StaticWeaponSettings.items["wposition"]
+	if item.values[item.currValue] == 3 then
+		if Cfg.PROD_Static_Weapon == true then
+			PMENU.EnableItem( "selectweapon" )
+			PMENU.EnableItem( "positionx" )
+			PMENU.EnableItem( "positiony" )
+			PMENU.EnableItem( "positionz" )
+			PMENU.EnableItem( "anglex" )
+			PMENU.EnableItem( "angley" )
+			PMENU.EnableItem( "anglez" )
+			PMENU.EnableItem( "defaultvalue" )
+		end
+	else
+		PMENU.DisableItem( "selectweapon" )
+		PMENU.DisableItem( "positionx" )
+		PMENU.DisableItem( "positiony" )
+		PMENU.DisableItem( "positionz" )
+		PMENU.DisableItem( "anglex" )
+		PMENU.DisableItem( "angley" )
+		PMENU.DisableItem( "anglez" )
+		PMENU.DisableItem( "defaultvalue" )
+	end
+end
+
+function DefaultValueW()
+	item = StaticWeaponSettings.items["selectweapon"]
+	if item.values[item.currValue] == 0 then
+		Cfg.PROD_Weapon2_Posx = 0.39
+		Cfg.PROD_Weapon2_Posy = -0.50
+		Cfg.PROD_Weapon2_Posz = -0.90
+		Cfg.PROD_Weapon2_Angx = -0.15
+		Cfg.PROD_Weapon2_Angy = 0.08
+		Cfg.PROD_Weapon2_Angz = 0
+		Cfg:Save()
+	elseif item.values[item.currValue] == 1 then
+		Cfg.PROD_Weapon3_Posx = 0.38
+		Cfg.PROD_Weapon3_Posy = -0.36
+		Cfg.PROD_Weapon3_Posz = -1.10
+		Cfg.PROD_Weapon3_Angx = -0.10
+		Cfg.PROD_Weapon3_Angy = 0.20
+		Cfg.PROD_Weapon3_Angz = 0
+		Cfg:Save()
+	elseif item.values[item.currValue] == 2 then
+		Cfg.PROD_Weapon4_Posx = 0.63
+		Cfg.PROD_Weapon4_Posy = -0.32
+		Cfg.PROD_Weapon4_Posz = -1.18
+		Cfg.PROD_Weapon4_Angx = 0
+		Cfg.PROD_Weapon4_Angy = 0
+		Cfg.PROD_Weapon4_Angz = -0.20
+		Cfg:Save()
+	elseif item.values[item.currValue] == 3 then
+		Cfg.PROD_Weapon7_Posx = 0.63
+		Cfg.PROD_Weapon7_Posy = -1.10
+		Cfg.PROD_Weapon7_Posz = -1.20
+		Cfg.PROD_Weapon7_Angx = -0.08
+		Cfg.PROD_Weapon7_Angy = 0.21
+		Cfg.PROD_Weapon7_Angz = 0.20
+		Cfg:Save()
+	end
+end
+function EnableLowAmmoOptions()
+	if Cfg.PROD_LA_Msg == true then
+		PMENU.EnableItem( "lowammomsgonchange" )
+		PMENU.EnableItem( "lowammomsgontake" )
+		PMENU.EnableItem( "lowammodurationmsg" )
+	else
+		PMENU.DisableItem( "lowammomsgonchange" )
+		PMENU.DisableItem( "lowammomsgontake" )
+		PMENU.DisableItem( "lowammodurationmsg" )
+	end	
 end
 --ADDED=end############################################################################################

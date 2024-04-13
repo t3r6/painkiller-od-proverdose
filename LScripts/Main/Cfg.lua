@@ -164,7 +164,7 @@ Cfg =
     PowerupDrop = false,
     Powerups = true,
     PrecacheData = 0,
---ADDED=####################################################################################################
+--ADDED=#################################################################################
 	PROD_AmmoList_Posix = 0,
 	PROD_Colored_Items = false,
 	PROD_CrosshairSize = 1,
@@ -174,6 +174,15 @@ Cfg =
 	PROD_HUD_Fontsize_1 = 1,
 	PROD_HUD_Fontsize_2 = 1,
 	PROD_HUDSize = 1.0,
+	PROD_LA_Msg = false,
+	PROD_LA_Msg_Time = 2,
+	PROD_LA_Msg_Switch = false,
+	PROD_LA_Msg_Pickup = false,
+	PROD_LA_Sound = false,
+	PROD_Score = true,
+	PROD_Score_Size = 1.0,
+	PROD_Select_Weapon = 0,
+	PROD_Static_Weapon = false,
 	PROD_Infos_Posx = 0,
 	PROD_KillSound = false,
 	PROD_OverTime = true,
@@ -183,9 +192,40 @@ Cfg =
 	PROD_SimpleIcons = false,
 	PROD_Teammate_Icon = true,
 	PROD_ThinShaft = false,
-	PROD_Weapons_Icons = 1,
+	PROD_Weapon_Pos = 1,
+--posx
+	PROD_Weapon2_Posx = 0.39,
+	PROD_Weapon3_Posx = 0.38,
+	PROD_Weapon4_Posx = 0.63,
+	PROD_Weapon7_Posx = 0.63,
+--posy
+	PROD_Weapon2_Posy = -0.50,
+	PROD_Weapon3_Posy = -0.36,
+	PROD_Weapon4_Posy = -0.32,
+	PROD_Weapon7_Posy = -1.10,
+--posz
+	PROD_Weapon2_Posz = -0.90,
+	PROD_Weapon3_Posz = -1.10,
+	PROD_Weapon4_Posz = -1.18,
+	PROD_Weapon7_Posz = -1.20,
+--angx
+	PROD_Weapon2_Angx = -0.15,
+	PROD_Weapon3_Angx = -0.10,
+	PROD_Weapon4_Angx = 0,
+	PROD_Weapon7_Angx = -0.08,
+--angy
+	PROD_Weapon2_Angy = 0.08,
+	PROD_Weapon3_Angy = 0.20,
+	PROD_Weapon4_Angy = 0,
+	PROD_Weapon7_Angy = 0.21,
+--angz
+	PROD_Weapon2_Angz = 0,
+	PROD_Weapon3_Angz = 0,
+	PROD_Weapon4_Angz = -0.20,
+	PROD_Weapon7_Angz = 0.20,
+	PROD_Weapons_Icons = 1,	
 	PROD_Zoom_FX = 1,
---ADDED=end##################################################################################################
+--ADDED=end###############################################################################
     Projectors = false,
     PublicServer = false,
     RenderSky = 2,
