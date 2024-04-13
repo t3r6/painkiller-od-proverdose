@@ -64,13 +64,7 @@ function FrozenObject:Tick(delta)
         return
     end
     if self.Obj.ToKill then GObjects:ToKill(self) end    
-	
-	if self._aftersave then -- renew shader
-		if not self._inshader then self._inshader = "palskinned_freeze" end
-    		MDL.SetMaterial(self.Obj._Entity, self._inshader)
-		self._aftersave = nil
-	end
-
+   MDL.SetMaterial(self.Obj._Entity, "palskinned_stone")
     self._timer = self._timer + delta    
 
     local a = 0
@@ -120,3 +114,8 @@ function FrozenObject:Tick(delta)
     MDL.SetAnimTimeScale(self.Obj._Entity, self.Obj._CurAnimIndex, self.AnimSpeed * a)
 end    
 --============================================================================
+
+function FrozenObject:RestoreFromSave()
+ MDL.SetMaterial(self.Obj._Entity, "")
+ MDL.SetMaterial(self.Obj._Entity, self._inshader)
+end

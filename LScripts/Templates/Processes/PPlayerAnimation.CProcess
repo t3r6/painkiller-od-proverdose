@@ -180,13 +180,12 @@ function PPlayerAnimation:ShowCorrectWeapon()
     self._light = nil
     
     if self.State == 1 then
-        WORLD.AddEntity(self._mdlPKHead)
-        MDL.SetMeshVisibility(e,"polySurfaceShape1",false)
+    	MDL.SetMeshVisibility(e,"razorCube_Shape",true)
     end
     if self.State == 2 then
 	    MDL.SetMeshVisibility(e,"bonegun_Shape",true)
     end
-    if self.State == 3 then
+    if self.State == 3 or  self.State == 31 then
     	MDL.SetMeshVisibility(e,"cannongun_Shape",true)
         if self.State == 31 then 
             local tp
@@ -226,6 +225,7 @@ function PPlayerAnimation:ShowCorrectWeapon()
 	
     end
     if self.State == 11 then
+        WORLD.AddEntity(self._mdlPKHead)
         --BindSoundToEntity(e,"weapons/painkiller/pain-rotor-star",15,50,false,nil,nil,nil,nil,nil,0)
         local tp
         tp,self._snd = BindSoundToEntity(e,"weapons/painkiller/pain-rotor-loop",15,50,true,nil,nil,nil,nil,nil,0)

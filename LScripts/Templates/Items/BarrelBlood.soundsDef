@@ -7,6 +7,6 @@ o.s_SubClass.SoundsDefinitions = {
 		samples = {"barrel-wood-fallsdown1","barrel-wood-fallsdown2","barrel-wood-fallsdown3"},
 	},
 	DestroySound = {
-		samples = {"gib_big","gib_big2","gib_big3"},
+		samples = {"barrel-wood-explode"},
 	},
 }

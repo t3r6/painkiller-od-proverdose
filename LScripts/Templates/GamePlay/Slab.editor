@@ -15,5 +15,5 @@ function Slab:FillAntiPortals()
 end
 
 function Slab:FillAppearance()
-    tmp_tab = {"Slab","Dead_marsh","Asteroids","slab_japan_paper","slab_japan_grate","slab_japan","Dead_marsh2","Fence","Babel_Arab","Asylum_Monast","Chaos","Docks_Base","Factory_Bridge","Catacombs","Opera","Prison","TrainStation","CityOnWater","Leningrad","Wood","Colosseum","Colosseum2","City","CityTunnel","Orphanage","Mine","Roleta","Haunted"}
+    tmp_tab = {"Slab","Dead_marsh","Asteroids","slab_japan_paper","slab_japan_grate","slab_japan","Dead_marsh2","Fence","Babel_Arab","Asylum_Monast","Chaos","Docks_Base","Factory_Bridge","Catacombs","Opera","Prison","TrainStation","CityOnWater","Leningrad","Wood","Colosseum","Colosseum2","City","CityTunnel","Orphanage","Mine","Roleta","Haunted","letadlo"}
 end

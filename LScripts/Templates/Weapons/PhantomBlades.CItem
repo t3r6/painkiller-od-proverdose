@@ -2,7 +2,7 @@
 --o.Pack = "BonesHead.dat"
 o.Mesh = "polySurfaceShape9"
 o.Pack = "P_Phantom_Blade.dat"
-
+o.NotCountable = true
 
 o.Scale = 0.27
 --Stake.Restitution = 0.5

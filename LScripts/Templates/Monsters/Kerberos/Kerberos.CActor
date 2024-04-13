@@ -147,7 +147,7 @@ o.s_SubClass = {
 o.DeathTimer = 120
 
 o.AiParams = {}
-o.AiParams.aiGoals = {"idle","throw", "hunt", "Scream"}
+o.AiParams.aiGoals = {"idle","throw", "Scream"}
 o.AiParams.viewDistance = 70			-- zasieg widzenia
 o.AiParams.viewAngle = 270			-- kat widzenia
 o.AiParams.viewDistance360 = 40			-- zasieg widzenia z katem widzenia 360 stopni

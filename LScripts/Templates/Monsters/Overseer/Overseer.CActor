@@ -15,7 +15,7 @@ o.ScreamDamage = 50
 
 o.s_Physics = {
     BodyType = BodyTypes.Fatter,
-    Mass     = 140,
+    Mass     = 6000,
 }
 
 o.s_SubClass = {

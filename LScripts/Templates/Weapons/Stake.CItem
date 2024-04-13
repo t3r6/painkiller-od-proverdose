@@ -5,9 +5,8 @@ Stake.Scale = 0.07
 --Stake.Mass = 0.001
 Stake.TestDeathZone = true
 Stake.SoundInWater = "impacts/bulletbig-water"
-
+o.NotCountable = true
 o.DestroyPack = "kolek_zlom.dat"
-
 o.Destroy.Strength = 50
 o.Destroy.AverageDelay = 0
 o.Destroy.AverageVariation = 0

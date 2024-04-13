@@ -103,7 +103,7 @@ function EndOfMatch:Tick(delta)
 			INP.Reset()
         end
         
-        if self.Mode == 1 and Game:IsServer() and self.TimeOut > 15 then
+        if self.Mode == 1 and Game:IsServer() and self.TimeOut > Game.ServTimeout then
             StringToDo = "Game:LoadNextMap()"
         end            
     end

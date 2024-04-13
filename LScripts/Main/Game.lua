@@ -139,9 +139,12 @@ Game =
   --sounds
  killingspree={},
  lastmgstart=nil,
- chatdelay = 350,
+ chatdelay = 550,
  chatvolume = 110.0,
  lastchat=1,
+ ServTimeout = 15,
+MaxEggs = 8,
+
 
 }
 
@@ -181,11 +184,12 @@ function Game:Init(nolevel)
         MsgBox( "Critical error: bad engine version or exe version; the game will not run" )
         return
     end
---ADDED=######################################################################	
+
+--ADDED=#######################################################################
 	if Cfg.PROD_Colored_Items then
 		FS.RegisterPack("../Data/".."PRODitems.pak","../Data/Textures/")
 	end
---ADDED=end######################################################################	
+--ADDED=end####################################################################
 
     Cfg:Load()
     Tweak:Load()        
@@ -990,11 +994,11 @@ end
 function Game:LoadLevel(name)
     local path = "../Data/Levels/"..name.."/"        
     local files = FS.FindFiles(path.."*.CLevel",1,0)
-	
+
 --ADDED=###########################################################
 	enemyscore = 0
---ADDED=end###########################################################	
-	
+--ADDED=end###########################################################
+
 	if table.getn(files)<=0 then 
         CONSOLE.AddMessage("Level '"..name.."' not found!!!")
         return 0 
@@ -1013,7 +1017,7 @@ function Game:LoadLevel(name)
     if self.GMode == GModes.SingleGame then 
         MPCfg.GameMode = ""
     end
-	
+
 --ADDED=##################################################################################
 	PMENU.ActivateLoadingScreen( false )
 --ADDED=end################################################################################
@@ -1513,7 +1517,7 @@ function Game:CountMoneyAndActorsOnLevel()
 				self.TotalArmor = self.TotalArmor + 1
 			else
                 if v.DestroyPack then
-					if not v.NotCountable then
+					if not v.NotCountable and not v.Immortal then
 						self.TotalDestroyed = self.TotalDestroyed + 1
 					end
                     local amount = 0
@@ -1787,7 +1791,7 @@ function Game:EnableSilverCards()
 		self.PlayerRegenerateWhenDying = true
 	end
 	
-	-- health stealer (5% of the damage to the enemy goes to player’s health)
+	-- health stealer (5% of the damage to the enemy goes to playerï¿½s health)
 	if Game.CardsSelected[cards[13].index] then
 		self.StealHealth = true
 	end
@@ -2074,24 +2078,29 @@ function Game:UpdateLevelStats()
 	end
 	local stats = self.LevelsStats[lname]
 	
-	if stats.GameplayTime <= Game.LevelTime then
+	-- by Kalme:
+	-- set shorter time as record!	
+	if ((stats.GameplayTime == 0) or (stats.GameplayTime > Game.LevelTime)) or ((stats.GameplayTime == Game.LevelTime) and (stats.TimeDiff < Game.Difficulty)) then
 		stats.GameplayTime = Game.LevelTime
-		stats.TimeDiff = Game.Difficulty
+		stats.TimeDiff = Game.Difficulty	
 	end
+	
 	if stats.Difficulty <= Game.Difficulty then stats.Difficulty = Game.Difficulty end
-	if stats.MonstersKilled <= Game.BodyCountTotal then
+
+	-- by Kalme: avoid downgrading of stats if values are equal to previous records
+	if (stats.MonstersKilled < Game.BodyCountTotal) or ((stats.MonstersKilled == Game.BodyCountTotal) and (stats.MonstersDiff < Game.Difficulty)) then
 		stats.MonstersKilled = Game.BodyCountTotal
 		stats.MonstersDiff = Game.Difficulty
 	end
-	if stats.SoulsCollected <= Player.TotalSoulsCount then
+	if (stats.SoulsCollected < Player.TotalSoulsCount) or ((stats.SoulsCollected == Player.TotalSoulsCount) and (stats.SoulsDiff < Game.Difficulty)) then
 		stats.SoulsCollected = Player.TotalSoulsCount
 		stats.SoulsDiff = Game.Difficulty
 	end
-	if stats.ArmorsFound <= Player.ArmorFound then
+	if (stats.ArmorsFound < Player.ArmorFound) or ((stats.ArmorsFound == Player.ArmorFound) and (stats.ArmorsDiff < Game.Difficulty)) then
 		stats.ArmorsFound = Player.ArmorFound
 		stats.ArmorsDiff = Game.Difficulty
 	end
-	if stats.GoldFound < Game.PlayerMoneyFound-Player.BonusItems then
+	if (stats.GoldFound < Game.PlayerMoneyFound-Player.BonusItems) or ((stats.GoldFound == 0) and (stats.GoldDiff < Game.Difficulty)) then
 		stats.GoldFound = Game.PlayerMoneyFound-Player.BonusItems
 		stats.BonusItems = Player.BonusItems
 		stats.GoldDiff = Game.Difficulty
@@ -2099,19 +2108,19 @@ function Game:UpdateLevelStats()
 		stats.BonusItems = Player.BonusItems
 		stats.GoldDiff = Game.Difficulty
 	end
-	if stats.HolyItemsFound <= Player.HolyItems then
+	if (stats.HolyItemsFound < Player.HolyItems) or ((stats.HolyItemsFound == Player.HolyItems) and (stats.HolyDiff < Game.Difficulty)) then
 		stats.HolyItemsFound = Player.HolyItems
 		stats.HolyDiff = Game.Difficulty
 	end
-	if stats.AmmoFound <= Game.PlayerAmmoFound then
+	if (stats.AmmoFound < Game.PlayerAmmoFound) or ((stats.AmmoFound == Game.PlayerAmmoFound) and (stats.AmmoDiff < Game.Difficulty)) then
 		stats.AmmoFound = Game.PlayerAmmoFound
 		stats.AmmoDiff = Game.Difficulty
 	end
-	if stats.ObjectsDestroyed <= Game.PlayerDestroyedItems then
+	if (stats.ObjectsDestroyed < Game.PlayerDestroyedItems) or ((stats.ObjectsDestroyed == Game.PlayerDestroyedItems) and (stats.ObjectsDiff < Game.Difficulty)) then
 		stats.ObjectsDestroyed = Game.PlayerDestroyedItems
 		stats.ObjectsDiff = Game.Difficulty
 	end
-	if stats.SecretsFound <= Player.SecretsFound then
+	if (stats.SecretsFound < Player.SecretsFound) or ((stats.SecretsFound == Player.SecretsFound) and (stats.SecretsDiff < Game.Difficulty)) then
 		stats.SecretsFound = Player.SecretsFound
 		stats.SecretsDiff = Game.Difficulty
 	end

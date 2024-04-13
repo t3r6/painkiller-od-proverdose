@@ -20,6 +20,7 @@ o.Exploparticlescale = 1.5
 o.DeadAnimChance = 100
 o.deathtype="deathanim"
 o.Comebacktag=true
+o.NotCountable = false
 
 o.comebackpoints = {}
 o.comebackpoints[1] = Vector:New(2.1128687858582,20.977447509766,36.302890777588)

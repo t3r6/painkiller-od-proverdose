@@ -2628,8 +2628,8 @@ function CActor:OnDamage(damage, obj, type, x, y, z, nx, ny, nz, he,msg)			-- +p
         	if self.CustomOnDamage then
 			local skip, dmg = self:CustomOnDamage(he,x,y,z,obj, damage, type,nx,ny,nz)
 			if skip then
-				if type ~= AttackTypes.OutOfLevel and not (self.IsBoos and Game.BelialAssault) then
-					return				-- damage canceled
+				if type ~= AttackTypes.OutOfLevel and (not Game.BelialAssault or self.IsBoss) then
+						return
 				end
 			end
 			if dmg then

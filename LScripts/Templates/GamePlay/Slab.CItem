@@ -23,6 +23,10 @@ Slab.s_SubClass.types = {
         mesh = "pCubeShape11",
         pack = "plyta.dat",
     },
+    letadlo = {
+        mesh = "hrac_transShape",
+        pack = "slab_lietadlo.dat",
+    },
    Dead_marsh = {
         mesh = "slub_march0Shape1",
         pack = "slab_marsh.dat",

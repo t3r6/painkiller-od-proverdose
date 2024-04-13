@@ -23,14 +23,13 @@ end
 function DemonFX:OnToKill()
     Game.IsDemon = false
     Game._DemonProc = nil
-
+    if Player then Player.EnabledWeapons[10] = nil end
     if self.prevSlot then
         RawCallMethod(CPlayer.WeaponChangeConfirmation,Player._Entity,self.prevSlot) 
         self.prevSlot = nil
-        if Player then Player.EnabledWeapons[10] = nil end
     end
 
-    if Cfg.ViewWeaponModel then
+    if Cfg.ViewWeaponModel and Player then
         ENTITY.EnableDraw(Player:GetCurWeapon()._Entity, true)
     end
     

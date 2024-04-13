@@ -63,7 +63,7 @@ o.s_SubClass = {
 
 o.s_MPSubClass = {
     -- odstep czasu miedzy kolejnymi strzalami (1/30 sec):
-    BallDamage        = 80,
+    BallDamage        = 100,
     BallSpeed = 170,
     FireTimeout    = 8 ,
     AltFireTimeout = 0.1  * 30,

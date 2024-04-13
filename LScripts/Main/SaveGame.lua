@@ -193,7 +193,7 @@ function SaveGame:LoadRequest(slot,loadOnly,demo)
 end
 --============================================================================
 function SaveGame:Load(slot,loadOnly,demo)
-
+	if not slot then return end
     LoadRequest = nil
     
     WORLD.SwitchToState(2)    

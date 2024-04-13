@@ -24,9 +24,9 @@ MultiplayerMenu =
 			desc = TXT.MenuDesc.StartGame,
 			x	 = -1,
 			y	 = 264, -- CHG: PrimeviL (344)
-			action = "PainMenu:ActivateScreen(CreateServerMenu)",
+			action = "if Game:IsServer() and Game.Gmode ~= GameStates.Finished then PainMenu:AskYesNo( Languages.Texts[967],'Game.ServTimeout = 800; Game:EndOfMatch(); PainMenu:ActivateScreen(CreateServerMenu)','PainMenu:ActivateScreen(MultiplayerMenu)') else Game.ServTimeout = 15 ; PainMenu:ActivateScreen(CreateServerMenu) end",
 		},
-		
+
 		JoinGame =
 		{
 			text = TXT.Menu.JoinGame,
@@ -35,7 +35,7 @@ MultiplayerMenu =
 			y	 = 344, -- CHG: PrimeviL (264)
 			action = "PainMenu:ActivateScreen(LANGameMenu)",
 		},
-		
+
 		PlayerSettings =
 		{
 			text = TXT.Menu.PlayerSettings,

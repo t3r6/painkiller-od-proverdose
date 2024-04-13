@@ -12,7 +12,7 @@ o.DeathTimer = 120
 o.checkColInFlight = 0.3
 o.disableFreeze = true
 o.IsBoss = true
-
+o.NotCountable = true 
 
 
 o.s_Physics = {

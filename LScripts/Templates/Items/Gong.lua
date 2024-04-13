@@ -12,7 +12,7 @@ function o:CustomOnDamage(damage, owner, attacktype, x, y, z, nx, ny, nz, he)
         local t,e,j = PHYSICS.GetHavokBodyInfo(he)
         local jName = MDL.GetJointName(e,j)
         if jName == "gong"  then
-	PlaySound2D("actor/maso/maso_grenade-explosion")
+	PlaySound2D("impacts/gong"..math.random(2))
 	end
 	end
 end

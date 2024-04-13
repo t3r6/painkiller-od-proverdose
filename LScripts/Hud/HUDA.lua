@@ -1,4 +1,4 @@
---CurrentWeapon =début=################################################################################
+--CurrentWeapon =dï¿½but=################################################################################
 function Hud:CurrentWeapon()
     local w,h = R3D.ScreenSize()
 	local sizex, sizey = MATERIAL.Size(Hud._matHUDLeft)
@@ -58,7 +58,7 @@ end
 end
 --CurrentWeapon =fin=################################################################################
 
---CurrentAmmo =début=################################################################################
+--CurrentAmmo =dï¿½but=################################################################################
 function Hud:CurrentAmmo()
     local w,h = R3D.ScreenSize()
     local gray = R3D.RGB(120,120,70)
@@ -80,13 +80,13 @@ function Hud:CurrentAmmo()
 	elseif Player._CurWeaponIndex == 2 then --Bonegun -> Cfg.SwitchFire[2]
 		if not (INP.IsFireSwitched() or (not Game.SwitchFire[2] and Cfg.SwitchFire[2]) or (not Cfg.SwitchFire[2] and Game.SwitchFire[2])) then
 			Hud:Quad(Hud._matBoneGun1,(1024-52*sizehud)*w/1024,((768+sizehud*23)-sizehud*sizey)*h/768,sizehud,false)
-			--Hud:Quad(Hud._matBoneGun1a,(1024-52*sizehud)*w/1024,((768+sizehud*65)-sizehud*sizey)*h/768,sizehud,false)
+			Hud:Quad(Hud._matBoneGun1a,(1024-52*sizehud)*w/1024,((768+sizehud*65)-sizehud*sizey)*h/768,sizehud,false)
 			Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*26)-sizehud*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.Bonegun),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.Bonegun)
-			--Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*68)-sizehud*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.StoneBullets),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.StoneBullets)
+			Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*68)-sizehud*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.StoneBullets),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.StoneBullets)
 		else
 			Hud:Quad(Hud._matBoneGun1,(1024-52*sizehud)*w/1024,((768+sizehud*65)-sizehud*sizey)*h/768,sizehud,false)
-			--Hud:Quad(Hud._matBoneGun1a,(1024-52*sizehud)*w/1024,((768+sizehud*23)-sizehud*sizey)*h/768,sizehud,false)
-			--Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*26)-sizehud*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.StoneBullets),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.StoneBullets)
+			Hud:Quad(Hud._matBoneGun1a,(1024-52*sizehud)*w/1024,((768+sizehud*23)-sizehud*sizey)*h/768,sizehud,false)
+			Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*26)-sizehud*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.StoneBullets),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.StoneBullets)
 			Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*68)-sizehud*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.Bonegun),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.Bonegun)
 		end
 
@@ -156,14 +156,14 @@ function Hud:CurrentAmmo()
 	elseif Player._CurWeaponIndex == 7 then --Ectoplasmer -> Cfg.SwitchFire[6]
 		if not (INP.IsFireSwitched() or (not Game.SwitchFire[6] and Cfg.SwitchFire[6]) or (not Cfg.SwitchFire[6] and Game.SwitchFire[6])) then
 			Hud:Quad(Hud._matEctoplasmer1,(1024-52*sizehud)*w/1024,((768+sizehud*23)-sizehud*sizey)*h/768,sizehud,false)
-			--Hud:Quad(Hud._matEctoplasmer1a,(1024-56*sizehud)*w/1024,((768+sizehud*49)-sizehud*sizey)*h/768,sizehud,false)
-			--Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*50)-sizehud*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.GreenGoo),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.GreenGoo)
+			Hud:Quad(Hud._matEctoplasmer1a,(1024-52*sizehud)*w/1024,((768+sizehud*65)-sizehud*sizey)*h/768,sizehud,false)
 			Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*26)-sizehud*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Ectoplasm),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.Ectoplasm)
+			Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*68)-sizehud*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.GreenGoo),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.GreenGoo)
 		else
-			--Hud:Quad(Hud._matEctoplasmer1a,(1024-56*sizehud)*w/1024,((768+sizehud*12)-sizehud*sizey)*h/768,sizehud,false)
+			Hud:Quad(Hud._matEctoplasmer1a,(1024-52*sizehud)*w/1024,((768+sizehud*23)-sizehud*sizey)*h/768,sizehud,false)
 			Hud:Quad(Hud._matEctoplasmer1,(1024-52*sizehud)*w/1024,((768+sizehud*65)-sizehud*sizey)*h/768,sizehud,false)
+			Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*26)-sizehud*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.GreenGoo),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.GreenGoo)
 			Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*68)-sizehud*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Ectoplasm),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.Ectoplasm)
-			--Hud:DrawDigitsText((1024-118*sizehud)*w/1024,((768+sizehud*16)-sizehud*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.GreenGoo),-3),0.9*sizehud,Player.s_SubClass.AmmoWarning.GreenGoo)
 		end
 
 	elseif Player._CurWeaponIndex == 8 then --EggBomb -> Cfg.SwitchFire[7]

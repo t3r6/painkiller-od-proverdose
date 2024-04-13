@@ -177,9 +177,12 @@ function EggBomb:AltFireSFX(pe)
 	local t = Templates["EggBomb.CWeapon"]
 	local s = t:GetSubClass()
 	local x,y,z = ENTITY.GetPosition(pe)
-	if player then
+
+	if player
+		then 
+		local cw = player:GetCurWeapon()
+		if Game.GMode == GModes.SingleGame or cw._bombnumber < Game.MaxEggs then
 		if not Game.NoAmmoLoss then player.Ammo.StickyBombs = player.Ammo.StickyBombs -1 end  
-			local cw = player:GetCurWeapon()
 		if player == Player then
 			MDL.SetMeshVisibility(cw._Entity,"polySurfaceShape4",false)
 			MDL.SetMeshVisibility(cw._Entity,"polySurfaceShape2",false)
@@ -221,7 +224,7 @@ function EggBomb:AltFireSFX(pe)
 				cw._bombnumber = cw._bombnumber + 1
 				cw.ShotTimeOut = s.BombDelay
 		end
-	
+	end	
 	end
 end
 Network:RegisterMethod("EggBomb.AltFireSFX", NCallOn.ServerAndAllClients, NMode.Reliable, "e")	

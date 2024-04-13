@@ -5,7 +5,7 @@ o.Scale = 0.015
 --Stake.Mass = 0.001
 o.TestDeathZone = true
 o.SoundInWater = "impacts/bulletbig-water"
-
+o.NotCountable = true
 o.DestroyPack = "kolek_zlom.dat"
 o.Destroy.Strength = 1
 o.Destroy.AverageDelay = 0

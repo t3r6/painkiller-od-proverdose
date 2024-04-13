@@ -553,12 +553,12 @@ function CPlayer:TryToSelectNextWeaponWithAmmo(slot,fire)
     return newslot
 end
 --============================================================================
-function CPlayer:Client_OnTakeWeapon(slot)   
-	local cw = Player._CurWeaponIndex
-    if Cfg.AutoChangeWeapon then    
+function CPlayer:Client_OnTakeWeapon(slot)
+    local cw = Player._CurWeaponIndex
+    if Cfg.AutoChangeWeapon then
         for i,o in Cfg.WeaponPriority do
             if o == 0 then return end
-            local sl = tonumber(string.sub(tostring(o),1,1))            
+            local sl = tonumber(string.sub(tostring(o),1,1))
             local ammoname = Weapon2Ammo[o]
             if ammoname == "Full" or self.Ammo[ammoname] > 0 then 
                 if self._CurWeaponIndex ==  sl then return end -- i have it or better
@@ -568,7 +568,7 @@ function CPlayer:Client_OnTakeWeapon(slot)
                 end
             end
         end
-    end	
+    end
 end
 --============================================================================
 -- [ CLIENT ] --
@@ -1769,13 +1769,13 @@ function CPlayer:Steps(delta)
         self._LastStepTime = -1
     end            
 
-    if not self._Walking and  Game.GMode == GModes.SingleGame and Lev and Lev._ambient and self._JumpSndDelay < 0 and self._ambientdelay > 400 then
+--[[    if not self._Walking and  Game.GMode == GModes.SingleGame and Lev and Lev._ambient and self._JumpSndDelay < 0 and self._ambientdelay > 400 then
 	    if Game.lastchat and Game.lastchat + Game.chatdelay < Game.currentTime then
 			Game.lastchat=Game.currentTime
 			self._ambientdelay=0
 			PlaySound2D("belial/Belial_ingame_"..math.random(1,8),Game.chatvolume,nil,true)	
 	    end
-   end
+   end--]]
 
     -- head bob
     --if self._Walking then 
@@ -2151,10 +2151,10 @@ function CPlayer:Common_UpdateStats(checkOnly,deadID,killerID,attack_type,score)
         else
             ds.Score  = ds.Score  - 1
         end
---MODIFIED=#################################################################################        
+--MODIFIED=####################################################################################
         --if MPCfg.GameMode == "Capture The Flag" or MPCfg.GameMode == "Team Deathmatch" then -- no scores for frags
 		if MPCfg.GameMode == "Capture The Flag" then
---MODIFIED=end#################################################################################   
+--MODIFIED=end#################################################################################
             if ds then 
                 Game.PlayerStats[deadID].Score = b_ds[1]
             end
@@ -2297,7 +2297,7 @@ function CPlayer:Client_OnDeath(deadID,killerID,attack_type,gib,score,damage)
     local ds = Game.PlayerStats[deadID]
     local ks = Game.PlayerStats[killerID]
 
---ADDED=##########################################################################################    
+--ADDED=###########################################################################################
 	if Player and Player.ClientID == killerID and deadID ~= Player.ClientID then
 		if Cfg.PROD_KillSound then
 			PlaySound2D("../PRODsounds/killsound",nil,nil,true)
@@ -2310,7 +2310,7 @@ function CPlayer:Client_OnDeath(deadID,killerID,attack_type,gib,score,damage)
 		enemyscore = enemyscore-1
 	end
 --ADDED=end########################################################################################
-	
+
     local deadEntity = nil
     if ds then deadEntity = ds._Entity end    
     
@@ -2523,8 +2523,8 @@ function CPlayer:WeaponChangeConfirmation(entity,slot)
 	tmendaltsnd = 0
 	tmendsnd = 0
 	tmendtxt = 0
---ADDED=end##########################################################################	
-	
+--ADDED=end##########################################################################
+
     player._CurWeaponIndex = slot 
     if player == Player then WORLD.AddEntity(cw._Entity) end
     player.State = slot   

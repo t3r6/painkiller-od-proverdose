@@ -1,6 +1,6 @@
 o.Model = "tentacle_monster"
 o.Scale = 1.6
-o.Health = 299
+o.Health = 210
 o.CreatePO = true
 o.WalkSpeed = 5.0
 o.RunSpeed = 1.0
@@ -161,8 +161,8 @@ o.shadow = 0
 -- bliski atak --
 o.AiParams.attackRange = 9
 o.AiParams.secondattackRange = 9
-o.AiParams.weaponDamage = 15
-o.AiParams.weapon2Damage = 10
+o.AiParams.weaponDamage = 10
+o.AiParams.weapon2Damage = 8
 o.AiParams.attackRangeAngle = 360
 --
 o.AiParams.disableEscapeWhenTooClose = true

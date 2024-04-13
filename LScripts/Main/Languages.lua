@@ -333,6 +333,8 @@ Languages.English =
 
 		Name              = Languages.Texts[183],
 		TeamName          = Languages.Texts[184],
+                TeamColorRed      = Languages.Texts[83],
+                TeamColorBlue     = Languages.Texts[85],
 		ConnectionSpeed   = Languages.Texts[185],
 		CDKey             = Languages.Texts[186],
 		Delete            = Languages.Texts[187],
@@ -828,7 +830,71 @@ Languages.English =
         AI = "AI:true/false\nWlacza/wylacza inteligencje przeciwnika.",
         Damage = "Damage:obj[,dmg]\nZadaje obrazenia obiektowi. Przy braku parametru 'dmg' zadaje obrazenie usmiercajace obiekt.",
         Kill = "Kill:obj\nNatychmiastowo kasuje obiekt ze swiata gry. Bez zadnych dodatkowych efektow."
-    }
+    },
+
+    MPErrors =
+    {
+	DisconnectedTimeout	= Languages.Texts[579], -- : Disconnected on timeout: %d ms
+        GameSpyTimeout 		= Languages.Texts[580], -- : GameSpy timeout error!!!\nDescription: %s
+        NATAck 			= Languages.Texts[581], -- : NAT Negotiation: NN server acknowledged your connection request
+        NATDirectStart 		= Languages.Texts[582], -- : NAT Negotiation: direct negotiation with the other client has started
+        NATUnknownState 	= Languages.Texts[583], -- : NAT Negotiation: unknown negotiate state returned by GameSpy!! State: %d
+        NATCompleteOut 		= Languages.Texts[584], -- : NAT Negotiation complete! Connecting to %s
+        NATNotRegistered 	= Languages.Texts[585], -- : NAT Negotiation error: Partner did not register with the NAT Negotiation Server
+        NATNoServer 		= Languages.Texts[586], -- : NAT Negotiation error: Unable to communicate with NAT Negotiation Server
+        NATServerError 		= Languages.Texts[587], -- : NAT Negotiation error: NAT Negotiation server indicated an unknown error condition
+        NATCompleteIn 		= Languages.Texts[588], -- : NAT Negotiation succesfull!: Client connecting from %s
+        NATCookie 		= Languages.Texts[589], -- : NAT Negotiation: Received client cookie: %d
+        InitStartupFailed 	= Languages.Texts[590], -- : Net Init Error: WSAStartup() failed!! Returned %s
+        InitOldSockets 		= Languages.Texts[591], -- : Net Init Error: Windows Sockets implementation too old!
+        InitInterfaceFailed 	= Languages.Texts[592], -- : Net Init Error: tried to resolve given interface and failed!
+        InitHostnameFailed 	= Languages.Texts[593], -- : Net Init Error: gethostname() call failed!! Can't find this computer's name! Returned: %s
+        InitIPUnresolved 	= Languages.Texts[594], -- : Net Init Error: failed to resolve our IP with gethostbyname()!!
+        InitOpenFailed 		= Languages.Texts[595], -- : Net Init Error: Couldn't open listening socket: %s
+        InitNonblockingFailed 	= Languages.Texts[596], -- : Net Init Error: Couldn't make socket non-blocking: %s
+        InitSocketBindFailed 	= Languages.Texts[597], -- : Net Init Error: Failed to bind socket on port %d: %s
+        InitSocknameFailed	= Languages.Texts[598], -- : Net Init Error: getsockname on bound socket failed!! Returned: %s
+        GameSpyDNSError		= Languages.Texts[599], -- : GameSpy Init Error: a DNS lookup (for the master server) failed\nGameSpy inactive!
+        GameSpyNoChallenge	= Languages.Texts[600], -- : GameSpy Init Error: no challenge was received from the master - either the master is down, or a firewall is blocking UDP\nGameSpy inactive!
+        GameSpyUnknownError	= Languages.Texts[601], -- : GameSpy Init Error: unknown error value given by GameSpy: %d\nGameSpy inactive!
+        PortUnreachable		= Languages.Texts[602], -- : Net Error: Connection refused by server (port unreachable)
+        AddressDoesNotReply	= Languages.Texts[603], -- : Net Error: Given address does not reply
+        ConnectionClosed	= Languages.Texts[604], -- : Net Error: Connection closed from other side (probably other side is down right now)
+        RejectedDevelVersion	= Languages.Texts[605], -- : Net Info: Rejected connect from '%s': using early development client version!
+        RejectedDifferentClient	= Languages.Texts[606], -- : Net Info: Rejected connect from '%s': different client version: %s
+        RejectedDifferentScript	= Languages.Texts[607], -- : Net Info: Rejected connect from '%s': different client scripts
+        RejectedUnexpectedChallenge	= Languages.Texts[608], -- : Net Info: Rejected connect from '%s': it tried to answer a challenge I didn't issue
+        RejectedTooManyConnections = Languages.Texts[609], -- : Net Info: Rejected connect from '%s': too many clients trying to connect
+        RejectedBadPassword	= Languages.Texts[610], -- : Net Info: Rejected connect from '%s': bad password given
+        RejectedMaxClients	= Languages.Texts[611], -- : Net Info: Rejected connect from '%s': maximal number of clients achieved
+        RejectedInvalidChallenge = Languages.Texts[612], -- : Net Info: Rejected connect from '%s': invalid challenge given
+        RejectedInvalidResponse	= Languages.Texts[613], -- : Net Info: Rejected connect from '%s': invalid challenge response given
+        RejectedBadCDKey	= Languages.Texts[614], -- : Net Info: Rejected connect from '%s': GameSpy says it has a bad CD key
+        RejectedOpenWithoutConnect	= Languages.Texts[615], -- : Net Info: Rejected net open from '%s': it tried to do it without a prior connect
+        NoPKServer		= Languages.Texts[616], -- : Net Error: trying to connect to host that is not a Painkiller server!!
+        BadVersion		= Languages.Texts[617], -- : Net Error: the server is version '%s', we are '%s'.\nCan't connect!! Please upgrade the game.
+        BadScripts		= Languages.Texts[618], -- : Net Error: we have different scripts than the server, but the same game version.\nPlease upgrade or reinstall the game.
+        BadPassword		= Languages.Texts[619], -- : Net Error: we gave bad password to passworded server!!
+        FailedChallenge		= Languages.Texts[620], -- : Net Error: failed challenge authentication!! A hack job, perhaps?
+        ChallengeTimeout	= Languages.Texts[621], -- : Network: server challenge timeout...reconnecting
+        MaxPlayers		= Languages.Texts[622], -- : Net Error: No more players allowed on this server
+        IncorrectCDKey 		= Languages.Texts[623], -- : Net Error: the CD Key you entered is incorrect, or there's another player with the same CD Key presently on the Net!\nServer said: %s
+        UnexpectedChallenge	= Languages.Texts[624], -- : Net Error: the client tried to answer a challenge that the server didn't provide!\nServer said: %s
+        OpenWithoutConnect	= Languages.Texts[625], -- : Net Error: the client tried to issue a Net Open command without connecting first!\nServer said: %s
+        UnknownErrorReport	= Languages.Texts[626], -- : Net Error: unknown error report received!!
+        WriteError		= Languages.Texts[627], -- : Net Error: Write: error in sendto(): %s
+        ReadError		= Languages.Texts[628], -- : Net Error: Read: error in recvfrom(): %s
+        ResolveError		= Languages.Texts[629], -- : Net Error: Couldn't resolve address: %s
+
+        EnterPassword           = Languages.Texts[958],
+        PasswordTooLong         = Languages.Texts[960], --: Net Error: password given was too long.\n
+        PureScripts             = Languages.Texts[961], --: Net Error: failed connection due to pure server and different checksum of our scripts\n
+        ChallengeTooLong        = Languages.Texts[962], --: Net Error: Challenge response too long!!\n
+        MaximalFrameSizeEx      = Languages.Texts[963], --: Net Error: Maximal frame size exceeded! Try lowering your fps or getting server frames more frequently\n
+        DifferentMap            = Languages.Texts[964], --: Net Error: the map we are trying to load is different than the map on the server!
+        RejectedTooLongPassword = Languages.Texts[965], --: Net Info: Rejected connect from '%s': gave too long password\n
+        RejectedDifferentChecksum = Languages.Texts[966], --: Net Info: Rejected connect from '%s': different scripts checksum\n
+    }    
 }
 
 --=======================================================================================

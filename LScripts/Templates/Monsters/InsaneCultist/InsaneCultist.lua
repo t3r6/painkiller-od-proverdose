@@ -13,7 +13,7 @@ end
 
 
 function o:CustomOnHit()
-	if not self._ABdo and math.random(100) < 30 then
+	if not self._ABdo and math.random(100) < 20 then
 		if self._HealthMax * self.ABHp > self.Health then
 			self._ABdo = true
 		end

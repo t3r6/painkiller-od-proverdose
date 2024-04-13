@@ -4,7 +4,7 @@
 o.Mesh = "pSphereShape1"
 o.Pack = "meteor_caly.dat"
 o._fx = 'or_lava'
-
+o.NotCountable = true
 o.Scale = 0.65
 o.Pos = Vector:New(0,0,-4)
 o.Restitution = 0.2

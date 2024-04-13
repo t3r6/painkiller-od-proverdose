@@ -3,6 +3,7 @@ o.Pack = "meteor_caly.dat"
 o._fx = 'or_lava'
 
 o.Scale = 0.35
+o.NotCountable = true
 o.Pos = Vector:New(0,0,-4)
 o.Restitution = 0.2
 o.Damage = 45

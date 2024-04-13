@@ -4,15 +4,12 @@ end
 
 function Electrician:OnCreateEntity()
 self._AIBrain._lastThrowTime = FRand(-4, -1)
---[[	local obj = GObjects:Add(TempObjName(),CloneTemplate("FRef.CItem"))
-		    obj.Pos:Set(0,-0.25,0)
-		    obj.Rot:FromEuler(math.pi/2,0, 0)
-		    obj:Apply()
-		    ENTITY.RegisterChild(self._Entity,obj._Entity,true,MDL.GetJointIndex(self._Entity, "weapon_light_joint"))
-		    ]]--
 self:BindSound("actor/mw_electrician/electrician_loop1",4,20,true)
 self:BindSound("actor/mw_electrician/electrician_loop2",4,20,true)
 self._dest = false
+if Game.Difficulty > 1 then
+	self.AiParams.weaponDamage = 10
+end
 end
 
 function o:startfx()
@@ -67,8 +64,13 @@ function o:Render()
                 if b then                            
                     local obj = EntityToObject[e]             
                     if obj  and e ~= self._Entity then          
-                        if math.random(100) < 10 then                            
-		         if obj.OnDamage then obj:OnDamage(self.AiParams.laserdamage,self,AttackTypes.Painkiller,tx,ty,tz,nx,ny,nz) end
+                        if math.random(100) < 10 then 
+				if Game.Difficulty < 2 then
+			         if obj.OnDamage then obj:OnDamage(self.AiParams.laserdamage,self,AttackTypes.Painkiller,tx,ty,tz,nx,ny,nz) end
+				 else
+					 local d = self.AiParams.laserdamage/Game.Difficulty
+			         if obj.OnDamage then obj:OnDamage(d,self,AttackTypes.Painkiller,tx,ty,tz,nx,ny,nz) end
+				end
                         end
 		    end
 			if b and e and e ~= self._Entity then

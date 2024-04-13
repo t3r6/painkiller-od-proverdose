@@ -2,7 +2,7 @@ o.Mesh = "bones03_polySurfaceShape1869"
 o.Pack = "BonesHead.dat"
 --o.Mesh = "pCylinderShape1"
 --o.Pack = "kolek.dat"
-
+o.NotCountable = true
 
 o.Scale = 0.04
 --Stake.Restitution = 0.5

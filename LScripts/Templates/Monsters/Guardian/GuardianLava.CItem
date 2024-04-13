@@ -1,6 +1,6 @@
 o.Mesh = "pSphereShape1"
 o.Pack = "meteor_caly.dat"
-
+o.NotCountable = true
 o.DestroyPack = "meteor_zlom.dat"
 o.Destroy.ExplosionStrength = 3200
 

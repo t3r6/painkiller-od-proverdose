@@ -2,7 +2,7 @@ o.Scale = 0.01
 o.Mass = 1600
 o.HPDrainDistance = 4
 o.HPDrain = 1
-
+o.NotCountable = true
 o.Mesh = "pSphereShape1"
 o.Pack = "Kamyk.dat"
 o.Restitution = 5 -- sprezystosc

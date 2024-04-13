@@ -63,8 +63,10 @@ function Energy:OnTake(player)
 		PlaySound2D("belial/Belial_ingame_"..math.random(132,134),nil,nil,true)
 	end
     player.Health = player.Health + self.HPadd * Game.SoulHealthFactor
-    player.SoulsCount = player.SoulsCount + 1
-    player.TotalSoulsCount = player.TotalSoulsCount + 1
+	if Lev and Lev._Name ~= "C8L07_Black_tower" then
+	    player.SoulsCount = player.SoulsCount + 1
+	    player.TotalSoulsCount = player.TotalSoulsCount + 1
+	end
     player:PickupFX()
     Templates["Energy.CItem"]:Snd2D("pickup")
 	Game.FlashDemon = true

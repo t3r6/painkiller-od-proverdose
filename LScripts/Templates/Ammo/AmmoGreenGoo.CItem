@@ -20,9 +20,13 @@ end
 --============================================================================
 function AmmoGreenGoo:OnCreateEntity()
     ENTITY.EnableNetworkSynchronization(self._Entity)
- self:BindFX("googlow",0.9)
--- self:BindFX("googlow",1)
+    ENTITY.SetSynchroString(self._Entity,"GreenGoo.CItem")
+    self:Client_OnCreateEntity(self._Entity)
 
+end
+function AmmoGreenGoo:Client_OnCreateEntity(entity)
+  local smokefx = AddPFX("googlow",0.9)
+    ENTITY.RegisterChild(entity,smokefx)
 end
 --============================================================================
 function AmmoGreenGoo:OnTake(player)    

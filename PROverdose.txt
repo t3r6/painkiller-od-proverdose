@@ -2,7 +2,11 @@
 OVERVIEW
 ========
 
-PROverdose is a multiplayer's modification for Painkiller: Overdose 75.3 and Press demo 66.3 
+PROverdose is a multiplayer modification for Painkiller Overdose.
+
+PROverdose v0.4 only supports the latest official Painkiller Overdose version 84.4.
+
+Earlier PROverdose versions support Overdose 75.3 and Press demo 66.3.
 
 PROD is a pro-mod for competitions and tournaments without gameplay's change
 
@@ -15,6 +19,13 @@ PROD's homepage is under construction, you can visit our forum: www.painkiller.f
 Don't forget to download PK's maps remixes for OD: www.myoekaki.de/killua/OD-maps
 
 Join the PK-OD Ladders: http://www.esl.eu/eu/pkod/  
+
+=============
+CHANGELOG 0.4
+=============
+
+- ADD: Support for Overdose 84.4
+- CHG: Enable secondary Petrifier and Nuclear Gun simple HUD ammo
 
 
 =============
@@ -172,7 +183,7 @@ TODOLIST
 CREDITS
 =======
 
-Credits goes to devteams for her ideas:
+Credits goes to devteams for their ideas:
 
 - PK++ (Blowfish) 
 - NewPK (Crazy)
@@ -183,8 +194,8 @@ Credits goes to devteams for her ideas:
 
 PROD's devteam would to special thanks:
 
-- ESL to allow PROD with her ladders 
-- killua for her PK's maps remix
+- ESL to allow PROD with their ladders 
+- killua for his PK's maps remix
 - Mogul for his hitsound/killsound
 - catphone for hosting 3 PROD servers
 - Overdose project and the 17 PKers community :)
