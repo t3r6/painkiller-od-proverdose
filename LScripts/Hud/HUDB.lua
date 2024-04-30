@@ -49,7 +49,7 @@ function Hud:DrawDigitsText1(x,y,txt,scale,warning)
 		end
 	end		
 end
---AmmoList =début=################################################################################
+--AmmoList =start=################################################################################
 function Hud:AmmoList()
     local w,h = R3D.ScreenSize()
     local gray = R3D.RGB(120,120,70)
@@ -232,7 +232,7 @@ function Hud:AmmoList()
 
 end
 --AmmoList =fin=#########################################################################
---LowAmmo=début=########################################################################
+--LowAmmo=start=########################################################################
 function Hud:LowAmmo()
 LAmmos =
 {
@@ -274,61 +274,61 @@ LAmmos =
 	if amfire > warfire and cw == 2 then 
 		endbonesnd = endsnd
 		endbonetxt = endtxt
-		tmallwend = 0 -- a bien vérifier par le test en jeu "tm all w end == tm (time) all w(weapon) end"
+		tmallwend = 0 -- a bien vÃ©rifier par le test en jeu "tm all w end == tm (time) all w(weapon) end"
 	elseif amfire > warfire and cw == 3 then 
 		endcannonsnd = endsnd
 		endcannontxt = endtxt
-		wtmcannonend = 0 -- a bien vérifier par le test en jeu
-		tmallwend = 0 -- a bien vérifier par le test en jeu
+		wtmcannonend = 0 -- a bien vÃ©rifier par le test en jeu
+		tmallwend = 0 -- a bien vÃ©rifier par le test en jeu
 	elseif amfire > warfire and cw == 4 then
 		endarrowsnd = endsnd
 		endarrowtxt = endtxt
-		tmallwend = 0 -- a bien vérifier par le test en jeu
+		tmallwend = 0 -- a bien vÃ©rifier par le test en jeu
 	elseif amfire > warfire and cw == 5 then
 		endbrainsnd = endsnd
 		endbraintxt = endtxt
-		tmallwend = 0 -- a bien vérifier par le test en jeu
+		tmallwend = 0 -- a bien vÃ©rifier par le test en jeu
 	elseif amfire > warfire and cw == 6 then
 		endskullsnd = endsnd
 		endskulltxt = endtxt
-		tmallwend = 0 -- a bien vérifier par le test en jeu
+		tmallwend = 0 -- a bien vÃ©rifier par le test en jeu
 	elseif amfire > warfire and cw == 7 then
 		endectoplasmsnd = endsnd
 		endectoplasmtxt = endtxt
-		wtmectoplasmend = 0 -- a bien vérifier par le test en jeu
-		tmallwend = 0 -- a bien vérifier par le test en jeu
+		wtmectoplasmend = 0 -- a bien vÃ©rifier par le test en jeu
+		tmallwend = 0 -- a bien vÃ©rifier par le test en jeu
 		tmceamend = 0
 	--elseif amfire > warfire and cw == 8 then
 		--endbombsnd = endsnd
 		--endbombtxt = endtxt
-		--tmallwend = 0 -- a bien vérifier par le test en jeu
+		--tmallwend = 0 -- a bien vÃ©rifier par le test en jeu
 	end
 	if amaltfire > waraltfire and cw == 2 then
 		endbulletsnd = endsnd
 		endbullettxt = endtxt
-		tmallwaltend = 0 -- a bien vérifier par le test en jeu "tm all w end == tm (time) all w(weapon) alt(alternatif) end"
+		tmallwaltend = 0 -- a bien vÃ©rifier par le test en jeu "tm all w end == tm (time) all w(weapon) alt(alternatif) end"
 	elseif amaltfire > waraltfire and cw == 3 then
 		endminigunsnd = endsnd
 		endminiguntxt = endtxt
-		tmallwaltend = 0 -- a bien vérifier par le test en jeu
+		tmallwaltend = 0 -- a bien vÃ©rifier par le test en jeu
 	elseif amaltfire > waraltfire and cw == 4 then
 		endheadsnd = endsnd
 		endheadtxt = endtxt
-		tmallwaltend = 0 -- a bien vérifier par le test en jeu
-		wtmcrossbowend = 0 -- a bien vérifier par le test en jeu
-		tmcramend = 0 -- a bien vérifier par le test en jeu
+		tmallwaltend = 0 -- a bien vÃ©rifier par le test en jeu
+		wtmcrossbowend = 0 -- a bien vÃ©rifier par le test en jeu
+		tmcramend = 0 -- a bien vÃ©rifier par le test en jeu
 	elseif amaltfire > waraltfire and cw == 5 then
 		endbrokensnd = endsnd
 		endbrokentxt = endtxt
-		tmallwaltend = 0 -- a bien vérifier par le test en jeu
+		tmallwaltend = 0 -- a bien vÃ©rifier par le test en jeu
 	elseif amaltfire > waraltfire and cw == 6 then
 		endenergysnd = endsnd
 		endenergytxt = endtxt
-		tmallwaltend = 0 -- a bien vérifier par le test en jeu
+		tmallwaltend = 0 -- a bien vÃ©rifier par le test en jeu
 	elseif amaltfire > waraltfire and cw == 7 then
 		endgreengoosnd = endsnd
 		endgreengootxt = endtxt
-		tmallwaltend = 0 -- a bien vérifier par le test en jeu
+		tmallwaltend = 0 -- a bien vÃ©rifier par le test en jeu
 	end
 	
 	if not Cfg.PROD_SimpleIcons then
@@ -353,8 +353,8 @@ LAmmos =
 		end
 		if Cfg.PROD_LA_Msg then
 			if cw == cwx and tmend <= tmendtxt then
-				HUD.PrintXY((w-HUD.GetTextWidth("Low Ammos!"))/2+1,200*h/768+1,"Low Ammos!",lafonttypo,15,15,15,lafontsizes)
-				HUD.PrintXY((w-HUD.GetTextWidth("Low Ammos!"))/2,200*h/768,"Low Ammos!",lafonttypo,255,0,0,lafontsizes)
+				HUD.PrintXY((w-HUD.GetTextWidth("Low Ammo!"))/2+1,200*h/768+1,"Low Ammo!",lafonttypo,15,15,15,lafontsizes)
+				HUD.PrintXY((w-HUD.GetTextWidth("Low Ammo!"))/2,200*h/768,"Low Ammo!",lafonttypo,255,0,0,lafontsizes)
 			end
 		end
 	end
@@ -366,8 +366,8 @@ LAmmos =
 		end
 		if Cfg.PROD_LA_Msg then
 			if cw == cwx and tmend <= tmendalttxt then
-				HUD.PrintXY((w-HUD.GetTextWidth("Low Ammos!"))/2+1,200*h/768+1,"Low Ammos!",lafonttypo,15,15,15,lafontsizes)
-				HUD.PrintXY((w-HUD.GetTextWidth("Low Ammos!"))/2,200*h/768,"Low Ammos!",lafonttypo,255,0,0,lafontsizes)	
+				HUD.PrintXY((w-HUD.GetTextWidth("Low Ammo!"))/2+1,200*h/768+1,"Low Ammo!",lafonttypo,15,15,15,lafontsizes)
+				HUD.PrintXY((w-HUD.GetTextWidth("Low Ammo!"))/2,200*h/768,"Low Ammo!",lafonttypo,255,0,0,lafontsizes)	
 			end
 		end
 	end
@@ -377,15 +377,15 @@ LAmmos =
 		if Cfg.PROD_LA_Msg_Switch then
 			if amfire <= warfire and amfire ~= 0 then
 				if cw == cwx and tmend <= tmallwend then
-					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammos! "))/2+1,200*h/768+1,cammos.." Low Ammos! ",lafonttypo,15,15,15,lafontsizes)
-					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammos! "))/2,200*h/768,cammos.." Low Ammos! ",lafonttypo,255,0,0,lafontsizes)
+					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammo! "))/2+1,200*h/768+1,cammos.." Low Ammo! ",lafonttypo,15,15,15,lafontsizes)
+					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammo! "))/2,200*h/768,cammos.." Low Ammo! ",lafonttypo,255,0,0,lafontsizes)
 				end
 			end
 			if amaltfire <= waraltfire and amaltfire ~= 0 then
 				if cw == cwx and tmend <= tmallwaltend then
 					if cw ~= 7 then
-						HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammos! "))/2+1,225*h/768+1,caltammos.." Low Ammos! ",lafonttypo,15,15,15,lafontsizes)
-						HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammos! "))/2,225*h/768,caltammos.." Low Ammos! ",lafonttypo,255,0,0,lafontsizes)
+						HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammo! "))/2+1,225*h/768+1,caltammos.." Low Ammo! ",lafonttypo,15,15,15,lafontsizes)
+						HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammo! "))/2,225*h/768,caltammos.." Low Ammo! ",lafonttypo,255,0,0,lafontsizes)
 					end
 				end
 			end
@@ -394,14 +394,14 @@ LAmmos =
 	--On Take Ammo===========================================
 		if amfire <= warfire and amfire ~= 0 then
 			if cw == 7 and tmend <= tmceamend then
-				HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammos! "))/2+1,200*h/768+1,caltammos.." Low Ammos! "..amaltfire,lafonttypo,15,15,15,lafontsizes)
-				HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammos! "))/2,200*h/768,caltammos.." Low Ammos! "..amaltfire,lafonttypo,255,0,0,lafontsizes)
+				HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammo! "))/2+1,200*h/768+1,caltammos.." Low Ammo! "..amaltfire,lafonttypo,15,15,15,lafontsizes)
+				HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammo! "))/2,200*h/768,caltammos.." Low Ammo! "..amaltfire,lafonttypo,255,0,0,lafontsizes)
 			end
 		end
 		if amaltfire <= waraltfire and amaltfire ~= 0 then
 			if cw == 4 and tmend <= tmcramend then
-				HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammos! "))/2+1,200*h/768+1,caltammos.." Low Ammos! "..amaltfire,lafonttypo,15,15,15,lafontsizes)
-				HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammos! "))/2,200*h/768,caltammos.." Low Ammos! "..amaltfire,lafonttypo,255,0,0,lafontsizes)
+				HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammo! "))/2+1,200*h/768+1,caltammos.." Low Ammo! "..amaltfire,lafonttypo,15,15,15,lafontsizes)
+				HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammo! "))/2,200*h/768,caltammos.." Low Ammo! "..amaltfire,lafonttypo,255,0,0,lafontsizes)
 			end
 		end
 		
@@ -409,17 +409,17 @@ LAmmos =
 		if Cfg.PROD_LA_Msg_Pickup then
 			if amfire <= warfire and amfire ~= 0 then
 				if cw == 3 and tmend <= wtmcannonend then
-					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammos! "))/2+1,200*h/768+1,cammos.." Low Ammos!",lafonttypo,15,15,15,lafontsizes)
-					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammos! "))/2,200*h/768,cammos.." Low Ammos!",lafonttypo,255,0,0,lafontsizes)
+					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammo! "))/2+1,200*h/768+1,cammos.." Low Ammo!",lafonttypo,15,15,15,lafontsizes)
+					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammo! "))/2,200*h/768,cammos.." Low Ammo!",lafonttypo,255,0,0,lafontsizes)
 				elseif cw == 7 and tmend <= wtmectoplasmend then
-					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammos! "))/2+1,200*h/768+1,cammos.." Low Ammos!",lafonttypo,15,15,15,lafontsizes)
-					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammos! "))/2,200*h/768,cammos.." Low Ammos!",lafonttypo,255,0,0,lafontsizes)
+					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammo! "))/2+1,200*h/768+1,cammos.." Low Ammo!",lafonttypo,15,15,15,lafontsizes)
+					HUD.PrintXY((w-HUD.GetTextWidth(cammos.." Low Ammo! "))/2,200*h/768,cammos.." Low Ammo!",lafonttypo,255,0,0,lafontsizes)
 				end
 			end
 			if amaltfire <= waraltfire and amaltfire ~= 0 then
 				if cw == 4 and tmend <= wtmcrossbowend then
-					HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammos! "))/2+1,200*h/768+1,caltammos.." Low Ammos!",lafonttypo,15,15,15,lafontsizes)
-					HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammos! "))/2,200*h/768,caltammos.." Low Ammos!",lafonttypo,255,0,0,lafontsizes)
+					HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammo! "))/2+1,200*h/768+1,caltammos.." Low Ammo!",lafonttypo,15,15,15,lafontsizes)
+					HUD.PrintXY((w-HUD.GetTextWidth(caltammos.." Low Ammo! "))/2,200*h/768,caltammos.." Low Ammo!",lafonttypo,255,0,0,lafontsizes)
 				end
 			end
 		end
