@@ -20,6 +20,15 @@ Don't forget to download PK's maps remixes for OD: www.myoekaki.de/killua/OD-map
 
 Join the PK-OD Ladders: http://www.esl.eu/eu/pkod/  
 
+===============
+CHANGELOG 0.4.1
+===============
+
+- CHG: Swap Start Game and Join Game, like in the original game
+- CHG: Enable secondary Petrifier and Nuclear Gun ammo for side HUD
+- FIX: Typos
+
+
 =============
 CHANGELOG 0.4
 =============
