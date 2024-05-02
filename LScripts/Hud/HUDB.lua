@@ -72,162 +72,180 @@ function Hud:AmmoList()
 --CurrentAmmo
 	if Player._CurWeaponIndex == 1 then
 	elseif Player._CurWeaponIndex == 2 then
-		Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*0)-sizem*sizey)*h/768,sizem,false,trans)
-		--Hud:QuadTrans(Hud._matammoselect,(1024-240*sizem)*w/1024,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false,255)
-    
-	elseif Player._CurWeaponIndex == 3 then  
-		if not (INP.IsFireSwitched() or (not Game.SwitchFire[4] and Cfg.SwitchFire[4]) or (not Cfg.SwitchFire[4] and Game.SwitchFire[4])) then
-			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false,trans)
-			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*84)-sizem*sizey)*h/768,sizem,false,trans)
-		else
-			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*84)-sizem*sizey)*h/768,sizem,false,trans)
+		if not (INP.IsFireSwitched() or (not Game.SwitchFire[2] and Cfg.SwitchFire[2]) or (not Cfg.SwitchFire[2] and Game.SwitchFire[2])) then
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*0)-sizem*sizey)*h/768,sizem,false,trans)
 			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false,trans)
+		else
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*0)-sizem*sizey)*h/768,sizem,false,trans)
+		end
+
+	elseif Player._CurWeaponIndex == 3 then
+		if not (INP.IsFireSwitched() or (not Game.SwitchFire[4] and Cfg.SwitchFire[4]) or (not Cfg.SwitchFire[4] and Game.SwitchFire[4])) then
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*84)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false,trans)
+		else
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*84)-sizem*sizey)*h/768,sizem,false,trans)
 		end
     
 	elseif Player._CurWeaponIndex == 4 then 
 		if not (INP.IsFireSwitched() or (not Game.SwitchFire[7] and Cfg.SwitchFire[7]) or (not Cfg.SwitchFire[7] and Game.SwitchFire[7])) then	
-			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false,trans)
-			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*168)-sizem*sizey)*h/768,sizem,false,trans)
-		else
 			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*168)-sizem*sizey)*h/768,sizem,false,trans)
-			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*210)-sizem*sizey)*h/768,sizem,false,trans)
+		else
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*210)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*168)-sizem*sizey)*h/768,sizem,false,trans)
 		end
    
 	elseif Player._CurWeaponIndex == 5 then 
 		if not (INP.IsFireSwitched() or (not Game.SwitchFire[2] and Cfg.SwitchFire[2]) or (not Cfg.SwitchFire[2] and Game.SwitchFire[2])) then
-			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*210)-sizem*sizey)*h/768,sizem,false,trans)
-			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*252)-sizem*sizey)*h/768,sizem,false,trans)
-		else
 			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*252)-sizem*sizey)*h/768,sizem,false,trans)
-			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*210)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false,trans)
+		else
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*252)-sizem*sizey)*h/768,sizem,false,trans)
 		end
 
 	elseif Player._CurWeaponIndex == 6 then
 		if not (INP.IsFireSwitched() or (not Game.SwitchFire[7] and Cfg.SwitchFire[7]) or (not Cfg.SwitchFire[7] and Game.SwitchFire[7])) then
-			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false,trans)  
-			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*336)-sizem*sizey)*h/768,sizem,false,trans) 
-		else
 			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*336)-sizem*sizey)*h/768,sizem,false,trans)  
-			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false,trans) 
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*378)-sizem*sizey)*h/768,sizem,false,trans) 
+		else
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*378)-sizem*sizey)*h/768,sizem,false,trans)  
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*336)-sizem*sizey)*h/768,sizem,false,trans) 
 		end
 
 	elseif Player._CurWeaponIndex == 7 then
-		Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*378)-sizem*sizey)*h/768,sizem,false,trans)
-		
+		if not (INP.IsFireSwitched() or (not Game.SwitchFire[6] and Cfg.SwitchFire[6]) or (not Cfg.SwitchFire[6] and Game.SwitchFire[6])) then
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*462)-sizem*sizey)*h/768,sizem,false,trans)
+		else
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*462)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false,trans)
+		end
+
 	elseif Player._CurWeaponIndex == 8 then
-		Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false,trans)
-    
+		Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*504)-sizem*sizey)*h/768,sizem,false,trans)
 	end
-	
+
 --AMMO==################################################################################
 		if not Cfg.PROD_SimpleIcons then
 			ammo1 = { Hud._matBoneGun2, Hud._matCannonGun2, Hud._matCrossBow2, Hud._matScreamer2, Hud._matHellBlade2, Hud._matEctoplasmer2, Hud._matEggBomb2 }
-			ammo2 = { Hud._matCannonGun2a, Hud._matCrossBow2a, Hud._matScreamer2a, Hud._matHellBlade2a, }
+			ammo2 = { Hud._matBoneGun2a, Hud._matCannonGun2a, Hud._matCrossBow2a, Hud._matScreamer2a, Hud._matHellBlade2a, Hud._matEctoplasmer2a }
 		else
 			ammo1 = { Hud._matBoneGun1, Hud._matCannonGun1, Hud._matCrossBow1, Hud._matScreamer1, Hud._matHellBlade1, Hud._matEctoplasmer1, Hud._matEggBomb1 }
-			ammo2 = { Hud._matCannonGun1a, Hud._matCrossBow1a, Hud._matScreamer1a, Hud._matHellBlade1a, }
+			ammo2 = { Hud._matBoneGun1a, Hud._matCannonGun1a, Hud._matCrossBow1a, Hud._matScreamer1a, Hud._matHellBlade1a, Hud._matEctoplasmer1a }
 		end
 --BoneGun
-		--if not (INP.IsFireSwitched() or (not Game.SwitchFire[2] and Cfg.SwitchFire[2]) or (not Cfg.SwitchFire[2] and Game.SwitchFire[2])) then
+		if not (INP.IsFireSwitched() or (not Game.SwitchFire[2] and Cfg.SwitchFire[2]) or (not Cfg.SwitchFire[2] and Game.SwitchFire[2])) then
+			Hud:Quad(ammo2[1],icoposix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false)
 			Hud:Quad(ammo1[1],icoposix,((posiy+sizem*0)-sizem*sizey)*h/768,sizem,false)
-			--Hud:Quad(Hud._matBoneGun1a,icoposix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false)
 			Hud:DrawDigitsText1(textposix,((posiy+sizem*3)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.Bonegun),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Bonegun)
-
-	--end
-			--Hud:DrawDigitsText1(textposix,((posiy+sizem*45)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.StoneBullets),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.StoneBullets)
-		--[[else
-			Hud:Quad(Hud._matBoneGun1,icoposix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false)
-			Hud:Quad(Hud._matBoneGun1a,icoposix,((posiy+sizem*0)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*45)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.StoneBullets),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.StoneBullets)
+		else
+			Hud:Quad(ammo2[1],icoposix,((posiy+sizem*0)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo1[1],icoposix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false)
 			Hud:DrawDigitsText1(textposix,((posiy+sizem*3)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.StoneBullets),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.StoneBullets)
-			Hud:DrawDigitsText(textposix,((posiy+sizem*45)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.Bonegun),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Bonegun)]]--
-		--end
-		
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*45)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.Bonegun),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Bonegun)
+		end
+
 --CannonGun
 		if not (INP.IsFireSwitched() or (not Game.SwitchFire[4] and Cfg.SwitchFire[4]) or (not Cfg.SwitchFire[4] and Game.SwitchFire[4])) then
-			Hud:Quad(ammo2[1],icoposix,((posiy+sizem*84)-sizem*sizey)*h/768,sizem,false)
-			Hud:Quad(ammo1[2],icoposix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*45)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.Cannonball),-3),0.9 * sizem,Player.s_SubClass.AmmoWarning.Cannonball)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*87)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.MiniGun),-3),0.9 * sizem,Player.s_SubClass.AmmoWarning.MiniGun)
-		else
-			Hud:Quad(ammo2[1],icoposix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo2[2],icoposix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false)
 			Hud:Quad(ammo1[2],icoposix,((posiy+sizem*84)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*45)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.MiniGun),-3),0.9 * sizem,Player.s_SubClass.AmmoWarning.MiniGun)
 			Hud:DrawDigitsText1(textposix,((posiy+sizem*87)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.Cannonball),-3),0.9 * sizem,Player.s_SubClass.AmmoWarning.Cannonball)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*129)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.MiniGun),-3),0.9 * sizem,Player.s_SubClass.AmmoWarning.MiniGun)
+		else
+			Hud:Quad(ammo2[2],icoposix,((posiy+sizem*84)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo1[2],icoposix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*87)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.MiniGun),-3),0.9 * sizem,Player.s_SubClass.AmmoWarning.MiniGun)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*129)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.Cannonball),-3),0.9 * sizem,Player.s_SubClass.AmmoWarning.Cannonball)
 		end
 
 --CrossBow
 		if not (INP.IsFireSwitched() or (not Game.SwitchFire[7] and Cfg.SwitchFire[7]) or (not Cfg.SwitchFire[7] and Game.SwitchFire[7])) then
-			Hud:Quad(ammo1[3],icoposix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false)
-			Hud:Quad(ammo2[2],icoposix,((posiy+sizem*168)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*129)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Arrows),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Arrows)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*171)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Heads),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Heads)
-		else
-			Hud:Quad(ammo2[2],icoposix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false)
 			Hud:Quad(ammo1[3],icoposix,((posiy+sizem*168)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*129)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Heads),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Heads)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*171)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Arrows),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Arrows)
-		end 
-		
---Screamer		
-		if not (INP.IsFireSwitched() or (not Game.SwitchFire[2] and Cfg.SwitchFire[2]) or (not Cfg.SwitchFire[2] and Game.SwitchFire[2])) then
-			Hud:Quad(ammo1[4],icoposix,((posiy+sizem*210)-sizem*sizey)*h/768,sizem,false)
-			Hud:Quad(ammo2[3],icoposix,((posiy+sizem*252)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*213)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.BrainWorms),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.BrainWorms)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*255)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.BrokenSouls),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.BrokenSouls)
-		else
-			Hud:Quad(ammo1[4],icoposix,((posiy+sizem*252)-sizem*sizey)*h/768,sizem,false)
 			Hud:Quad(ammo2[3],icoposix,((posiy+sizem*210)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*213)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.BrokenSouls),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.BrokenSouls)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*255)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.BrainWorms),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.BrainWorms)
-		end
-		
---HellBlade		
-		if not (INP.IsFireSwitched() or (not Game.SwitchFire[7] and Cfg.SwitchFire[7]) or (not Cfg.SwitchFire[7] and Game.SwitchFire[7])) then
-			Hud:Quad(ammo1[5],icoposix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false)
-			Hud:Quad(ammo2[4],icoposix,((posiy+sizem*336)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*297)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Skulls),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Skulls)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*339)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.DarkEnergy),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.DarkEnergy)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*171)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Arrows),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Arrows)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*213)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Heads),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Heads)
 		else
-			Hud:Quad(ammo2[4],icoposix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false)
-			Hud:Quad(ammo1[5],icoposix,((posiy+sizem*336)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*297)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.DarkEnergy),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.DarkEnergy)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*339)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Skulls),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Skulls)
+			Hud:Quad(ammo2[3],icoposix,((posiy+sizem*168)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo1[3],icoposix,((posiy+sizem*210)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*171)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Heads),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Heads)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*213)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Arrows),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Arrows)
 		end 
-		
---Ectoplasmer		
-			Hud:Quad(ammo1[6],icoposix,((posiy+sizem*378)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*381)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Ectoplasm),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Ectoplasm)
-			
---EggBomb		
-			Hud:Quad(ammo1[7],icoposix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false)
-			Hud:DrawDigitsText1(textposix,((posiy+sizem*423)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.StickyBombs),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.StickyBombs)
+
+-- --Screamer
+		if not (INP.IsFireSwitched() or (not Game.SwitchFire[2] and Cfg.SwitchFire[2]) or (not Cfg.SwitchFire[2] and Game.SwitchFire[2])) then
+			Hud:Quad(ammo1[4],icoposix,((posiy+sizem*252)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo2[4],icoposix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*255)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.BrainWorms),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.BrainWorms)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*297)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.BrokenSouls),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.BrokenSouls)
+		else
+			Hud:Quad(ammo1[4],icoposix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo2[4],icoposix,((posiy+sizem*252)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*255)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.BrokenSouls),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.BrokenSouls)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*297)-sizem*sizey)*h/768,string.sub(string.format("%03d",Player.Ammo.BrainWorms),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.BrainWorms)
+		end
+
+--HellBlade
+		if not (INP.IsFireSwitched() or (not Game.SwitchFire[7] and Cfg.SwitchFire[7]) or (not Cfg.SwitchFire[7] and Game.SwitchFire[7])) then
+			Hud:Quad(ammo1[5],icoposix,((posiy+sizem*336)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo2[5],icoposix,((posiy+sizem*378)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*339)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Skulls),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Skulls)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*381)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.DarkEnergy),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.DarkEnergy)
+		else
+			Hud:Quad(ammo2[5],icoposix,((posiy+sizem*336)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo1[5],icoposix,((posiy+sizem*378)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*339)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.DarkEnergy),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.DarkEnergy)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*381)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Skulls),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Skulls)
+		end
+
+--Ectoplasmer
+		if not (INP.IsFireSwitched() or (not Game.SwitchFire[6] and Cfg.SwitchFire[6]) or (not Cfg.SwitchFire[6] and Game.SwitchFire[6])) then
+			Hud:Quad(ammo1[6],icoposix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo2[6],icoposix,((posiy+sizem*462)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*423)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Ectoplasm),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Ectoplasm)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*465)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.GreenGoo),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.GreenGoo)
+		else
+			Hud:Quad(ammo1[6],icoposix,((posiy+sizem*462)-sizem*sizey)*h/768,sizem,false)
+			Hud:Quad(ammo2[6],icoposix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*423)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.GreenGoo),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.GreenGoo)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*465)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.Ectoplasm),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.Ectoplasm)
+		end
+
+--EggBomb
+			Hud:Quad(ammo1[7],icoposix,((posiy+sizem*504)-sizem*sizey)*h/768,sizem,false)
+			Hud:DrawDigitsText1(textposix,((posiy+sizem*507)-sizem*sizey)*h/768,string.sub(string.format("%04d",Player.Ammo.StickyBombs),-3),0.9*sizem,Player.s_SubClass.AmmoWarning.StickyBombs)
 
 --UnallowableWeapons
 	if Player.EnabledWeapons[2] == Bonegun then
 		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*0)-sizem*sizey)*h/768,sizem,false,255)
-		--Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false,255)
+		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false,255)
 	end
 	if Player.EnabledWeapons[3] == CannonGun then
-		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*42)-sizem*sizey)*h/768,sizem,false,255)
 		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*84)-sizem*sizey)*h/768,sizem,false,255)
+		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false,255)
 	end
 	if Player.EnabledWeapons[4] == MagicCrossbow then
-		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*126)-sizem*sizey)*h/768,sizem,false,255)
 		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*168)-sizem*sizey)*h/768,sizem,false,255)
+		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*210)-sizem*sizey)*h/768,sizem,false,255)
 	end
 	if Player.EnabledWeapons[5] == Screamer then
-		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*210)-sizem*sizey)*h/768,sizem,false,255)
 		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*252)-sizem*sizey)*h/768,sizem,false,255)
+		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false,255)
 	end
 	if Player.EnabledWeapons[6] == HellBlade then
-		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*294)-sizem*sizey)*h/768,sizem,false,255)
 		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*336)-sizem*sizey)*h/768,sizem,false,255)
-	end
-	if Player.EnabledWeapons[7] == Ectoplasmer then
 		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*378)-sizem*sizey)*h/768,sizem,false,255)
 	end
-	if Player.EnabledWeapons[8] == EggBomb then
+	if Player.EnabledWeapons[7] == Ectoplasmer then
 		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false,255)
+		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*462)-sizem*sizey)*h/768,sizem,false,255)
+	end
+	if Player.EnabledWeapons[8] == EggBomb then
+		Hud:QuadTrans(Hud._Unallowable,icoposix,((posiy+sizem*504)-sizem*sizey)*h/768,sizem,false,255)
 	end
 
 end

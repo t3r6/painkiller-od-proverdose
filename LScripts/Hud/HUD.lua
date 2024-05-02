@@ -170,7 +170,7 @@ function Hud:LoadData()
 	Hud._matMinus     	  = MATERIAL.Create("..ProOptions/Scores/minus", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	Hud._matMinusDef     	  = MATERIAL.Create("..ProOptions/Scores/minusdef", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	
---Colored Icones=début==============================================================================================================================================
+--Colored Icons=start==============================================================================================================================================
 --weapon
 	Hud._matCubew      	  = MATERIAL.Create("../ProOptions/Weapon/kostka_open", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	Hud._matBoneGunw      = MATERIAL.Create("../ProOptions/Weapon/i_bones", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
@@ -208,11 +208,11 @@ function Hud:LoadData()
 	Hud._matArmorRed1    = MATERIAL.Create("../ProOptions/Armor/armor_czerwony", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	Hud._matArmorGreen1  = MATERIAL.Create("../ProOptions/Armor/armor_zielony", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	Hud._matArmorYellow1 = MATERIAL.Create("../ProOptions/Armor/armor_zolty", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
---Colored Icones=fin===============================================================================================================================================
+--Colored Icons=fin===============================================================================================================================================
 
 --###################
 
---Normal Icones (CurrentWeapons/Ammo)=début=============================================================================================================================
+--Normal Icons (CurrentWeapons/Ammo)=start=============================================================================================================================
 	Hud._matCube2      	  = MATERIAL.Create("HUD/kostka_open", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	Hud._matInfinity1 	  = MATERIAL.Create("HUD/infinity", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	Hud._matBoneGun2      = MATERIAL.Create("HUD/Mw_hud/i_bones", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
@@ -227,9 +227,10 @@ function Hud:LoadData()
 	Hud._matHellBlade2    = MATERIAL.Create("HUD/Mw_hud/i_skulls", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	Hud._matHellBlade2a   = MATERIAL.Create("HUD/Mw_hud/i_Dark_energy", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	Hud._matEctoplasmer2  = MATERIAL.Create("HUD/Mw_hud/i_Ectoplasm", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
+	Hud._matEctoplasmer2a = MATERIAL.Create("HUD/Mw_hud/i_GreenGoo", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	Hud._matEggBomb2      = MATERIAL.Create("HUD/Mw_hud/i_eggbombs", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
 	
---Normal Icones=fin==============================================================================================================================================
+--Normal Icons=fin==============================================================================================================================================
 --ADDED=end####################################################################################################
 
 	self._matHealth = MATERIAL.Create("HUD/energia", TextureFlags.NoLOD + TextureFlags.NoMipMaps)
@@ -421,7 +422,7 @@ function Hud:Render(delta)
 			HUD.PrintXY(w-HUD.GetTextWidth(ploss),HUD.GetTextHeight(),ploss,"timesbd",230,161,97,26)
 		end
 	 end ]]--
---ShowFPS and ShowPing=début============================================================================
+--ShowFPS and ShowPing=start============================================================================
 	if self._showFPS or Cfg.PROD_ShowFPS then
 		local fps = string.format("FPS: %d",R3D.GetFPS())
 		--HUD.SetFont("timesbd",26)	
@@ -495,7 +496,7 @@ function Hud:Render(delta)
 		end
 		local time = string.format(m..":"..string.format("%02d",s))
 --MODIFIED=####################################################################################################
---ShowTimer=début===================================================================================	
+--ShowTimer=start===================================================================================	
 		if not Cfg.PROD_SimpleIcons then
 			HUD.SetFont("timesbd",35)
 		else
@@ -623,7 +624,7 @@ function Hud:Render(delta)
 	
 	local sizex, sizey = MATERIAL.Size(self._matHUDLeft)
 --MODIFIED=####################################################################################################
---Simple HUD =début=============================================================================================================================================
+--Simple HUD =start=============================================================================================================================================
 	if not Cfg.PROD_SimpleIcons then	
 		self:QuadTrans(self._matHUDLeft,0,(768-Cfg.HUDSize*sizey)*h/768,Cfg.HUDSize,false,trans)
 		self:QuadTrans(self._matHUDRight,(1024-Cfg.HUDSize*sizex)*w/1024,(768-Cfg.HUDSize*sizey)*h/768,Cfg.HUDSize,false,trans)
@@ -636,7 +637,7 @@ function Hud:Render(delta)
 	end
 
 --MODIFIED=####################################################################################################	
---Simple HUD =début=============================================================================================================================================
+--Simple HUD =start=============================================================================================================================================
 	if not Cfg.PROD_SimpleIcons then	
 		self:Quad(self._matHealth,Cfg.HUDSize*17*w/1024,((768+Cfg.HUDSize*14)-Cfg.HUDSize*sizey)*h/768,Cfg.HUDSize,false)
 	else
@@ -683,7 +684,7 @@ function Hud:Render(delta)
 --ADDED=end########################################################################################
 	
 --MODFIED=####################################################################################################
---Simple HUD =début=============================================================================================================================================
+--Simple HUD =start=============================================================================================================================================
 		if not Cfg.PROD_SimpleIcons then
 			if Player.ArmorType == 0 then
 				self:Quad(self._matArmorNormal,Cfg.HUDSize*17*w/1024,((768+Cfg.HUDSize*49)-Cfg.HUDSize*sizey)*h/768,Cfg.HUDSize,false)
@@ -726,7 +727,7 @@ function Hud:Render(delta)
 --MODFIED=end####################################################################################################
 
 --ADDED=####################################################################################################		
---CurrentWeapon=début============================================================================        
+--CurrentWeapon=start============================================================================        
 		if Cfg.PROD_CurrentWeapon then
 			self:CurrentWeapon()
 		end	
@@ -741,7 +742,7 @@ function Hud:Render(delta)
             he = 1
         end	
 --MODFIED=####################################################################################################
---Simple HUD =début=============================================================================================================================================	
+--Simple HUD =start=============================================================================================================================================	
 			if not Cfg.PROD_SimpleIcons then
 				self:DrawDigitsText(Cfg.HUDSize*60*w/1024,((768+Cfg.HUDSize*16)-Cfg.HUDSize*sizey)*h/768,string.sub(string.format("%03d",he),-3),0.9 * Cfg.HUDSize,Player.HealthWarning)
 
@@ -834,7 +835,7 @@ function Hud:Render(delta)
     if Game.IsDemon then return end
 	
 --MODFIED=####################################################################################################
---Simple HUD =début=============================================================================================================================================	    
+--Simple HUD =start=============================================================================================================================================	    
     --[[  speedmeter
     if  Tweak.PlayerMove.ShowSpeedmeter and Player and Player._Entity then
         local vx,vy,vz,vl = ENTITY.GetVelocity(Player._Entity)
@@ -1449,7 +1450,7 @@ function Hud:DrawText(x,y,txt,color,size)
     end
 end
 --MODFIED=####################################################################################################
---Simple HUD =début=============================================================================================================================================
+--Simple HUD =start=============================================================================================================================================
 --============================================================================
 function Hud:DrawDigit(x,y,chr,scale)
 	local w,h = R3D.ScreenSize()

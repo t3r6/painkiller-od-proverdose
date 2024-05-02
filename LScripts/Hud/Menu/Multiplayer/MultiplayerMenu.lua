@@ -18,22 +18,22 @@ MultiplayerMenu =
 
 	items =
 	{
-		StartGame =
-		{
-			text = TXT.Menu.StartGame,
-			desc = TXT.MenuDesc.StartGame,
-			x	 = -1,
-			y	 = 264, -- CHG: PrimeviL (344)
-			action = "if Game:IsServer() and Game.Gmode ~= GameStates.Finished then PainMenu:AskYesNo( Languages.Texts[967],'Game.ServTimeout = 800; Game:EndOfMatch(); PainMenu:ActivateScreen(CreateServerMenu)','PainMenu:ActivateScreen(MultiplayerMenu)') else Game.ServTimeout = 15 ; PainMenu:ActivateScreen(CreateServerMenu) end",
-		},
-
 		JoinGame =
 		{
 			text = TXT.Menu.JoinGame,
 			desc = TXT.MenuDesc.JoinGame,
 			x	 = -1,
-			y	 = 344, -- CHG: PrimeviL (264)
+			y	 = 264,
 			action = "PainMenu:ActivateScreen(LANGameMenu)",
+		},
+
+		StartGame =
+		{
+			text = TXT.Menu.StartGame,
+			desc = TXT.MenuDesc.StartGame,
+			x	 = -1,
+			y	 = 344,
+			action = "if Game:IsServer() and Game.Gmode ~= GameStates.Finished then PainMenu:AskYesNo( Languages.Texts[967],'Game.ServTimeout = 800; Game:EndOfMatch(); PainMenu:ActivateScreen(CreateServerMenu)','PainMenu:ActivateScreen(MultiplayerMenu)') else Game.ServTimeout = 15 ; PainMenu:ActivateScreen(CreateServerMenu) end",
 		},
 
 		PlayerSettings =
