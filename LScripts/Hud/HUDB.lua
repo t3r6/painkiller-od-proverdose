@@ -119,10 +119,10 @@ function Hud:AmmoList()
 	elseif Player._CurWeaponIndex == 7 then
 		if not (INP.IsFireSwitched() or (not Game.SwitchFire[6] and Cfg.SwitchFire[6]) or (not Cfg.SwitchFire[6] and Game.SwitchFire[6])) then
 			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false,trans)
-			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*462)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*462)-sizem*sizey)*h/768,sizem,false,trans)
 		else
 			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*462)-sizem*sizey)*h/768,sizem,false,trans)
-			Hud:QuadTrans(matselect1,selectpoxix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false,trans)
+			Hud:QuadTrans(matselect2,selectpoxix,((posiy+sizem*420)-sizem*sizey)*h/768,sizem,false,trans)
 		end
 
 	elseif Player._CurWeaponIndex == 8 then
