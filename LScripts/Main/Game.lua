@@ -1791,7 +1791,7 @@ function Game:EnableSilverCards()
 		self.PlayerRegenerateWhenDying = true
 	end
 	
-	-- health stealer (5% of the damage to the enemy goes to player�s health)
+	-- health stealer (5% of the damage to the enemy goes to player's health)
 	if Game.CardsSelected[cards[13].index] then
 		self.StealHealth = true
 	end

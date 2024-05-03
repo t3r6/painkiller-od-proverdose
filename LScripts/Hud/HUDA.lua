@@ -1,4 +1,4 @@
---CurrentWeapon =d�but=################################################################################
+--CurrentWeapon =start=################################################################################
 function Hud:CurrentWeapon()
     local w,h = R3D.ScreenSize()
 	local sizex, sizey = MATERIAL.Size(Hud._matHUDLeft)
@@ -58,7 +58,7 @@ end
 end
 --CurrentWeapon =fin=################################################################################
 
---CurrentAmmo =d�but=################################################################################
+--CurrentAmmo =start=################################################################################
 function Hud:CurrentAmmo()
     local w,h = R3D.ScreenSize()
     local gray = R3D.RGB(120,120,70)
